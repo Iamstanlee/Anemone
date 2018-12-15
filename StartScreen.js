@@ -12,6 +12,13 @@ export default class StartScreen extends React.Component {
             this.props.navigation.navigate('HomeScreen')
           }
         />
+
+        <Button
+          title="Onwards"
+          onPress={() =>
+            this.props.navigation.navigate('NextScreen')
+          }
+        />
       </View>
     );
   }
