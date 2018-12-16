@@ -15,7 +15,7 @@ export default class EmergencyResources extends React.Component{
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>EmergencyResources</Text>
+        <Text style={styles.welcome}>Emergency Resources</Text>
         <Button
                  title="Go back home"
                  onPress={() =>
