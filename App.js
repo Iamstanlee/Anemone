@@ -1,20 +1,21 @@
 import React from 'react';
 import AppNavigator from './AppNavigator';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import BottomTabs from './src/BottomTabs';
 
 export default class App extends React.Component {
   render() {
     return (
-      <View>
+      //<View>
 
-        <TouchableOpacity
-          style={styles.item}
-          onPress={() => this.props.navigation.push('BottomTabs')}
-        >
-          <Text>{"\n"}{"\n"}{"\n"}Bottom tabs</Text>
-        </TouchableOpacity>
+      //  <TouchableOpacity
+      //    style={styles.item}
+      //    onPress={() => this.props.navigation.push('BottomTabs')}
+      //  >
+      //    <Text>{"\n"}{"\n"}{"\n"}Bottom tabs</Text>
+      //  </TouchableOpacity>
         <AppNavigator/>
-      </View>
+    //  </View>
     );
   }
 }

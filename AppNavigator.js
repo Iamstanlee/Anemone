@@ -2,23 +2,43 @@ import { createStackNavigator, createAppContainer } from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import HomeScreen from './screens/HomeScreen';
-import StartScreen from './screens/StartScreen';
-import NextScreen from './screens/NextScreen';
-import BottomTabs from './src/BottomTabs';
+import CrisisPlan from './screens/CrisisPlan';
+import EmergencyResources from './screens/EmergencyResources';
+import CopingSkills from './screens/CopingSkills';
 
-const AppNavigator = createStackNavigator({
-  // HomeScreen: {screen: HomeScreen},
-  // StartScreen: {screen: StartScreen},
-  // NextScreen: {screen: NextScreen}
-  HomeScreen: {
-   screen: HomeScreen,
-   navigationOptions: { title: 'Examples' },
+
+
+
+const TabNavigator = createBottomTabNavigator({
+ CrisisPlan: {
+   screen: CrisisPlan,
+   navigationOptions: { title: 'CrisisPlan' },
  },
- BottomTabs: {
-   screen: BottomTabs,
-   navigationOptions: { title: 'Bottom tabs' },
+ EmergencyResources: {
+   screen: EmergencyResources,
+   navigationOptions: { title: 'EmergencyResources' },
+ },
+ CopingSkills: {
+   screen: CopingSkills,
+   navigationOptions: { title: 'CopingSkills' },
  },
 });
-const App = createAppContainer(AppNavigator);
+
+const FeedStack = createStackNavigator({
+  HomeScreen: HomeScreen,
+  Tabs: TabNavigator,
+  CrisisPlan: CrisisPlan,
+});
+
+
+// TabNavigator.navigationOptions = ({ navigation }) => {
+//     let tabBarVisible = navigation.state.routes[navigation.state.index].params.showTabBar;
+//
+//     return {
+//       tabBarVisible,
+//     };
+// };
+
+const App = createAppContainer(FeedStack);
 
 export default App;

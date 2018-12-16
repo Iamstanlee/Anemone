@@ -11,17 +11,24 @@ import {Platform, StyleSheet, Text, View, Button} from 'react-native';
 
 
 type Props = {};
-export default class HomeScreen extends React.Component{
+export default class EmergencyResources extends React.Component{
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to Anemone!</Text>
+        <Text style={styles.welcome}>EmergencyResources</Text>
         <Button
-                 title="Get Started"
+                 title="Go back home"
                  onPress={() =>
-                   this.props.navigation.navigate('CrisisPlan')
+                   this.props.navigation.navigate('HomeScreen')
                  }
                />
+
+               <Button
+                        title="Go back one page"
+                        onPress={() =>
+                          this.props.navigation.navigate('CopingSkills')
+                        }
+                      />
       </View>
     );
   }

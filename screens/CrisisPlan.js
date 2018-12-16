@@ -11,11 +11,11 @@ import {Platform, StyleSheet, Text, View, Button} from 'react-native';
 
 
 type Props = {};
-export default class NextScreen extends React.Component{
+export default class EmergencyResources extends React.Component{
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to Anemone again!</Text>
+        <Text style={styles.welcome}>You do not currently have a crisis plan set up</Text>
         <Button
                  title="Go back home"
                  onPress={() =>
@@ -26,7 +26,7 @@ export default class NextScreen extends React.Component{
                <Button
                         title="Go back one page"
                         onPress={() =>
-                          this.props.navigation.navigate('StartScreen')
+                          this.props.navigation.navigate('CopingSkills')
                         }
                       />
       </View>

@@ -1,11 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
-export default class StartScreen extends React.Component {
+export default class CopingSkills extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-      <Text> Add friends here! </Text>
+      <Text> Coping Skills </Text>
         <Button
           title="Back to home"
           onPress={() =>
@@ -16,7 +16,7 @@ export default class StartScreen extends React.Component {
         <Button
           title="Onwards"
           onPress={() =>
-            this.props.navigation.navigate('NextScreen')
+            this.props.navigation.navigate('EmergencyResources')
           }
         />
       </View>
