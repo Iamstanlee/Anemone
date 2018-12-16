@@ -11,7 +11,7 @@ export default class App extends React.Component {
           style={styles.item}
           onPress={() => this.props.navigation.push('BottomTabs')}
         >
-          <Text>~{"\n"}~{"\n"}~{"\n"}Bottom tabs</Text>
+          <Text>{"\n"}{"\n"}{"\n"}Bottom tabs</Text>
         </TouchableOpacity>
         <AppNavigator/>
       </View>
