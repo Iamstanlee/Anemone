@@ -9,19 +9,43 @@
 import React from 'react';
 import {Platform, StyleSheet, Text, View, Button, SectionList, TouchableHighlight, Linking} from 'react-native';
 import {List, ListItem} from 'react-native-elements';
+import call from 'react-native-phone-call'
+
+const emergencyline = {
+  number: '911', // String value with the number to call
+  prompt: true // Optional boolean property. Determines if the user should be prompt prior to the call
+}
+
+const suicideLine = {
+  number: '18002738255', // String value with the number to call
+  prompt: true // Optional boolean property. Determines if the user should be prompt prior to the call
+}
+
 
 
 const list = [
   {
-    title: 'Appointments',
+    title: 'Urgent Care',
     icon: 'av-timer',
-    component: () =>  <View><TouchableHighlight onPress={()=> Linking.openURL('https://www.google.com').catch(err => console.error('An error occurred', err))}><View style={styles.item}><Text>Oochoo</Text></View></TouchableHighlight></View> ,
+    component: () =>  <View><TouchableHighlight onPress={()=> Linking.openURL('https://www.google.com/maps/search/urgent+care/').catch(err => console.error('An error occurred', err))}><View style={styles.item}><Text>Urgent Care</Text></View></TouchableHighlight></View> ,
 
   },
   {
-    title: 'Trips',
+    title: 'Hospitals',
     icon: 'flight-takeoff',
-    component: () =>  <View><TouchableHighlight onPress={()=> Linking.openURL('https://www.google.com').catch(err => console.error('An error occurred', err))}><View style={styles.item}><Text>Tatti</Text></View></TouchableHighlight></View> ,
+    component: () =>  <View><TouchableHighlight onPress={()=> Linking.openURL('https://www.google.com/maps/search/hospital/').catch(err => console.error('An error occurred', err))}><View style={styles.item}><Text>Hospital</Text></View></TouchableHighlight></View> ,
+  },
+
+  {
+    title: 'Emergency Line',
+    icon: 'flight-takeoff',
+    component: () =>  <View><TouchableHighlight onPress={()=> call(emergencyline).catch(console.error)}><View style={styles.item}><Text>Emergency Hotline</Text></View></TouchableHighlight></View> ,
+  },
+
+  {
+    title: 'Suicide Line',
+    icon: 'flight-takeoff',
+    component: () =>  <View><TouchableHighlight onPress={()=> call(suicideLine).catch(console.error)}><View style={styles.item}><Text>Suicide Hotline</Text></View></TouchableHighlight></View> ,
   },
 ]
 
