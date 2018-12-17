@@ -28,7 +28,7 @@ export default class EmergencyResources extends React.Component{
 
   _linkPressed: function(url){
        LinkingIOS.openURL(url);
-   }
+   },
 
   render() {
     return (
