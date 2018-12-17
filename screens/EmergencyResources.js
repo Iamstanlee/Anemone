@@ -7,48 +7,68 @@
  */
 
 import React from 'react';
-import {Platform, StyleSheet, Text, View, Button} from 'react-native';
+import {Platform, StyleSheet, Text, View, Button, SectionList, TouchableHighlight} from 'react-native';
+import {List, ListItem} from 'react-native-elements';
 
 
-type Props = {};
+const list = [
+  {
+    title: 'Appointments',
+    icon: 'av-timer',
+    component: <TouchableHighlight onPress={()=> this._linkPressed('http://www.google.com')}/>
+
+  },
+  {
+    title: 'Trips',
+    icon: 'flight-takeoff',
+  },
+]
+
 export default class EmergencyResources extends React.Component{
+
+  _linkPressed: function(url){
+       LinkingIOS.openURL(url);
+   }
+
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Emergency Resources</Text>
-        <Button
-                 title="Go back home"
-                 onPress={() =>
-                   this.props.navigation.navigate('HomeScreen')
-                 }
-               />
-
-               <Button
-                        title="Go back one page"
-                        onPress={() =>
-                          this.props.navigation.navigate('CopingSkills')
-                        }
-                      />
-      </View>
+      <View>
+    <Text>
+    {"\n"}{"\n"}{"\n"}
+      </Text>
+      <List>
+  {
+    list.map((item) => (
+      <ListItem
+        key={item.title}
+        title={item.title}
+        leftIcon={{name: item.icon}}
+      />
+    ))
+  }
+</List>
+</View>
     );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+   flex: 1,
+   paddingTop: 22
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  sectionHeader: {
+    paddingTop: 2,
+    paddingLeft: 10,
+    paddingRight: 10,
+    paddingBottom: 2,
+    fontSize: 14,
+    fontWeight: 'bold',
+    backgroundColor: 'rgba(247,247,247,1.0)',
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+  item: {
+    padding: 10,
+    fontSize: 18,
+    height: 44,
   },
 });
