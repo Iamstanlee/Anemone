@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import {Platform, StyleSheet, Text, View, Button, SectionList, TouchableHighlight} from 'react-native';
+import {Platform, StyleSheet, Text, View, Button, SectionList, TouchableHighlight, Linking} from 'react-native';
 import {List, ListItem} from 'react-native-elements';
 
 
@@ -15,20 +15,21 @@ const list = [
   {
     title: 'Appointments',
     icon: 'av-timer',
-    component: <TouchableHighlight onPress={()=> this._linkPressed('http://www.google.com')}/>
+    component: () =>  <View><TouchableHighlight onPress={()=> Linking.openURL('https://www.google.com').catch(err => console.error('An error occurred', err))}><View style={styles.item}><Text>Oochoo</Text></View></TouchableHighlight></View> ,
 
   },
   {
     title: 'Trips',
     icon: 'flight-takeoff',
+    component: () =>  <View><TouchableHighlight onPress={()=> Linking.openURL('https://www.google.com').catch(err => console.error('An error occurred', err))}><View style={styles.item}><Text>Tatti</Text></View></TouchableHighlight></View> ,
   },
 ]
 
 export default class EmergencyResources extends React.Component{
 
-  _linkPressed: function(url){
-       LinkingIOS.openURL(url);
-   },
+  // _linkPressed=function(url){
+  //   Linking.openURL(url).catch(err => console.error('An error occurred', err));
+  //  }
 
   render() {
     return (
@@ -43,6 +44,7 @@ export default class EmergencyResources extends React.Component{
         key={item.title}
         title={item.title}
         leftIcon={{name: item.icon}}
+        component={item.component}
       />
     ))
   }
