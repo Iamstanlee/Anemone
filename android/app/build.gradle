@@ -137,10 +137,6 @@ android {
 }
 
 dependencies {
-<<<<<<< HEAD
-    compile project(':react-native-sms')
-=======
->>>>>>> 096674bdca70e8dd614023f73169118511f90669
     compile project(':react-native-vector-icons')
     compile project(':react-native-gesture-handler')
     implementation fileTree(dir: "libs", include: ["*.jar"])
