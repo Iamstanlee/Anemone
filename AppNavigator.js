@@ -1,5 +1,5 @@
 import React from 'react';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
+import { createStackNavigator, createAppContainer, createSwitchNavigator} from 'react-navigation';
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 import {View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -43,19 +43,17 @@ const TabNavigator = createMaterialBottomTabNavigator({
 
 const FeedStack = createStackNavigator({
   HomeScreen: HomeScreen,
-  Tabs: TabNavigator,
-  CrisisPlan: CrisisPlan,
 });
 
+// TabNavigator.navigationOptions = ({ navigation }) => {
+//     let tabBarVisible = navigation.state.routes[navigation.state.index].params.showTabBar;
+//
+//     return {
+//       tabBarVisible,
+//     };
+// };
 
-TabNavigator.navigationOptions = ({ navigation }) => {
-    let tabBarVisible = navigation.state.routes[navigation.state.index].params.showTabBar;
 
-    return {
-      tabBarVisible,
-    };
-};
+ const SwitchNavigator = createSwitchNavigator({ Opening: FeedStack, Tabs: TabNavigator,}, { initialRouteName: 'Opening', resetOnBlur: true, }, );
 
-const App = createAppContainer(TabNavigator);
-
-export default App;
+ export default createAppContainer(SwitchNavigator);
