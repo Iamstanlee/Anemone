@@ -1,24 +1,47 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, Modal, TouchableHighlight} from 'react-native';
 
 export default class CopingSkills extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-      <Text> Coping Skills </Text>
-        <Button
-          title="Back to home"
-          onPress={() =>
-            this.props.navigation.navigate('HomeScreen')
-          }
-        />
+  state = {
+  modalVisible: false,
+};
 
-        <Button
-          title="Onwards"
-          onPress={() =>
-            this.props.navigation.navigate('EmergencyResources')
-          }
-        />
+setModalVisible(visible) {
+  this.setState({modalVisible: visible});
+}
+render() {
+    return (
+      <View style={{marginTop: 22}}>
+      <Text>
+      {"\n"}{"\n"}{"\n"}
+        </Text>
+        <Modal
+          animationType="slide"
+          transparent={false}
+          visible={this.state.modalVisible}
+          onRequestClose={() => {
+            Alert.alert('Modal has been closed.');
+          }}>
+          <View style={{marginTop: 22}}>
+            <View>
+              <Text>Hello World!</Text>
+
+              <TouchableHighlight
+                onPress={() => {
+                  this.setModalVisible(!this.state.modalVisible);
+                }}>
+                <Text>Hide Modal</Text>
+              </TouchableHighlight>
+            </View>
+          </View>
+        </Modal>
+
+        <TouchableHighlight
+          onPress={() => {
+            this.setModalVisible(true);
+          }}>
+          <Text>Show Modal</Text>
+        </TouchableHighlight>
       </View>
     );
   }

@@ -11,8 +11,6 @@ import {Platform, StyleSheet, Text, View, Button, SectionList, TouchableHighligh
 import {List, ListItem} from 'react-native-elements';
 import call from 'react-native-phone-call'
 import SendSMS from 'react-native-sms'
-import TouchableScale from 'react-native-touchable-scale' // https://github.com/kohver/react-native-touchable-scale
-import LinearGradient from 'react-native-linear-gradient' // Only if no expo
 
 
 const emergencyline = {
@@ -81,33 +79,21 @@ export default class EmergencyResources extends React.Component{
     <Text>
     {"\n"}{"\n"}{"\n"}
       </Text>
-      <Button
-   title="Sign In"
-   buttonStyle={{
-     height: 54,
-   }}
-   ViewComponent={LinearGradient}
-   linearGradientProps={{
-     colors: ['#4E9CD0', '#F5FCFF'],
-     start: { x: 0, y: 0.5 },
-     end: { x: 1, y: 0.5 },
-   }}
-   containerStyle={{
-     marginBottom: 20,
-   }}/>
-    </View>
-//       <List>
-//   {
-//     list.map((item) => (
-//       <ListItem
-//         key={item.title}
-//         title={item.title}
-//         leftIcon={{name: item.icon}}
-//         component={item.component}
-//       />
-//     ))
-//   }
-// </List>
+
+
+      <List>
+  {
+    list.map((item) => (
+      <ListItem
+        key={item.title}
+        title={item.title}
+        leftIcon={{name: item.icon}}
+        component={item.component}
+      />
+    ))
+  }
+</List>
+</View>
 
 );
   }
@@ -131,5 +117,19 @@ const styles = StyleSheet.create({
     padding: 10,
     fontSize: 18,
     height: 44,
+  },
+  linearGradient: {
+    flex: 1,
+    paddingLeft: 15,
+    paddingRight: 15,
+    borderRadius: 5
+  },
+  buttonText: {
+    fontSize: 18,
+    fontFamily: 'Gill Sans',
+    textAlign: 'center',
+    margin: 10,
+    color: '#ffffff',
+    backgroundColor: 'transparent',
   },
 });
