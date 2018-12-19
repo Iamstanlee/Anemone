@@ -3,6 +3,9 @@ package com.crisisapp;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import cl.json.RNSharePackage;
+import com.hopding.pdflib.PDFLibPackage;
+import com.christopherdro.htmltopdf.RNHTMLtoPDFPackage;
 import com.BV.LinearGradient.LinearGradientPackage;
 import com.tkporter.sendsms.SendSMSPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
@@ -27,6 +30,9 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNSharePackage(),
+            new PDFLibPackage(),
+            new RNHTMLtoPDFPackage(),
             new LinearGradientPackage(),
             SendSMSPackage.getInstance(),
             new VectorIconsPackage(),

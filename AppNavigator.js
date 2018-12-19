@@ -7,6 +7,7 @@ import HomeScreen from './screens/HomeScreen';
 import CrisisPlan from './screens/CrisisPlan';
 import EmergencyResources from './screens/EmergencyResources';
 import CopingSkills from './screens/CopingSkills';
+import PDFRender from './screens/PDFRender';
 
 // const tabBarIcon = name => ({focused, horizontal, tintColor }) => (
 //   <MaterialIcons name={name} color={focused ? tintColor: tintColor} size={horizontal ? 17 : 24} />
@@ -43,6 +44,7 @@ const TabNavigator = createMaterialBottomTabNavigator({
 
 const FeedStack = createStackNavigator({
   HomeScreen: HomeScreen,
+  PDFRender: PDFRender,
 });
 
 // TabNavigator.navigationOptions = ({ navigation }) => {

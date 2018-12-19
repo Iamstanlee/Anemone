@@ -17,9 +17,9 @@ export default class EmergencyResources extends React.Component{
       <View style={styles.container}>
         <Text style={styles.welcome}>You do not currently have a crisis plan set up</Text>
         <Button
-                 title="Go back home"
+                 title="Go to render PDF screen"
                  onPress={() =>
-                   this.props.navigation.navigate('HomeScreen')
+                   this.props.navigation.navigate('PDFRender')
                  }
                />
 
