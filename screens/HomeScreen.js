@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import {Platform, StyleSheet, Text, View, Button} from 'react-native';
+import {Platform, StyleSheet, Text, View, Button, Image} from 'react-native';
 
 
 type Props = {};
@@ -15,7 +15,8 @@ export default class HomeScreen extends React.Component{
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to Anemone!</Text>
+        <Text style={styles.welcome}>Anemone</Text>
+        <Image source={{uri: './assets/anemone.png'}}></Image>
         <Button
                  title="Get Started"
                  onPress={() =>
@@ -32,12 +33,15 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#000000',
+    width: null,
+    height: null
   },
   welcome: {
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
+    color: '#ffffff',
   },
   instructions: {
     textAlign: 'center',
