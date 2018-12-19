@@ -15,7 +15,7 @@ import {Platform, StyleSheet, Text, View, Button, TextInput, AsyncStorage, Dimen
 type Props = {};
 export default class EmergencyResources extends React.Component{
   async saveKey(key, value){
-//    value = JSON.stringify(value).replace(/\\n/g, "ooch");
+    //    value = JSON.stringify(value).replace(/\\n/g, "ooch");
     try {
       await AsyncStorage.setItem(key, value);
     } catch (error) {
@@ -27,7 +27,8 @@ export default class EmergencyResources extends React.Component{
   render() {
     return (
       <View style={styles.container}>
-      <Text style={styles.welcome}>You do not currently have a crisis plan set up</Text>
+      <Text style={styles.welcome}>    {"\n"}{"\n"}{"\n"}
+      You do not currently have a crisis plan set up</Text>
       <Button
       title="Go to render PDF screen"
       onPress={() =>
