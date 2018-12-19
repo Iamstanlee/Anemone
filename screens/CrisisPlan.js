@@ -15,11 +15,13 @@ import {Platform, StyleSheet, Text, View, Button, TextInput, AsyncStorage} from 
 type Props = {};
 export default class EmergencyResources extends React.Component{
   async saveKey(key, value){
-    value = JSON.stringify(value)
+    //value = JSON.stringify(value)
     try {
       await AsyncStorage.setItem(key, value);
     } catch (error) {
       // Error saving data
+      console.log("Error: could not save data" + error);
+
     }
   }
   render() {
@@ -38,7 +40,7 @@ export default class EmergencyResources extends React.Component{
       placeholder="Type here to translate!"
     //  value = {this.state.text}
     //  onChangeText= {(value) => this.saveKey(value)}
-      onChangeText={(text) => {this.setState({text}); this.saveKey('trial', this.state);}}
+      onChangeText={(text) => {this.saveKey('trial', 'hello');}}
           //  const currText = {this.state.text},
     //  saveKey('trial', currText)
   //  }
