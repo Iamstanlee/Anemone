@@ -40,7 +40,7 @@ export default class EmergencyResources extends React.Component{
       placeholder="Type here to translate!"
     //  value = {this.state.text}
     //  onChangeText= {(value) => this.saveKey(value)}
-      onChangeText={(text) => {this.saveKey('trial', 'hello');}}
+      onChangeText={(text) => {this.saveKey('trial', text);}}
           //  const currText = {this.state.text},
     //  saveKey('trial', currText)
   //  }
