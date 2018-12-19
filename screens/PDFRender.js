@@ -22,6 +22,9 @@
     var trialText = "Nothing was filled out";
     try {
       trialText = await this.getKey('trial');
+      trialText = trialText.split(" ").join(" \n");
+
+
     }
     catch(error) {
       console.log('error: ' + error);
@@ -31,7 +34,7 @@
     // Create a PDF page with text and rectangles
     const page1 = PDFPage
     .create()
-    .setMediaBox(200, 200)
+    .setMediaBox(816, 1056)
     .drawText(trialText, {
       x: 25,
       y: 25,

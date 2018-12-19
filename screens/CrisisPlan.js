@@ -7,7 +7,7 @@
 */
 
 import React from 'react';
-import {Platform, StyleSheet, Text, View, Button, TextInput, AsyncStorage} from 'react-native';
+import {Platform, StyleSheet, Text, View, Button, TextInput, AsyncStorage, Dimensions} from 'react-native';
 
 
 
@@ -15,7 +15,7 @@ import {Platform, StyleSheet, Text, View, Button, TextInput, AsyncStorage} from 
 type Props = {};
 export default class EmergencyResources extends React.Component{
   async saveKey(key, value){
-    //value = JSON.stringify(value)
+//    value = JSON.stringify(value).replace(/\\n/g, "ooch");
     try {
       await AsyncStorage.setItem(key, value);
     } catch (error) {
@@ -36,14 +36,12 @@ export default class EmergencyResources extends React.Component{
       />
 
       <TextInput
-      style={{height: 40}}
-      placeholder="Type here to translate!"
-    //  value = {this.state.text}
-    //  onChangeText= {(value) => this.saveKey(value)}
+      style={{width: Dimensions.get('window').width},
+      {height: Dimensions.get('window').height},
+      {flex: 1}}
+      placeholder="Type text here"
+      multiline={true}
       onChangeText={(text) => {this.saveKey('trial', text);}}
-          //  const currText = {this.state.text},
-    //  saveKey('trial', currText)
-  //  }
       />
       </View>
     );
