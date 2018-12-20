@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import {Platform, StyleSheet, Text, View, Button, SectionList, TouchableHighlight, Linking} from 'react-native';
+import {Platform, StyleSheet, Text, View, Button, SectionList, TouchableHighlight, Linking, Icon} from 'react-native';
 import {List, ListItem} from 'react-native-elements';
 import call from 'react-native-phone-call'
 import SendSMS from 'react-native-sms'
@@ -35,35 +35,123 @@ const list = [
   {
     title: 'Urgent Care',
     icon: 'av-timer',
-    component: () =>  <View><TouchableHighlight onPress={()=> Linking.openURL('https://www.google.com/maps/search/urgent+care/').catch(err => console.error('An error occurred', err))}><View style={styles.item}><Text>Urgent Care</Text></View></TouchableHighlight></View> ,
+    component: () =>
+    <View>
+    <TouchableHighlight
+    style={{
+      borderWidth:1,
+      borderColor:'rgba(0,0,0,0.2)',
+      alignItems:'center',
+      justifyContent:'center',
+      width:100,
+      height:100,
+      backgroundColor:'#fff',
+      borderRadius:100,
+    }}
+    onPress={()=> Linking.openURL('https://www.google.com/maps/search/urgent+care/').catch(err => console.error('An error occurred', err))}>
+    <View>
+    <Text style={styles.buttonText}>Urgent Care</Text>
+    </View>
+    </TouchableHighlight>
+    </View> ,
+
 
   },
   {
     title: 'Hospitals',
     icon: 'flight-takeoff',
-    component: () =>  <View><TouchableHighlight onPress={()=> Linking.openURL('https://www.google.com/maps/search/hospital/').catch(err => console.error('An error occurred', err))}><View style={styles.item}><Text>Hospital</Text></View></TouchableHighlight></View> ,
+    component: () =>
+    <View>
+    <TouchableHighlight
+    style={{
+      borderWidth:1,
+      borderColor:'rgba(0,0,0,0.2)',
+      alignItems:'center',
+      justifyContent:'center',
+      width:100,
+      height:100,
+      backgroundColor:'#fff',
+      borderRadius:100,
+    }}
+    onPress={()=> Linking.openURL('https://www.google.com/maps/search/hospital/').catch(err => console.error('An error occurred', err))}>
+    <View>
+    <Text style={styles.buttonText}>Hospitals</Text>
+    </View>
+    </TouchableHighlight>
+    </View> ,
   },
 
   {
     title: 'Emergency Line',
     icon: 'flight-takeoff',
-    component: () =>  <View><TouchableHighlight onPress={()=> call(emergencyline).catch(console.error)}><View style={styles.item}><Text>Emergency Hotline</Text></View></TouchableHighlight></View> ,
+    component: () =>
+    <View>
+    <TouchableHighlight
+    style={{
+      borderWidth:1,
+      borderColor:'rgba(0,0,0,0.2)',
+      alignItems:'center',
+      justifyContent:'center',
+      width:100,
+      height:100,
+      backgroundColor:'#fff',
+      borderRadius:100,
+    }}
+    onPress={()=> call(emergencyline).catch(console.error)}>
+    <View>
+    <Text style={styles.buttonText}>Emergency Hotline</Text>
+    </View>
+    </TouchableHighlight>
+    </View> ,
   },
 
   {
     title: 'Suicide Line',
     icon: 'flight-takeoff',
-    component: () =>  <View><TouchableHighlight onPress={()=> call(suicideLine).catch(console.error)}><View style={styles.item}><Text>Suicide Hotline</Text></View></TouchableHighlight></View> ,
+    component: () =>
+    <View>
+    <TouchableHighlight
+    style={{
+      borderWidth:1,
+      borderColor:'rgba(0,0,0,0.2)',
+      alignItems:'center',
+      justifyContent:'center',
+      width:100,
+      height:100,
+      backgroundColor:'#fff',
+      borderRadius:100,
+    }}
+    onPress={()=> call(suicideLine).catch(console.error)}>
+    <View>
+    <Text style={styles.buttonText}>Suicide Hotline</Text>
+    </View>
+    </TouchableHighlight></View> ,
   },
 
   {
     title: 'Suicide Text Line',
     icon: 'flight-takeoff',
-    component: () =>  <View><TouchableHighlight onPress={()=> SendSMS.send(suicideTextLine, (completed, cancelled, error) => {
+    component: () =>
+    <View>
+    <TouchableHighlight
+    style={{
+      borderWidth:1,
+      borderColor:'rgba(0,0,0,0.2)',
+      alignItems:'center',
+      justifyContent:'center',
+      width:100,
+      height:100,
+      backgroundColor:'#fff',
+      borderRadius:100,
+    }}
+    onPress={()=> SendSMS.send(suicideTextLine, (completed, cancelled, error) => {console.log('SMS Callback: completed: ' + completed + ' cancelled: ' + cancelled + 'error: ' + error);
 
-		console.log('SMS Callback: completed: ' + completed + ' cancelled: ' + cancelled + 'error: ' + error);
-
-	})}><View style={styles.item}><Text>Suicide Textline</Text></View></TouchableHighlight></View> ,
+	})}>
+  <View>
+  <Text style={styles.buttonText}>Suicide Textline</Text>
+  </View>
+  </TouchableHighlight>
+  </View> ,
   },
 ]
 
@@ -125,11 +213,11 @@ const styles = StyleSheet.create({
     borderRadius: 5
   },
   buttonText: {
-    fontSize: 18,
+    fontSize: 15,
     fontFamily: 'Gill Sans',
     textAlign: 'center',
     margin: 10,
-    color: '#ffffff',
+    color: '#000000',
     backgroundColor: 'transparent',
   },
 });
