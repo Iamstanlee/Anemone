@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import {Platform, StyleSheet, Text, View, Button, SectionList, TouchableHighlight, Linking, Icon, Dimensions} from 'react-native';
+import {Platform, StyleSheet, Text, View, Button, SectionList, TouchableHighlight, Linking, Icon, Dimensions, AsyncStorage} from 'react-native';
 import {List, ListItem} from 'react-native-elements';
 import call from 'react-native-phone-call'
 import SendSMS from 'react-native-sms'
@@ -117,6 +117,7 @@ const list = [
     <TouchableHighlight
     style={this.buttonStyle(3, 3)}
     //TODO: Set up if in async, call number, else modal for setting contact
+    //TODO: Add "edit number" button to Modal
     onPress={()=> call(suicideLine).catch(console.error)}>
   <View>
   <Text style={styles.buttonText}>Personal Contact</Text>
@@ -128,6 +129,31 @@ const list = [
 
 export default class EmergencyResources extends React.Component{
 
+  async saveKey(key, value){
+  //value = JSON.stringify(value).replace(/\\n/g, "ooch");
+    try {
+      await AsyncStorage.setItem(key, value);
+    } catch (error) {
+      // Error saving data
+      console.log("Error: could not save data" + error);
+
+    }
+  }
+
+  async getKey(key){
+    try {
+      const value = await AsyncStorage.getItem(key);
+      return value;
+    } catch (error) {
+      console.log("Error retrieving data" + error);
+    }
+  }
+  //
+  // var isPC = false;
+  //
+  // if (getKey('PC')!=null){
+  //   isPC = true;
+  // }
 
 
   // _linkPressed=function(url){
