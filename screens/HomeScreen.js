@@ -9,14 +9,16 @@
 import React from 'react';
 import {Platform, StyleSheet, Text, View, Button, Image} from 'react-native';
 
+//var yourPicture = require ('./images/picture.jpg');
+
+
 
 type Props = {};
 export default class HomeScreen extends React.Component{
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Anemone</Text>
-        <Image source={{require:('./assets/anemone.png')}}/>
+        <Image source={require('../assets/anemone.png')} style={{width: 300, height: 70}}/>
         <Button
                  title="Get Started"
                  onPress={() =>
