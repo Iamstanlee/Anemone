@@ -1,7 +1,5 @@
   import React, { Component} from 'react'
-  // Import from 'react-native-pdf-lib'
   import { View, TouchableHighlight, Text, AsyncStorage } from 'react-native';
-
   import PDFLib, { PDFDocument, PDFPage } from 'react-native-pdf-lib';
   import Share from 'react-native-share';
 

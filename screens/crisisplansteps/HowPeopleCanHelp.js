@@ -32,7 +32,7 @@ export default class HowPeopleCanHelp extends React.Component{
       {flex: 1}}
       placeholder="Type text here"
       multiline={true}
-      onChangeText={(text) => {this.saveKey('trial', text);}}
+      onChangeText={(text) => {this.saveKey('HowPeopleCanHelp', text);}}
       />
       </View>
     );

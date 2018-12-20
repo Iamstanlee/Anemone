@@ -32,7 +32,7 @@ export default class OtherResources extends React.Component{
       {flex: 1}}
       placeholder="Type text here"
       multiline={true}
-      onChangeText={(text) => {this.saveKey('trial', text);}}
+      onChangeText={(text) => {this.saveKey('OtherResources', text);}}
       />
       </View>
     );

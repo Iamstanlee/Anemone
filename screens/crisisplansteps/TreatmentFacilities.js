@@ -32,7 +32,7 @@ export default class TreatmentFacilities extends React.Component{
       {flex: 1}}
       placeholder="Type text here"
       multiline={true}
-      onChangeText={(text) => {this.saveKey('trial', text);}}
+      onChangeText={(text) => {this.saveKey('TreatmentFacilities', text);}}
       />
       </View>
     );
