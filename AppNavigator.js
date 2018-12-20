@@ -8,6 +8,16 @@ import CrisisPlan from './screens/CrisisPlan';
 import EmergencyResources from './screens/EmergencyResources';
 import CopingSkills from './screens/CopingSkills';
 import PDFRender from './screens/PDFRender';
+import CrisisSigns from './screens/crisisplansteps/CrisisSigns';
+import CurrentMedications from './screens/crisisplansteps/CurrentMedications';
+import DateTime from './screens/crisisplansteps/DateTime';
+import EarlySymptoms from './screens/crisisplansteps/EarlySymptoms';
+import HowPeopleCanHelp from './screens/crisisplansteps/HowPeopleCanHelp';
+import OtherResources from './screens/crisisplansteps/OtherResources';
+import PastMedications from './screens/crisisplansteps/PastMedications';
+import People from './screens/crisisplansteps/People';
+import SymptomManagement from './screens/crisisplansteps/SymptomManagement';
+import TreatmentFacilities from './screens/crisisplansteps/TreatmentFacilities';
 
 // const tabBarIcon = name => ({focused, horizontal, tintColor }) => (
 //   <MaterialIcons name={name} color={focused ? tintColor: tintColor} size={horizontal ? 17 : 24} />
@@ -44,7 +54,17 @@ const TabNavigator = createMaterialBottomTabNavigator({
 
 const FeedStack = createStackNavigator({
   HomeScreen: HomeScreen,
-  PDFRender: PDFRender,
+  EarlySymptoms: EarlySymptoms,
+  SymptomManagement: SymptomManagement,
+  CrisisSigns: CrisisSigns,
+  People: People,
+  HowPeopleCanHelp: HowPeopleCanHelp,
+  CurrentMedications: CurrentMedications,
+  PastMedications: PastMedications,
+  TreatmentFacilities: TreatmentFacilities,
+  OtherResources: OtherResources,
+  DateTime: DateTime,
+  PDFRender: PDFRender
 });
 
 // TabNavigator.navigationOptions = ({ navigation }) => {

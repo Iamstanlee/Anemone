@@ -3,7 +3,7 @@ import {Platform, StyleSheet, Text, View, Button, TextInput, AsyncStorage, Dimen
 
 
 type Props = {};
-export default class CrisisPlan extends React.Component{
+export default class DateTime extends React.Component{
   async saveKey(key, value){
     //    value = JSON.stringify(value).replace(/\\n/g, "ooch");
     try {
@@ -18,12 +18,21 @@ export default class CrisisPlan extends React.Component{
     return (
       <View style={styles.container}>
       <Text style={styles.welcome}>    {"\n"}{"\n"}{"\n"}
-      You do not currently have a crisis plan set up</Text>
+      Your crisis plan is saved!</Text>
       <Button
-      title="Create a Crisis Plan"
+      title="Email, export, or share plan with others"
       onPress={() =>
-        this.props.navigation.navigate('EarlySymptoms')
+        this.props.navigation.navigate('PDFRender')
       }
+      />
+
+      <TextInput
+      style={{width: Dimensions.get('window').width},
+      {height: Dimensions.get('window').height},
+      {flex: 1}}
+      placeholder="Type text here"
+      multiline={true}
+      onChangeText={(text) => {this.saveKey('trial', text);}}
       />
       </View>
     );
