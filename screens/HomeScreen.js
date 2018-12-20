@@ -16,7 +16,7 @@ export default class HomeScreen extends React.Component{
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>Anemone</Text>
-        <Image source={{uri: './assets/anemone.png'}}></Image>
+        <Image source={{require:('./assets/anemone.png')}}/>
         <Button
                  title="Get Started"
                  onPress={() =>
