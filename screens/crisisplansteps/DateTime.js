@@ -12,7 +12,7 @@ var dateTimeString = "This plan was created on " + time + ".";
 
 export default class DateTime extends React.Component{
   async saveKey(key, value){
-    //    value = JSON.stringify(value).replace(/\\n/g, "ooch");
+  //value = JSON.stringify(value).replace(/\\n/g, "ooch");
     try {
       await AsyncStorage.setItem(key, value);
     } catch (error) {
@@ -25,6 +25,9 @@ export default class DateTime extends React.Component{
   async getKey(key){
     try {
       const value = await AsyncStorage.getItem(key);
+      if (value == null) {
+        console.log("VALUE IS NULL");
+      }
       return value;
     } catch (error) {
       console.log("Error retrieving data" + error);
@@ -32,10 +35,46 @@ export default class DateTime extends React.Component{
   }
 
   async createPDF(){// Create a new PDF in your app's private Documents directory
-  var trialText = "Nothing was filled out";
+  var EarlySymptoms = "No early symptoms were filled out";
+  var SymptomManagement = "No symptom management skills were filled out";
+  var CrisisSigns = "No crisis signs were filled out";
+  //TODO: Change name for people
+  var People = "No contacts of assistance were filled out";
+  var HowPeopleCanHelp = "No instructions for contacts were filled out";
+  var CurrentMedications = "No current medications were filled out";
+  var PastMedications = "No past medications were filled out";
+  var TreatmentFacilities = "No treatment facilities were filled out";
+  var OtherResources = "No other resources were filled out";
+
+
   try {
-    trialText = await this.getKey('trial');
-    trialText = trialText.split(" ").join(" \n");
+    EarlySymptoms = await this.getKey('EarlySymptoms');
+    //EarlySymptoms = EarlySymptoms.split(" ").join(" \n");
+
+    SymptomManagement = await this.getKey('SymptomManagement');
+  //  SymptomManagement = SymptomManagement.split(" ").join(" \n");
+
+    CrisisSigns = await this.getKey('CrisisSigns');
+  //  CrisisSigns = CrisisSigns.split(" ").join(" \n");
+
+    People = await this.getKey('People');
+  //  People = People.split(" ").join(" \n");
+
+    HowPeopleCanHelp = await this.getKey('HowPeopleCanHelp');
+  //  HowPeopleCanHelp = HowPeopleCanHelp.split(" ").join(" \n");
+
+    CurrentMedications = await this.getKey('CurrentMedications');
+  //  CurrentMedications = CurrentMedications.split(" ").join(" \n");
+
+    PastMedications = await this.getKey('PastMedications');
+  //  PastMedications = PastMedications.split(" ").join(" \n");
+
+    TreatmentFacilities = await this.getKey('TreatmentFacilities');
+  //  TreatmentFacilities = TreatmentFacilities.split(" ").join(" \n");
+
+    OtherResources = await this.getKey('OtherResources');
+  //  OtherResources = OtherResources.split(" ").join(" \n");
+
 
 
   }
@@ -48,19 +87,73 @@ export default class DateTime extends React.Component{
   const page1 = PDFPage
   .create()
   .setMediaBox(816, 1056)
-  .drawText(dateTimeString, {
+  .drawText("Crisis Plan", {
     x: 25,
-    y: 25,
+    y: 1020,
     //  width: 150,
     //  height: 150,
     color: '#FF99CC',
   })
-  .drawText('Antu is a little oochoo', {
-    x: 75,
-    y: 75,
-    //width: 50,
-    //  height: 50,
-    color: '#99FFCC',
+  .drawText(EarlySymptoms, {
+    x: 25,
+    y: 921.6,
+    //  width: 150,
+    //  height: 150,
+    color: '#FF99CC',
+  })  .drawText(SymptomManagement, {
+    x: 25,
+    y: 823.2,
+    //  width: 150,
+    //  height: 150,
+    color: '#FF99CC',
+  })  .drawText(CrisisSigns, {
+    x: 25,
+    y: 724.8,
+    //  width: 150,
+    //  height: 150,
+    color: '#FF99CC',
+  })  .drawText(People, {
+    x: 25,
+    y: 626.4,
+    //  width: 150,
+    //  height: 150,
+    color: '#FF99CC',
+  })  .drawText(HowPeopleCanHelp, {
+    x: 25,
+    y: 528,
+    //  width: 150,
+    //  height: 150,
+    color: '#FF99CC',
+  })  .drawText(CurrentMedications, {
+    x: 25,
+    y: 429.6,
+    //  width: 150,
+    //  height: 150,
+    color: '#FF99CC',
+  })  .drawText(PastMedications, {
+    x: 25,
+    y: 331.2,
+    //  width: 150,
+    //  height: 150,
+    color: '#FF99CC',
+  })  .drawText(TreatmentFacilities, {
+    x: 25,
+    y: 232.8,
+    //  width: 150,
+    //  height: 150,
+    color: '#FF99CC',
+  })  .drawText(OtherResources, {
+    x: 25,
+    y: 134.4,
+    //  width: 150,
+    //  height: 150,
+    color: '#FF99CC',
+  })  .drawText(dateTimeString, {
+    x: 25,
+    y: 36,
+    //  width: 150,
+    //  height: 150,
+    color: '#FF99CC',
   });
 
 

@@ -7,7 +7,6 @@ import HomeScreen from './screens/HomeScreen';
 import CrisisPlan from './screens/CrisisPlan';
 import EmergencyResources from './screens/EmergencyResources';
 import CopingSkills from './screens/CopingSkills';
-import PDFRender from './screens/PDFRender';
 import CrisisSigns from './screens/crisisplansteps/CrisisSigns';
 import CurrentMedications from './screens/crisisplansteps/CurrentMedications';
 import DateTime from './screens/crisisplansteps/DateTime';
@@ -64,7 +63,6 @@ const FeedStack = createStackNavigator({
   TreatmentFacilities: TreatmentFacilities,
   OtherResources: OtherResources,
   DateTime: DateTime,
-  PDFRender: PDFRender
 });
 
 // TabNavigator.navigationOptions = ({ navigation }) => {
