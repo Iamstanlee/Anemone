@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, ScrollView} from 'react-native';
 import { Card, ListItem, Button, Icon } from 'react-native-elements'
 
 
-export default class CopingSkills extends React.Component {
+export default class GroundingBox extends React.Component {
   render() {
     return (
       <View style={styles.container}>

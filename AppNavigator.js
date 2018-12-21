@@ -2,11 +2,13 @@ import React from 'react';
 import { createStackNavigator, createAppContainer, createSwitchNavigator} from 'react-navigation';
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 import {View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import MatIcon from 'react-native-vector-icons/MaterialIcons';
+import EntypoIcon from 'react-native-vector-icons/Entypo'
 import HomeScreen from './screens/HomeScreen';
 import CrisisPlan from './screens/CrisisPlan';
 import EmergencyResources from './screens/EmergencyResources';
 import CopingSkills from './screens/CopingSkills';
+import GroundingBox from './screens/GroundingBox';
 import CrisisSigns from './screens/crisisplansteps/CrisisSigns';
 import CurrentMedications from './screens/crisisplansteps/CurrentMedications';
 import DateTime from './screens/crisisplansteps/DateTime';
@@ -27,22 +29,31 @@ const TabNavigator = createMaterialBottomTabNavigator({
    screen: CrisisPlan,
    navigationOptions: { title: 'Crisis Plan',
    tabBarColor: '#AF7B93',
-   tabBarIcon: <Icon size={24} color="white" name="star" />,
+   tabBarIcon: <MatIcon size={24} color="white" name="star" />,
   },
    },
  EmergencyResources: {
    screen: EmergencyResources,
-   navigationOptions: { title: 'Emergency Resources',
+   navigationOptions: { title: 'Resources',
    tabBarColor: '#7BD2D8',
-   tabBarIcon: <Icon size={24} color="white" name="phone" />,
+   tabBarIcon: <MatIcon size={24} color="white" name="phone" />,
 },
  },
  CopingSkills: {
    screen: CopingSkills,
    navigationOptions: { title: 'Coping Skills',
    tabBarColor: '#B6D332',
-   tabBarIcon: <Icon size={24} color="white" name="wb-sunny" />,
+   tabBarIcon: <MatIcon size={24} color="white" name="wb-sunny" />,
 },
+ },
+
+ GroundingBox: {
+   screen: GroundingBox,
+   navigationOptions: { title: 'Grounding Box',
+   tabBarColor: '#F9B5AC',
+   tabBarIcon: <EntypoIcon size={24} color="white" name="box" />,
+},
+//TODO: Add box animation
  },
 },
  {
