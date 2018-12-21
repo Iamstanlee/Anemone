@@ -32,7 +32,7 @@ const suicideTextLine = {
 }
 
 const list1 = [
-  // {
+  //  {
   //   title: 'Urgent Care',
   //   icon: 'av-timer',
   //   component: () =>
@@ -78,6 +78,21 @@ const list1 = [
     </View> ,
   },
 
+
+    {
+      title: 'Local Crisis Line',
+      icon: 'flight-takeoff',
+      component: () =>
+      <View>
+      <TouchableHighlight
+      style={this.buttonStyle(2, 1, 4)}
+      onPress={()=> Linking.openURL('https://www.google.com/maps/search/local+crisis+line/').catch(err => console.error('An error occurred', err))}>
+      <View>
+      <Text style={styles.buttonText}>Local Crisis Line</Text>
+      </View>
+      </TouchableHighlight>
+      </View> ,
+    },
 ]
 
 const list2 = [
@@ -102,7 +117,7 @@ const list2 = [
     component: () =>
     <View>
     <TouchableHighlight
-    style={this.buttonStyle(3, 1, 4)}
+    style={this.buttonStyle(3, 1, 0)}
     onPress={()=> SendSMS.send(suicideTextLine, (completed, cancelled, error) => {console.log('SMS Callback: completed: ' + completed + ' cancelled: ' + cancelled + 'error: ' + error);
 
 	})}>
@@ -119,7 +134,7 @@ const list2 = [
     component: () =>
     <View>
     <TouchableHighlight
-    style={this.buttonStyle(3, 2, 0)}
+    style={this.buttonStyle(3, 2, 1)}
     //TODO: Set up if in async, call number, else modal for setting contact
     //TODO: Add "edit number" button to Modal
     //TODO: Some way to signify contact is not already set

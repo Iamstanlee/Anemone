@@ -63,6 +63,9 @@
 		F8446F46E7D546458D3B3241 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FBBB665E7DC4CD586229C05 /* EvilIcons.ttf */; };
 		FC8BAD0A517C4A21B9D01C24 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 41D5FF4B567949A6BC6A9E6D /* AntDesign.ttf */; };
 		FFC8AFECCD8A422B9C015E73 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FDDA24237BF54075870BD05A /* Foundation.ttf */; };
+		D9AF48E370A142208F5CFB1B /* libReactNativeNavigation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DE02A121662442A82CC13F3 /* libReactNativeNavigation.a */; };
+		15849DFB46E64E0CBE02AE0B /* ReactNativeNavigationTests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = 524125A91DDB418FB68366D1 /* ReactNativeNavigationTests.xctest */; };
+		D280B8DEB7EA4C478D341A80 /* libRNUploader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BEC7BBCA17E94D929F6A5944 /* libRNUploader.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -471,6 +474,11 @@
 		F9E18A53F4C34C9E9C422E49 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		FD495FB75A474398B23A7A97 /* RNShare.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNShare.xcodeproj; path = "../node_modules/react-native-share/ios/RNShare.xcodeproj"; sourceTree = "<group>"; };
 		FDDA24237BF54075870BD05A /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
+		189D92321E2148A6A03756F0 /* ReactNativeNavigation.xcodeproj */ = {isa = PBXFileReference; name = "ReactNativeNavigation.xcodeproj"; path = "../node_modules/react-native-navigation/lib/ios/ReactNativeNavigation.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		3DE02A121662442A82CC13F3 /* libReactNativeNavigation.a */ = {isa = PBXFileReference; name = "libReactNativeNavigation.a"; path = "libReactNativeNavigation.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		524125A91DDB418FB68366D1 /* ReactNativeNavigationTests.xctest */ = {isa = PBXFileReference; name = "ReactNativeNavigationTests.xctest"; path = "ReactNativeNavigationTests.xctest"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.cfbundle; explicitFileType = undefined; includeInIndex = 0; };
+		AA88580C10CA46F48495B510 /* RNUploader.xcodeproj */ = {isa = PBXFileReference; name = "RNUploader.xcodeproj"; path = "../node_modules/react-native-uploader/RNUploader/RNUploader.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		BEC7BBCA17E94D929F6A5944 /* libRNUploader.a */ = {isa = PBXFileReference; name = "libRNUploader.a"; path = "libRNUploader.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -507,6 +515,9 @@
 				9E39D238AAD94AA2B27E9EF2 /* RNHTMLtoPDFTests.xctest in Frameworks */,
 				6BE76CCEDB1A481C9F7E52EE /* libRNPDFLib.a in Frameworks */,
 				5C9257CE88384864B10C48C9 /* libRNShare.a in Frameworks */,
+				D9AF48E370A142208F5CFB1B /* libReactNativeNavigation.a in Frameworks */,
+				15849DFB46E64E0CBE02AE0B /* ReactNativeNavigationTests.xctest in Resources */,
+				D280B8DEB7EA4C478D341A80 /* libRNUploader.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -805,6 +816,8 @@
 				5DB9182DE7654C9487DA8BBB /* RNHTMLtoPDF.xcodeproj */,
 				F8728C23D72442B28C23B192 /* RNPDFLib.xcodeproj */,
 				FD495FB75A474398B23A7A97 /* RNShare.xcodeproj */,
+				189D92321E2148A6A03756F0 /* ReactNativeNavigation.xcodeproj */,
+				AA88580C10CA46F48495B510 /* RNUploader.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1554,12 +1567,16 @@
 					"$(SRCROOT)/../node_modules/react-native-html-to-pdf/ios/RNHTMLtoPDF/**",
 					"$(SRCROOT)/../node_modules/react-native-pdf-lib/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-share/ios",
+					"$(SRCROOT)/../node_modules/react-native-navigation/lib/ios/**",
 				);
 				INFOPLIST_FILE = CrisisAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1595,12 +1612,16 @@
 					"$(SRCROOT)/../node_modules/react-native-html-to-pdf/ios/RNHTMLtoPDF/**",
 					"$(SRCROOT)/../node_modules/react-native-pdf-lib/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-share/ios",
+					"$(SRCROOT)/../node_modules/react-native-navigation/lib/ios/**",
 				);
 				INFOPLIST_FILE = CrisisAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1638,6 +1659,7 @@
 					"$(SRCROOT)/../node_modules/react-native-html-to-pdf/ios/RNHTMLtoPDF/**",
 					"$(SRCROOT)/../node_modules/react-native-pdf-lib/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-share/ios",
+					"$(SRCROOT)/../node_modules/react-native-navigation/lib/ios/**",
 				);
 				INFOPLIST_FILE = CrisisApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1668,6 +1690,7 @@
 					"$(SRCROOT)/../node_modules/react-native-html-to-pdf/ios/RNHTMLtoPDF/**",
 					"$(SRCROOT)/../node_modules/react-native-pdf-lib/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-share/ios",
+					"$(SRCROOT)/../node_modules/react-native-navigation/lib/ios/**",
 				);
 				INFOPLIST_FILE = CrisisApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1703,11 +1726,15 @@
 					"$(SRCROOT)/../node_modules/react-native-html-to-pdf/ios/RNHTMLtoPDF/**",
 					"$(SRCROOT)/../node_modules/react-native-pdf-lib/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-share/ios",
+					"$(SRCROOT)/../node_modules/react-native-navigation/lib/ios/**",
 				);
 				INFOPLIST_FILE = "CrisisApp-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1751,11 +1778,15 @@
 					"$(SRCROOT)/../node_modules/react-native-html-to-pdf/ios/RNHTMLtoPDF/**",
 					"$(SRCROOT)/../node_modules/react-native-pdf-lib/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-share/ios",
+					"$(SRCROOT)/../node_modules/react-native-navigation/lib/ios/**",
 				);
 				INFOPLIST_FILE = "CrisisApp-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1798,11 +1829,15 @@
 					"$(SRCROOT)/../node_modules/react-native-html-to-pdf/ios/RNHTMLtoPDF/**",
 					"$(SRCROOT)/../node_modules/react-native-pdf-lib/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-share/ios",
+					"$(SRCROOT)/../node_modules/react-native-navigation/lib/ios/**",
 				);
 				INFOPLIST_FILE = "CrisisApp-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1845,11 +1880,15 @@
 					"$(SRCROOT)/../node_modules/react-native-html-to-pdf/ios/RNHTMLtoPDF/**",
 					"$(SRCROOT)/../node_modules/react-native-pdf-lib/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-share/ios",
+					"$(SRCROOT)/../node_modules/react-native-navigation/lib/ios/**",
 				);
 				INFOPLIST_FILE = "CrisisApp-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
