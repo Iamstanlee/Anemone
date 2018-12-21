@@ -86,7 +86,7 @@ const list1 = [
       <View>
       <TouchableHighlight
       style={this.buttonStyle(2, 1, 4)}
-      onPress={()=> Linking.openURL('https://www.google.com/maps/search/local+crisis+line/').catch(err => console.error('An error occurred', err))}>
+      onPress={()=> Linking.openURL('https://www.google.com/search?q=local+crisis+lines').catch(err => console.error('An error occurred', err))}>
       <View>
       <Text style={styles.buttonText}>Local Crisis Line</Text>
       </View>
