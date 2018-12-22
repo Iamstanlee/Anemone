@@ -74,9 +74,9 @@ export default class EmergencyResources extends React.Component{
         title: 'Hospitals',
         icon: 'flight-takeoff',
         component: () =>
-        <View>
+        <View style={outerButtonStyle(1,2,1)}>
         <TouchableOpacity
-        style={buttonStyle(1, 2, 1)}
+        style={innerButtonStyle(1, 2, 1)}
         onPress={()=> {Linking.openURL('https://www.google.com/maps/search/hospital/').catch(err => console.error('An error occurred', err)); this.refs.grounding.pulse(200);}}>
         <Animatable.View>
         <Text style={styles.buttonText}>Hospitals</Text>
@@ -89,9 +89,9 @@ export default class EmergencyResources extends React.Component{
         title: 'Emergency Line',
         icon: 'flight-takeoff',
         component: () =>
-        <View>
+        <View style={outerButtonStyle(2, 1,2)}>
         <TouchableOpacity
-        style={buttonStyle(2, 1, 2)}
+        style={innerButtonStyle(2, 1, 2)}
         onPress={()=> call(emergencyline).catch(console.error)}>
         <View>
         <Text style={styles.buttonText}>Emergency Hotline</Text>
@@ -105,9 +105,9 @@ export default class EmergencyResources extends React.Component{
           title: 'Local Crisis Line',
           icon: 'flight-takeoff',
           component: () =>
-          <View>
+          <View style={outerButtonStyle(2,1,4)}>
           <TouchableOpacity
-          style={buttonStyle(2, 1, 4)}
+          style={innerButtonStyle(2, 1, 4)}
           onPress={()=> Linking.openURL('https://www.google.com/search?q=local+crisis+lines').catch(err => console.error('An error occurred', err))}>
           <View>
           <Text style={styles.buttonText}>Local Crisis Line</Text>
@@ -123,9 +123,9 @@ export default class EmergencyResources extends React.Component{
         title: 'Suicide Line',
         icon: 'flight-takeoff',
         component: () =>
-        <View>
+        <View style={outerButtonStyle(2,2,3)}>
         <TouchableOpacity
-        style={buttonStyle(2, 2, 3)}
+        style={innerButtonStyle(2, 2, 3)}
         onPress={()=> call(suicideLine).catch(console.error)}>
         <View>
         <Text style={styles.buttonText}>Suicide Hotline</Text>
@@ -137,9 +137,9 @@ export default class EmergencyResources extends React.Component{
         title: 'Suicide Text Line',
         icon: 'flight-takeoff',
         component: () =>
-        <View>
+        <View style={outerButtonStyle(3,1,0)}>
         <TouchableOpacity
-        style={buttonStyle(3, 1, 0)}
+        style={innerButtonStyle(3, 1, 0)}
         onPress={()=> SendSMS.send(suicideTextLine, (completed, cancelled, error) => {console.log('SMS Callback: completed: ' + completed + ' cancelled: ' + cancelled + 'error: ' + error);
 
     	})}>
@@ -154,9 +154,9 @@ export default class EmergencyResources extends React.Component{
         title: 'Personal Contact',
         icon: 'flight-takeoff',
         component: () =>
-        <View>
+        <View style={outerButtonStyle(3,2,1)}>
         <TouchableOpacity
-        style={buttonStyle(3, 2, 1)}
+        style={innerButtonStyle(3, 2, 1)}
         //TODO: Set up if in async, call number, else modal for setting contact
         //TODO: Add "edit number" button to Modal
         //TODO: Some way to signify contact is not already set
@@ -172,7 +172,7 @@ export default class EmergencyResources extends React.Component{
     var {height, width} = Dimensions.get('window');
     var color = ['#af7b93', '#7bd2d8', '#b6d332', '#f9b5ac', '#ee7674']
 
-    buttonStyle = function(rNum, cNum, colNum) {
+    innerButtonStyle = function(rNum, cNum, colNum) {
      return {
        borderWidth:1,
        borderColor:'rgba(0,0,0,0.2)',
@@ -187,6 +187,23 @@ export default class EmergencyResources extends React.Component{
 
      }
    }
+
+   outerButtonStyle = function(rNum, cNum, colNum) {
+    return {
+      borderWidth:3,
+      borderColor:'rgba(0,0,0,0.2)',
+      alignItems:'center',
+      justifyContent:'center',
+      width:120,
+      height:120,
+      backgroundColor:'transparent',
+      borderColor:color[colNum],
+      borderRadius:120,
+      top: (rNum*(height))/6,
+      left: (cNum*(width))/6 - 100,
+
+    }
+  }
 
     return (
       <View>
