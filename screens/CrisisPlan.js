@@ -1,5 +1,6 @@
 import React from 'react';
 import {Platform, StyleSheet, Text, View, Button, TextInput, AsyncStorage, Dimensions} from 'react-native';
+import Interactable from 'react-native-interactable';
 
 
 type Props = {};
@@ -17,6 +18,14 @@ export default class CrisisPlan extends React.Component{
   render() {
     return (
       <View style={styles.container}>
+      <Interactable.View
+      horizontalOnly={true}
+      snapPoints={[{x: 0}, {x: -200}]}
+      onSnap={this.onDrawerSnap}>
+
+  <View style={{height: 10, width: 10, borderRadius: 10, backgroundColor: 'black'}}>
+    </View>
+  </Interactable.View>
       <Text style={styles.welcome}>    {"\n"}{"\n"}{"\n"}
       You do not currently have a crisis plan set up</Text>
       <Button

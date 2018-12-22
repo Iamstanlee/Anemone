@@ -174,8 +174,8 @@ export default class EmergencyResources extends React.Component{
 
     innerButtonStyle = function(rNum, cNum, colNum) {
      return {
-       borderWidth:1,
-       borderColor:'rgba(0,0,0,0.2)',
+       //borderWidth:,
+       //borderColor:'rgba(0,0,0,0.2)',
        alignItems:'center',
        justifyContent:'center',
        width:100,
@@ -190,7 +190,7 @@ export default class EmergencyResources extends React.Component{
 
    outerButtonStyle = function(rNum, cNum, colNum) {
     return {
-      borderWidth:3,
+      borderWidth:2,
       borderColor:'rgba(0,0,0,0.2)',
       alignItems:'center',
       justifyContent:'center',

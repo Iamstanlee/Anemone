@@ -3,6 +3,7 @@ package com.crisisapp;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.wix.interactable.Interactable;
 import cl.json.RNSharePackage;
 import com.hopding.pdflib.PDFLibPackage;
 import com.christopherdro.htmltopdf.RNHTMLtoPDFPackage;
@@ -30,6 +31,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new Interactable(),
             new RNSharePackage(),
             new PDFLibPackage(),
             new RNHTMLtoPDFPackage(),
