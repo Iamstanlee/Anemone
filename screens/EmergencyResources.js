@@ -7,11 +7,13 @@
  */
 
 import React from 'react';
-import {Platform, StyleSheet, Text, View, Button, SectionList, TouchableHighlight, Linking, Icon, Dimensions, AsyncStorage} from 'react-native';
+import {Platform, StyleSheet, Text, View, Button, SectionList, TouchableOpacity, Linking, Icon, Dimensions, AsyncStorage} from 'react-native';
 import {List, ListItem} from 'react-native-elements';
 import call from 'react-native-phone-call'
 import SendSMS from 'react-native-sms'
+import * as Animatable from 'react-native-animatable';
 
+//TODO: Add circle outline with bit of white space around circle buttons
 
 const emergencyline = {
   number: '911', // String value with the number to call
@@ -31,121 +33,6 @@ const suicideTextLine = {
   allowAndroidSendWithoutReadPermission: false
 }
 
-const list1 = [
-  //  {
-  //   title: 'Urgent Care',
-  //   icon: 'av-timer',
-  //   component: () =>
-  //   <View>
-  //   <TouchableHighlight
-  //   style={[this.buttonStyle(1, 1, 0)]}
-  //   onPress={()=> Linking.openURL('https://www.google.com/maps/search/urgent+care/').catch(err => console.error('An error occurred', err))}>
-  //   <View>
-  //   <Text style={styles.buttonText}>Urgent Care</Text>
-  //   </View>
-  //   </TouchableHighlight>
-  //   </View> ,
-  //
-  //
-  // },
-  {
-    title: 'Hospitals',
-    icon: 'flight-takeoff',
-    component: () =>
-    <View>
-    <TouchableHighlight
-    style={this.buttonStyle(1, 2, 1)}
-    onPress={()=> Linking.openURL('https://www.google.com/maps/search/hospital/').catch(err => console.error('An error occurred', err))}>
-    <View>
-    <Text style={styles.buttonText}>Hospitals</Text>
-    </View>
-    </TouchableHighlight>
-    </View> ,
-  },
-
-  {
-    title: 'Emergency Line',
-    icon: 'flight-takeoff',
-    component: () =>
-    <View>
-    <TouchableHighlight
-    style={this.buttonStyle(2, 1, 2)}
-    onPress={()=> call(emergencyline).catch(console.error)}>
-    <View>
-    <Text style={styles.buttonText}>Emergency Hotline</Text>
-    </View>
-    </TouchableHighlight>
-    </View> ,
-  },
-
-
-    {
-      title: 'Local Crisis Line',
-      icon: 'flight-takeoff',
-      component: () =>
-      <View>
-      <TouchableHighlight
-      style={this.buttonStyle(2, 1, 4)}
-      onPress={()=> Linking.openURL('https://www.google.com/search?q=local+crisis+lines').catch(err => console.error('An error occurred', err))}>
-      <View>
-      <Text style={styles.buttonText}>Local Crisis Line</Text>
-      </View>
-      </TouchableHighlight>
-      </View> ,
-    },
-]
-
-const list2 = [
-
-  {
-    title: 'Suicide Line',
-    icon: 'flight-takeoff',
-    component: () =>
-    <View>
-    <TouchableHighlight
-    style={this.buttonStyle(2, 2, 3)}
-    onPress={()=> call(suicideLine).catch(console.error)}>
-    <View>
-    <Text style={styles.buttonText}>Suicide Hotline</Text>
-    </View>
-    </TouchableHighlight></View> ,
-  },
-
-  {
-    title: 'Suicide Text Line',
-    icon: 'flight-takeoff',
-    component: () =>
-    <View>
-    <TouchableHighlight
-    style={this.buttonStyle(3, 1, 0)}
-    onPress={()=> SendSMS.send(suicideTextLine, (completed, cancelled, error) => {console.log('SMS Callback: completed: ' + completed + ' cancelled: ' + cancelled + 'error: ' + error);
-
-	})}>
-  <View>
-  <Text style={styles.buttonText}>Suicide Textline</Text>
-  </View>
-  </TouchableHighlight>
-  </View> ,
-  },
-
-  {
-    title: 'Personal Contact',
-    icon: 'flight-takeoff',
-    component: () =>
-    <View>
-    <TouchableHighlight
-    style={this.buttonStyle(3, 2, 1)}
-    //TODO: Set up if in async, call number, else modal for setting contact
-    //TODO: Add "edit number" button to Modal
-    //TODO: Some way to signify contact is not already set
-    onPress={(isPC, PCnumber)=> (isPC) ? (call(PCnumber).catch(console.error)): (call(suicideLine).catch(console.error))}>
-  <View>
-  <Text style={styles.buttonText}>Personal Contact</Text>
-  </View>
-  </TouchableHighlight>
-  </View> ,
-  },
-]
 
 export default class EmergencyResources extends React.Component{
 
@@ -182,6 +69,106 @@ export default class EmergencyResources extends React.Component{
   //  }
 
   render() {
+    var list1 = [
+      {
+        title: 'Hospitals',
+        icon: 'flight-takeoff',
+        component: () =>
+        <View>
+        <TouchableOpacity
+        style={buttonStyle(1, 2, 1)}
+        onPress={()=> {Linking.openURL('https://www.google.com/maps/search/hospital/').catch(err => console.error('An error occurred', err)); this.refs.grounding.pulse(200);}}>
+        <Animatable.View>
+        <Text style={styles.buttonText}>Hospitals</Text>
+        </Animatable.View>
+        </TouchableOpacity>
+        </View> ,
+      },
+
+      {
+        title: 'Emergency Line',
+        icon: 'flight-takeoff',
+        component: () =>
+        <View>
+        <TouchableOpacity
+        style={buttonStyle(2, 1, 2)}
+        onPress={()=> call(emergencyline).catch(console.error)}>
+        <View>
+        <Text style={styles.buttonText}>Emergency Hotline</Text>
+        </View>
+        </TouchableOpacity>
+        </View> ,
+      },
+
+
+        {
+          title: 'Local Crisis Line',
+          icon: 'flight-takeoff',
+          component: () =>
+          <View>
+          <TouchableOpacity
+          style={buttonStyle(2, 1, 4)}
+          onPress={()=> Linking.openURL('https://www.google.com/search?q=local+crisis+lines').catch(err => console.error('An error occurred', err))}>
+          <View>
+          <Text style={styles.buttonText}>Local Crisis Line</Text>
+          </View>
+          </TouchableOpacity>
+          </View> ,
+        },
+    ]
+
+    const list2 = [
+
+      {
+        title: 'Suicide Line',
+        icon: 'flight-takeoff',
+        component: () =>
+        <View>
+        <TouchableOpacity
+        style={buttonStyle(2, 2, 3)}
+        onPress={()=> call(suicideLine).catch(console.error)}>
+        <View>
+        <Text style={styles.buttonText}>Suicide Hotline</Text>
+        </View>
+        </TouchableOpacity></View> ,
+      },
+
+      {
+        title: 'Suicide Text Line',
+        icon: 'flight-takeoff',
+        component: () =>
+        <View>
+        <TouchableOpacity
+        style={buttonStyle(3, 1, 0)}
+        onPress={()=> SendSMS.send(suicideTextLine, (completed, cancelled, error) => {console.log('SMS Callback: completed: ' + completed + ' cancelled: ' + cancelled + 'error: ' + error);
+
+    	})}>
+      <View>
+      <Text style={styles.buttonText}>Suicide Textline</Text>
+      </View>
+      </TouchableOpacity>
+      </View> ,
+      },
+
+      {
+        title: 'Personal Contact',
+        icon: 'flight-takeoff',
+        component: () =>
+        <View>
+        <TouchableOpacity
+        style={buttonStyle(3, 2, 1)}
+        //TODO: Set up if in async, call number, else modal for setting contact
+        //TODO: Add "edit number" button to Modal
+        //TODO: Some way to signify contact is not already set
+        onPress={(isPC, PCnumber)=> (isPC) ? (call(PCnumber).catch(console.error)): (call(suicideLine).catch(console.error))}>
+      <View>
+      <Text style={styles.buttonText}>Personal Contact</Text>
+      </View>
+      </TouchableOpacity>
+      </View> ,
+      },
+    ]
+
     var {height, width} = Dimensions.get('window');
     var color = ['#af7b93', '#7bd2d8', '#b6d332', '#f9b5ac', '#ee7674']
 
