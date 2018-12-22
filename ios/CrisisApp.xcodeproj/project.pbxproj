@@ -23,7 +23,6 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
-		15849DFB46E64E0CBE02AE0B /* ReactNativeNavigationTests.xctest in Frameworks */ = {isa = PBXBuildFile; fileRef = 524125A91DDB418FB68366D1 /* ReactNativeNavigationTests.xctest */; };
 		1614363B45534520956BEDE7 /* libSendSMS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A3BD7D9611C42108519C8B2 /* libSendSMS.a */; };
 		1881129021CDDCC7000FE8EB /* libInteractable.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1881128421CDDC64000FE8EB /* libInteractable.a */; };
 		18A6F0A221C8578000BE199B /* CrisisApp.app in Frameworks */ = {isa = PBXBuildFile; fileRef = 13B07F961A680F5B00A75B9A /* CrisisApp.app */; };
@@ -567,7 +566,6 @@
 				6BE76CCEDB1A481C9F7E52EE /* libRNPDFLib.a in Frameworks */,
 				5C9257CE88384864B10C48C9 /* libRNShare.a in Frameworks */,
 				D9AF48E370A142208F5CFB1B /* libReactNativeNavigation.a in Frameworks */,
-				15849DFB46E64E0CBE02AE0B /* ReactNativeNavigationTests.xctest in Frameworks */,
 				D280B8DEB7EA4C478D341A80 /* libRNUploader.a in Frameworks */,
 				D31E7307C8784D4D8ED0B429 /* libInteractable.a in Frameworks */,
 				8A0B191DBF413A38AEFC1026 /* libPods-CrisisApp.a in Frameworks */,

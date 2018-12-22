@@ -30,10 +30,8 @@ export default ({ onPress }) => (
   <View style={styles.container}>
 
 <Text> {"\n"}{"\n"}{"\n"}</Text>
-<Text> {"\n"}{"\n"}{"\n"}</Text>
-<Text> {"\n"}{"\n"}{"\n"}</Text>
 
-        <Button title="Ooch" onPress={onPress} />
+        <Button title="Card #2" onPress={onPress} />
 
 
   </View>

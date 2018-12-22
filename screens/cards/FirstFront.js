@@ -14,10 +14,10 @@ const styles = StyleSheet.create({
   },
   leftPane: {
     flex: 1,
-    backgroundColor: '#33373B',
+    backgroundColor: '#ffffff',
     padding: 16,
     flexDirection: 'column',
-    justifyContent: 'space-between',
+    //justifyContent: 'space-between',
   },
   rightPane: {
     flex: 2,
@@ -30,10 +30,8 @@ export default ({ onPress }) => (
   <View style={styles.container}>
 
 <Text> {"\n"}{"\n"}{"\n"}</Text>
-<Text> {"\n"}{"\n"}{"\n"}</Text>
-<Text> {"\n"}{"\n"}{"\n"}</Text>
 
-        <Button title="Ooch" onPress={onPress} />
+        <Button title="Card #1" onPress={onPress} />
 
 
   </View>
