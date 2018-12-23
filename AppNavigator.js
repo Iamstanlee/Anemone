@@ -19,7 +19,7 @@ import PastMedications from './screens/crisisplansteps/PastMedications';
 import People from './screens/crisisplansteps/People';
 import SymptomManagement from './screens/crisisplansteps/SymptomManagement';
 import TreatmentFacilities from './screens/crisisplansteps/TreatmentFacilities';
-
+import CrisisPlanSteps from './screens/crisisplansteps/CrisisPlanSteps';
 // const tabBarIcon = name => ({focused, horizontal, tintColor }) => (
 //   <MaterialIcons name={name} color={focused ? tintColor: tintColor} size={horizontal ? 17 : 24} />
 // );
@@ -64,6 +64,7 @@ const TabNavigator = createMaterialBottomTabNavigator({
 
 const FeedStack = createStackNavigator({
   HomeScreen: HomeScreen,
+  CrisisPlanSteps: CrisisPlanSteps,
   EarlySymptoms: EarlySymptoms,
   SymptomManagement: SymptomManagement,
   CrisisSigns: CrisisSigns,

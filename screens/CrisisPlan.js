@@ -45,6 +45,13 @@ export default class CrisisPlan extends React.Component{
         this.props.navigation.navigate('EarlySymptoms')
       }
       />
+
+      <Button
+      title="Create a Crisis Plan the fancy way"
+      onPress={() =>
+        this.props.navigation.navigate('CrisisPlanSteps')
+      }
+      />
       </View>
     );
   }
