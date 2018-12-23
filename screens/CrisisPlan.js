@@ -1,5 +1,5 @@
 import React from 'react';
-import {Platform, StyleSheet, Text, View, Button, TextInput, AsyncStorage, Dimensions} from 'react-native';
+import {Platform, StyleSheet, Text, View, Button, TextInput, AsyncStorage, Dimensions, Image} from 'react-native';
 import Interactable from 'react-native-interactable';
 
 
@@ -19,11 +19,22 @@ export default class CrisisPlan extends React.Component{
     return (
       <View style={styles.container}>
       <Interactable.View
-      horizontalOnly={true}
-      snapPoints={[{x: 0}, {x: -200}]}
+      horizontalOnly={false}
+      snapPoints={[
+            {x: -140, y: -200},
+            {x: 140, y: -200},
+            {x: -140, y: -120},
+            {x: 140, y: -120},
+            {x: -140, y: 120},
+            {x: 140, y: 120},
+            {x: -140, y: 200},
+            {x: 140, y: 200, tension: 50, damping: 0.9}
+          ]}
+      initialPosition={{x: -140, y: -200}}
       onSnap={this.onDrawerSnap}>
 
-  <View style={{height: 10, width: 10, borderRadius: 10, backgroundColor: 'black'}}>
+  <View>
+  <Image source={require('../assets/seahorse.png')} style={{width: 50, height: 50}}/>
     </View>
   </Interactable.View>
       <Text style={styles.welcome}>    {"\n"}{"\n"}{"\n"}

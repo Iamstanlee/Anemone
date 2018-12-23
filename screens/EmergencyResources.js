@@ -158,9 +158,9 @@ export default class EmergencyResources extends React.Component{
         title: 'Personal Contact',
         icon: 'flight-takeoff',
         component: () =>
-        <View style={outerButtonStyle(2,2,1)}>
+        <View style={outerButtonStyle(2,2,5)}>
         <TouchableOpacity
-        style={innerButtonStyle(3, 2, 1)}
+        style={innerButtonStyle(3, 2, 5)}
         //TODO: Set up if in async, call number, else modal for setting contact
         //TODO: Add "edit number" button to Modal
         //TODO: Some way to signify contact is not already set
@@ -177,7 +177,7 @@ export default class EmergencyResources extends React.Component{
   //  console.log("height: " + height);
 
     //console.log("width: " + width);
-    var color = ['#af7b93', '#7bd2d8', '#b6d332', '#f9b5ac', '#ee7674']
+    var color = ['#af7b93', '#7bd2d8', '#b6d332', '#f9b5ac', '#ee7674', '#F9BD39']
 
     innerButtonStyle = function(rNum, cNum, colNum) {
      return {
