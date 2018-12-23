@@ -36,6 +36,10 @@ const suicideTextLine = {
 
 export default class EmergencyResources extends React.Component{
 
+  constructor(props) {
+    super(props);
+  }
+
   async saveKey(key, value){
   //value = JSON.stringify(value).replace(/\\n/g, "ooch");
     try {
@@ -74,10 +78,10 @@ export default class EmergencyResources extends React.Component{
         title: 'Hospitals',
         icon: 'flight-takeoff',
         component: () =>
-        <View style={outerButtonStyle(1,2,1)}>
+        <View style={outerButtonStyle(1,1,1)}>
         <TouchableOpacity
         style={innerButtonStyle(1, 2, 1)}
-        onPress={()=> {Linking.openURL('https://www.google.com/maps/search/hospital/').catch(err => console.error('An error occurred', err)); this.refs.grounding.pulse(200);}}>
+        onPress={()=> {this.view.pulse(200); Linking.openURL('https://www.google.com/maps/search/hospital/').catch(err => console.error('An error occurred', err)); }}>
         <Animatable.View>
         <Text style={styles.buttonText}>Hospitals</Text>
         </Animatable.View>
@@ -89,10 +93,10 @@ export default class EmergencyResources extends React.Component{
         title: 'Emergency Line',
         icon: 'flight-takeoff',
         component: () =>
-        <View style={outerButtonStyle(2, 1,2)}>
+        <View style={outerButtonStyle(1, 1,2)}>
         <TouchableOpacity
         style={innerButtonStyle(2, 1, 2)}
-        onPress={()=> call(emergencyline).catch(console.error)}>
+        onPress={()=> {this.view.pulse(200); call(emergencyline).catch(console.error); }}>
         <View>
         <Text style={styles.buttonText}>Emergency Hotline</Text>
         </View>
@@ -105,10 +109,10 @@ export default class EmergencyResources extends React.Component{
           title: 'Local Crisis Line',
           icon: 'flight-takeoff',
           component: () =>
-          <View style={outerButtonStyle(2,1,4)}>
+          <View style={outerButtonStyle(1,1,4)}>
           <TouchableOpacity
           style={innerButtonStyle(2, 1, 4)}
-          onPress={()=> Linking.openURL('https://www.google.com/search?q=local+crisis+lines').catch(err => console.error('An error occurred', err))}>
+          onPress={()=> {this.view.pulse(200); Linking.openURL('https://www.google.com/search?q=local+crisis+lines').catch(err => console.error('An error occurred', err)); }}>
           <View>
           <Text style={styles.buttonText}>Local Crisis Line</Text>
           </View>
@@ -137,7 +141,7 @@ export default class EmergencyResources extends React.Component{
         title: 'Suicide Text Line',
         icon: 'flight-takeoff',
         component: () =>
-        <View style={outerButtonStyle(3,1,0)}>
+        <View style={outerButtonStyle(2,2,0)}>
         <TouchableOpacity
         style={innerButtonStyle(3, 1, 0)}
         onPress={()=> SendSMS.send(suicideTextLine, (completed, cancelled, error) => {console.log('SMS Callback: completed: ' + completed + ' cancelled: ' + cancelled + 'error: ' + error);
@@ -154,7 +158,7 @@ export default class EmergencyResources extends React.Component{
         title: 'Personal Contact',
         icon: 'flight-takeoff',
         component: () =>
-        <View style={outerButtonStyle(3,2,1)}>
+        <View style={outerButtonStyle(2,2,1)}>
         <TouchableOpacity
         style={innerButtonStyle(3, 2, 1)}
         //TODO: Set up if in async, call number, else modal for setting contact
@@ -170,6 +174,9 @@ export default class EmergencyResources extends React.Component{
     ]
 
     var {height, width} = Dimensions.get('window');
+  //  console.log("height: " + height);
+
+    //console.log("width: " + width);
     var color = ['#af7b93', '#7bd2d8', '#b6d332', '#f9b5ac', '#ee7674']
 
     innerButtonStyle = function(rNum, cNum, colNum) {
@@ -182,8 +189,9 @@ export default class EmergencyResources extends React.Component{
        height:100,
        backgroundColor:color[colNum],
        borderRadius:100,
-       top: (rNum*(height))/6,
-       left: (cNum*(width))/6 - 100,
+       //position: 'absolute'
+    //   top: (rNum*(height))/6,
+      // left: (cNum*(width))/6 - 100,
 
      }
    }
@@ -191,6 +199,7 @@ export default class EmergencyResources extends React.Component{
    outerButtonStyle = function(rNum, cNum, colNum) {
     return {
       borderWidth:2,
+      //position: 'absolute',
       borderColor:'rgba(0,0,0,0.2)',
       alignItems:'center',
       justifyContent:'center',
@@ -200,7 +209,7 @@ export default class EmergencyResources extends React.Component{
       borderColor:color[colNum],
       borderRadius:120,
       top: (rNum*(height))/6,
-      left: (cNum*(width))/6 - 100,
+      //left: (cNum*(width))/6,
 
     }
   }
