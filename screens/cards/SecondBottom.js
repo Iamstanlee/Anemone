@@ -12,7 +12,10 @@ import {
 
 import FoldView from 'react-native-foldview';
 
-export default class Row extends Component {
+import SecondMiddle from './SecondMiddle';
+
+
+export default class SecondBottom extends Component {
 
   componentWillMount() {
     this.renderBackface = this.renderBackface.bind(this);
@@ -39,6 +42,8 @@ export default class Row extends Component {
           renderFrontface={this.renderBlankFace}
           renderBackface={this.renderInnerBackFace}
         >
+        <SecondMiddle onPress={onPress} />
+
         </FoldView>
 
       </View>
