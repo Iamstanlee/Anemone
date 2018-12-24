@@ -12,7 +12,6 @@ import {List, ListItem} from 'react-native-elements';
 import call from 'react-native-phone-call'
 import SendSMS from 'react-native-sms'
 import * as Animatable from 'react-native-animatable';
-import Interactable from 'react-native-interactable';
 
 //TODO: Add circle outline with bit of white space around circle buttons
 
@@ -221,27 +220,6 @@ export default class EmergencyResources extends React.Component{
     <Text>
     {"\n"}{"\n"}{"\n"}
       </Text>
-
-      <Interactable.View
-      horizontalOnly={false}
-      snapPoints={[
-            {x: -140, y: -200},
-            {x: 140, y: -200},
-            {x: -140, y: -120},
-            {x: 140, y: -120},
-            {x: -140, y: 120},
-            {x: 140, y: 120},
-            {x: -140, y: 200},
-            {x: 140, y: 200, tension: 50, damping: 0.9}
-          ]}
-      initialPosition={{x: -140, y: -100}}
-      onSnap={this.onDrawerSnap}>
-
-      <View>
-      <Image source={require('../assets/seahorse.png')} style={{width: 50, height: 50}}/>
-      </View>
-      </Interactable.View>
-
       <List>
       <View style={{flexDirection: 'row', flex:2}}>
   {

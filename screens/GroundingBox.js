@@ -131,7 +131,7 @@ MusicPlayerController.playMusic(()=>{
                 {x: -140, y: 200},
                 {x: 140, y: 200, tension: 50, damping: 0.9}
               ]}
-          initialPosition={{x: -140, y: -100}}
+          initialPosition={{x: -140, y: 0}}
           onSnap={this.onDrawerSnap}>
 
       <View>
