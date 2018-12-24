@@ -137,6 +137,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-get-music-files')
     compile project(':react-native-image-picker')
     compile project(':react-native-interactable')
     compile project(':react-native-share')

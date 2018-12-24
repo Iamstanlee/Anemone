@@ -3,6 +3,7 @@ package com.crisisapp;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.cinder92.musicfiles.RNReactNativeGetMusicFilesPackage;
 import com.imagepicker.ImagePickerPackage;
 import com.wix.interactable.Interactable;
 import cl.json.RNSharePackage;
@@ -32,6 +33,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNReactNativeGetMusicFilesPackage(),
             new ImagePickerPackage(),
             new Interactable(),
             new RNSharePackage(),

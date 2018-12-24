@@ -24,6 +24,7 @@
     "react-native-elements": "^0.19.1",
     "react-native-foldview": "^1.2.1",
     "react-native-gesture-handler": "^1.0.12",
+    "react-native-get-music-files": "^2.1.0",
     "react-native-gradient-buttons": "^1.2.9",
     "react-native-html-to-pdf": "^0.6.0",
     "react-native-image-picker": "^0.27.2",

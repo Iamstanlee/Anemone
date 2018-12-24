@@ -30,8 +30,10 @@
 	<key>NSCameraUsageDescription</key>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<key>NSMicrophoneUsageDescription</key>
+	<key>NSAppleMusicUsageDescription</key>
+		<string>Select and play using with your remote</string>
 	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
+	<string>LaunchString</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
