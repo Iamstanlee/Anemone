@@ -83,10 +83,9 @@ export default class GroundingBox extends React.Component {
   // Successfully saved MPMediaItemCollection to NSUserDefaults.
   //    Returns an array of metadata for each track (not all MPMediaItem
   //    fields are copied, only the blantantly needed ones)
-    alert(metadata[0]["title"])
 }, ()=>{
   // Opened, but user tapped Cancel
-  alert("Cancel")
+
 })
 
 
@@ -115,7 +114,7 @@ MusicPlayerController.playMusic(()=>{
       render() {
         return (
           <View style={styles.container}>
-          <TouchableOpacity onPress={this.getMusic.bind(this)}>
+          <TouchableOpacity onPress={this.selectPhotoTapped.bind(this)}>
           <View
           style={[
             styles.avatar,
@@ -128,6 +127,17 @@ MusicPlayerController.playMusic(()=>{
           ) : (
             <Image style={styles.avatar} source={this.state.avatarSource} />
           )}
+          </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={this.getMusic.bind(this)}>
+          <View
+          style={[
+            styles.avatarContainer,
+            { marginBottom: 20 },
+          ]}
+          >
+            <Text>Select a Song</Text>
           </View>
           </TouchableOpacity>
           </View>
