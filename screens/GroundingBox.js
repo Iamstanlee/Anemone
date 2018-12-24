@@ -9,11 +9,13 @@ import {
   View,
   AsyncStorage,
   DeviceEventEmitter,
-  NativeModules
+  NativeModules,
+  ScrollView
 } from 'react-native';
 import ImagePicker from 'react-native-image-picker';
 
 import MusicPlayerController from 'react-native-musicplayercontroller'
+import Interactable from 'react-native-interactable';
 
 export default class GroundingBox extends React.Component {
 
@@ -104,16 +106,39 @@ MusicPlayerController.playMusic(()=>{
 
 
       }
-
+      //TODO: Have music stop playing when navigating to another screen
 
       // You can also display the image using data:
       // let source = { uri: 'data:image/jpeg;base64,' + response.data };
-
+//TODO: Display picture on load if picture is already in AsyncStorage
+//TODO: Fix seahorse view
 
 
       render() {
         return (
+          <ScrollView>
           <View style={styles.container}>
+
+          <Interactable.View
+          horizontalOnly={false}
+          snapPoints={[
+                {x: -140, y: -200},
+                {x: 140, y: -200},
+                {x: -140, y: -120},
+                {x: 140, y: -120},
+                {x: -140, y: 120},
+                {x: 140, y: 120},
+                {x: -140, y: 200},
+                {x: 140, y: 200, tension: 50, damping: 0.9}
+              ]}
+          initialPosition={{x: -140, y: -100}}
+          onSnap={this.onDrawerSnap}>
+
+      <View>
+      <Image source={require('../assets/seahorse.png')} style={{width: 50, height: 50}}/>
+        </View>
+      </Interactable.View>
+
           <TouchableOpacity onPress={this.selectPhotoTapped.bind(this)}>
           <View
           style={[
@@ -141,6 +166,7 @@ MusicPlayerController.playMusic(()=>{
           </View>
           </TouchableOpacity>
           </View>
+          </ScrollView>
         );
       }
     }
