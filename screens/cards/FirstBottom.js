@@ -149,6 +149,7 @@ export default class FirstBottom extends Component {
               renderFrontface={this.renderBlankFace}
               renderBackface={this.renderBackface}
             >
+            <View></View>
             </FoldView>
 
           </View>

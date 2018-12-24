@@ -3,9 +3,6 @@ import {Platform, StyleSheet, Text, View, Button, TextInput, AsyncStorage, Dimen
 import PDFLib, { PDFDocument, PDFPage } from 'react-native-pdf-lib';
 import Share from 'react-native-share';
 
-// var date = new Date().getDate();
-// var month = new Date().getMonth() + 1;
-// var year = new Date().getFullYear();
 var time= new Date().toLocaleString();
 
 var dateTimeString = "This plan was created on " + time + ".";

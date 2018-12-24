@@ -30,7 +30,7 @@ export default class CrisisPlan extends React.Component{
             {x: -140, y: 200},
             {x: 140, y: 200, tension: 50, damping: 0.9}
           ]}
-      initialPosition={{x: -140, y: -200}}
+      initialPosition={{x: -140, y: -100}}
       onSnap={this.onDrawerSnap}>
 
   <View>
@@ -39,15 +39,9 @@ export default class CrisisPlan extends React.Component{
   </Interactable.View>
       <Text style={styles.welcome}>    {"\n"}{"\n"}{"\n"}
       You do not currently have a crisis plan set up</Text>
-      <Button
-      title="Create a Crisis Plan"
-      onPress={() =>
-        this.props.navigation.navigate('EarlySymptoms')
-      }
-      />
 
       <Button
-      title="Create a Crisis Plan the fancy way"
+      title="Create a Crisis Plan"
       onPress={() =>
         this.props.navigation.navigate('CrisisPlanSteps')
       }

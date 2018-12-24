@@ -10,7 +10,7 @@ export default () => <Swiper
   stack={true}
   swipeDirection={'right'}
   backPressToBack={true}
-  stackDepth={9}
+  stackDepth={3}
   showPagination={true}
   showPaginationBelow={true}
 >
@@ -25,6 +25,7 @@ export default () => <Swiper
         onChangeText={(text) => {saveKey('EarlySymptoms', text);}}
         />
   </View>
+
   <View style={styles.slide2}>
     <Text style={styles.text}>Symptom Management</Text>
     <TextInput
@@ -33,9 +34,10 @@ export default () => <Swiper
         {flex: 1}}
         placeholder="Type text here"
         multiline={true}
-        onChangeText={(text) => {saveKey('EarlySymptoms', text);}}
+        onChangeText={(text) => {saveKey('SymptomManagement', text);}}
         />
   </View>
+
   <View style={styles.slide3}>
     <Text style={styles.text}>Crisis Signs</Text>
     <TextInput
@@ -44,9 +46,81 @@ export default () => <Swiper
         {flex: 1}}
         placeholder="Type text here"
         multiline={true}
-        onChangeText={(text) => {saveKey('EarlySymptoms', text);}}
+        onChangeText={(text) => {saveKey('CrisisSigns', text);}}
         />
   </View>
+
+  <View style={styles.slide3}>
+    <Text style={styles.text}>People I would like to help me</Text>
+    <TextInput
+        style={{width: Dimensions.get('window').width},
+        {height: Dimensions.get('window').height},
+        {flex: 1}}
+        placeholder="Type text here"
+        multiline={true}
+        onChangeText={(text) => {saveKey('People', text);}}
+        />
+  </View>
+
+  <View style={styles.slide3}>
+    <Text style={styles.text}>How I would like people to help me</Text>
+    <TextInput
+        style={{width: Dimensions.get('window').width},
+        {height: Dimensions.get('window').height},
+        {flex: 1}}
+        placeholder="Type text here"
+        multiline={true}
+        onChangeText={(text) => {saveKey('HowPeopleCanHelp', text);}}
+        />
+  </View>
+
+  <View style={styles.slide3}>
+    <Text style={styles.text}>Medications I am currently on</Text>
+    <TextInput
+        style={{width: Dimensions.get('window').width},
+        {height: Dimensions.get('window').height},
+        {flex: 1}}
+        placeholder="Type text here"
+        multiline={true}
+        onChangeText={(text) => {saveKey('CurrentMedications', text);}}
+        />
+  </View>
+
+    <View style={styles.slide3}>
+      <Text style={styles.text}>Medications I used to be on</Text>
+      <TextInput
+          style={{width: Dimensions.get('window').width},
+          {height: Dimensions.get('window').height},
+          {flex: 1}}
+          placeholder="Type text here"
+          multiline={true}
+          onChangeText={(text) => {saveKey('PastMedications', text);}}
+          />
+    </View>
+
+    <View style={styles.slide3}>
+      <Text style={styles.text}>Treatment Facilities or Hospitals I prefer</Text>
+      <TextInput
+          style={{width: Dimensions.get('window').width},
+          {height: Dimensions.get('window').height},
+          {flex: 1}}
+          placeholder="Type text here"
+          multiline={true}
+          onChangeText={(text) => {saveKey('TreatmentFacilities', text);}}
+          />
+    </View>
+
+        <View style={styles.slide3}>
+          <Text style={styles.text}>Other Resources I can use</Text>
+          <TextInput
+              style={{width: Dimensions.get('window').width},
+              {height: Dimensions.get('window').height},
+              {flex: 1}}
+              placeholder="Type text here"
+              multiline={true}
+              onChangeText={(text) => {saveKey('OtherResources', text);}}
+              />
+        </View>
 </Swiper>;
 
 
@@ -70,6 +144,7 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5F5F5',
+
   },
   slide2: {
     flex: 1,
@@ -87,5 +162,9 @@ const styles = {
     color: '#000',
     fontSize: 30,
     fontWeight: 'bold',
+    textShadowColor: '#000000',
+    textShadowRadius: 100,
+    color: '#F9BD39',
+    textAlign: 'center'
   },
 };
