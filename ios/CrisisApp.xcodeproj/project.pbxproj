@@ -13,6 +13,7 @@
 		00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302DC1ABCB9D200DB3ED1 /* libRCTNetwork.a */; };
 		00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
 		00E356F31AD99517003FC87E /* CrisisAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* CrisisAppTests.m */; };
+		101E54B0A7EA46F89D3D3E4B /* libRNReactNativeMusicplayercontroller.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A9FE6E8F161E4E0DBED9AA70 /* libRNReactNativeMusicplayercontroller.a */; };
 		11D1A2F320CAFA9E000508D9 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
 		139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139105C11AF99BAD00B5F7CC /* libRCTSettings.a */; };
@@ -153,6 +154,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = 134814201AA4EA6300B7C361;
 			remoteInfo = RNReactNativeGetMusicFiles;
+		};
+		180AFDED21D16B8900A09BBB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 232A8BF35BC145E49BEC5B76 /* RNReactNativeMusicplayercontroller.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RNReactNativeMusicplayercontroller;
 		};
 		185EDC1E21C483CE009EA966 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -486,6 +494,7 @@
 		189D92321E2148A6A03756F0 /* ReactNativeNavigation.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeNavigation.xcodeproj; path = "../node_modules/react-native-navigation/lib/ios/ReactNativeNavigation.xcodeproj"; sourceTree = "<group>"; };
 		18A6F07721C8572100BE199B /* CrisisApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = CrisisApp.xcodeproj; sourceTree = "<group>"; };
 		1D47C965673E4E30B79276F6 /* RNGestureHandler.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNGestureHandler.xcodeproj; path = "../node_modules/react-native-gesture-handler/ios/RNGestureHandler.xcodeproj"; sourceTree = "<group>"; };
+		232A8BF35BC145E49BEC5B76 /* RNReactNativeMusicplayercontroller.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNReactNativeMusicplayercontroller.xcodeproj; path = "../node_modules/react-native-musicplayercontroller/ios/RNReactNativeMusicplayercontroller.xcodeproj"; sourceTree = "<group>"; };
 		28E6DAA741373E875EB73D18 /* Pods-CrisisAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrisisAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CrisisAppTests/Pods-CrisisAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* CrisisApp-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CrisisApp-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* CrisisApp-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CrisisApp-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -516,6 +525,7 @@
 		9FBBB665E7DC4CD586229C05 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		A0544641D84741B0BD4E3BD7 /* BVLinearGradient.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = BVLinearGradient.xcodeproj; path = "../node_modules/react-native-linear-gradient/BVLinearGradient.xcodeproj"; sourceTree = "<group>"; };
 		A612B7E5125D411DAC199736 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
+		A9FE6E8F161E4E0DBED9AA70 /* libRNReactNativeMusicplayercontroller.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNReactNativeMusicplayercontroller.a; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
 		B27CFB43BA3ACB9943D74769 /* libPods-CrisisApp-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CrisisApp-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3B29BE430AD4D50A23A80D3 /* libRNShare.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNShare.a; sourceTree = "<group>"; };
@@ -582,6 +592,7 @@
 				D31E7307C8784D4D8ED0B429 /* libInteractable.a in Frameworks */,
 				8A0B191DBF413A38AEFC1026 /* libPods-CrisisApp.a in Frameworks */,
 				A723A47485B943E0A8E110AA /* libRNReactNativeGetMusicFiles.a in Frameworks */,
+				101E54B0A7EA46F89D3D3E4B /* libRNReactNativeMusicplayercontroller.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -746,6 +757,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		180AFDEA21D16B8900A09BBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				180AFDEE21D16B8900A09BBB /* libRNReactNativeMusicplayercontroller.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		185EDBF521C483CA009EA966 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
@@ -763,6 +782,7 @@
 				BEC7BBCA17E94D929F6A5944 /* libRNUploader.a */,
 				DE41884AAD1A45E8BDB1CF72 /* libInteractable.a */,
 				E692F8A34298409B98E9729E /* libRNReactNativeGetMusicFiles.a */,
+				A9FE6E8F161E4E0DBED9AA70 /* libRNReactNativeMusicplayercontroller.a */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -930,6 +950,7 @@
 				189D92321E2148A6A03756F0 /* ReactNativeNavigation.xcodeproj */,
 				3AB3D2E7590A4A12AFF91915 /* Interactable.xcodeproj */,
 				5E3ABB5C05BD410886CE21F8 /* RNReactNativeGetMusicFiles.xcodeproj */,
+				232A8BF35BC145E49BEC5B76 /* RNReactNativeMusicplayercontroller.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1199,6 +1220,10 @@
 					ProjectRef = 5E3ABB5C05BD410886CE21F8 /* RNReactNativeGetMusicFiles.xcodeproj */;
 				},
 				{
+					ProductGroup = 180AFDEA21D16B8900A09BBB /* Products */;
+					ProjectRef = 232A8BF35BC145E49BEC5B76 /* RNReactNativeMusicplayercontroller.xcodeproj */;
+				},
+				{
 					ProductGroup = 18A5806721C9CECC0078555B /* Products */;
 					ProjectRef = FD495FB75A474398B23A7A97 /* RNShare.xcodeproj */;
 				},
@@ -1290,6 +1315,13 @@
 			fileType = archive.ar;
 			path = libRNReactNativeGetMusicFiles.a;
 			remoteRef = 180AFD9C21D163F200A09BBB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		180AFDEE21D16B8900A09BBB /* libRNReactNativeMusicplayercontroller.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNReactNativeMusicplayercontroller.a;
+			remoteRef = 180AFDED21D16B8900A09BBB /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		185EDC1F21C483CE009EA966 /* libRNGestureHandler.a */ = {
@@ -1842,12 +1874,14 @@
 					"$(SRCROOT)/../node_modules/react-native-navigation/lib/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-interactable/lib/ios/Interactable",
 					"$(SRCROOT)/../node_modules/react-native-get-music-files/ios",
+					"$(SRCROOT)/../node_modules/react-native-musicplayercontroller/ios",
 				);
 				INFOPLIST_FILE = CrisisAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1892,12 +1926,14 @@
 					"$(SRCROOT)/../node_modules/react-native-navigation/lib/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-interactable/lib/ios/Interactable",
 					"$(SRCROOT)/../node_modules/react-native-get-music-files/ios",
+					"$(SRCROOT)/../node_modules/react-native-musicplayercontroller/ios",
 				);
 				INFOPLIST_FILE = CrisisAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1944,6 +1980,7 @@
 					"$(SRCROOT)/../node_modules/react-native-navigation/lib/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-interactable/lib/ios/Interactable",
 					"$(SRCROOT)/../node_modules/react-native-get-music-files/ios",
+					"$(SRCROOT)/../node_modules/react-native-musicplayercontroller/ios",
 				);
 				INFOPLIST_FILE = CrisisApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1978,6 +2015,7 @@
 					"$(SRCROOT)/../node_modules/react-native-navigation/lib/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-interactable/lib/ios/Interactable",
 					"$(SRCROOT)/../node_modules/react-native-get-music-files/ios",
+					"$(SRCROOT)/../node_modules/react-native-musicplayercontroller/ios",
 				);
 				INFOPLIST_FILE = CrisisApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2017,11 +2055,13 @@
 					"$(SRCROOT)/../node_modules/react-native-navigation/lib/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-interactable/lib/ios/Interactable",
 					"$(SRCROOT)/../node_modules/react-native-get-music-files/ios",
+					"$(SRCROOT)/../node_modules/react-native-musicplayercontroller/ios",
 				);
 				INFOPLIST_FILE = "CrisisApp-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -2074,11 +2114,13 @@
 					"$(SRCROOT)/../node_modules/react-native-navigation/lib/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-interactable/lib/ios/Interactable",
 					"$(SRCROOT)/../node_modules/react-native-get-music-files/ios",
+					"$(SRCROOT)/../node_modules/react-native-musicplayercontroller/ios",
 				);
 				INFOPLIST_FILE = "CrisisApp-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -2130,11 +2172,13 @@
 					"$(SRCROOT)/../node_modules/react-native-navigation/lib/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-interactable/lib/ios/Interactable",
 					"$(SRCROOT)/../node_modules/react-native-get-music-files/ios",
+					"$(SRCROOT)/../node_modules/react-native-musicplayercontroller/ios",
 				);
 				INFOPLIST_FILE = "CrisisApp-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -2186,11 +2230,13 @@
 					"$(SRCROOT)/../node_modules/react-native-navigation/lib/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-interactable/lib/ios/Interactable",
 					"$(SRCROOT)/../node_modules/react-native-get-music-files/ios",
+					"$(SRCROOT)/../node_modules/react-native-musicplayercontroller/ios",
 				);
 				INFOPLIST_FILE = "CrisisApp-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",

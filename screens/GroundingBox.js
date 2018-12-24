@@ -13,40 +13,9 @@ import {
 } from 'react-native';
 import ImagePicker from 'react-native-image-picker';
 
-import MusicFiles from 'react-native-get-music-files';
+import MusicPlayerController from 'react-native-musicplayercontroller'
 
 export default class GroundingBox extends React.Component {
-
-
-
-  //In order to get blocks of songs, for fix performance issues at least in Android, use next
-
-  componentWillMount() {
-    DeviceEventEmitter.addListener(
-      'onBatchReceived',
-      (params) => {
-        this.setState({songs : [
-          ...this.state.songs,
-          ...params.batch
-        ]});
-      }
-    )
-  }
-
-  componentDidMount(){
-    MusicFiles.getAll({
-      id : true,
-      blured : false,
-      artist : true,
-      duration : true, //default : true
-      cover : true, //default : true,
-      title : true,
-      cover : true,
-      batchNumber : 5, //get 5 songs per batch
-      minimumSongDuration : 10000, //in miliseconds,
-      fields : ['title','artwork','duration','artist','genre','lyrics','albumTitle']
-    });
-  }
 
   async saveKey(key, value){
     value = JSON.stringify(value);
@@ -108,27 +77,33 @@ export default class GroundingBox extends React.Component {
   }
 
 
-  getAllMusic() {
+  getMusic() {
 
-    try {
+    MusicPlayerController.presentPicker(false, (metadata)=>{
+  // Successfully saved MPMediaItemCollection to NSUserDefaults.
+  //    Returns an array of metadata for each track (not all MPMediaItem
+  //    fields are copied, only the blantantly needed ones)
+    alert(metadata[0]["title"])
+}, ()=>{
+  // Opened, but user tapped Cancel
+  alert("Cancel")
+})
 
-      MusicFiles.getAll({
-        blured : false, // works only when 'cover' is set to true
-        artist : true,
-        duration : true, //default : true
-        cover : false, //default : true,
-        genre : true,
-        title : true,
-        cover : true,
-        minimumSongDuration : 10000, // get songs bigger than 10000 miliseconds duration,
-        fields : ['title','albumTitle','genre','lyrics','artwork','duration'] // for iOs Version
-      }).then(tracks => {
-        console.log("Tracks successfully taken")      })
 
-      }
+MusicPlayerController.preloadMusic("all", (metadata)=>{
+  // Successful preload
+}, ()=>{
+  // Failed to preload music. Potentially lots of reasons, such as the music file being removed from the device.
+})
 
-      catch(error) {
-        console.log("Error: could not load music" + error);  }
+
+MusicPlayerController.playMusic(()=>{
+    // Successfully playing
+}, ()=>{
+    // Failed to play
+})
+
+
       }
 
 
@@ -140,7 +115,7 @@ export default class GroundingBox extends React.Component {
       render() {
         return (
           <View style={styles.container}>
-          <TouchableOpacity onPress={this.getAllMusic.bind(this)}>
+          <TouchableOpacity onPress={this.getMusic.bind(this)}>
           <View
           style={[
             styles.avatar,
