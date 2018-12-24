@@ -10,7 +10,8 @@ import {
   AsyncStorage,
   DeviceEventEmitter,
   NativeModules,
-  ScrollView
+  ScrollView,
+  TouchableWithoutFeedback
 } from 'react-native';
 import ImagePicker from 'react-native-image-picker';
 
@@ -122,20 +123,22 @@ MusicPlayerController.playMusic(()=>{
           <Interactable.View
           horizontalOnly={false}
           snapPoints={[
-                {x: -140, y: -200},
-                {x: 140, y: -200},
-                {x: -140, y: -120},
-                {x: 140, y: -120},
-                {x: -140, y: 120},
-                {x: 140, y: 120},
-                {x: -140, y: 200},
-                {x: 140, y: 200, tension: 50, damping: 0.9}
+                {x: -160, y: -200},
+                {x: 160, y: -200},
+                {x: -160, y: -120},
+                {x: 160, y: -120},
+                {x: -160, y: 120},
+                {x: 160, y: 120},
+                {x: -160, y: 200},
+                {x: 160, y: 200, tension: 50, damping: 0.9}
               ]}
           initialPosition={{x: -140, y: 0}}
           onSnap={this.onDrawerSnap}>
 
       <View>
+      <TouchableWithoutFeedback onPress={this.selectPhotoTapped.bind(this)}>
       <Image source={require('../assets/seahorse.png')} style={{width: 50, height: 50}}/>
+      </TouchableWithoutFeedback>
         </View>
       </Interactable.View>
 

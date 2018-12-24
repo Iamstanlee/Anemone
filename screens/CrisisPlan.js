@@ -1,5 +1,5 @@
 import React from 'react';
-import {Platform, StyleSheet, Text, View, Button, TextInput, AsyncStorage, Dimensions, Image} from 'react-native';
+import {Platform, StyleSheet, Text, View, Button, TextInput, AsyncStorage, Dimensions, Image, TouchableWithoutFeedback} from 'react-native';
 import Interactable from 'react-native-interactable';
 
 
@@ -34,10 +34,14 @@ export default class CrisisPlan extends React.Component{
       onSnap={this.onDrawerSnap}>
 
   <View>
+  <TouchableWithoutFeedback onPress={() =>
+    this.props.navigation.navigate('CrisisPlanSteps')
+  }>
   <Image source={require('../assets/seahorse.png')} style={{width: 50, height: 50}}/>
+  </TouchableWithoutFeedback>
     </View>
   </Interactable.View>
-      <Text style={styles.welcome}>    {"\n"}{"\n"}{"\n"}
+      <Text style={styles.welcome} pointerEvents="none">    {"\n"}{"\n"}{"\n"}
       You do not currently have a crisis plan set up</Text>
 
       <Button
