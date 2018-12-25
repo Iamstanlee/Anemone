@@ -126,7 +126,7 @@ export default class GroundingBox extends React.Component {
       <View style={styles.container}>
 
       <Modal animationType="slide"
-      transparent={false}
+      transparent={true}
       visible={this.state.modalVisible}
       onRequestClose={this.closeModal}>
       <View style={{
