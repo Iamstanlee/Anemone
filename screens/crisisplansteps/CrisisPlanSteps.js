@@ -20,7 +20,7 @@ export default () => <Swiper
   showPaginationBelow={true}
 >
   <View style={styles.slide1}>
-    <Text style={styles.text}>Early Symptoms</Text>
+    <Text style={styles.text1}>Early Symptoms</Text>
     <TextInput
         style={{width: Dimensions.get('window').width},
         {height: Dimensions.get('window').height},
@@ -32,7 +32,7 @@ export default () => <Swiper
   </View>
 
   <View style={styles.slide2}>
-    <Text style={styles.text}>Symptom Management</Text>
+    <Text style={styles.text2}>Symptom Management</Text>
     <TextInput
         style={{width: Dimensions.get('window').width},
         {height: Dimensions.get('window').height},
@@ -44,7 +44,7 @@ export default () => <Swiper
   </View>
 
   <View style={styles.slide3}>
-    <Text style={styles.text}>Crisis Signs</Text>
+    <Text style={styles.text3}>Crisis Signs</Text>
     <TextInput
         style={{width: Dimensions.get('window').width},
         {height: Dimensions.get('window').height},
@@ -56,7 +56,7 @@ export default () => <Swiper
   </View>
 
   <View style={styles.slide3}>
-    <Text style={styles.text}>People I would like to help me</Text>
+    <Text style={styles.text4}>People I would like to help me</Text>
     <TextInput
         style={{width: Dimensions.get('window').width},
         {height: Dimensions.get('window').height},
@@ -68,7 +68,7 @@ export default () => <Swiper
   </View>
 
   <View style={styles.slide3}>
-    <Text style={styles.text}>How I would like people to help me</Text>
+    <Text style={styles.text5}>How I would like people to help me</Text>
     <TextInput
         style={{width: Dimensions.get('window').width},
         {height: Dimensions.get('window').height},
@@ -80,7 +80,7 @@ export default () => <Swiper
   </View>
 
   <View style={styles.slide3}>
-    <Text style={styles.text}>Medications I am currently on</Text>
+    <Text style={styles.text6}>Medications I am currently on</Text>
     <TextInput
         style={{width: Dimensions.get('window').width},
         {height: Dimensions.get('window').height},
@@ -92,7 +92,7 @@ export default () => <Swiper
   </View>
 
     <View style={styles.slide3}>
-      <Text style={styles.text}>Medications I used to be on</Text>
+      <Text style={styles.text1}>Medications I used to be on</Text>
       <TextInput
           style={{width: Dimensions.get('window').width},
           {height: Dimensions.get('window').height},
@@ -104,7 +104,7 @@ export default () => <Swiper
     </View>
 
     <View style={styles.slide3}>
-      <Text style={styles.text}>Treatment Facilities or Hospitals I prefer</Text>
+      <Text style={styles.text2}>Treatment Facilities or Hospitals I prefer</Text>
       <TextInput
           style={{width: Dimensions.get('window').width},
           {height: Dimensions.get('window').height},
@@ -116,7 +116,7 @@ export default () => <Swiper
     </View>
 
         <View style={styles.slide3}>
-          <Text style={styles.text}>Other Resources I can use</Text>
+          <Text style={styles.text3}>Other Resources I can use</Text>
           <TextInput
               style={{width: Dimensions.get('window').width},
               {height: Dimensions.get('window').height},
@@ -362,7 +362,68 @@ const styles = {
     alignItems: 'center',
     backgroundColor: '#F5F5F5',
   },
-  text: {
+  slide4: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5F5F5',
+  },
+  slide5: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5F5F5',
+  },
+  text1: {
+    color: '#000',
+    fontSize: 30,
+    fontWeight: 'bold',
+    textShadowColor: '#000000',
+    textShadowRadius: 100,
+    color: '#7bd2d8',
+    textAlign: 'center'
+  },
+
+  text2: {
+    color: '#000',
+    fontSize: 30,
+    fontWeight: 'bold',
+    textShadowColor: '#000000',
+    textShadowRadius: 100,
+    color: '#b6d332',
+    textAlign: 'center'
+  },
+
+  text3: {
+    color: '#000',
+    fontSize: 30,
+    fontWeight: 'bold',
+    textShadowColor: '#000000',
+    textShadowRadius: 100,
+    color: '#ee7674',
+    textAlign: 'center'
+  },
+
+  text4: {
+    color: '#000',
+    fontSize: 30,
+    fontWeight: 'bold',
+    textShadowColor: '#000000',
+    textShadowRadius: 100,
+    color: '#f9b5ac',
+    textAlign: 'center'
+  },
+
+  text5: {
+    color: '#000',
+    fontSize: 30,
+    fontWeight: 'bold',
+    textShadowColor: '#000000',
+    textShadowRadius: 100,
+    color: '#af7b93',
+    textAlign: 'center'
+  },
+  text6: {
     color: '#000',
     fontSize: 30,
     fontWeight: 'bold',
