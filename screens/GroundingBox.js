@@ -11,7 +11,8 @@ import {
   DeviceEventEmitter,
   NativeModules,
   ScrollView,
-  TouchableWithoutFeedback
+  TouchableWithoutFeedback,
+  Modal
 } from 'react-native';
 import ImagePicker from 'react-native-image-picker';
 
@@ -19,6 +20,10 @@ import MusicPlayerController from 'react-native-musicplayercontroller'
 import Interactable from 'react-native-interactable';
 
 export default class GroundingBox extends React.Component {
+
+  setModalVisible(visible) {
+    this.setState({modalVisible: visible});
+  }
 
   async saveKey(key, value){
     value = JSON.stringify(value);
@@ -42,6 +47,7 @@ export default class GroundingBox extends React.Component {
 
   state = {
     avatarSource: null,
+    modalVisible: false
   };
 
   constructor(props) {
@@ -83,64 +89,86 @@ export default class GroundingBox extends React.Component {
   getMusic() {
 
     MusicPlayerController.presentPicker(false, (metadata)=>{
-  // Successfully saved MPMediaItemCollection to NSUserDefaults.
-  //    Returns an array of metadata for each track (not all MPMediaItem
-  //    fields are copied, only the blantantly needed ones)
-}, ()=>{
-  // Opened, but user tapped Cancel
+      // Successfully saved MPMediaItemCollection to NSUserDefaults.
+      //    Returns an array of metadata for each track (not all MPMediaItem
+      //    fields are copied, only the blantantly needed ones)
+    }, ()=>{
+      // Opened, but user tapped Cancel
 
-})
-
-
-MusicPlayerController.preloadMusic("all", (metadata)=>{
-  // Successful preload
-}, ()=>{
-  // Failed to preload music. Potentially lots of reasons, such as the music file being removed from the device.
-})
+    })
 
 
-MusicPlayerController.playMusic(()=>{
-    // Successfully playing
-}, ()=>{
-    // Failed to play
-})
+    MusicPlayerController.preloadMusic("all", (metadata)=>{
+      // Successful preload
+    }, ()=>{
+      // Failed to preload music. Potentially lots of reasons, such as the music file being removed from the device.
+    })
 
 
-      }
-      //TODO: Have music stop playing when navigating to another screen
-
-      // You can also display the image using data:
-      // let source = { uri: 'data:image/jpeg;base64,' + response.data };
-//TODO: Display picture on load if picture is already in AsyncStorage
-//TODO: Fix seahorse view
+    MusicPlayerController.playMusic(()=>{
+      // Successfully playing
+    }, ()=>{
+      // Failed to play
+    })
 
 
-      render() {
-        return (
-          <ScrollView>
-          <View style={styles.container}>
+  }
+  //TODO: Have music stop playing when navigating to another screen
+
+  // You can also display the image using data:
+  // let source = { uri: 'data:image/jpeg;base64,' + response.data };
+  //TODO: Display picture on load if picture is already in AsyncStorage
+  //TODO: Play song on load if song is already saved
+
+  render() {
+    return (
+      <ScrollView>
+      <View style={styles.container}>
+
+      <Modal animationType="slide"
+      transparent={false}
+      visible={this.state.modalVisible}
+      onRequestClose={this.closeModal}>
+      <View style={{
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center'}}>
+        <View style={{
+          width: 300,
+          height: 300}}>
+          <TouchableWithoutFeedback
+          onPress={() => {
+            this.setModalVisible(!this.state.modalVisible);
+          }}>
+          <Text>Hide Modal</Text>
+          </TouchableWithoutFeedback>
+          </View>
+          </View>
+          </Modal>
+
 
           <Interactable.View
           horizontalOnly={false}
           snapPoints={[
-                {x: -160, y: -200},
-                {x: 160, y: -200},
-                {x: -160, y: -120},
-                {x: 160, y: -120},
-                {x: -160, y: 120},
-                {x: 160, y: 120},
-                {x: -160, y: 200},
-                {x: 160, y: 200, tension: 50, damping: 0.9}
-              ]}
+            {x: -160, y: -200},
+            {x: 160, y: -200},
+            {x: -160, y: -120},
+            {x: 160, y: -120},
+            {x: -160, y: 120},
+            {x: 160, y: 120},
+            {x: -160, y: 200},
+            {x: 160, y: 200, tension: 50, damping: 0.9}
+          ]}
           initialPosition={{x: -140, y: 0}}
           onSnap={this.onDrawerSnap}>
 
-      <View>
-      <TouchableWithoutFeedback onPress={this.selectPhotoTapped.bind(this)}>
-      <Image source={require('../assets/seahorse.png')} style={{width: 50, height: 50}}/>
-      </TouchableWithoutFeedback>
-        </View>
-      </Interactable.View>
+          <View>
+          <TouchableWithoutFeedback onPress={()=> this.setModalVisible(true)}>
+          <Image source={require('../assets/seahorse.png')} style={{width: 50, height: 50}}/>
+          </TouchableWithoutFeedback>
+          </View>
+          </Interactable.View>
 
           <TouchableOpacity onPress={this.selectPhotoTapped.bind(this)}>
           <View
@@ -165,7 +193,7 @@ MusicPlayerController.playMusic(()=>{
             { marginBottom: 20 },
           ]}
           >
-            <Text>Select a Song</Text>
+          <Text>Select a Song</Text>
           </View>
           </TouchableOpacity>
           </View>

@@ -1,10 +1,19 @@
 import React from 'react';
-import {Platform, StyleSheet, Text, View, Button, TextInput, AsyncStorage, Dimensions, Image, TouchableWithoutFeedback} from 'react-native';
+import {Platform, StyleSheet, Text, View, Button, TextInput, AsyncStorage, Dimensions, Image, TouchableWithoutFeedback, TouchableHighlight, Modal} from 'react-native';
 import Interactable from 'react-native-interactable';
 
 
 type Props = {};
 export default class CrisisPlan extends React.Component{
+
+  state = {
+     modalVisible: false,
+  }
+
+  setModalVisible(visible) {
+    this.setState({modalVisible: visible});
+  }
+
   async saveKey(key, value){
     //    value = JSON.stringify(value).replace(/\\n/g, "ooch");
     try {
@@ -17,7 +26,32 @@ export default class CrisisPlan extends React.Component{
   }
   render() {
     return (
+
+
       <View style={styles.container}>
+
+      <Modal animationType="slide"
+      transparent={false}
+      visible={this.state.modalVisible}
+      onRequestClose={this.closeModal}>
+      <View style={{
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center'}}>
+        <View style={{
+          width: 300,
+          height: 300}}>
+          <TouchableWithoutFeedback
+          onPress={() => {
+            this.setModalVisible(!this.state.modalVisible);
+          }}>
+          <Text>Hide Modal</Text>
+          </TouchableWithoutFeedback>
+          </View>
+          </View>
+          </Modal>
+
       <Interactable.View
       horizontalOnly={false}
       snapPoints={[
@@ -34,9 +68,7 @@ export default class CrisisPlan extends React.Component{
       onSnap={this.onDrawerSnap}>
 
   <View>
-  <TouchableWithoutFeedback onPress={() =>
-    this.props.navigation.navigate('CrisisPlanSteps')
-  }>
+  <TouchableWithoutFeedback onPress={()=> this.setModalVisible(true)}>
   <Image source={require('../assets/seahorse.png')} style={{width: 50, height: 50}}/>
   </TouchableWithoutFeedback>
     </View>
