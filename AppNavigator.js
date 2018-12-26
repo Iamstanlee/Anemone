@@ -9,6 +9,7 @@ import CrisisPlan from './screens/CrisisPlan';
 import EmergencyResources from './screens/EmergencyResources';
 import CopingSkills from './screens/CopingSkills';
 import GroundingBox from './screens/GroundingBox';
+import ViewPlan from './screens/ViewPlan';
 import CrisisSigns from './screens/crisisplansteps/CrisisSigns';
 import CurrentMedications from './screens/crisisplansteps/CurrentMedications';
 import DateTime from './screens/crisisplansteps/DateTime';
@@ -64,6 +65,7 @@ const TabNavigator = createMaterialBottomTabNavigator({
 
 const FeedStack = createStackNavigator({
   HomeScreen: HomeScreen,
+  ViewPlan: ViewPlan,
   CrisisPlanSteps: CrisisPlanSteps,
   EarlySymptoms: EarlySymptoms,
   SymptomManagement: SymptomManagement,
@@ -75,6 +77,7 @@ const FeedStack = createStackNavigator({
   TreatmentFacilities: TreatmentFacilities,
   OtherResources: OtherResources,
   DateTime: DateTime,
+
 });
 
 // TabNavigator.navigationOptions = ({ navigation }) => {

@@ -1,60 +1,56 @@
 import React from 'react';
-import {Platform, StyleSheet, Text, View, Button, TextInput, AsyncStorage, Dimensions, Image, TouchableWithoutFeedback, TouchableHighlight, Modal} from 'react-native';
+import {Platform, StyleSheet, Text, View, Button, TextInput, AsyncStorage, Dimensions, Image, TouchableWithoutFeedback, TouchableHighlight} from 'react-native';
 import Interactable from 'react-native-interactable';
+import Modal from 'react-native-modalbox';
+
+
 
 
 type Props = {};
 export default class CrisisPlan extends React.Component{
 
   state = {
-     modalVisible: false,
+    planCreated: false,
   }
 
-  setModalVisible(visible) {
-    this.setState({modalVisible: visible});
-  }
 
-  async saveKey(key, value){
-    //    value = JSON.stringify(value).replace(/\\n/g, "ooch");
+  async getKey(key){
     try {
-      await AsyncStorage.setItem(key, value);
+      const value = await AsyncStorage.getItem(key);
+      return value;
     } catch (error) {
-      // Error saving data
-      console.log("Error: could not save data" + error);
-
+      console.log("Error retrieving data" + error);
     }
   }
-  render() {
-    return (
 
+  render() {
+
+    return (
 
       <View style={styles.container}>
 
-      <Modal animationType="slide"
-      transparent={false}
-      visible={this.state.modalVisible}
-      onRequestClose={this.closeModal}>
+      <Modal style={styles.modal} ref="sully" isOpen="true"
+      swipetoClose="true"
+      position={"center"}
+      backdropOpacity={0.5}
+      coverScreen="false">
       <View style={{
         flex: 1,
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center'}}>
-        <View style={{
-          width: 300,
-          height: 300}}>
-          <TouchableWithoutFeedback
-          onPress={() => {
-            this.setModalVisible(!this.state.modalVisible);
-          }}>
-          <Text>Hide Modal</Text>
-          </TouchableWithoutFeedback>
-          </View>
+
+
+
+          <Image source={require('../assets/sully.png')} style={{width: 335, height: 245}}/>
+
+          <Text style={{backgroundColor: 'white'}}>Swipe down to close</Text>
           </View>
           </Modal>
 
-      <Interactable.View
-      horizontalOnly={false}
-      snapPoints={[
+          <Interactable.View
+          horizontalOnly={false}
+          snapPoints={[
             {x: -140, y: -200},
             {x: 140, y: -200},
             {x: -140, y: -120},
@@ -64,44 +60,60 @@ export default class CrisisPlan extends React.Component{
             {x: -140, y: 200},
             {x: 140, y: 200, tension: 50, damping: 0.9}
           ]}
-      initialPosition={{x: -140, y: 0}}
-      onSnap={this.onDrawerSnap}>
+          initialPosition={{x: -140, y: 0}}
+          onSnap={this.onDrawerSnap}>
 
-  <View>
-  <TouchableWithoutFeedback onPress={()=> this.setModalVisible(true)}>
-  <Image source={require('../assets/seahorse.png')} style={{width: 50, height: 50}}/>
-  </TouchableWithoutFeedback>
-    </View>
-  </Interactable.View>
-      <Text style={styles.welcome} pointerEvents="none">    {"\n"}{"\n"}{"\n"}
-      You do not currently have a crisis plan set up</Text>
+          <View>
+          <TouchableWithoutFeedback onPress={()=> this.refs.sully.open()}>
+          <Image source={require('../assets/seahorse.png')} style={{width: 50, height: 50}}/>
+          </TouchableWithoutFeedback>
+          </View>
+          </Interactable.View>
 
-      <Button
-      title="Create a Crisis Plan"
-      onPress={() =>
-        this.props.navigation.navigate('CrisisPlanSteps')
+          <Text pointerEvents="none">
+          {"\n"}{"\n"}{"\n"}
+          </Text>
+
+          {!(this.getKey('PlanCreated') != null) ? <Text style={styles.welcome} pointerEvents="none">
+          You do not currently have a crisis plan set up
+          </Text> : null}
+
+<Button title="Create a Crisis Plan" onPress={() => this.props.navigation.navigate('CrisisPlanSteps')}/>
+
+          {!(this.getKey('PlanCreated') != null) ? <Button title="Create a Crisis Plan" onPress={() => this.props.navigation.navigate('CrisisPlanSteps')}/> : null}
+
+
+          {(this.getKey('PlanCreated') != null) ? <Button title="View your Crisis Plan" onPress={() => this.props.navigation.navigate('ViewPlan')}/> : null}
+
+          </View>
+        );
       }
-      />
-      </View>
-    );
-  }
-}
+    }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
+    const styles = StyleSheet.create({
+      container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#F5FCFF',
+      },
+      welcome: {
+        fontSize: 20,
+        textAlign: 'center',
+        margin: 10,
+      },
+      instructions: {
+        textAlign: 'center',
+        color: '#333333',
+        marginBottom: 5,
+      },
+
+      modal: {
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    height: 300,
+    width: 350,
+    backgroundColor: 'transparent'
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+
+    });

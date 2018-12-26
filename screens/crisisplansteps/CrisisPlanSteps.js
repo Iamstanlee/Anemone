@@ -19,7 +19,7 @@ export default () => <Swiper
   showPagination={true}
   showPaginationBelow={true}
 >
-  <View style={styles.slide1}>
+  <View style={styles.slide}>
     <Text style={styles.text1}>Early Symptoms</Text>
     <TextInput
         style={{width: Dimensions.get('window').width},
@@ -31,7 +31,7 @@ export default () => <Swiper
         />
   </View>
 
-  <View style={styles.slide2}>
+  <View style={styles.slide}>
     <Text style={styles.text2}>Symptom Management</Text>
     <TextInput
         style={{width: Dimensions.get('window').width},
@@ -43,7 +43,7 @@ export default () => <Swiper
         />
   </View>
 
-  <View style={styles.slide3}>
+  <View style={styles.slide}>
     <Text style={styles.text3}>Crisis Signs</Text>
     <TextInput
         style={{width: Dimensions.get('window').width},
@@ -55,7 +55,7 @@ export default () => <Swiper
         />
   </View>
 
-  <View style={styles.slide3}>
+  <View style={styles.slide}>
     <Text style={styles.text4}>People I would like to help me</Text>
     <TextInput
         style={{width: Dimensions.get('window').width},
@@ -67,7 +67,7 @@ export default () => <Swiper
         />
   </View>
 
-  <View style={styles.slide3}>
+  <View style={styles.slide}>
     <Text style={styles.text5}>How I would like people to help me</Text>
     <TextInput
         style={{width: Dimensions.get('window').width},
@@ -79,7 +79,7 @@ export default () => <Swiper
         />
   </View>
 
-  <View style={styles.slide3}>
+  <View style={styles.slide}>
     <Text style={styles.text6}>Medications I am currently on</Text>
     <TextInput
         style={{width: Dimensions.get('window').width},
@@ -91,7 +91,7 @@ export default () => <Swiper
         />
   </View>
 
-    <View style={styles.slide3}>
+    <View style={styles.slide}>
       <Text style={styles.text1}>Medications I used to be on</Text>
       <TextInput
           style={{width: Dimensions.get('window').width},
@@ -103,7 +103,7 @@ export default () => <Swiper
           />
     </View>
 
-    <View style={styles.slide3}>
+    <View style={styles.slide}>
       <Text style={styles.text2}>Treatment Facilities or Hospitals I prefer</Text>
       <TextInput
           style={{width: Dimensions.get('window').width},
@@ -115,7 +115,7 @@ export default () => <Swiper
           />
     </View>
 
-        <View style={styles.slide3}>
+        <View style={styles.slide}>
           <Text style={styles.text3}>Other Resources I can use</Text>
           <TextInput
               style={{width: Dimensions.get('window').width},
@@ -127,7 +127,7 @@ export default () => <Swiper
               />
         </View>
 
-        <View style={styles.slide3}>
+        <View style={styles.slide}>
         <Text>
         Email, export, or share plan with others
         </Text>
@@ -325,10 +325,22 @@ try
     console.log('PDF created at: ' + path);
     // Do stuff with your shiny new PDF!
 
-    Share.open({
+    try {
+
+      saveKey('CrisisPlan', pdfPath);
+      saveKey('PlanCreated', "true");
+
+
+      Share.open({
       url: path,
       subject: "Crisis Plan",
     })
+
+  }
+
+  catch (err) {
+    console.log(err)
+  }
   });
 }
 catch (err)
@@ -341,39 +353,16 @@ catch (err)
 
 const styles = {
   wrapper: {
-    backgroundColor: '#009688',
+    backgroundColor: '#4A637D',
   },
-  slide1: {
+  slide: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5F5F5',
 
   },
-  slide2: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5F5F5',
-  },
-  slide3: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5F5F5',
-  },
-  slide4: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5F5F5',
-  },
-  slide5: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5F5F5',
-  },
+
   text1: {
     color: '#000',
     fontSize: 30,

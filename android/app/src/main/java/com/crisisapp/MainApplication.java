@@ -3,6 +3,8 @@ package com.crisisapp;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import org.wonday.pdf.RCTPdfView;
+import com.RNFetchBlob.RNFetchBlobPackage;
 import com.reactlibrary.RNReactNativeMusicplayercontrollerPackage;
 import com.cinder92.musicfiles.RNReactNativeGetMusicFilesPackage;
 import com.imagepicker.ImagePickerPackage;
@@ -34,6 +36,8 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RCTPdfView(),
+            new RNFetchBlobPackage(),
             new RNReactNativeMusicplayercontrollerPackage(),
             new RNReactNativeGetMusicFilesPackage(),
             new ImagePickerPackage(),
