@@ -5,9 +5,14 @@ import Modal from 'react-native-modalbox';
 
 
 
+var count = 0;
 
 type Props = {};
 export default class CrisisPlan extends React.Component{
+
+incrementCount(){
+  count = count+1;
+}
 
   state = {
     planCreated: false,
@@ -40,9 +45,9 @@ export default class CrisisPlan extends React.Component{
         justifyContent: 'center',
         alignItems: 'center'}}>
 
+        {(count==0) ? <Image source={require('../assets/sully.png')} style={{width: 335, height: 245}}/> : null}
 
-
-          <Image source={require('../assets/sully.png')} style={{width: 335, height: 245}}/>
+        {(count==1) ? <Image source={require('../assets/opening.png')} style={{width: 335, height: 245}}/> : null}
 
           <Text style={{backgroundColor: 'white'}}>Swipe down to close</Text>
           </View>
@@ -64,7 +69,7 @@ export default class CrisisPlan extends React.Component{
           onSnap={this.onDrawerSnap}>
 
           <View>
-          <TouchableWithoutFeedback onPress={()=> this.refs.sully.open()}>
+          <TouchableWithoutFeedback onPress={()=> {this.refs.sully.open(); this.incrementCount();}}>
           <Image source={require('../assets/seahorse.png')} style={{width: 50, height: 50}}/>
           </TouchableWithoutFeedback>
           </View>
@@ -78,7 +83,7 @@ export default class CrisisPlan extends React.Component{
           You do not currently have a crisis plan set up
           </Text> : null}
 
-<Button title="Create a Crisis Plan" onPress={() => this.props.navigation.navigate('CrisisPlanSteps')}/>
+          <Button title="Create a Crisis Plan" onPress={() => this.props.navigation.navigate('CrisisPlanSteps')}/>
 
           {!(this.getKey('PlanCreated') != null) ? <Button title="Create a Crisis Plan" onPress={() => this.props.navigation.navigate('CrisisPlanSteps')}/> : null}
 
