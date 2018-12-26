@@ -13,6 +13,7 @@ export default class CrisisPlan extends React.Component{
 incrementCount(){
   count = count+1;
   console.log("The count is " + count);
+  this.forceUpdate();
 }
 
   state = {
