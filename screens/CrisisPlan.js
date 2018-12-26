@@ -12,6 +12,7 @@ export default class CrisisPlan extends React.Component{
 
 incrementCount(){
   count = count+1;
+  console.log("The count is " + count);
 }
 
   state = {
@@ -34,11 +35,11 @@ incrementCount(){
 
       <View style={styles.container}>
 
-      <Modal style={styles.modal} ref="sully" isOpen="true"
+      <Modal style={styles.modal} ref="sully" isOpen={true}
       swipetoClose="true"
       position={"center"}
       backdropOpacity={0.5}
-      coverScreen="false">
+      coverScreen={false}>
       <View style={{
         flex: 1,
         flexDirection: 'column',
@@ -48,6 +49,9 @@ incrementCount(){
         {(count==0) ? <Image source={require('../assets/sully.png')} style={{width: 335, height: 245}}/> : null}
 
         {(count==1) ? <Image source={require('../assets/opening.png')} style={{width: 335, height: 245}}/> : null}
+
+        {(count==2) ? <Image source={require('../assets/opening.png')} style={{width: 335, height: 245}}/> : null}
+
 
           <Text style={{backgroundColor: 'white'}}>Swipe down to close</Text>
           </View>
