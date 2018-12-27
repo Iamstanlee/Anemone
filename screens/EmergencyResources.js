@@ -247,7 +247,7 @@ export default class EmergencyResources extends React.Component{
         alignItems: 'center'}}>
 
         <Text style={{backgroundColor: 'white'}}> Enter a number for your personal contact</Text>
-        <TextInput style={{backgroundColor: 'white'}} placeholder="Type text here" onChangeText={(text) => {this.saveKey('PC', text);}}>
+        <TextInput keyboardType = 'numeric' style={{backgroundColor: 'white'}} placeholder="Type text here" onChangeText={(text) => {this.saveKey('PC', text);}}>
         </TextInput>
 
         <Text style={{backgroundColor: 'white'}}>Swipe down to close</Text>

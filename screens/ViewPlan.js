@@ -116,7 +116,58 @@ export default class ViewPlan extends React.Component {
 
 <ScrollView>
 
-<Text>{EarlySymptoms}</Text>
+<Text style={styles.text1}>Early Symptoms: {"\n"}</Text>
+
+<Text style={styles.entryText}>{EarlySymptoms} {"\n"}{"\n"}{"\n"}</Text>
+
+
+
+<Text style={styles.text2}>Ways I can manage early symptoms: {"\n"}</Text>
+
+<Text style={styles.entryText}>{SymptomManagement} {"\n"}{"\n"}{"\n"}</Text>
+
+
+
+<Text style={styles.text3}>Crisis Signs: {"\n"}</Text>
+
+<Text style={styles.entryText}>{CrisisSigns} {"\n"}{"\n"}{"\n"}</Text>
+
+
+
+<Text style={styles.text4}>People I would like to help me: {"\n"}</Text>
+
+<Text style={styles.entryText}>{People} {"\n"}{"\n"}{"\n"}</Text>
+
+
+
+<Text style={styles.text5}>How I would like people to help me: {"\n"}</Text>
+
+<Text style={styles.entryText}>{HowPeopleCanHelp} {"\n"}{"\n"}{"\n"}</Text>
+
+
+
+<Text style={styles.text6}>Medications I am currently on: {"\n"}</Text>
+
+<Text style={styles.entryText}>{CurrentMedications} {"\n"}{"\n"}{"\n"}</Text>
+
+
+
+<Text style={styles.text1}>Medications I used to be on: {"\n"}</Text>
+
+<Text style={styles.entryText}>{PastMedications} {"\n"}{"\n"}{"\n"}</Text>
+
+
+
+<Text style={styles.text2}>Treatment Facilities or Hospitals I prefer: {"\n"}</Text>
+
+<Text style={styles.entryText}>{TreatmentFacilities} {"\n"}{"\n"}{"\n"}</Text>
+
+
+<Text style={styles.text3}>Other Resources I can use: {"\n"}</Text>
+
+<Text style={styles.entryText}>{OtherResources} {"\n"}{"\n"}{"\n"}</Text>
+
+
 
 </ScrollView>
 
@@ -197,6 +248,15 @@ const styles = StyleSheet.create({
     textShadowColor: '#000000',
     textShadowRadius: 100,
     color: '#F9BD39',
+    textAlign: 'center'
+  },
+
+  entryText: {
+    color: '#000',
+    fontSize: 20,
+    fontWeight: '200',
+    textShadowColor: '#000000',
+    textShadowRadius: 100,
     textAlign: 'center'
   },
 });

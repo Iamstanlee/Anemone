@@ -32,7 +32,7 @@ export default () => <Swiper
   </View>
 
   <View style={styles.slide}>
-    <Text style={styles.text2}>Symptom Management</Text>
+    <Text style={styles.text2}>Ways I can manage early symptoms</Text>
     <TextInput
         style={{width: Dimensions.get('window').width},
         {height: Dimensions.get('window').height},
