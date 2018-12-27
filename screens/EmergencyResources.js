@@ -60,6 +60,8 @@ export default class EmergencyResources extends React.Component{
     else {
       this.state.isPC = 'false'
     }
+
+    console.log("PC is " + this.state.isPC);
   }
 
   async saveKey(key, value){
