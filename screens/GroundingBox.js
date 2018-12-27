@@ -19,7 +19,7 @@ import Interactable from 'react-native-interactable';
 import Modal from 'react-native-modalbox';
 import MusicPlayerController from 'react-native-musicplayercontroller'
 
-
+//TODO: Add photo in AsyncStorage so it stays even when you close the app
 var count = 0;
 
 export default class GroundingBox extends React.Component {

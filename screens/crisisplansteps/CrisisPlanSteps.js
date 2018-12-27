@@ -238,6 +238,7 @@ catch(error) {
 }
 
 // Create a PDF page with text and rectangles
+//TODO: Add headers for PDF
 const page1 = PDFPage
 .create()
 .setMediaBox(816, 1056)
