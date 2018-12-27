@@ -32,7 +32,6 @@ export default class DateTime extends React.Component{
   var EarlySymptoms = "No early symptoms were filled out";
   var SymptomManagement = "No symptom management skills were filled out";
   var CrisisSigns = "No crisis signs were filled out";
-  //TODO: Change name for people
   var People = "No contacts of assistance were filled out";
   var HowPeopleCanHelp = "No instructions for contacts were filled out";
   var CurrentMedications = "No current medications were filled out";

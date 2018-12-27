@@ -12,17 +12,21 @@ import {
   NativeModules,
   ScrollView,
   TouchableWithoutFeedback,
-  Modal
 } from 'react-native';
 import ImagePicker from 'react-native-image-picker';
 
-import MusicPlayerController from 'react-native-musicplayercontroller'
 import Interactable from 'react-native-interactable';
+import Modal from 'react-native-modalbox';
+import MusicPlayerController from 'react-native-musicplayercontroller'
+
+
+var count = 0;
 
 export default class GroundingBox extends React.Component {
-
-  setModalVisible(visible) {
-    this.setState({modalVisible: visible});
+  incrementCount(){
+    count = count+1;
+    console.log("The count is " + count);
+    this.forceUpdate();
   }
 
   async saveKey(key, value){
@@ -47,7 +51,6 @@ export default class GroundingBox extends React.Component {
 
   state = {
     avatarSource: null,
-    modalVisible: false
   };
 
   constructor(props) {
@@ -94,6 +97,8 @@ export default class GroundingBox extends React.Component {
       //    fields are copied, only the blantantly needed ones)
     }, ()=>{
       // Opened, but user tapped Cancel
+      alert("Cancel")
+
 
     })
 
@@ -125,98 +130,103 @@ export default class GroundingBox extends React.Component {
       <ScrollView>
       <View style={styles.container}>
 
-      <Modal animationType="slide"
-      transparent={true}
-      visible={this.state.modalVisible}
-      onRequestClose={this.closeModal}>
+      <Modal style={styles.modal} ref="sully" isOpen={false}
+      swipetoClose="true"
+      position={"center"}
+      backdropOpacity={0.5}
+      coverScreen={false}>
       <View style={{
         flex: 1,
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center'}}>
-        <View style={{
-          width: 300,
-          height: 300}}>
-          <TouchableWithoutFeedback
-          onPress={() => {
-            this.setModalVisible(!this.state.modalVisible);
-          }}>
-          <Text>Hide Modal</Text>
-          </TouchableWithoutFeedback>
-          </View>
-          </View>
-          </Modal>
+
+        {(count==1) ? <Image source={require('../assets/sullyblank.png')} style={{width: 335, height: 245}}/> : null}
+
+        {(count==2) ? <Image source={require('../assets/sullyblank.png')} style={{width: 335, height: 245}}/> : null}
 
 
-          <Interactable.View
-          horizontalOnly={false}
-          snapPoints={[
-            {x: -160, y: -200},
-            {x: 160, y: -200},
-            {x: -160, y: -120},
-            {x: 160, y: -120},
-            {x: -160, y: 120},
-            {x: 160, y: 120},
-            {x: -160, y: 200},
-            {x: 160, y: 200, tension: 50, damping: 0.9}
-          ]}
-          initialPosition={{x: -140, y: 0}}
-          onSnap={this.onDrawerSnap}>
+        <Text style={{backgroundColor: 'white'}}>Swipe down to close</Text>
+        </View>
+        </Modal>
 
-          <View>
-          <TouchableWithoutFeedback onPress={()=> this.setModalVisible(true)}>
-          <Image source={require('../assets/seahorse.png')} style={{width: 50, height: 50}}/>
-          </TouchableWithoutFeedback>
-          </View>
-          </Interactable.View>
 
-          <TouchableOpacity onPress={this.selectPhotoTapped.bind(this)}>
-          <View
-          style={[
-            styles.avatar,
-            styles.avatarContainer,
-            { marginBottom: 20 },
-          ]}
-          >
-          {this.state.avatarSource === null ? (
-            <Text>Select a Photo</Text>
-          ) : (
-            <Image style={styles.avatar} source={this.state.avatarSource} />
-          )}
-          </View>
-          </TouchableOpacity>
+        <Interactable.View
+        horizontalOnly={false}
+        snapPoints={[
+          {x: -160, y: -200},
+          {x: 160, y: -200},
+          {x: -160, y: -120},
+          {x: 160, y: -120},
+          {x: -160, y: 120},
+          {x: 160, y: 120},
+          {x: -160, y: 200},
+          {x: 160, y: 200, tension: 50, damping: 0.9}
+        ]}
+        initialPosition={{x: -140, y: 0}}
+        onSnap={this.onDrawerSnap}>
 
-          <TouchableOpacity onPress={this.getMusic.bind(this)}>
-          <View
-          style={[
-            styles.avatarContainer,
-            { marginBottom: 20 },
-          ]}
-          >
-          <Text>Select a Song</Text>
-          </View>
-          </TouchableOpacity>
-          </View>
-          </ScrollView>
-        );
-      }
+        <View>
+        <TouchableWithoutFeedback onPress={()=> {this.refs.sully.open(); this.incrementCount();}}>
+        <Image source={require('../assets/seahorse.png')} style={{width: 50, height: 50}}/>
+        </TouchableWithoutFeedback>
+        </View>
+        </Interactable.View>
+
+        <TouchableOpacity onPress={this.selectPhotoTapped.bind(this)}>
+        <View
+        style={[
+          styles.avatar,
+          styles.avatarContainer,
+          { marginBottom: 20 },
+        ]}
+        >
+        {this.state.avatarSource === null ? (
+          <Text>Select a Photo</Text>
+        ) : (
+          <Image style={styles.avatar} source={this.state.avatarSource} />
+        )}
+        </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={this.getMusic.bind(this)}>
+        <View
+        style={[
+          styles.avatarContainer,
+          { marginBottom: 20 },
+        ]}
+        >
+        <Text>Select a Song</Text>
+        </View>
+        </TouchableOpacity>
+        </View>
+        </ScrollView>
+      );
     }
+  }
 
-    const styles = StyleSheet.create({
-      container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#F5FCFF',
-      },
-      avatarContainer: {
-        borderColor: '#9B9B9B',
-        borderWidth: 1 / PixelRatio.get(),
-        justifyContent: 'center',
-        alignItems: 'center',
-      },
-      avatar: {
-        width: 300,
-        height: 300,
-      },
-    });
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: '#F5FCFF',
+    },
+    avatarContainer: {
+      borderColor: '#9B9B9B',
+      borderWidth: 1 / PixelRatio.get(),
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    avatar: {
+      width: 300,
+      height: 300,
+    },
+    modal: {
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: 300,
+      width: 350,
+      backgroundColor: 'transparent'
+    },
+  });

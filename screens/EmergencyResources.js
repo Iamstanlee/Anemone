@@ -13,8 +13,6 @@ import call from 'react-native-phone-call'
 import SendSMS from 'react-native-sms'
 import * as Animatable from 'react-native-animatable';
 
-//TODO: Add circle outline with bit of white space around circle buttons
-
 const emergencyline = {
   number: '911', // String value with the number to call
   prompt: true // Optional boolean property. Determines if the user should be prompt prior to the call
@@ -33,11 +31,30 @@ const suicideTextLine = {
   allowAndroidSendWithoutReadPermission: false
 }
 
+const PCnumber = {
+  number: null,
+  prompt: true
+}
 
 export default class EmergencyResources extends React.Component{
 
   constructor(props) {
     super(props);
+  }
+
+
+  state = {
+    isPC: false,
+  };
+
+  async checkPC(){
+    //  TODO: wtf is this
+    await this.saveKey('PC', "4122281989");
+    if(await this.getKey('PC')!=null)
+    {
+      this.state.isPC = 'true';
+      PCnumber.number = JSON.stringify(this.getKey('PC'));
+    }
   }
 
   async saveKey(key, value){
@@ -60,12 +77,6 @@ export default class EmergencyResources extends React.Component{
     }
   }
 
-  //var isPC = false;
-  //
-  // if(this.getKey('PC')!=null)
-  // {
-  //   isPC = true;
-  // }
 
 
   // _linkPressed=function(url){
@@ -164,7 +175,7 @@ export default class EmergencyResources extends React.Component{
         //TODO: Set up if in async, call number, else modal for setting contact
         //TODO: Add "edit number" button to Modal
         //TODO: Some way to signify contact is not already set
-        onPress={(isPC, PCnumber)=> (isPC) ? (call(PCnumber).catch(console.error)): (call(suicideLine).catch(console.error))}>
+        onPress={() => {this.checkPC(); ((this.state.isPC) ? (call(PCnumber).catch(console.error)): (this.forceUpdate()))}}>
       <View>
       <Text style={styles.buttonText}>Personal Contact</Text>
       </View>

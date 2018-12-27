@@ -4,10 +4,6 @@ import Interactable from 'react-native-interactable';
 
 export default class ViewPlan extends React.Component {
 
-  setModalVisible(visible) {
-    this.setState({modalVisible: visible});
-  }
-
   async saveKey(key, value){
     value = JSON.stringify(value);
     try {
@@ -28,85 +24,94 @@ export default class ViewPlan extends React.Component {
     }
   }
 
+  async createView(){
+
+
+
+      try {
+        EarlySymptoms = await this.getKey('EarlySymptoms');
+        if (EarlySymptoms == null){
+          EarlySymptoms = "No early symptoms were filled out";
+        }
+
+        EarlySymptoms = JSON.stringify(EarlySymptoms);
+        //EarlySymptoms = EarlySymptoms.split(" ").join(" \n");
+
+        SymptomManagement = await this.getKey('SymptomManagement');
+        if (SymptomManagement == null){
+          SymptomManagement = "No symptom management skills were filled out";
+        }
+      //  SymptomManagement = SymptomManagement.split(" ").join(" \n");
+
+        CrisisSigns = await this.getKey('CrisisSigns');
+        if (CrisisSigns == null){
+          CrisisSigns = "No crisis signs were filled out";
+        }
+      //  CrisisSigns = CrisisSigns.split(" ").join(" \n");
+
+        People = await this.getKey('People');
+        if (People == null){
+          People = "No contacts of assistance were filled out";
+        }
+      //  People = People.split(" ").join(" \n");
+
+        HowPeopleCanHelp = await this.getKey('HowPeopleCanHelp');
+        if (HowPeopleCanHelp == null){
+          HowPeopleCanHelp = "No instructions for contacts were filled out";
+        }
+      //  HowPeopleCanHelp = HowPeopleCanHelp.split(" ").join(" \n");
+
+        CurrentMedications = await this.getKey('CurrentMedications');
+        if (CurrentMedications == null){
+          CurrentMedications = "No current medications were filled out";
+        }
+      //  CurrentMedications = CurrentMedications.split(" ").join(" \n");
+
+        PastMedications = await this.getKey('PastMedications');
+        if (PastMedications == null){
+          PastMedications = "No past medications were filled out";
+        }
+      //  PastMedications = PastMedications.split(" ").join(" \n");
+
+        TreatmentFacilities = await this.getKey('TreatmentFacilities');
+        if (TreatmentFacilities == null){
+          TreatmentFacilities = "No treatment facilities were filled out";
+        }
+      //  TreatmentFacilities = TreatmentFacilities.split(" ").join(" \n");
+
+        OtherResources = await this.getKey('OtherResources');
+        if (OtherResources == null){
+          OtherResources = "No other resources were filled out";
+        }
+      //  OtherResources = OtherResources.split(" ").join(" \n");
+
+
+
+      }
+
+      catch (err) {
+        console.log("Retrieving failed " + err);
+      }
+
+    }
+
 
   render() {
 
-    var EarlySymptoms = "No early symptoms were filled out";
-    var SymptomManagement = "No symptom management skills were filled out";
-    var CrisisSigns = "No crisis signs were filled out";
-    //TODO: Change name for people
-    var People = "No contacts of assistance were filled out";
-    var HowPeopleCanHelp = "No instructions for contacts were filled out";
-    var CurrentMedications = "No current medications were filled out";
-    var PastMedications = "No past medications were filled out";
-    var TreatmentFacilities = "No treatment facilities were filled out";
-    var OtherResources = "No other resources were filled out";
+
+      var EarlySymptoms = "No early symptoms were filled out";
+      var SymptomManagement = "No symptom management skills were filled out";
+      var CrisisSigns = "No crisis signs were filled out";
+      var People = "No contacts of assistance were filled out";
+      var HowPeopleCanHelp = "No instructions for contacts were filled out";
+      var CurrentMedications = "No current medications were filled out";
+      var PastMedications = "No past medications were filled out";
+      var TreatmentFacilities = "No treatment facilities were filled out";
+      var OtherResources = "No other resources were filled out";
 
 
-    try {
-      EarlySymptoms = this.getKey('EarlySymptoms');
-      if (EarlySymptoms == null){
-        EarlySymptoms = "No early symptoms were filled out";
-      }
+this.createView();
 
-      EarlySymptoms = JSON.stringify(EarlySymptoms);
-      //EarlySymptoms = EarlySymptoms.split(" ").join(" \n");
-
-      SymptomManagement = this.getKey('SymptomManagement');
-      if (SymptomManagement == null){
-        SymptomManagement = "No symptom management skills were filled out";
-      }
-    //  SymptomManagement = SymptomManagement.split(" ").join(" \n");
-
-      CrisisSigns = this.getKey('CrisisSigns');
-      if (CrisisSigns == null){
-        CrisisSigns = "No crisis signs were filled out";
-      }
-    //  CrisisSigns = CrisisSigns.split(" ").join(" \n");
-
-      People = this.getKey('People');
-      if (People == null){
-        People = "No contacts of assistance were filled out";
-      }
-    //  People = People.split(" ").join(" \n");
-
-      HowPeopleCanHelp = this.getKey('HowPeopleCanHelp');
-      if (HowPeopleCanHelp == null){
-        HowPeopleCanHelp = "No instructions for contacts were filled out";
-      }
-    //  HowPeopleCanHelp = HowPeopleCanHelp.split(" ").join(" \n");
-
-      CurrentMedications = this.getKey('CurrentMedications');
-      if (CurrentMedications == null){
-        CurrentMedications = "No current medications were filled out";
-      }
-    //  CurrentMedications = CurrentMedications.split(" ").join(" \n");
-
-      PastMedications = this.getKey('PastMedications');
-      if (PastMedications == null){
-        PastMedications = "No past medications were filled out";
-      }
-    //  PastMedications = PastMedications.split(" ").join(" \n");
-
-      TreatmentFacilities = this.getKey('TreatmentFacilities');
-      if (TreatmentFacilities == null){
-        TreatmentFacilities = "No treatment facilities were filled out";
-      }
-    //  TreatmentFacilities = TreatmentFacilities.split(" ").join(" \n");
-
-      OtherResources = this.getKey('OtherResources');
-      if (OtherResources == null){
-        OtherResources = "No other resources were filled out";
-      }
-    //  OtherResources = OtherResources.split(" ").join(" \n");
-
-
-
-    }
-
-    catch (err) {
-      console.log("Retrieving failed " + err);
-    }
 
     return (
 
