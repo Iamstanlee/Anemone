@@ -26,14 +26,13 @@ export default class ViewPlan extends React.Component {
 
   async createView(){
 
-
-
       try {
         EarlySymptoms = await this.getKey('EarlySymptoms');
         if (EarlySymptoms == null){
           EarlySymptoms = "No early symptoms were filled out";
         }
 
+        //TODO: Still not picking up strings from this function
         EarlySymptoms = JSON.stringify(EarlySymptoms);
         //EarlySymptoms = EarlySymptoms.split(" ").join(" \n");
 
@@ -110,7 +109,7 @@ export default class ViewPlan extends React.Component {
       var OtherResources = "No other resources were filled out";
 
 
-this.createView();
+      this.createView();
 
 
     return (

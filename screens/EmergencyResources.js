@@ -7,11 +7,12 @@
  */
 
 import React from 'react';
-import {Platform, StyleSheet, Text, View, Button, SectionList, TouchableOpacity, Linking, Icon, Dimensions, AsyncStorage, Image} from 'react-native';
+import {Platform, StyleSheet, Text, View, Button, SectionList, TouchableOpacity, Linking, Icon, Dimensions, AsyncStorage, Image, TextInput} from 'react-native';
 import {List, ListItem} from 'react-native-elements';
 import call from 'react-native-phone-call'
 import SendSMS from 'react-native-sms'
 import * as Animatable from 'react-native-animatable';
+import Modal from 'react-native-modalbox';
 
 const emergencyline = {
   number: '911', // String value with the number to call
@@ -34,6 +35,8 @@ const suicideTextLine = {
 const PCnumber = {
   number: null,
   prompt: true
+
+  //TODO: Fix state for number resetting when you open and close the app
 }
 
 export default class EmergencyResources extends React.Component{
@@ -44,16 +47,18 @@ export default class EmergencyResources extends React.Component{
 
 
   state = {
-    isPC: false,
+    isPC: null,
   };
 
   async checkPC(){
-    //  TODO: wtf is this
-    await this.saveKey('PC', "4122281989");
     if(await this.getKey('PC')!=null)
     {
       this.state.isPC = 'true';
-      PCnumber.number = JSON.stringify(this.getKey('PC'));
+      PCnumber.number = JSON.stringify(await this.getKey('PC'));
+    }
+
+    else {
+      this.state.isPC = 'false'
     }
   }
 
@@ -175,7 +180,7 @@ export default class EmergencyResources extends React.Component{
         //TODO: Set up if in async, call number, else modal for setting contact
         //TODO: Add "edit number" button to Modal
         //TODO: Some way to signify contact is not already set
-        onPress={() => {this.checkPC(); ((this.state.isPC) ? (call(PCnumber).catch(console.error)): (this.forceUpdate()))}}>
+        onPress={() => {this.checkPC(); ((this.state.isPC) ? (call(PCnumber).catch(console.error)): (this.refs.personalContact.open()))}}>
       <View>
       <Text style={styles.buttonText}>Personal Contact</Text>
       </View>
@@ -228,6 +233,25 @@ export default class EmergencyResources extends React.Component{
     return (
       <View>
 
+      <Modal style={styles.modal} ref="personalContact" isOpen={false}
+      swipetoClose="true"
+      position={"center"}
+      backdropOpacity={0.5}
+      coverScreen={false}>
+      <View style={{
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center'}}>
+
+        <Text style={{backgroundColor: 'white'}}> Enter a number for your personal contact</Text>
+        <TextInput style={{backgroundColor: 'white'}} placeholder="Type text here" onChangeText={(text) => {this.saveKey('PC', text);}}>
+        </TextInput>
+
+        <Text style={{backgroundColor: 'white'}}>Swipe down to close</Text>
+        </View>
+        </Modal>
+
     <Text>
     {"\n"}{"\n"}{"\n"}
       </Text>
@@ -275,5 +299,12 @@ const styles = StyleSheet.create({
     margin: 10,
     color: '#000000',
     backgroundColor: 'transparent',
+  },
+  modal: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 300,
+    width: 350,
+    backgroundColor: 'transparent'
   },
 });
