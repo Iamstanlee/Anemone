@@ -19,7 +19,6 @@ import Interactable from 'react-native-interactable';
 import Modal from 'react-native-modalbox';
 import MusicPlayerController from 'react-native-musicplayercontroller'
 
-//TODO: Add photo in AsyncStorage so it stays even when you close the app
 var count = 0;
 
 export default class GroundingBox extends React.Component {
@@ -42,7 +41,8 @@ export default class GroundingBox extends React.Component {
 
   async getKey(key){
     try {
-      const value = await AsyncStorage.getItem(key);
+      var value = await AsyncStorage.getItem(key);
+      value = JSON.parse(value);
       return value;
     } catch (error) {
       console.log("Error retrieving data" + error);
@@ -56,7 +56,9 @@ export default class GroundingBox extends React.Component {
 async checkPhoto(){
   if (await this.getKey('GroundingPhoto') != null){
 
-    source = JSON.stringify(await this.getKey('GroundingPhoto'));
+    source = await this.getKey('GroundingPhoto');
+
+    console.log("This is what source does look like: " + source);
 
     this.setState({
       avatarSource: source
@@ -91,6 +93,7 @@ async checkPhoto(){
       } else {
         let source = { uri: response.uri };
         this.saveKey('GroundingPhoto', source);
+        console.log("This is what source should look like: " + source);
         this.setState({
           avatarSource: source,
         });
