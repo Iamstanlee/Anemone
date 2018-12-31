@@ -7,7 +7,9 @@
  */
 
 import React from 'react';
-import {Platform, StyleSheet, Text, View, Button, Image} from 'react-native';
+import {Platform, StyleSheet, Text, View, Image} from 'react-native';
+import Button from 'react-native-flat-button'
+
 
 //var yourPicture = require ('./images/picture.jpg');
 
@@ -19,12 +21,20 @@ export default class HomeScreen extends React.Component{
     return (
       <View style={styles.container}>
         <Image source={require('../assets/anemone.png')} style={{width: 300, height: 70}}/>
+        <Text>{"\n"}{"\n"}{"\n"}</Text>
         <Button
-                 title="Get Started"
+                 type="custom"
                  onPress={() =>
                    this.props.navigation.navigate('CrisisPlan')
                  }
-               />
+                 backgroundColor={"#7bd2d8"}
+                 borderColor={"#16a085"}
+                 borderRadius={10}
+                 shadowHeight={5}
+                 containerStyle={styles.buttonContainer}
+                 contentStyle={styles.content}
+               >
+                  Get Started               </Button>
       </View>
     );
   }
@@ -50,4 +60,11 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
+
+  content:{
+  fontSize: 22,
+  textAlign: 'center'
+},
+
+
 });

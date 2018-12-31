@@ -1,7 +1,7 @@
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Interactable" "${PODS_ROOT}/Headers/Public/React" "${PODS_ROOT}/Headers/Public/yoga"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Interactable" "${PODS_ROOT}/Headers/Public/React" "${PODS_ROOT}/Headers/Public/ReactNativePermissions" "${PODS_ROOT}/Headers/Public/lottie-ios" "${PODS_ROOT}/Headers/Public/lottie-react-native" "${PODS_ROOT}/Headers/Public/react-native-image-picker" "${PODS_ROOT}/Headers/Public/react-native-pdf" "${PODS_ROOT}/Headers/Public/rn-fetch-blob" "${PODS_ROOT}/Headers/Public/yoga"
 LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Interactable" "${PODS_CONFIGURATION_BUILD_DIR}/React" "${PODS_CONFIGURATION_BUILD_DIR}/yoga"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/Interactable" -isystem "${PODS_ROOT}/Headers/Public/React" -isystem "${PODS_ROOT}/Headers/Public/yoga"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/Interactable" -isystem "${PODS_ROOT}/Headers/Public/React" -isystem "${PODS_ROOT}/Headers/Public/ReactNativePermissions" -isystem "${PODS_ROOT}/Headers/Public/lottie-ios" -isystem "${PODS_ROOT}/Headers/Public/lottie-react-native" -isystem "${PODS_ROOT}/Headers/Public/react-native-image-picker" -isystem "${PODS_ROOT}/Headers/Public/react-native-pdf" -isystem "${PODS_ROOT}/Headers/Public/rn-fetch-blob" -isystem "${PODS_ROOT}/Headers/Public/yoga"
 OTHER_LDFLAGS = $(inherited) -ObjC -l"stdc++" -framework "JavaScriptCore"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)

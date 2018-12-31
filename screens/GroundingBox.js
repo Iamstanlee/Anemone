@@ -53,6 +53,16 @@ export default class GroundingBox extends React.Component {
     avatarSource: null,
   };
 
+async checkPhoto(){
+  if (await this.getKey('GroundingPhoto') != null){
+
+    source = JSON.stringify(await this.getKey('GroundingPhoto'));
+
+    this.setState({
+      avatarSource: source
+    });
+  }
+}
   constructor(props) {
     super(props);
 
@@ -126,6 +136,9 @@ export default class GroundingBox extends React.Component {
   //TODO: Play song on load if song is already saved
 
   render() {
+
+    this.checkPhoto();
+
     return (
       <ScrollView>
       <View style={styles.container}>

@@ -22,6 +22,10 @@ pod 'Interactable', :path => '../node_modules/react-native-interactable'
 
     pod 'react-native-pdf', :path => '../node_modules/react-native-pdf'
 
+    pod 'lottie-ios', :path => '../node_modules/lottie-ios'
+
+    pod 'lottie-react-native', :path => '../node_modules/lottie-react-native'
+
   end
 
   target 'CrisisAppTests' do
