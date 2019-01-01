@@ -21,6 +21,8 @@ import People from './screens/crisisplansteps/People';
 import SymptomManagement from './screens/crisisplansteps/SymptomManagement';
 import TreatmentFacilities from './screens/crisisplansteps/TreatmentFacilities';
 import CrisisPlanSteps from './screens/crisisplansteps/CrisisPlanSteps';
+import MusicPlayerController from 'react-native-musicplayercontroller'
+
 // const tabBarIcon = name => ({focused, horizontal, tintColor }) => (
 //   <MaterialIcons name={name} color={focused ? tintColor: tintColor} size={horizontal ? 17 : 24} />
 // );
@@ -31,6 +33,15 @@ const TabNavigator = createMaterialBottomTabNavigator({
    navigationOptions: { title: 'Crisis Plan',
    tabBarColor: '#AF7B93',
    tabBarIcon: <MatIcon size={24} color="white" name="star" />,
+   tabBarOnPress: ({navigation}) => {
+	  // in the argument I am getting navigation object now
+    MusicPlayerController.pauseMusic(()=>{
+      // pausing music
+    }, ()=> {
+      // failed to pause
+    });
+    navigation.navigate("CrisisPlan");
+    }
   },
    },
  EmergencyResources: {
@@ -38,6 +49,15 @@ const TabNavigator = createMaterialBottomTabNavigator({
    navigationOptions: { title: 'Resources',
    tabBarColor: '#7BD2D8',
    tabBarIcon: <MatIcon size={24} color="white" name="phone" />,
+   tabBarOnPress: ({navigation}) => {
+   // in the argument I am getting navigation object now
+    MusicPlayerController.pauseMusic(()=>{
+      // pausing music
+    }, ()=> {
+      // failed to pause
+    });
+    navigation.navigate("EmergencyResources");
+    }
 },
  },
  CopingSkills: {
@@ -45,6 +65,15 @@ const TabNavigator = createMaterialBottomTabNavigator({
    navigationOptions: { title: 'Coping Skills',
    tabBarColor: '#B6D332',
    tabBarIcon: <MatIcon size={24} color="white" name="wb-sunny" />,
+   tabBarOnPress: ({navigation}) => {
+   // in the argument I am getting navigation object now
+    MusicPlayerController.pauseMusic(()=>{
+      // pausing music
+    }, ()=> {
+      // failed to pause
+    });
+    navigation.navigate("CopingSkills");
+    }
 },
  },
 
@@ -53,6 +82,15 @@ const TabNavigator = createMaterialBottomTabNavigator({
    navigationOptions: { title: 'Grounding Box',
    tabBarColor: '#F9B5AC',
    tabBarIcon: <EntypoIcon size={24} color="white" name="box" />,
+   tabBarOnPress: ({navigation}) => {
+   // in the argument I am getting navigation object now
+    MusicPlayerController.playMusic(()=>{
+      // pausing music
+    }, ()=> {
+      // failed to pause
+    });
+    navigation.navigate("GroundingBox");
+    }
 },
 //TODO: Add box animation
  },
