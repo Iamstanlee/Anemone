@@ -108,6 +108,9 @@ async checkPhoto(){
       // Successfully saved MPMediaItemCollection to NSUserDefaults.
       //    Returns an array of metadata for each track (not all MPMediaItem
       //    fields are copied, only the blantantly needed ones)
+
+      alert(metadata[0]["title"])
+
     }, ()=>{
       // Opened, but user tapped Cancel
       alert("Cancel")
@@ -116,7 +119,7 @@ async checkPhoto(){
     })
 
 
-    MusicPlayerController.preloadMusic("all", (metadata)=>{
+    MusicPlayerController.preloadMusic("one", (metadata)=>{
       // Successful preload
     }, ()=>{
       // Failed to preload music. Potentially lots of reasons, such as the music file being removed from the device.

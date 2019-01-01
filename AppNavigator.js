@@ -83,13 +83,20 @@ const TabNavigator = createMaterialBottomTabNavigator({
    tabBarColor: '#F9B5AC',
    tabBarIcon: <EntypoIcon size={24} color="white" name="box" />,
    tabBarOnPress: ({navigation}) => {
+       navigation.navigate("GroundingBox");
+
+     MusicPlayerController.preloadMusic("one", (metadata)=>{
+       // Successful preload
+     }, ()=>{
+       // Failed to preload music. Potentially lots of reasons, such as the music file being removed from the device.
+     });
    // in the argument I am getting navigation object now
     MusicPlayerController.playMusic(()=>{
       // pausing music
     }, ()=> {
       // failed to pause
     });
-    navigation.navigate("GroundingBox");
+
     }
 },
 //TODO: Add box animation
