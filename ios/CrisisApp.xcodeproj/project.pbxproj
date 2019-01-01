@@ -22,6 +22,7 @@
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		1614363B45534520956BEDE7 /* libSendSMS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A3BD7D9611C42108519C8B2 /* libSendSMS.a */; };
 		1814593621D97A7400D884D7 /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 180AFCFE21D0B76400A09BBB /* libRNImagePicker.a */; };
+		1817A87E21DB354F00C5315C /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		1881129021CDDCC7000FE8EB /* libInteractable.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1881128421CDDC64000FE8EB /* libInteractable.a */; };
 		1C88C425765844678862F3A4 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A612B7E5125D411DAC199736 /* FontAwesome.ttf */; };
 		28127363ED26468B886267A6 /* libRNHTMLtoPDF.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF5C1FBA66414C9E95988038 /* libRNHTMLtoPDF.a */; };
@@ -588,6 +589,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1817A87E21DB354F00C5315C /* libRCTAnimation.a in Frameworks */,
 				1814593621D97A7400D884D7 /* libRNImagePicker.a in Frameworks */,
 				00C302E81ABCBA2D00DB3ED1 /* libRCTImage.a in Frameworks */,
 				133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */,

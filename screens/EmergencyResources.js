@@ -55,6 +55,7 @@ export default class EmergencyResources extends React.Component{
     {
       this.state.isPC = 'true';
       PCnumber.number = JSON.stringify(await this.getKey('PC'));
+      this.forceUpdate();
     }
 
     else {
@@ -182,7 +183,7 @@ export default class EmergencyResources extends React.Component{
         //TODO: Set up if in async, call number, else modal for setting contact
         //TODO: Add "edit number" button to Modal
         //TODO: Some way to signify contact is not already set
-        onPress={() => {this.checkPC(); ((this.state.isPC) ? (call(PCnumber).catch(console.error)): (this.refs.personalContact.open()))}}>
+        onPress={() => {this.checkPC(); this.forceUpdate(); ((this.state.isPC) ? (call(PCnumber).catch(console.error)): (this.refs.personalContact.open()))}}>
       <View>
       <Text style={styles.buttonText}>Personal Contact</Text>
       </View>

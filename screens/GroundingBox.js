@@ -131,11 +131,8 @@ async checkPhoto(){
 
 
   }
-  //TODO: Have music stop playing when navigating to another screen
-
   // You can also display the image using data:
   // let source = { uri: 'data:image/jpeg;base64,' + response.data };
-  //TODO: Display picture on load if picture is already in AsyncStorage
   //TODO: Play song on load if song is already saved
 
   render() {
