@@ -1,8 +1,21 @@
 import React from 'react';
-import {View, Text, ScrollView, StyleSheet} from 'react-native';
+import {View, Text, ScrollView, StyleSheet, AsyncStorage} from 'react-native';
 import Interactable from 'react-native-interactable';
 
+
+var EarlySymptoms = "No early symptoms were filled out";
+var SymptomManagement = "No symptom management skills were filled out";
+var CrisisSigns = "No crisis signs were filled out";
+var People = "No contacts of assistance were filled out";
+var HowPeopleCanHelp = "No instructions for contacts were filled out";
+var CurrentMedications = "No current medications were filled out";
+var PastMedications = "No past medications were filled out";
+var TreatmentFacilities = "No treatment facilities were filled out";
+var OtherResources = "No other resources were filled out";
+
 export default class ViewPlan extends React.Component {
+
+
 
   async saveKey(key, value){
     value = JSON.stringify(value);
@@ -27,16 +40,6 @@ export default class ViewPlan extends React.Component {
   async createView(){
 
 
-          var EarlySymptoms = "No early symptoms were filled out";
-          var SymptomManagement = "No symptom management skills were filled out";
-          var CrisisSigns = "No crisis signs were filled out";
-          var People = "No contacts of assistance were filled out";
-          var HowPeopleCanHelp = "No instructions for contacts were filled out";
-          var CurrentMedications = "No current medications were filled out";
-          var PastMedications = "No past medications were filled out";
-          var TreatmentFacilities = "No treatment facilities were filled out";
-          var OtherResources = "No other resources were filled out";
-
       try {
         EarlySymptoms = await this.getKey('EarlySymptoms');
         if (EarlySymptoms == null){
@@ -44,7 +47,6 @@ export default class ViewPlan extends React.Component {
         }
 
         //TODO: Still not picking up strings from this function
-        EarlySymptoms = JSON.stringify(EarlySymptoms);
         //EarlySymptoms = EarlySymptoms.split(" ").join(" \n");
 
         SymptomManagement = await this.getKey('SymptomManagement');
@@ -109,7 +111,6 @@ export default class ViewPlan extends React.Component {
   render() {
 
 
-
       this.createView();
 
 
@@ -119,54 +120,54 @@ export default class ViewPlan extends React.Component {
 
 <Text style={styles.text1}>Early Symptoms: {"\n"}</Text>
 
-<Text style={styles.entryText}>{this.EarlySymptoms} {"\n"}{"\n"}{"\n"}</Text>
+<Text style={styles.entryText}>{EarlySymptoms} {"\n"}{"\n"}{"\n"}</Text>
 
 
 
 <Text style={styles.text2}>Ways I can manage early symptoms: {"\n"}</Text>
 
-<Text style={styles.entryText}>{this.SymptomManagement} {"\n"}{"\n"}{"\n"}</Text>
+<Text style={styles.entryText}>{SymptomManagement} {"\n"}{"\n"}{"\n"}</Text>
 
 
 
 <Text style={styles.text3}>Crisis Signs: {"\n"}</Text>
 
-<Text style={styles.entryText}>{this.CrisisSigns} {"\n"}{"\n"}{"\n"}</Text>
+<Text style={styles.entryText}>{CrisisSigns} {"\n"}{"\n"}{"\n"}</Text>
 
 
 
 <Text style={styles.text4}>People I would like to help me: {"\n"}</Text>
 
-<Text style={styles.entryText}>{this.People} {"\n"}{"\n"}{"\n"}</Text>
+<Text style={styles.entryText}>{People} {"\n"}{"\n"}{"\n"}</Text>
 
 
 
 <Text style={styles.text5}>How I would like people to help me: {"\n"}</Text>
 
-<Text style={styles.entryText}>{this.HowPeopleCanHelp} {"\n"}{"\n"}{"\n"}</Text>
+<Text style={styles.entryText}>{HowPeopleCanHelp} {"\n"}{"\n"}{"\n"}</Text>
 
 
 
 <Text style={styles.text6}>Medications I am currently on: {"\n"}</Text>
 
-<Text style={styles.entryText}>{this.CurrentMedications} {"\n"}{"\n"}{"\n"}</Text>
+<Text style={styles.entryText}>{CurrentMedications} {"\n"}{"\n"}{"\n"}</Text>
 
 
 
 <Text style={styles.text1}>Medications I used to be on: {"\n"}</Text>
 
-<Text style={styles.entryText}>{this.PastMedications} {"\n"}{"\n"}{"\n"}</Text>
+<Text style={styles.entryText}>{PastMedications} {"\n"}{"\n"}{"\n"}</Text>
 
 
 
 <Text style={styles.text2}>Treatment Facilities or Hospitals I prefer: {"\n"}</Text>
 
-<Text style={styles.entryText}>{this.TreatmentFacilities} {"\n"}{"\n"}{"\n"}</Text>
+<Text style={styles.entryText}>{TreatmentFacilities} {"\n"}{"\n"}{"\n"}</Text>
 
 
 <Text style={styles.text3}>Other Resources I can use: {"\n"}</Text>
 
-<Text style={styles.entryText}>{this.OtherResources} {"\n"}{"\n"}{"\n"}</Text>
+<Text style={styles.entryText}>{OtherResources} {"\n"}{"\n"}{"\n"}</Text>
 
 
 
