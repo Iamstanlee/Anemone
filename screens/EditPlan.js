@@ -3,11 +3,13 @@ import {Platform, StyleSheet, Text, View, Button, TextInput, AsyncStorage, Dimen
 import Swiper from 'react-native-swiper-animated';
 import PDFLib, { PDFDocument, PDFPage } from 'react-native-pdf-lib';
 
+//TODO: Fix this whole page so that edit can make text fields editable and actually saves to PDF which can then be viewed
+
 var time= new Date().toLocaleString();
 
 var dateTimeString = "This plan was created on " + time + ".";
 
-var EarlySymptoms = "No OOCH symptoms were filled out";
+var EarlySymptoms = "No early symptoms were filled out";
 var SymptomManagement = "No symptom management skills were filled out";
 var CrisisSigns = "No crisis signs were filled out";
 var People = "No contacts of assistance were filled out";
