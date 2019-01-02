@@ -157,7 +157,7 @@ export default class EditPlan extends React.Component{
   placeholder="Type text here"
   multiline={true}
   onChangeText={(text) => {saveKey('EarlySymptoms', text);}}
-  value = {EarlySymptoms}
+  defaultValue = {EarlySymptoms}
   editable={true}
   />
   </View>
@@ -171,7 +171,7 @@ export default class EditPlan extends React.Component{
   placeholder="Type text here"
   multiline={true}
   onChangeText={(text) => {saveKey('SymptomManagement', text);}}
-  value = {SymptomManagement}
+  defaultValue = {SymptomManagement}
   editable={true}
   />
   </View>
@@ -185,7 +185,7 @@ export default class EditPlan extends React.Component{
   placeholder="Type text here"
   multiline={true}
   onChangeText={(text) => {saveKey('CrisisSigns', text);}}
-  value = {CrisisSigns}
+  defaultValue = {CrisisSigns}
   editable={true}
   />
   </View>
@@ -199,7 +199,7 @@ export default class EditPlan extends React.Component{
   placeholder="Type text here"
   multiline={true}
   onChangeText={(text) => {saveKey('People', text);}}
-  value = {People}
+  defaultValue = {People}
   editable={true}
   />
   </View>
@@ -213,7 +213,7 @@ export default class EditPlan extends React.Component{
   placeholder="Type text here"
   multiline={true}
   onChangeText={(text) => {saveKey('HowPeopleCanHelp', text);}}
-  value = {HowPeopleCanHelp}
+  defaultValue = {HowPeopleCanHelp}
   editable={true}
   />
   </View>
@@ -227,7 +227,7 @@ export default class EditPlan extends React.Component{
   placeholder="Type text here"
   multiline={true}
   onChangeText={(text) => {saveKey('CurrentMedications', text);}}
-  value = {CurrentMedications}
+  defaultValue = {CurrentMedications}
   editable={true}
   />
   </View>
@@ -241,7 +241,7 @@ export default class EditPlan extends React.Component{
   placeholder="Type text here"
   multiline={true}
   onChangeText={(text) => {saveKey('PastMedications', text);}}
-  value = {PastMedications}
+  defaultValue = {PastMedications}
   editable={true}
   />
   </View>
@@ -255,7 +255,7 @@ export default class EditPlan extends React.Component{
   placeholder="Type text here"
   multiline={true}
   onChangeText={(text) => {saveKey('TreatmentFacilities', text);}}
-  value = {TreatmentFacilities}
+  defaultValue = {TreatmentFacilities}
   editable={true}
   />
   </View>
@@ -269,7 +269,7 @@ export default class EditPlan extends React.Component{
   placeholder="Type text here"
   multiline={true}
   onChangeText={(text) => {saveKey('OtherResources', text);}}
-  value = {OtherResources}
+  defaultValue = {OtherResources}
   editable={true}
   />
   </View>
