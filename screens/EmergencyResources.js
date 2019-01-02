@@ -13,6 +13,9 @@ import call from 'react-native-phone-call'
 import SendSMS from 'react-native-sms'
 import * as Animatable from 'react-native-animatable';
 import Modal from 'react-native-modalbox';
+import MaterialsIcon from 'react-native-vector-icons/MaterialIcons';
+import { Kohana } from 'react-native-textinput-effects';
+
 
 const emergencyline = {
   number: '911', // String value with the number to call
@@ -248,9 +251,16 @@ export default class EmergencyResources extends React.Component{
         justifyContent: 'center',
         alignItems: 'center'}}>
 
-        <Text style={{backgroundColor: 'white'}}> Enter a number for your personal contact</Text>
-        <TextInput keyboardType = 'numeric' style={{backgroundColor: 'white'}} placeholder="Type text here" onChangeText={(text) => {this.saveKey('PC', text);}}>
-        </TextInput>
+        <Kohana
+        style={{ backgroundColor: '#ffffff' }}
+        label={'Personal Contact Phone Number'}
+        iconClass={MaterialsIcon}
+        iconName={'phone'}
+        iconColor={'#af7b93'}
+        labelStyle={{ color: '#000000', fontFamily:'Arial', fontWeight: 'normal'}}
+        inputStyle={{ color: '#F9BD39' }}
+        useNativeDriver
+        />
 
         <Text style={{backgroundColor: 'white'}}>Swipe down to close</Text>
         </View>
