@@ -51,6 +51,7 @@ export default class GroundingBox extends React.Component {
 
   state = {
     avatarSource: null,
+    songTitle: null,
   };
 
 async checkPhoto(){
@@ -58,10 +59,25 @@ async checkPhoto(){
 
     source = await this.getKey('GroundingPhoto');
 
-    console.log("This is what source does look like: " + source);
+    //console.log("This is what source does look like: " + source);
 
     this.setState({
       avatarSource: source
+    });
+  }
+}
+
+
+async checkSongTitle(){
+
+  if (await this.getKey('SongTitle') != null){
+
+    source = await this.getKey('SongTitle');
+
+    //console.log("This is what source does look like: " + source);
+
+    this.setState({
+      songTitle: source
     });
   }
 }
@@ -71,7 +87,7 @@ async checkPhoto(){
     this.selectPhotoTapped = this.selectPhotoTapped.bind(this);
   }
 
-  selectPhotoTapped() {
+  async selectPhotoTapped() {
     const options = {
       quality: 1.0,
       maxWidth: 500,
@@ -92,24 +108,32 @@ async checkPhoto(){
         console.log('User tapped custom button: ', response.customButton);
       } else {
         let source = { uri: response.uri };
-        this.saveKey('GroundingPhoto', source);
-        console.log("This is what source should look like: " + source);
+      //  console.log("This is what source should look like: " + source);
         this.setState({
           avatarSource: source,
         });
       }
     });
+
+    await this.saveKey('GroundingPhoto', this.state.avatarSource);
+
   }
 
 
-  getMusic() {
+  async getMusic() {
 
     MusicPlayerController.presentPicker(false, (metadata)=>{
       // Successfully saved MPMediaItemCollection to NSUserDefaults.
       //    Returns an array of metadata for each track (not all MPMediaItem
       //    fields are copied, only the blantantly needed ones)
 
-      alert(metadata[0]["title"])
+      source = metadata[0]["title"];
+
+      this.setState({
+        songTitle: source
+      });
+
+
 
     }, ()=>{
       // Opened, but user tapped Cancel
@@ -117,6 +141,9 @@ async checkPhoto(){
 
 
     })
+
+    await this.saveKey('SongTitle', this.state.songTitle);
+
 
 
     MusicPlayerController.preloadMusic("one", (metadata)=>{
@@ -141,6 +168,7 @@ async checkPhoto(){
   render() {
 
     this.checkPhoto();
+    //this.checkSongTitle();
 
     return (
       <ScrollView>
@@ -212,7 +240,15 @@ async checkPhoto(){
           { marginBottom: 20 },
         ]}
         >
-        <Text>Select a Song</Text>
+
+
+        {this.state.songTitle === null ? (
+          <Text>Select a Song</Text>
+        ) : (
+          <Text>You have selected: {this.state.songTitle} </Text>
+        )}
+
+
         </View>
         </TouchableOpacity>
         </View>

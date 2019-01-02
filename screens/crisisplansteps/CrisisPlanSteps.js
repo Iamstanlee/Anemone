@@ -1,8 +1,7 @@
 import React from 'react';
-import {Platform, StyleSheet, Text, View, Button, TextInput, AsyncStorage, Dimensions} from 'react-native';
+import {Platform, StyleSheet, Text, View, Button, TextInput, AsyncStorage, Dimensions, Share,} from 'react-native';
 import Swiper from 'react-native-swiper-animated';
 import PDFLib, { PDFDocument, PDFPage } from 'react-native-pdf-lib';
-import Share from 'react-native-share';
 
 var time= new Date().toLocaleString();
 
@@ -331,15 +330,15 @@ try
       saveKey('PlanCreated', "true");
 
 
-      Share.open({
+      Share.share({
       url: path,
-      subject: "Crisis Plan",
+      title: 'Crisis Plan',
     })
 
   }
 
   catch (err) {
-    console.log(err)
+    console.log("Share error " + err)
   }
   });
 }

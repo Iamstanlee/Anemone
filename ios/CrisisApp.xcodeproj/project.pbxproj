@@ -23,6 +23,10 @@
 		1614363B45534520956BEDE7 /* libSendSMS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A3BD7D9611C42108519C8B2 /* libSendSMS.a */; };
 		1814593621D97A7400D884D7 /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 180AFCFE21D0B76400A09BBB /* libRNImagePicker.a */; };
 		1817A87E21DB354F00C5315C /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
+		1817A8B621DC5D3800C5315C /* libRNShare.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A5806B21C9CECC0078555B /* libRNShare.a */; };
+		1817A8B821DC5E2600C5315C /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1817A8B721DC5E2600C5315C /* Social.framework */; };
+		1817A8BA21DC5E2D00C5315C /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1817A8B921DC5E2D00C5315C /* MessageUI.framework */; };
+		1817A8BB21DC638D00C5315C /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		1881129021CDDCC7000FE8EB /* libInteractable.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1881128421CDDC64000FE8EB /* libInteractable.a */; };
 		1C88C425765844678862F3A4 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A612B7E5125D411DAC199736 /* FontAwesome.ttf */; };
 		28127363ED26468B886267A6 /* libRNHTMLtoPDF.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF5C1FBA66414C9E95988038 /* libRNHTMLtoPDF.a */; };
@@ -48,7 +52,6 @@
 		56DBD1615E274E39848CE992 /* libRNVectorIcons-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3000F791E384BF784B68490 /* libRNVectorIcons-tvOS.a */; };
 		5BB5F1551F4D410EBA64D185 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44EA4D0F153F443CA6AA715C /* MaterialCommunityIcons.ttf */; };
 		5C2E3A0FD0594EA3934872CD /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 832C84DBE4234404BA12C856 /* FontAwesome5_Brands.ttf */; };
-		5C9257CE88384864B10C48C9 /* libRNShare.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3B29BE430AD4D50A23A80D3 /* libRNShare.a */; };
 		61BE7FF2790948E294907278 /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E1BE227143C4B3B9BD065A6 /* libRNGestureHandler.a */; };
 		661ACE2369E24ED09D91DE45 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9F6A20DCF5745DDBBB09BC6 /* Ionicons.ttf */; };
 		6BE76CCEDB1A481C9F7E52EE /* libRNPDFLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09DCB23B2F6C4948B98CAFC2 /* libRNPDFLib.a */; };
@@ -515,6 +518,8 @@
 		180AFCCC21D0B76400A09BBB /* RNImagePicker.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNImagePicker.xcodeproj; path = "../node_modules/react-native-image-picker/ios/RNImagePicker.xcodeproj"; sourceTree = "<group>"; };
 		1814587921D870CF00D884D7 /* liblottie-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "liblottie-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		181458B021D8711200D884D7 /* Lottie.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Lottie.xcodeproj; path = "../node_modules/lottie-ios/Lottie.xcodeproj"; sourceTree = "<group>"; };
+		1817A8B721DC5E2600C5315C /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		1817A8B921DC5E2D00C5315C /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		189D92321E2148A6A03756F0 /* ReactNativeNavigation.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeNavigation.xcodeproj; path = "../node_modules/react-native-navigation/lib/ios/ReactNativeNavigation.xcodeproj"; sourceTree = "<group>"; };
 		18A6F07721C8572100BE199B /* CrisisApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = CrisisApp.xcodeproj; sourceTree = "<group>"; };
 		1D47C965673E4E30B79276F6 /* RNGestureHandler.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNGestureHandler.xcodeproj; path = "../node_modules/react-native-gesture-handler/ios/RNGestureHandler.xcodeproj"; sourceTree = "<group>"; };
@@ -589,6 +594,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1817A8BB21DC638D00C5315C /* libRCTActionSheet.a in Frameworks */,
+				1817A8BA21DC5E2D00C5315C /* MessageUI.framework in Frameworks */,
+				1817A8B821DC5E2600C5315C /* Social.framework in Frameworks */,
+				1817A8B621DC5D3800C5315C /* libRNShare.a in Frameworks */,
 				1817A87E21DB354F00C5315C /* libRCTAnimation.a in Frameworks */,
 				1814593621D97A7400D884D7 /* libRNImagePicker.a in Frameworks */,
 				00C302E81ABCBA2D00DB3ED1 /* libRCTImage.a in Frameworks */,
@@ -605,7 +614,6 @@
 				28127363ED26468B886267A6 /* libRNHTMLtoPDF.a in Frameworks */,
 				9E39D238AAD94AA2B27E9EF2 /* RNHTMLtoPDFTests.xctest in Frameworks */,
 				6BE76CCEDB1A481C9F7E52EE /* libRNPDFLib.a in Frameworks */,
-				5C9257CE88384864B10C48C9 /* libRNShare.a in Frameworks */,
 				D9AF48E370A142208F5CFB1B /* libReactNativeNavigation.a in Frameworks */,
 				D31E7307C8784D4D8ED0B429 /* libInteractable.a in Frameworks */,
 				8A0B191DBF413A38AEFC1026 /* libPods-CrisisApp.a in Frameworks */,
@@ -902,6 +910,8 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1817A8B921DC5E2D00C5315C /* MessageUI.framework */,
+				1817A8B721DC5E2600C5315C /* Social.framework */,
 				1814587921D870CF00D884D7 /* liblottie-ios.a */,
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
 				DDA9ACA2F756D9437A21B4A7 /* libPods-CrisisApp.a */,
