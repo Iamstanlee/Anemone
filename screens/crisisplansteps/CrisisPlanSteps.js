@@ -7,7 +7,12 @@ var time= new Date().toLocaleString();
 
 var dateTimeString = "This plan was created on " + time + ".";
 
-export default () => <Swiper
+export default class CrisisPlanSteps extends React.Component{
+
+  render(){
+  return(
+
+<Swiper
   style={styles.wrapper}
   smoothTransition={true}
   loop={false}
@@ -137,7 +142,9 @@ export default () => <Swiper
 
 
 </Swiper>
-;
+);
+}
+}
 
 
 async function saveKey(key, value){

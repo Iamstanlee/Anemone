@@ -37,6 +37,7 @@ const PCnumber = {
   prompt: true
 
   //TODO: Fix state for number resetting when you open and close the app
+  //TODO: Fix modal so that if you accidentally dismiss the first time, it comes up again
 }
 
 export default class EmergencyResources extends React.Component{
@@ -308,6 +309,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     height: 300,
     width: 350,
-    backgroundColor: 'transparent'
+    backgroundColor: 'white'
   },
 });
