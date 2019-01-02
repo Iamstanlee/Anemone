@@ -105,6 +105,9 @@ export default class ViewPlan extends React.Component {
         console.log("Retrieving failed " + err);
       }
 
+      this.forceUpdate();
+
+
     }
 
 
