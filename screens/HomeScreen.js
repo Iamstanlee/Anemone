@@ -10,6 +10,9 @@ import React from 'react';
 import {Platform, StyleSheet, Text, View, Image} from 'react-native';
 import Button from 'react-native-flat-button'
 
+import LottieView from 'lottie-react-native';
+
+
 
 //var yourPicture = require ('./images/picture.jpg');
 
@@ -19,7 +22,17 @@ type Props = {};
 export default class HomeScreen extends React.Component{
   render() {
     return (
+
+
+
       <View style={styles.container}>
+
+      <LottieView
+        source={require('../sold_out.json')}
+        autoPlay
+        loop
+      />
+
         <Image source={require('../assets/anemone.png')} style={{width: 300, height: 70}}/>
         <Text>{"\n"}{"\n"}{"\n"}</Text>
         <Button
