@@ -9,143 +9,180 @@ var dateTimeString = "This plan was created on " + time + ".";
 
 export default class CrisisPlanSteps extends React.Component{
 
+  state = {
+    textChanged: false,
+    cardCount: 0,
+  }
+
+
   render(){
-  return(
+    return(
 
-<Swiper
-  style={styles.wrapper}
-  smoothTransition={true}
-  loop={false}
-  stack={true}
-  swipeDirection={'right'}
-  backPressToBack={true}
-  stackDepth={3}
-  showPagination={true}
-  showPaginationBelow={true}
->
+      <Swiper
+      style={styles.wrapper}
+      smoothTransition={true}
+      loop={false}
+      stack={true}
+      swipeDirection={'right'}
+      backPressToBack={true}
+      stackDepth={3}
+      showPagination={true}
+      showPaginationBelow={true}
+      onRightSwipe =  {() => { if (this.state.cardCount < 7) {
+
+
+        this._textInput.setNativeProps({text: ''});
+
+      }
+
+      this.setState({
+        cardCount: this.state.cardCount + 1
+      });
+
+      //console.log("count: " + this.state.cardCount);
+
+
+
+    }}
+    onLeftSwipe  = {() => {  if (this.state.cardCount < 7) {
+
+      this._textInput.setNativeProps({text: ''});
+
+    }
+
+    this.setState({
+      cardCount: this.state.cardCount +1
+    });
+
+    //  console.log("count: " + this.state.cardCount);
+
+
+
+  }}
+  onFinish={() => { console.log("Finished");}}
+  >
   <View style={styles.slide}>
-    <Text style={styles.text1}>Early Symptoms</Text>
-    <TextInput
-        style={{width: Dimensions.get('window').width},
-        {height: Dimensions.get('window').height},
-        {flex: 1}}
-        placeholder="Type text here"
-        multiline={true}
-        onChangeText={(text) => {saveKey('EarlySymptoms', text);}}
-        />
+  <Text style={styles.text1}>Early Symptoms</Text>
+  <TextInput ref={component => this._textInput = component}
+  style={{width: Dimensions.get('window').width},
+  {height: Dimensions.get('window').height},
+  {flex: 1}}
+  placeholder="Type text here"
+  multiline={true}
+  onChangeText={(text) => {saveKey('EarlySymptoms', text);}}
+  />
   </View>
 
   <View style={styles.slide}>
-    <Text style={styles.text2}>Ways I can manage early symptoms</Text>
-    <TextInput
-        style={{width: Dimensions.get('window').width},
-        {height: Dimensions.get('window').height},
-        {flex: 1}}
-        placeholder="Type text here"
-        multiline={true}
-        onChangeText={(text) => {saveKey('SymptomManagement', text);}}
-        />
+  <Text style={styles.text2}>Ways I can manage early symptoms</Text>
+  <TextInput ref={component => this._textInput = component}
+  style={{width: Dimensions.get('window').width},
+  {height: Dimensions.get('window').height},
+  {flex: 1}}
+  placeholder="Type text here"
+  multiline={true}
+  onChangeText={(text) => {saveKey('SymptomManagement', text);}}
+  />
   </View>
 
   <View style={styles.slide}>
-    <Text style={styles.text3}>Crisis Signs</Text>
-    <TextInput
-        style={{width: Dimensions.get('window').width},
-        {height: Dimensions.get('window').height},
-        {flex: 1}}
-        placeholder="Type text here"
-        multiline={true}
-        onChangeText={(text) => {saveKey('CrisisSigns', text);}}
-        />
+  <Text style={styles.text3}>Crisis Signs</Text>
+  <TextInput ref={component => this._textInput = component}
+  style={{width: Dimensions.get('window').width},
+  {height: Dimensions.get('window').height},
+  {flex: 1}}
+  placeholder="Type text here"
+  multiline={true}
+  onChangeText={(text) => {saveKey('CrisisSigns', text);}}
+  />
   </View>
 
   <View style={styles.slide}>
-    <Text style={styles.text4}>People I would like to help me</Text>
-    <TextInput
-        style={{width: Dimensions.get('window').width},
-        {height: Dimensions.get('window').height},
-        {flex: 1}}
-        placeholder="Type text here"
-        multiline={true}
-        onChangeText={(text) => {saveKey('People', text);}}
-        />
+  <Text style={styles.text4}>People I would like to help me</Text>
+  <TextInput ref={component => this._textInput = component}
+  style={{width: Dimensions.get('window').width},
+  {height: Dimensions.get('window').height},
+  {flex: 1}}
+  placeholder="Type text here"
+  multiline={true}
+  onChangeText={(text) => {saveKey('People', text);}}
+  />
   </View>
 
   <View style={styles.slide}>
-    <Text style={styles.text5}>How I would like people to help me</Text>
-    <TextInput
-        style={{width: Dimensions.get('window').width},
-        {height: Dimensions.get('window').height},
-        {flex: 1}}
-        placeholder="Type text here"
-        multiline={true}
-        onChangeText={(text) => {saveKey('HowPeopleCanHelp', text);}}
-        />
+  <Text style={styles.text5}>How I would like people to help me</Text>
+  <TextInput ref={component => this._textInput = component}
+  style={{width: Dimensions.get('window').width},
+  {height: Dimensions.get('window').height},
+  {flex: 1}}
+  placeholder="Type text here"
+  multiline={true}
+  onChangeText={(text) => {saveKey('HowPeopleCanHelp', text);}}
+  />
   </View>
 
   <View style={styles.slide}>
-    <Text style={styles.text6}>Medications I am currently on</Text>
-    <TextInput
-        style={{width: Dimensions.get('window').width},
-        {height: Dimensions.get('window').height},
-        {flex: 1}}
-        placeholder="Type text here"
-        multiline={true}
-        onChangeText={(text) => {saveKey('CurrentMedications', text);}}
-        />
+  <Text style={styles.text6}>Medications I am currently on</Text>
+  <TextInput ref={component => this._textInput = component}
+  style={{width: Dimensions.get('window').width},
+  {height: Dimensions.get('window').height},
+  {flex: 1}}
+  placeholder="Type text here"
+  multiline={true}
+  onChangeText={(text) => {saveKey('CurrentMedications', text);}}
+  />
   </View>
 
-    <View style={styles.slide}>
-      <Text style={styles.text1}>Medications I used to be on</Text>
-      <TextInput
-          style={{width: Dimensions.get('window').width},
-          {height: Dimensions.get('window').height},
-          {flex: 1}}
-          placeholder="Type text here"
-          multiline={true}
-          onChangeText={(text) => {saveKey('PastMedications', text);}}
-          />
-    </View>
+  <View style={styles.slide}>
+  <Text style={styles.text1}>Medications I used to be on</Text>
+  <TextInput ref={component => this._textInput = component}
+  style={{width: Dimensions.get('window').width},
+  {height: Dimensions.get('window').height},
+  {flex: 1}}
+  placeholder="Type text here"
+  multiline={true}
+  onChangeText={(text) => {saveKey('PastMedications', text);}}
+  />
+  </View>
 
-    <View style={styles.slide}>
-      <Text style={styles.text2}>Treatment Facilities or Hospitals I prefer</Text>
-      <TextInput
-          style={{width: Dimensions.get('window').width},
-          {height: Dimensions.get('window').height},
-          {flex: 1}}
-          placeholder="Type text here"
-          multiline={true}
-          onChangeText={(text) => {saveKey('TreatmentFacilities', text);}}
-          />
-    </View>
+  <View style={styles.slide}>
+  <Text style={styles.text2}>Treatment Facilities or Hospitals I prefer</Text>
+  <TextInput ref={component => this._textInput = component}
+  style={{width: Dimensions.get('window').width},
+  {height: Dimensions.get('window').height},
+  {flex: 1}}
+  placeholder="Type text here"
+  multiline={true}
+  onChangeText={(text) => {saveKey('TreatmentFacilities', text);}}
+  />
+  </View>
 
-        <View style={styles.slide}>
-          <Text style={styles.text3}>Other Resources I can use</Text>
-          <TextInput
-              style={{width: Dimensions.get('window').width},
-              {height: Dimensions.get('window').height},
-              {flex: 1}}
-              placeholder="Type text here"
-              multiline={true}
-              onChangeText={(text) => {saveKey('OtherResources', text);}}
-              />
-        </View>
+  <View style={styles.slide}>
+  <Text style={styles.text3}>Other Resources I can use</Text>
+  <TextInput
+  style={{width: Dimensions.get('window').width},
+  {height: Dimensions.get('window').height},
+  {flex: 1}}
+  placeholder="Type text here"
+  multiline={true}
+  onChangeText={(text) => {saveKey('OtherResources', text);}}
+  />
+  </View>
 
-        <View style={styles.slide}>
-        <Text>
-        Email, export, or share plan with others
-        </Text>
-        <Button title="Share" onPress={createPDF.bind(this)}>
-        </Button>
-        </View>
+  <View style={styles.slide}>
+  <Text>
+  Email, export, or share plan with others
+  </Text>
+  <Button title="Share" onPress={createPDF.bind(this)}>
+  </Button>
+  </View>
 
 
 
-</Swiper>
+  </Swiper>
 );
 }
 }
-
 
 async function saveKey(key, value){
   //    value = JSON.stringify(value).replace(/\\n/g, "ooch");
@@ -181,59 +218,59 @@ var OtherResources = "No other resources were filled out";
 
 
 try {
-  EarlySymptoms = await this.getKey('EarlySymptoms');
+  EarlySymptoms = await getKey('EarlySymptoms');
   if (EarlySymptoms == null){
     EarlySymptoms = "No early symptoms were filled out";
   }
   //EarlySymptoms = EarlySymptoms.split(" ").join(" \n");
 
-  SymptomManagement = await this.getKey('SymptomManagement');
+  SymptomManagement = await getKey('SymptomManagement');
   if (SymptomManagement == null){
     SymptomManagement = "No symptom management skills were filled out";
   }
-//  SymptomManagement = SymptomManagement.split(" ").join(" \n");
+  //  SymptomManagement = SymptomManagement.split(" ").join(" \n");
 
-  CrisisSigns = await this.getKey('CrisisSigns');
+  CrisisSigns = await getKey('CrisisSigns');
   if (CrisisSigns == null){
     CrisisSigns = "No crisis signs were filled out";
   }
-//  CrisisSigns = CrisisSigns.split(" ").join(" \n");
+  //  CrisisSigns = CrisisSigns.split(" ").join(" \n");
 
-  People = await this.getKey('People');
+  People = await getKey('People');
   if (People == null){
     People = "No contacts of assistance were filled out";
   }
-//  People = People.split(" ").join(" \n");
+  //  People = People.split(" ").join(" \n");
 
-  HowPeopleCanHelp = await this.getKey('HowPeopleCanHelp');
+  HowPeopleCanHelp = await getKey('HowPeopleCanHelp');
   if (HowPeopleCanHelp == null){
     HowPeopleCanHelp = "No instructions for contacts were filled out";
   }
-//  HowPeopleCanHelp = HowPeopleCanHelp.split(" ").join(" \n");
+  //  HowPeopleCanHelp = HowPeopleCanHelp.split(" ").join(" \n");
 
-  CurrentMedications = await this.getKey('CurrentMedications');
+  CurrentMedications = await getKey('CurrentMedications');
   if (CurrentMedications == null){
     CurrentMedications = "No current medications were filled out";
   }
-//  CurrentMedications = CurrentMedications.split(" ").join(" \n");
+  //  CurrentMedications = CurrentMedications.split(" ").join(" \n");
 
-  PastMedications = await this.getKey('PastMedications');
+  PastMedications = await getKey('PastMedications');
   if (PastMedications == null){
     PastMedications = "No past medications were filled out";
   }
-//  PastMedications = PastMedications.split(" ").join(" \n");
+  //  PastMedications = PastMedications.split(" ").join(" \n");
 
-  TreatmentFacilities = await this.getKey('TreatmentFacilities');
+  TreatmentFacilities = await getKey('TreatmentFacilities');
   if (TreatmentFacilities == null){
     TreatmentFacilities = "No treatment facilities were filled out";
   }
-//  TreatmentFacilities = TreatmentFacilities.split(" ").join(" \n");
+  //  TreatmentFacilities = TreatmentFacilities.split(" ").join(" \n");
 
-  OtherResources = await this.getKey('OtherResources');
+  OtherResources = await getKey('OtherResources');
   if (OtherResources == null){
     OtherResources = "No other resources were filled out";
   }
-//  OtherResources = OtherResources.split(" ").join(" \n");
+  //  OtherResources = OtherResources.split(" ").join(" \n");
 
 
 
@@ -338,15 +375,15 @@ try
 
 
       Share.share({
-      url: path,
-      title: 'Crisis Plan',
-    })
+        url: path,
+        title: 'Crisis Plan',
+      })
 
-  }
+    }
 
-  catch (err) {
-    console.log("Share error " + err)
-  }
+    catch (err) {
+      console.log("Share error " + err)
+    }
   });
 }
 catch (err)
