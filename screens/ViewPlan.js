@@ -107,7 +107,6 @@ export default class ViewPlan extends React.Component {
 
       this.forceUpdate();
 
-
     }
 
 

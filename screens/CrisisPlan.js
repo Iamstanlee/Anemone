@@ -3,8 +3,6 @@ import {Platform, StyleSheet, Text, View, Button, TextInput, AsyncStorage, Dimen
 import Interactable from 'react-native-interactable';
 import Modal from 'react-native-modalbox';
 
-
-
 var count = 0;
 
 type Props = {};
@@ -88,12 +86,13 @@ incrementCount(){
           You do not currently have a crisis plan set up
           </Text> : null}
 
-          <Button title="Create a Crisis Plan" onPress={() => this.props.navigation.navigate('CrisisPlanSteps')}/>
-
           {!(this.getKey('PlanCreated') != null) ? <Button title="Create a Crisis Plan" onPress={() => this.props.navigation.navigate('CrisisPlanSteps')}/> : null}
 
 
           {(this.getKey('PlanCreated') != null) ? <Button title="View your Crisis Plan" onPress={() => this.props.navigation.navigate('ViewPlan')}/> : null}
+
+
+          {(this.getKey('PlanCreated') != null) ? <Button title="Edit your Crisis Plan" onPress={() => this.props.navigation.navigate('EditPlan')}/> : null}
 
           </View>
         );
