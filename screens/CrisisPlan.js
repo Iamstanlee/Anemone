@@ -86,13 +86,13 @@ incrementCount(){
           You do not currently have a crisis plan set up
           </Text> : null}
 
-          {!(this.getKey('PlanCreated') != null) ? <Button title="Create a Crisis Plan" onPress={() => this.props.navigation.navigate('CrisisPlanSteps')}/> : null}
+          {!(this.getKey('PlanCreated') != null) ? <Button title="Create a Crisis Plan" onPress={() => this.props.navigation.navigate('CreateSwipe')}/> : null}
 
 
           {(this.getKey('PlanCreated') != null) ? <Button title="View your Crisis Plan" onPress={() => this.props.navigation.navigate('ViewPlan')}/> : null}
 
 
-          {(this.getKey('PlanCreated') != null) ? <Button title="Edit your Crisis Plan" onPress={() => this.props.navigation.navigate('EditPlan')}/> : null}
+          {(this.getKey('PlanCreated') != null) ? <Button title="Edit your Crisis Plan" onPress={() => this.props.navigation.navigate('EditSwipe')}/> : null}
 
           </View>
         );

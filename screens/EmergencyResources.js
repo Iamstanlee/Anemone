@@ -15,6 +15,7 @@ import * as Animatable from 'react-native-animatable';
 import Modal from 'react-native-modalbox';
 import MaterialsIcon from 'react-native-vector-icons/MaterialIcons';
 import { Kohana } from 'react-native-textinput-effects';
+import LottieView from 'lottie-react-native';
 
 
 const emergencyline = {
@@ -236,7 +237,8 @@ export default class EmergencyResources extends React.Component{
                     }
 
                     return (
-                      <View>
+                      <View style={{backgroundColor:'transparent'}}>
+
 
                       <Modal style={styles.modal} ref="personalContact" isOpen={false}
                       swipetoClose="true"
@@ -267,7 +269,12 @@ export default class EmergencyResources extends React.Component{
                         <Text>
                         {"\n"}{"\n"}{"\n"}
                         </Text>
+
+
+
                         <List>
+
+
                         <View style={{flexDirection: 'row', flex:2}}>
                         {
                           list1.map((item) => (

@@ -17,7 +17,10 @@ import ImagePicker from 'react-native-image-picker';
 
 import Interactable from 'react-native-interactable';
 import Modal from 'react-native-modalbox';
-import MusicPlayerController from 'react-native-musicplayercontroller'
+import MusicPlayerController from 'react-native-musicplayercontroller';
+import LottieView from 'lottie-react-native';
+
+//TODO: fix box animation positioning
 
 var count = 0;
 
@@ -163,7 +166,6 @@ async checkSongTitle(){
   }
   // You can also display the image using data:
   // let source = { uri: 'data:image/jpeg;base64,' + response.data };
-  //TODO: Play song on load if song is already saved
 
   render() {
 
@@ -172,7 +174,10 @@ async checkSongTitle(){
 
     return (
       <ScrollView>
+
       <View style={styles.container}>
+
+
 
       <Modal style={styles.modal} ref="sully" isOpen={false}
       swipetoClose="true"
@@ -251,6 +256,21 @@ async checkSongTitle(){
 
         </View>
         </TouchableOpacity>
+
+<View pointerEvents="none" style={{position: 'absolute',
+    height: '100%',
+    width: '100%', alignItems: 'center'}}
+    >
+        <LottieView
+          source={require('../boxopen.json')}
+          autoPlay={true}
+          loop={true}
+          style={{height: '90%',
+              width: '90%'}}
+        />
+
+        </View >
+
         </View>
         </ScrollView>
       );

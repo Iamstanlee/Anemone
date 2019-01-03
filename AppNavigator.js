@@ -9,6 +9,9 @@ import CrisisPlan from './screens/CrisisPlan';
 import EmergencyResources from './screens/EmergencyResources';
 import CopingSkills from './screens/CopingSkills';
 import GroundingBox from './screens/GroundingBox';
+import GroundingAnimation from './screens/GroundingAnimation';
+import EditSwipe from './screens/EditSwipe';
+import CreateSwipe from './screens/CreateSwipe';
 import ViewPlan from './screens/ViewPlan';
 import EditPlan from './screens/EditPlan';
 import CrisisSigns from './screens/crisisplansteps/CrisisSigns';
@@ -114,6 +117,9 @@ const FeedStack = createStackNavigator({
   ViewPlan: ViewPlan,
   EditPlan: EditPlan,
   CrisisPlanSteps: CrisisPlanSteps,
+  GroundingAnimation: GroundingAnimation,
+  EditSwipe: EditSwipe,
+  CreateSwipe: CreateSwipe,
   EarlySymptoms: EarlySymptoms,
   SymptomManagement: SymptomManagement,
   CrisisSigns: CrisisSigns,

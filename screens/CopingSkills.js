@@ -9,6 +9,8 @@ import {
   Image
 } from 'react-native';
 
+import LottieView from 'lottie-react-native';
+
 import FirstCard from './FirstCard';
 import SecondCard from './SecondCard';
 
@@ -34,6 +36,25 @@ export default () => (
     <ScrollView
       style={styles.scrollView}
     >
+
+    <View style={{
+      position: 'absolute',
+      height: '200%',
+      width: '100%',
+      alignItems: 'center',
+      justifyContent: 'flex-end',}}>
+      <LottieView
+      source={require('../balloons.json')}
+      style={{
+        height: '100%',
+        width: '100%',
+        }}
+        autoPlay={true}
+        loop={true}
+        />
+        </View>
+
+
       <FirstCard zIndex={100} />
       <SecondCard zIndex={90} />
       <FirstCard zIndex={80} />
