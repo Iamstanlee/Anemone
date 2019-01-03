@@ -262,11 +262,11 @@ async checkSongTitle(){
     width: '100%', alignItems: 'center'}}
     >
         <LottieView
-          source={require('../boxopen.json')}
+          source={require('../confetti.json')}
           autoPlay={true}
           loop={true}
-          style={{height: '90%',
-              width: '90%'}}
+          style={{height: '100%',
+              width: '100%'}}
         />
 
         </View >
