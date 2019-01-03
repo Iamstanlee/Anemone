@@ -19,6 +19,7 @@ import Interactable from 'react-native-interactable';
 import Modal from 'react-native-modalbox';
 import MusicPlayerController from 'react-native-musicplayercontroller';
 import LottieView from 'lottie-react-native';
+import Button from 'react-native-flat-button'
 
 //TODO: fix box animation positioning
 
@@ -119,6 +120,8 @@ async checkSongTitle(){
     });
 
     await this.saveKey('GroundingPhoto', this.state.avatarSource);
+
+    //TODO: Photo no longer saves upon app close
 
   }
 
@@ -222,40 +225,51 @@ async checkSongTitle(){
         </View>
         </Interactable.View>
 
-        <TouchableOpacity onPress={this.selectPhotoTapped.bind(this)}>
+
+<TouchableOpacity onPress={this.selectPhotoTapped.bind(this)}>
         <View
-        style={[
-          styles.avatar,
-          styles.avatarContainer,
-          { marginBottom: 20 },
-        ]}
-        >
-        {this.state.avatarSource === null ? (
-          <Text>Select a Photo</Text>
+                style={[
+                  styles.avatar,
+                  styles.avatarContainer,
+                  { marginBottom: 20 },
+                ]}
+                >
+
+        {(this.state.avatarSource === null) ? (
+          <Button
+          type="custom"
+          backgroundColor={"#7bd2d8"}
+          borderColor={"#16a085"}
+          borderRadius={10}
+          shadowHeight={5}
+          containerStyle={styles.buttonContainer}
+          contentStyle={styles.content}
+          onPress={this.selectPhotoTapped.bind(this)}> Select a Photo </Button>
         ) : (
           <Image style={styles.avatar} source={this.state.avatarSource} />
         )}
+
         </View>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={this.getMusic.bind(this)}>
-        <View
-        style={[
-          styles.avatarContainer,
-          { marginBottom: 20 },
-        ]}
-        >
 
-
+<View>
         {this.state.songTitle === null ? (
-          <Text>Select a Song</Text>
+          <Button
+          type="custom"
+          backgroundColor={"#af7b93"}
+          borderColor={"#7C4D63"}
+          borderRadius={10}
+          shadowHeight={5}
+          containerStyle={styles.buttonContainer}
+          contentStyle={styles.content}
+          onPress={this.getMusic.bind(this)}> Select a Song </Button>
         ) : (
           <Text>You have selected: {this.state.songTitle} </Text>
         )}
 
-
         </View>
-        </TouchableOpacity>
+
 
 <View pointerEvents="none" style={{position: 'absolute',
     height: '100%',
@@ -285,10 +299,9 @@ async checkSongTitle(){
       backgroundColor: '#F5FCFF',
     },
     avatarContainer: {
-      borderColor: '#9B9B9B',
-      borderWidth: 1 / PixelRatio.get(),
       justifyContent: 'center',
       alignItems: 'center',
+      borderRadius: 10
     },
     avatar: {
       width: 300,

@@ -1,9 +1,11 @@
 import React from 'react';
-import {Platform, StyleSheet, Text, View, Button, TextInput, AsyncStorage, Dimensions, Image, TouchableWithoutFeedback, TouchableHighlight} from 'react-native';
+import {Platform, StyleSheet, Text, View, TextInput, AsyncStorage, Dimensions, Image, TouchableWithoutFeedback, TouchableHighlight, Share} from 'react-native';
 import Interactable from 'react-native-interactable';
 import Modal from 'react-native-modalbox';
+import Button from 'react-native-flat-button'
 
 var count = 0;
+var pdfPath = null;
 
 type Props = {};
 export default class CrisisPlan extends React.Component{
@@ -28,7 +30,15 @@ incrementCount(){
     }
   }
 
+
+  async getPDF(){
+    pdfPath = await this.getKey('CrisisPlan');
+
+  }
+
   render() {
+
+    this.getPDF();
 
     return (
 
@@ -86,13 +96,65 @@ incrementCount(){
           You do not currently have a crisis plan set up
           </Text> : null}
 
-          {!(this.getKey('PlanCreated') != null) ? <Button title="Create a Crisis Plan" onPress={() => this.props.navigation.navigate('CreateSwipe')}/> : null}
+          <Text pointerEvents="none">
+          {"\n"}{"\n"}{"\n"}
+          </Text>
+
+          {!(this.getKey('PlanCreated') != null) ?
+                          <Button
+                           type="custom"
+                           backgroundColor={"#f9b5ac"}
+                           borderColor={"#ee7674"}
+                           borderRadius={10}
+                           shadowHeight={5}
+                           containerStyle={styles.buttonContainer}
+                           contentStyle={styles.content}
+                         onPress={() => this.props.navigation.navigate('CreateSwipe')}> Create a Crisis Plan </Button> : null}
+
+                         <Text pointerEvents="none">
+                         {"\n"}{"\n"}{"\n"}
+                         </Text>
+
+          {(this.getKey('PlanCreated') != null) ?
+          <Button
+          type="custom"
+          backgroundColor={"#f9b5ac"}
+          borderColor={"#ee7674"}
+          borderRadius={10}
+          shadowHeight={5}
+          containerStyle={styles.buttonContainer}
+          contentStyle={styles.content} onPress={() => this.props.navigation.navigate('ViewPlan')}> View your Crisis Plan </Button> : null}
 
 
-          {(this.getKey('PlanCreated') != null) ? <Button title="View your Crisis Plan" onPress={() => this.props.navigation.navigate('ViewPlan')}/> : null}
+          <Text pointerEvents="none">
+          {"\n"}{"\n"}{"\n"}
+          </Text>
 
 
-          {(this.getKey('PlanCreated') != null) ? <Button title="Edit your Crisis Plan" onPress={() => this.props.navigation.navigate('EditSwipe')}/> : null}
+          {(this.getKey('PlanCreated') != null) ?
+          <Button
+          type="custom"
+          backgroundColor={"#b6d332"}
+          borderColor={"#91AA1E"}
+          borderRadius={10}
+          shadowHeight={5}
+          containerStyle={styles.buttonContainer}
+          contentStyle={styles.content} onPress={() => this.props.navigation.navigate('EditSwipe')}> Edit your Crisis Plan </Button> : null}
+
+                    <Text pointerEvents="none">
+                    {"\n"}{"\n"}{"\n"}
+                    </Text>
+
+          {(this.getKey('PlanCreated') != null) ?
+          <Button
+          type="custom"
+          backgroundColor={"#F9BD39"}
+          borderColor={"#C99422"}
+          borderRadius={10}
+          shadowHeight={5}
+          containerStyle={styles.buttonContainer}
+          contentStyle={styles.content} onPress={() => Share.share({url: pdfPath, title: 'Crisis Plan'})}> Share your Crisis Plan </Button> : null}
+
 
           </View>
         );
@@ -124,5 +186,10 @@ incrementCount(){
     width: 350,
     backgroundColor: 'transparent'
   },
+
+  content:{
+  fontSize: 22,
+  textAlign: 'center'
+},
 
     });
