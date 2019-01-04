@@ -178,15 +178,11 @@ async checkSongTitle(){
     return (
       <ScrollView>
 
-      <View style={styles.container}>
-
-
-
       <Modal style={styles.modal} ref="sully" isOpen={false}
       swipetoClose="true"
       position={"center"}
       backdropOpacity={0.5}
-      coverScreen={false}>
+      coverScreen={true}>
       <View style={{
         flex: 1,
         flexDirection: 'column',
@@ -201,6 +197,13 @@ async checkSongTitle(){
         <Text style={{backgroundColor: 'white'}}>Swipe down to close</Text>
         </View>
         </Modal>
+
+
+
+      <View style={styles.container}>
+
+
+
 
 
         <Interactable.View
