@@ -84,11 +84,6 @@ incrementCount(){
 
         {(count==0) ? <Image source={require('../assets/sully.png')} style={{width: 335, height: 245}}/> : null}
 
-        {(count==1) ? <Image source={require('../assets/sullyblank.png')} style={{width: 335, height: 245}}/> : null}
-
-        {(count==2) ? <Image source={require('../assets/sullyblank.png')} style={{width: 335, height: 245}}/> : null}
-
-
           <Text style={{backgroundColor: 'white'}}>Swipe down to close</Text>
           </View>
           </Modal>

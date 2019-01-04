@@ -21,7 +21,6 @@ import MusicPlayerController from 'react-native-musicplayercontroller';
 import LottieView from 'lottie-react-native';
 import Button from 'react-native-flat-button'
 
-//TODO: fix box animation positioning
 
 var count = 0;
 
