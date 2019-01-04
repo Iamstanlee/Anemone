@@ -203,7 +203,8 @@ const styles = StyleSheet.create({
     textShadowColor: '#000000',
     textShadowRadius: 100,
     color: '#7bd2d8',
-    textAlign: 'center'
+    textAlign: 'center',
+    padding: 10,
   },
 
   text2: {
@@ -213,7 +214,9 @@ const styles = StyleSheet.create({
     textShadowColor: '#000000',
     textShadowRadius: 100,
     color: '#b6d332',
-    textAlign: 'center'
+    textAlign: 'center',
+    padding: 10,
+
   },
 
   text3: {
@@ -223,7 +226,9 @@ const styles = StyleSheet.create({
     textShadowColor: '#000000',
     textShadowRadius: 100,
     color: '#ee7674',
-    textAlign: 'center'
+    textAlign: 'center',
+    padding: 10,
+
   },
 
   text4: {
@@ -233,7 +238,9 @@ const styles = StyleSheet.create({
     textShadowColor: '#000000',
     textShadowRadius: 100,
     color: '#f9b5ac',
-    textAlign: 'center'
+    textAlign: 'center',
+    padding: 10,
+
   },
 
   text5: {
@@ -243,7 +250,9 @@ const styles = StyleSheet.create({
     textShadowColor: '#000000',
     textShadowRadius: 100,
     color: '#af7b93',
-    textAlign: 'center'
+    textAlign: 'center',
+    padding: 10,
+
   },
   text6: {
     color: '#000',
@@ -252,7 +261,9 @@ const styles = StyleSheet.create({
     textShadowColor: '#000000',
     textShadowRadius: 100,
     color: '#F9BD39',
-    textAlign: 'center'
+    textAlign: 'center',
+    padding: 10,
+
   },
 
   entryText: {
@@ -261,6 +272,7 @@ const styles = StyleSheet.create({
     fontWeight: '200',
     textShadowColor: '#000000',
     textShadowRadius: 100,
-    textAlign: 'center'
+    textAlign: 'center',
+    padding: 10,
   },
 });

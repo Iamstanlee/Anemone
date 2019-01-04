@@ -237,7 +237,7 @@ async checkSongTitle(){
                 ]}
                 >
 
-        {!(this.state.avatarSource === null) ? (
+        {(this.state.avatarSource === null) ? (
           <Button
           type="custom"
           backgroundColor={"#7bd2d8"}
