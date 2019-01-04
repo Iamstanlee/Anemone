@@ -1,6 +1,7 @@
 import React from 'react';
-import {Text, View} from 'react-native'
+import {Text, View, StyleSheet} from 'react-native'
 import LottieView from 'lottie-react-native';
+import Button from 'react-native-flat-button'
 
 export default class EditSwipe extends React.Component {
   render() {
@@ -8,16 +9,41 @@ export default class EditSwipe extends React.Component {
       <View>
 
       <LottieView
-        source={require('../swipe.json')}
-        autoPlay={true}
-        loop={false}
-onAnimationFinish= {() => this.props.navigation.navigate('EditPlan')}
-style={{height: '80%',
-    width: '80%'}}
+      source={require('../swipe.json')}
+      autoPlay={true}
+      loop={true}
+      style={{height: '80%',
+      width: '80%'}}
 
       />
-<Text>Swipe cards left to move to next step</Text>
+
+      <Text style={{textAlign: 'center'}}>Swipe cards left to move between steps</Text>
+
+      <Button
+      type="custom"
+      backgroundColor={"#b6d332"}
+      borderColor={"#91AA1E"}
+      borderRadius={10}
+      shadowHeight={5}
+      containerStyle={styles.buttonContainer}
+      contentStyle={styles.content} onPress={() => this.props.navigation.navigate('EditPlan')}> Next </Button>
       </View>
     );
   }
 }
+
+
+const styles = StyleSheet.create({
+  buttonContainer: {
+    width: 200,
+    height: 31.3,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+
+  content:{
+    fontSize: 22,
+    textAlign: 'center'
+  },
+
+});

@@ -99,7 +99,7 @@ export default class EmergencyResources extends React.Component{
       render() {
         var list1 = [
         {
-          title: 'Hospitals',
+          title: 'Local Hospitals',
           icon: 'flight-takeoff',
           component: () =>
           <View style={outerButtonStyle(1,1,1)}>
@@ -107,7 +107,7 @@ export default class EmergencyResources extends React.Component{
           style={innerButtonStyle(1, 2, 1)}
           onPress={()=>  {this.hospitalanimated.swing(1000); Linking.openURL('https://www.google.com/maps/search/hospital/').catch(err => console.error('An error occurred', err)); }}>
           <Animatable.View ref={component => this.hospitalanimated = component}>
-          <Text style={styles.buttonText}>Hospitals</Text>
+          <Text style={styles.buttonText}>Local Hospitals</Text>
           </Animatable.View>
           </TouchableOpacity>
           </View> ,
@@ -199,7 +199,9 @@ export default class EmergencyResources extends React.Component{
                     //  console.log("height: " + height);
 
                     //console.log("width: " + width);
-                    var color = ['#af7b93', '#7bd2d8', '#b6d332', '#f9b5ac', '#ee7674', '#F9BD39']
+                    var innerColor = ['#af7b93', '#7bd2d8', '#b6d332', '#f9b5ac', '#ee7674', '#F9BD39']
+
+                    var outerColor = ['#7C4D63', '#16a085', '#91AA1E', '#D88C82', '#C65351', '#C99422']
 
                     innerButtonStyle = function(rNum, cNum, colNum) {
                       return {
@@ -209,7 +211,7 @@ export default class EmergencyResources extends React.Component{
                         justifyContent:'center',
                         width:100,
                         height:100,
-                        backgroundColor:color[colNum],
+                        backgroundColor:innerColor[colNum],
                         borderRadius:100,
                         //position: 'absolute'
                         //   top: (rNum*(height))/6,
@@ -220,7 +222,7 @@ export default class EmergencyResources extends React.Component{
 
                     outerButtonStyle = function(rNum, cNum, colNum) {
                       return {
-                        borderWidth:2,
+                        borderWidth:5,
                         //position: 'absolute',
                         borderColor:'rgba(0,0,0,0.2)',
                         alignItems:'center',
@@ -228,7 +230,7 @@ export default class EmergencyResources extends React.Component{
                         width:120,
                         height:120,
                         backgroundColor:'transparent',
-                        borderColor:color[colNum],
+                        borderColor:outerColor[colNum],
                         borderRadius:120,
                         top: (rNum*(height))/6,
                         //left: (cNum*(width))/6,
@@ -313,10 +315,11 @@ export default class EmergencyResources extends React.Component{
 
                           buttonText: {
                             fontSize: 15,
+                            fontWeight: '500',
                             //fontFamily: 'Gill Sans',
                             textAlign: 'center',
                             margin: 10,
-                            color: '#000000',
+                            color: '#ffffff',
                             backgroundColor: 'transparent',
                             },
                             modal: {

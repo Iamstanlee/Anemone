@@ -1,14 +1,22 @@
 import React from 'react';
-import {Platform, StyleSheet, Text, View, TextInput, AsyncStorage, Dimensions, Image, TouchableWithoutFeedback, TouchableHighlight, Share} from 'react-native';
+import {Platform, StyleSheet, Text, View, TextInput, AsyncStorage, Dimensions, Image, TouchableWithoutFeedback, TouchableHighlight, Share, Animated, Easing} from 'react-native';
 import Interactable from 'react-native-interactable';
 import Modal from 'react-native-modalbox';
-import Button from 'react-native-flat-button'
+import Button from 'react-native-flat-button';
+import LottieView from 'lottie-react-native';
 
 var count = 0;
 var pdfPath = null;
 
-type Props = {};
-export default class CrisisPlan extends React.Component{
+  export default class CrisisPlan extends React.Component{
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+          progress: new Animated.Value(0),
+        };
+      }
 
 incrementCount(){
   count = count+1;
@@ -19,6 +27,25 @@ incrementCount(){
   state = {
     planCreated: false,
   }
+
+
+  componentDidMount() {
+
+     this.setupAnimation()
+
+   }
+
+   setupAnimation = () => {
+      Animated.timing(this.state.progress, {
+        toValue: 1,
+        duration: 7000,
+        easing: Easing.linear,
+      }).start(() => {
+      this.setState({
+        progress: new Animated.Value(0),
+      }, () => this.setupAnimation())
+    })
+    }
 
 
   async getKey(key){
@@ -66,27 +93,23 @@ incrementCount(){
           </View>
           </Modal>
 
-          <Interactable.View
-          horizontalOnly={false}
-          snapPoints={[
-            {x: -140, y: -200},
-            {x: 140, y: -200},
-            {x: -140, y: -120},
-            {x: 140, y: -120},
-            {x: -140, y: 120},
-            {x: 140, y: 120},
-            {x: -140, y: 200},
-            {x: 140, y: 200, tension: 50, damping: 0.9}
-          ]}
-          initialPosition={{x: -140, y: 0}}
-          onSnap={this.onDrawerSnap}>
-
-          <View>
-          <TouchableWithoutFeedback onPress={()=> {this.refs.sully.open(); this.incrementCount();}}>
-          <Image source={require('../assets/seahorse.png')} style={{width: 50, height: 50}}/>
-          </TouchableWithoutFeedback>
-          </View>
-          </Interactable.View>
+          <View style={{
+            position: 'absolute',
+            height: '200%',
+            width: '100%',
+            alignItems: 'center',
+            justifyContent: 'flex-end',}}>
+            <LottieView
+            source={require('../bubbles.json')}
+            style={{
+              height: '70%',
+              width: '70%',
+              }}
+              autoPlay={true}
+              loop={true}
+              progress={this.state.progress}
+              />
+              </View>
 
           <Text pointerEvents="none">
           {"\n"}{"\n"}{"\n"}
@@ -104,7 +127,7 @@ incrementCount(){
                           <Button
                            type="custom"
                            backgroundColor={"#f9b5ac"}
-                           borderColor={"#ee7674"}
+                           borderColor={"#D88C82"}
                            borderRadius={10}
                            shadowHeight={5}
                            containerStyle={styles.buttonContainer}
@@ -119,7 +142,7 @@ incrementCount(){
           <Button
           type="custom"
           backgroundColor={"#f9b5ac"}
-          borderColor={"#ee7674"}
+          borderColor={"#D88C82"}
           borderRadius={10}
           shadowHeight={5}
           containerStyle={styles.buttonContainer}
