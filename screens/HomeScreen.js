@@ -72,5 +72,9 @@ const styles = StyleSheet.create({
   fontFamily: 'ProximaNova-Bold',
 },
 
+buttonContainer:{
+  height: 32,
+}
+
 
 });

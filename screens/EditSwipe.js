@@ -36,7 +36,7 @@ export default class EditSwipe extends React.Component {
 const styles = StyleSheet.create({
   buttonContainer: {
     width: 200,
-    height: 31.3,
+    height: 32,
     justifyContent: 'center',
     alignItems: 'center'
   },

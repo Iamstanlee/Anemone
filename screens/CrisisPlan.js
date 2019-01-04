@@ -82,7 +82,7 @@ incrementCount(){
         justifyContent: 'center',
         alignItems: 'center'}}>
 
-        {(count==0) ? <Image source={require('../assets/sully.png')} style={{width: 335, height: 245}}/> : null}
+        {(count==0) ? <Image source={require('../assets/sullywelcome.png')} style={{width: 335, height: 245}}/> : null}
 
           <Text style={{backgroundColor: 'white', fontFamily: 'ProximaNova-Regular' }}>Swipe down to close</Text>
           </View>
@@ -215,6 +215,7 @@ incrementCount(){
 
 buttonContainer:{
   width: 250,
+  height: 32,
 }
 
     });

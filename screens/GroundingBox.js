@@ -323,10 +323,12 @@ async checkSongTitle(){
     },
 
     buttonContainer:{
-      width: 140,
+      width: 160,
+      height: 32,
     },
 
     content: {
       fontFamily: 'ProximaNova-Bold',
+      fontSize: 22,
     }
   });
