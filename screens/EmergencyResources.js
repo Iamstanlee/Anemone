@@ -90,12 +90,6 @@ export default class EmergencyResources extends React.Component{
         }
       }
 
-
-      //TODO: Add timeout so animations can be seen on circles
-      // _linkPressed=function(url){
-      //   Linking.openURL(url).catch(err => console.error('An error occurred', err));
-      //  }
-
       render() {
         var list1 = [
         {
@@ -105,7 +99,7 @@ export default class EmergencyResources extends React.Component{
           <View style={outerButtonStyle(1,1,1)}>
           <TouchableOpacity
           style={innerButtonStyle(1, 2, 1)}
-          onPress={()=>  {this.hospitalanimated.swing(1000); Linking.openURL('https://www.google.com/maps/search/hospital/').catch(err => console.error('An error occurred', err)); }}>
+          onPress={()=>  {this.hospitalanimated.swing(1000).then(endState => {Linking.openURL('https://www.google.com/maps/search/hospital/').catch(err => console.error('An error occurred', err));}) }}>
           <Animatable.View ref={component => this.hospitalanimated = component}>
           <Text style={styles.buttonText}>Local Hospitals</Text>
           </Animatable.View>
@@ -120,7 +114,7 @@ export default class EmergencyResources extends React.Component{
             <View style={outerButtonStyle(1, 1,2)}>
             <TouchableOpacity
             style={innerButtonStyle(2, 1, 2)}
-            onPress={()=> {this.emergencyanimated.swing(1000); call(emergencyline).catch(console.error); }}>
+            onPress={()=> {this.emergencyanimated.swing(1000).then(endState => {call(emergencyline).catch(console.error);})}}>
             <Animatable.View ref={component => this.emergencyanimated = component}>
             <Text style={styles.buttonText}>Emergency Hotline</Text>
             </Animatable.View>
@@ -136,7 +130,7 @@ export default class EmergencyResources extends React.Component{
               <View style={outerButtonStyle(1,1,4)}>
               <TouchableOpacity
               style={innerButtonStyle(2, 1, 4)}
-              onPress={()=> {this.localanimated.swing(1000); Linking.openURL('https://www.google.com/search?q=local+crisis+lines').catch(err => console.error('An error occurred', err)); }}>
+              onPress={()=> {this.localanimated.swing(1000).then(endState => {Linking.openURL('https://www.google.com/search?q=local+crisis+lines').catch(err => console.error('An error occurred', err));}) }}>
               <Animatable.View ref={component => this.localanimated = component}>
               <Text style={styles.buttonText}>Local Crisis Line</Text>
               </Animatable.View>
@@ -154,7 +148,7 @@ export default class EmergencyResources extends React.Component{
                 <View style={outerButtonStyle(2,2,3)}>
                 <TouchableOpacity
                 style={innerButtonStyle(2, 2, 3)}
-                onPress={()=> {this.suicidelineanimated.swing(1000); call(suicideLine).catch(console.error)}}>
+                onPress={()=> {this.suicidelineanimated.swing(1000).then(endState => {call(suicideLine).catch(console.error);})}}>
                 <Animatable.View ref={component => this.suicidelineanimated = component}>
                 <Text style={styles.buttonText}>Suicide Hotline</Text>
                 </Animatable.View>
@@ -168,7 +162,7 @@ export default class EmergencyResources extends React.Component{
                   <View style={outerButtonStyle(2,2,0)}>
                   <TouchableOpacity
                   style={innerButtonStyle(3, 1, 0)}
-                  onPress={()=> {this.textanimated.swing(1000); SendSMS.send(suicideTextLine, (completed, cancelled, error) => {console.log('SMS Callback: completed: ' + completed + ' cancelled: ' + cancelled + 'error: ' + error);})}}>
+                  onPress={()=> {this.textanimated.swing(1000).then(endState => {SendSMS.send(suicideTextLine, (completed, cancelled, error) => {console.log('SMS Callback: completed: ' + completed + ' cancelled: ' + cancelled + 'error: ' + error);})})}}>
                   <Animatable.View ref={component => this.textanimated = component}>
                   <Text style={styles.buttonText}>Suicide Textline</Text>
                   </Animatable.View>
@@ -186,7 +180,7 @@ export default class EmergencyResources extends React.Component{
                     //TODO: Set up if in async, call number, else modal for setting contact
                     //TODO: Add "edit number" button to Modal
                     //TODO: Some way to signify contact is not already set
-                    onPress={() => {this.personalanimated.swing(1000); this.checkPC(); this.forceUpdate(); ((this.state.isPC) ? (call(PCnumber).catch(console.error)): (this.refs.personalContact.open()))}}>
+                    onPress={() => {this.personalanimated.swing(1000).then(endState => {this.checkPC(); this.forceUpdate(); ((this.state.isPC) ? (call(PCnumber).catch(console.error)): (this.refs.personalContact.open()))})}}>
                     <Animatable.View ref={component => this.personalanimated = component}>
                     <Text style={styles.buttonText}>Personal Contact</Text>
                     </Animatable.View>
