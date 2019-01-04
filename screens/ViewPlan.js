@@ -205,6 +205,7 @@ const styles = StyleSheet.create({
     color: '#7bd2d8',
     textAlign: 'center',
     padding: 10,
+    fontFamily: 'ProximaNova-Bold',
   },
 
   text2: {
@@ -216,6 +217,7 @@ const styles = StyleSheet.create({
     color: '#b6d332',
     textAlign: 'center',
     padding: 10,
+    fontFamily: 'ProximaNova-Bold',
 
   },
 
@@ -228,6 +230,7 @@ const styles = StyleSheet.create({
     color: '#ee7674',
     textAlign: 'center',
     padding: 10,
+    fontFamily: 'ProximaNova-Bold',
 
   },
 
@@ -240,6 +243,7 @@ const styles = StyleSheet.create({
     color: '#f9b5ac',
     textAlign: 'center',
     padding: 10,
+    fontFamily: 'ProximaNova-Bold',
 
   },
 
@@ -252,6 +256,7 @@ const styles = StyleSheet.create({
     color: '#af7b93',
     textAlign: 'center',
     padding: 10,
+    fontFamily: 'ProximaNova-Bold',
 
   },
   text6: {
@@ -263,6 +268,7 @@ const styles = StyleSheet.create({
     color: '#F9BD39',
     textAlign: 'center',
     padding: 10,
+    fontFamily: 'ProximaNova-Bold',
 
   },
 
@@ -274,5 +280,6 @@ const styles = StyleSheet.create({
     textShadowRadius: 100,
     textAlign: 'center',
     padding: 10,
+    fontFamily: 'ProximaNova-Regular'
   },
 });

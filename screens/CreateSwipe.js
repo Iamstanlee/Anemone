@@ -14,7 +14,7 @@ export default class CreateSwipe extends React.Component {
         style={{height: '80%',
         width: '80%'}}
       />
-      <Text style={{textAlign: 'center'}}>Swipe cards left to move between steps</Text>
+      <Text style={{textAlign: 'center', fontFamily: 'ProximaNova-Regular'}}>Swipe cards left to move between steps</Text>
 
       <Button
       type="custom"
@@ -41,7 +41,8 @@ const styles = StyleSheet.create({
 
 content:{
 fontSize: 22,
-textAlign: 'center'
+textAlign: 'center',
+fontFamily: 'ProximaNova-Bold'
 },
 
 });

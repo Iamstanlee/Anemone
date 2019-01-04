@@ -84,7 +84,7 @@ incrementCount(){
 
         {(count==0) ? <Image source={require('../assets/sully.png')} style={{width: 335, height: 245}}/> : null}
 
-          <Text style={{backgroundColor: 'white'}}>Swipe down to close</Text>
+          <Text style={{backgroundColor: 'white', fontFamily: 'ProximaNova-Regular' }}>Swipe down to close</Text>
           </View>
           </Modal>
 
@@ -191,6 +191,7 @@ incrementCount(){
         fontSize: 20,
         textAlign: 'center',
         margin: 10,
+        fontFamily: 'ProximaNova-Regular'
       },
       instructions: {
         textAlign: 'center',
@@ -208,7 +209,8 @@ incrementCount(){
 
   content:{
   fontSize: 22,
-  textAlign: 'center'
+  textAlign: 'center',
+  fontFamily: 'ProximaNova-Bold'
 },
 
 buttonContainer:{

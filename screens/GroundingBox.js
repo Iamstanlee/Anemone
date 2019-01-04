@@ -193,7 +193,8 @@ async checkSongTitle(){
         {(count==2) ? <Image source={require('../assets/sullyblank.png')} style={{width: 335, height: 245}}/> : null}
 
 
-        <Text style={{backgroundColor: 'white'}}>Swipe down to close</Text>
+        <Text style={{backgroundColor: 'white',fontFamily: 'ProximaNova-Regular'
+}}>Swipe down to close</Text>
         </View>
         </Modal>
 
@@ -267,7 +268,8 @@ async checkSongTitle(){
           contentStyle={styles.content}
           onPress={this.getMusic.bind(this)}> Select a Song </Button>
         ) : (
-          <Text>You have selected: {this.state.songTitle} </Text>
+          <Text style={{    fontFamily: 'ProximaNova-Regular'
+}}>You have selected: {this.state.songTitle} </Text>
         )}
 
         </View>
@@ -322,5 +324,9 @@ async checkSongTitle(){
 
     buttonContainer:{
       width: 140,
+    },
+
+    content: {
+      fontFamily: 'ProximaNova-Bold',
     }
   });

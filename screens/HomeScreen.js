@@ -68,7 +68,8 @@ const styles = StyleSheet.create({
 
   content:{
   fontSize: 22,
-  textAlign: 'center'
+  textAlign: 'center',
+  fontFamily: 'ProximaNova-Bold',
 },
 
 

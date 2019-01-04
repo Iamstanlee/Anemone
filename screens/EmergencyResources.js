@@ -253,12 +253,12 @@ export default class EmergencyResources extends React.Component{
                         iconClass={MaterialsIcon}
                         iconName={'phone'}
                         iconColor={'#af7b93'}
-                        labelStyle={{ color: '#000000', fontFamily:'Arial', fontWeight: 'normal'}}
-                        inputStyle={{ color: '#F9BD39' }}
+                        labelStyle={{ color: '#000000', fontFamily:'ProximaNova-Bold'}}
+                        inputStyle={{ color: '#F9BD39', fontFamily: 'ProximaNova-Regular'}}
                         useNativeDriver
                         />
 
-                        <Text style={{backgroundColor: 'white'}}>Swipe down to close</Text>
+                        <Text style={{backgroundColor: 'white', fontFamily:'ProximaNova-Regular'}}>Swipe down to close</Text>
                         </View>
                         </Modal>
 
@@ -310,7 +310,7 @@ export default class EmergencyResources extends React.Component{
                           buttonText: {
                             fontSize: 15,
                             fontWeight: '500',
-                            //fontFamily: 'Gill Sans',
+                            fontFamily: 'ProximaNova-Bold',
                             textAlign: 'center',
                             margin: 10,
                             color: '#ffffff',

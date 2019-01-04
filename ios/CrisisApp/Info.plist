@@ -40,7 +40,7 @@
 	<key>NSCameraUsageDescription</key>
 	<string>Needs access to camera for grounding box</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string/>
+	<string></string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Needs access to photos for grounding box</string>
 	<key>NSAppleMusicUsageDescription</key>
@@ -49,6 +49,8 @@
 	<string>Needs access to load photos for grounding box</string>
 	<key>UIAppFonts</key>
 	<array>
+		<string>ProximaNova-Regular.otf</string>
+		<string>ProximaNova-Bold.otf</string>
 		<string>AntDesign.ttf</string>
 		<string>Entypo.ttf</string>
 		<string>EvilIcons.ttf</string>

@@ -9,21 +9,10 @@ import CrisisPlan from './screens/CrisisPlan';
 import EmergencyResources from './screens/EmergencyResources';
 import CopingSkills from './screens/CopingSkills';
 import GroundingBox from './screens/GroundingBox';
-import GroundingAnimation from './screens/GroundingAnimation';
 import EditSwipe from './screens/EditSwipe';
 import CreateSwipe from './screens/CreateSwipe';
 import ViewPlan from './screens/ViewPlan';
 import EditPlan from './screens/EditPlan';
-import CrisisSigns from './screens/crisisplansteps/CrisisSigns';
-import CurrentMedications from './screens/crisisplansteps/CurrentMedications';
-import DateTime from './screens/crisisplansteps/DateTime';
-import EarlySymptoms from './screens/crisisplansteps/EarlySymptoms';
-import HowPeopleCanHelp from './screens/crisisplansteps/HowPeopleCanHelp';
-import OtherResources from './screens/crisisplansteps/OtherResources';
-import PastMedications from './screens/crisisplansteps/PastMedications';
-import People from './screens/crisisplansteps/People';
-import SymptomManagement from './screens/crisisplansteps/SymptomManagement';
-import TreatmentFacilities from './screens/crisisplansteps/TreatmentFacilities';
 import CrisisPlanSteps from './screens/crisisplansteps/CrisisPlanSteps';
 import MusicPlayerController from 'react-native-musicplayercontroller'
 
@@ -116,19 +105,8 @@ const FeedStack = createStackNavigator({
   ViewPlan: ViewPlan,
   EditPlan: EditPlan,
   CrisisPlanSteps: CrisisPlanSteps,
-  GroundingAnimation: GroundingAnimation,
   EditSwipe: EditSwipe,
   CreateSwipe: CreateSwipe,
-  EarlySymptoms: EarlySymptoms,
-  SymptomManagement: SymptomManagement,
-  CrisisSigns: CrisisSigns,
-  People: People,
-  HowPeopleCanHelp: HowPeopleCanHelp,
-  CurrentMedications: CurrentMedications,
-  PastMedications: PastMedications,
-  TreatmentFacilities: TreatmentFacilities,
-  OtherResources: OtherResources,
-  DateTime: DateTime,
 
 });
 

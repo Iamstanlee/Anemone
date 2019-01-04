@@ -64,7 +64,7 @@ export default class CrisisPlanSteps extends React.Component{
   <View style={styles.slide}>
   <Text style={styles.text1}>Early Symptoms</Text>
   <TextInput ref={component => this._textInput = component}
-  style={{width: Dimensions.get('window').width},
+  style={{fontFamily: 'ProximaNova-Regular', width: Dimensions.get('window').width},
   {height: Dimensions.get('window').height},
   {flex: 1}}
   placeholder="Type text here"
@@ -76,7 +76,7 @@ export default class CrisisPlanSteps extends React.Component{
   <View style={styles.slide}>
   <Text style={styles.text2}>Ways I can manage early symptoms</Text>
   <TextInput ref={component => this._textInput = component}
-  style={{width: Dimensions.get('window').width},
+  style={{fontFamily: 'ProximaNova-Regular', width: Dimensions.get('window').width},
   {height: Dimensions.get('window').height},
   {flex: 1}}
   placeholder="Type text here"
@@ -88,7 +88,7 @@ export default class CrisisPlanSteps extends React.Component{
   <View style={styles.slide}>
   <Text style={styles.text3}>Crisis Signs</Text>
   <TextInput ref={component => this._textInput = component}
-  style={{width: Dimensions.get('window').width},
+  style={{fontFamily: 'ProximaNova-Regular', width: Dimensions.get('window').width},
   {height: Dimensions.get('window').height},
   {flex: 1}}
   placeholder="Type text here"
@@ -100,7 +100,7 @@ export default class CrisisPlanSteps extends React.Component{
   <View style={styles.slide}>
   <Text style={styles.text4}>People I would like to help me</Text>
   <TextInput ref={component => this._textInput = component}
-  style={{width: Dimensions.get('window').width},
+  style={{fontFamily: 'ProximaNova-Regular', width: Dimensions.get('window').width},
   {height: Dimensions.get('window').height},
   {flex: 1}}
   placeholder="Type text here"
@@ -112,7 +112,7 @@ export default class CrisisPlanSteps extends React.Component{
   <View style={styles.slide}>
   <Text style={styles.text5}>How I would like people to help me</Text>
   <TextInput ref={component => this._textInput = component}
-  style={{width: Dimensions.get('window').width},
+  style={{fontFamily: 'ProximaNova-Regular', width: Dimensions.get('window').width},
   {height: Dimensions.get('window').height},
   {flex: 1}}
   placeholder="Type text here"
@@ -124,7 +124,7 @@ export default class CrisisPlanSteps extends React.Component{
   <View style={styles.slide}>
   <Text style={styles.text6}>Medications I am currently on</Text>
   <TextInput ref={component => this._textInput = component}
-  style={{width: Dimensions.get('window').width},
+  style={{fontFamily: 'ProximaNova-Regular', width: Dimensions.get('window').width},
   {height: Dimensions.get('window').height},
   {flex: 1}}
   placeholder="Type text here"
@@ -136,7 +136,7 @@ export default class CrisisPlanSteps extends React.Component{
   <View style={styles.slide}>
   <Text style={styles.text1}>Medications I used to be on</Text>
   <TextInput ref={component => this._textInput = component}
-  style={{width: Dimensions.get('window').width},
+  style={{fontFamily: 'ProximaNova-Regular', width: Dimensions.get('window').width},
   {height: Dimensions.get('window').height},
   {flex: 1}}
   placeholder="Type text here"
@@ -148,7 +148,7 @@ export default class CrisisPlanSteps extends React.Component{
   <View style={styles.slide}>
   <Text style={styles.text2}>Treatment Facilities or Hospitals I prefer</Text>
   <TextInput ref={component => this._textInput = component}
-  style={{width: Dimensions.get('window').width},
+  style={{fontFamily: 'ProximaNova-Regular', width: Dimensions.get('window').width},
   {height: Dimensions.get('window').height},
   {flex: 1}}
   placeholder="Type text here"
@@ -160,7 +160,7 @@ export default class CrisisPlanSteps extends React.Component{
   <View style={styles.slide}>
   <Text style={styles.text3}>Other Resources I can use</Text>
   <TextInput
-  style={{width: Dimensions.get('window').width},
+  style={{fontFamily: 'ProximaNova-Regular', width: Dimensions.get('window').width},
   {height: Dimensions.get('window').height},
   {flex: 1}}
   placeholder="Type text here"
@@ -170,7 +170,7 @@ export default class CrisisPlanSteps extends React.Component{
   </View>
 
   <View style={styles.slide}>
-  <Text>
+  <Text style={{fontFamily: 'ProximaNova-Regular'}}>
   Email, export, or share plan with others
   </Text>
   <Button title="Share" onPress={createPDF.bind(this)}>
@@ -415,6 +415,7 @@ const styles = {
     color: '#7bd2d8',
     textAlign: 'center',
     padding: 10,
+    fontFamily: 'ProximaNova-Bold'
   },
 
   text2: {
@@ -426,6 +427,8 @@ const styles = {
     color: '#b6d332',
     textAlign: 'center',
     padding: 10,
+    fontFamily: 'ProximaNova-Bold'
+
 
   },
 
@@ -438,6 +441,8 @@ const styles = {
     color: '#ee7674',
     textAlign: 'center',
     padding: 10,
+    fontFamily: 'ProximaNova-Bold'
+
 
   },
 
@@ -450,6 +455,8 @@ const styles = {
     color: '#f9b5ac',
     textAlign: 'center',
     padding: 10,
+    fontFamily: 'ProximaNova-Bold'
+
 
   },
 
@@ -462,6 +469,8 @@ const styles = {
     color: '#af7b93',
     textAlign: 'center',
     padding: 10,
+    fontFamily: 'ProximaNova-Bold'
+
 
   },
   text6: {
@@ -473,6 +482,8 @@ const styles = {
     color: '#F9BD39',
     textAlign: 'center',
     padding: 10,
+    fontFamily: 'ProximaNova-Bold'
+
 
   },
 };

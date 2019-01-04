@@ -4,7 +4,9 @@ import {
   View,
   StyleSheet,
   Button,
-  Text
+  Text,
+  TouchableWithoutFeedback,
+  Image
 } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -28,11 +30,8 @@ const styles = StyleSheet.create({
 
 export default ({ onPress }) => (
   <View style={styles.container}>
-
-<Text> {"\n"}{"\n"}{"\n"}</Text>
-
-        <Button title="Card #2" onPress={onPress} />
-
-
+  <TouchableWithoutFeedback onPress={onPress}>
+<Image style={{height: 180, width: 335}}source={require('/Users/apple/Anemone/Anemone/assets/mindfulnesscard.jpg')}/>
+</TouchableWithoutFeedback>
   </View>
 );
