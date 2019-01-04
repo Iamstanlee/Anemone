@@ -1,5 +1,5 @@
 import React from 'react';
-import {Platform, StyleSheet, Text, View, Button, TextInput, AsyncStorage, Dimensions, Share,} from 'react-native';
+import {Platform, StyleSheet, Text, View, Button, TextInput, AsyncStorage, Dimensions, Share} from 'react-native';
 import Swiper from 'react-native-swiper-animated';
 import PDFLib, { PDFDocument, PDFPage } from 'react-native-pdf-lib';
 
@@ -25,6 +25,26 @@ export default class EditPlan extends React.Component{
     cardCount: 0,
   }
 
+
+  async saveKey(key, value){
+    //    value = JSON.stringify(value).replace(/\\n/g, "ooch");
+    try {
+      await AsyncStorage.setItem(key, value);
+    } catch (error) {
+      // Error saving data
+      console.log("Error: could not save data" + error);
+
+    }
+  }
+
+  async getKey(key){
+    try {
+      const value = await AsyncStorage.getItem(key);
+      return value;
+    } catch (error) {
+      console.log("Error retrieving data" + error);
+    }
+  }
 
   async pullAnswers(){
 
@@ -156,7 +176,7 @@ export default class EditPlan extends React.Component{
   {flex: 1}}
   placeholder="Type text here"
   multiline={true}
-  onChangeText={(text) => {saveKey('EarlySymptoms', text);}}
+  onChangeText={(text) => {this.saveKey('EarlySymptoms', text);}}
   defaultValue = {EarlySymptoms}
   editable={true}
   />
@@ -170,7 +190,7 @@ export default class EditPlan extends React.Component{
   {flex: 1}}
   placeholder="Type text here"
   multiline={true}
-  onChangeText={(text) => {saveKey('SymptomManagement', text);}}
+  onChangeText={(text) => {this.saveKey('SymptomManagement', text);}}
   defaultValue = {SymptomManagement}
   editable={true}
   />
@@ -184,7 +204,7 @@ export default class EditPlan extends React.Component{
   {flex: 1}}
   placeholder="Type text here"
   multiline={true}
-  onChangeText={(text) => {saveKey('CrisisSigns', text);}}
+  onChangeText={(text) => {this.saveKey('CrisisSigns', text);}}
   defaultValue = {CrisisSigns}
   editable={true}
   />
@@ -198,7 +218,7 @@ export default class EditPlan extends React.Component{
   {flex: 1}}
   placeholder="Type text here"
   multiline={true}
-  onChangeText={(text) => {saveKey('People', text);}}
+  onChangeText={(text) => {this.saveKey('People', text);}}
   defaultValue = {People}
   editable={true}
   />
@@ -212,7 +232,7 @@ export default class EditPlan extends React.Component{
   {flex: 1}}
   placeholder="Type text here"
   multiline={true}
-  onChangeText={(text) => {saveKey('HowPeopleCanHelp', text);}}
+  onChangeText={(text) => {this.saveKey('HowPeopleCanHelp', text);}}
   defaultValue = {HowPeopleCanHelp}
   editable={true}
   />
@@ -226,7 +246,7 @@ export default class EditPlan extends React.Component{
   {flex: 1}}
   placeholder="Type text here"
   multiline={true}
-  onChangeText={(text) => {saveKey('CurrentMedications', text);}}
+  onChangeText={(text) => {this.saveKey('CurrentMedications', text);}}
   defaultValue = {CurrentMedications}
   editable={true}
   />
@@ -240,7 +260,7 @@ export default class EditPlan extends React.Component{
   {flex: 1}}
   placeholder="Type text here"
   multiline={true}
-  onChangeText={(text) => {saveKey('PastMedications', text);}}
+  onChangeText={(text) => {this.saveKey('PastMedications', text);}}
   defaultValue = {PastMedications}
   editable={true}
   />
@@ -254,7 +274,7 @@ export default class EditPlan extends React.Component{
   {flex: 1}}
   placeholder="Type text here"
   multiline={true}
-  onChangeText={(text) => {saveKey('TreatmentFacilities', text);}}
+  onChangeText={(text) => {this.saveKey('TreatmentFacilities', text);}}
   defaultValue = {TreatmentFacilities}
   editable={true}
   />
@@ -268,7 +288,7 @@ export default class EditPlan extends React.Component{
   {flex: 1}}
   placeholder="Type text here"
   multiline={true}
-  onChangeText={(text) => {saveKey('OtherResources', text);}}
+  onChangeText={(text) => {this.saveKey('OtherResources', text);}}
   defaultValue = {OtherResources}
   editable={true}
   />
@@ -289,28 +309,10 @@ export default class EditPlan extends React.Component{
 }
 }
 
-async function saveKey(key, value){
-  //    value = JSON.stringify(value).replace(/\\n/g, "ooch");
-  try {
-    await AsyncStorage.setItem(key, value);
-  } catch (error) {
-    // Error saving data
-    console.log("Error: could not save data" + error);
 
-  }
-}
+async function createPDF(){
 
-async function getKey(key){
-  try {
-    const value = await AsyncStorage.getItem(key);
-    return value;
-  } catch (error) {
-    console.log("Error retrieving data" + error);
-  }
-}
-
-
-async function createPDF(){// Create a new PDF in your app's private Documents directory
+  // Create a new PDF in your app's private Documents directory
 // var EarlySymptoms = "No early symptoms were filled out";
 // var SymptomManagement = "No symptom management skills were filled out";
 // var CrisisSigns = "No crisis signs were filled out";
@@ -322,68 +324,68 @@ async function createPDF(){// Create a new PDF in your app's private Documents d
 // var OtherResources = "No other resources were filled out";
 
 
-// try {
-//   EarlySymptoms = await getKey('EarlySymptoms');
-//   if (EarlySymptoms == null){
-//     EarlySymptoms = "No early symptoms were filled out";
-//   }
-//   //EarlySymptoms = EarlySymptoms.split(" ").join(" \n");
-//
-//   SymptomManagement = await getKey('SymptomManagement');
-//   if (SymptomManagement == null){
-//     SymptomManagement = "No symptom management skills were filled out";
-//   }
-//   //  SymptomManagement = SymptomManagement.split(" ").join(" \n");
-//
-//   CrisisSigns = await getKey('CrisisSigns');
-//   if (CrisisSigns == null){
-//     CrisisSigns = "No crisis signs were filled out";
-//   }
-//   //  CrisisSigns = CrisisSigns.split(" ").join(" \n");
-//
-//   People = await getKey('People');
-//   if (People == null){
-//     People = "No contacts of assistance were filled out";
-//   }
-//   //  People = People.split(" ").join(" \n");
-//
-//   HowPeopleCanHelp = await getKey('HowPeopleCanHelp');
-//   if (HowPeopleCanHelp == null){
-//     HowPeopleCanHelp = "No instructions for contacts were filled out";
-//   }
-//   //  HowPeopleCanHelp = HowPeopleCanHelp.split(" ").join(" \n");
-//
-//   CurrentMedications = await getKey('CurrentMedications');
-//   if (CurrentMedications == null){
-//     CurrentMedications = "No current medications were filled out";
-//   }
-//   //  CurrentMedications = CurrentMedications.split(" ").join(" \n");
-//
-//   PastMedications = await getKey('PastMedications');
-//   if (PastMedications == null){
-//     PastMedications = "No past medications were filled out";
-//   }
-//   //  PastMedications = PastMedications.split(" ").join(" \n");
-//
-//   TreatmentFacilities = await getKey('TreatmentFacilities');
-//   if (TreatmentFacilities == null){
-//     TreatmentFacilities = "No treatment facilities were filled out";
-//   }
-//   //  TreatmentFacilities = TreatmentFacilities.split(" ").join(" \n");
-//
-//   OtherResources = await getKey('OtherResources');
-//   if (OtherResources == null){
-//     OtherResources = "No other resources were filled out";
-//   }
-//   //  OtherResources = OtherResources.split(" ").join(" \n");
-//
-//
-//
-// }
-// catch(error) {
-//   console.log('error: ' + error);
-//
-// }
+try {
+  EarlySymptoms = await getKey('EarlySymptoms');
+  if (EarlySymptoms == null){
+    EarlySymptoms = "No early symptoms were filled out";
+  }
+  //EarlySymptoms = EarlySymptoms.split(" ").join(" \n");
+
+  SymptomManagement = await getKey('SymptomManagement');
+  if (SymptomManagement == null){
+    SymptomManagement = "No symptom management skills were filled out";
+  }
+  //  SymptomManagement = SymptomManagement.split(" ").join(" \n");
+
+  CrisisSigns = await getKey('CrisisSigns');
+  if (CrisisSigns == null){
+    CrisisSigns = "No crisis signs were filled out";
+  }
+  //  CrisisSigns = CrisisSigns.split(" ").join(" \n");
+
+  People = await getKey('People');
+  if (People == null){
+    People = "No contacts of assistance were filled out";
+  }
+  //  People = People.split(" ").join(" \n");
+
+  HowPeopleCanHelp = await getKey('HowPeopleCanHelp');
+  if (HowPeopleCanHelp == null){
+    HowPeopleCanHelp = "No instructions for contacts were filled out";
+  }
+  //  HowPeopleCanHelp = HowPeopleCanHelp.split(" ").join(" \n");
+
+  CurrentMedications = await getKey('CurrentMedications');
+  if (CurrentMedications == null){
+    CurrentMedications = "No current medications were filled out";
+  }
+  //  CurrentMedications = CurrentMedications.split(" ").join(" \n");
+
+  PastMedications = await getKey('PastMedications');
+  if (PastMedications == null){
+    PastMedications = "No past medications were filled out";
+  }
+  //  PastMedications = PastMedications.split(" ").join(" \n");
+
+  TreatmentFacilities = await getKey('TreatmentFacilities');
+  if (TreatmentFacilities == null){
+    TreatmentFacilities = "No treatment facilities were filled out";
+  }
+  //  TreatmentFacilities = TreatmentFacilities.split(" ").join(" \n");
+
+  OtherResources = await getKey('OtherResources');
+  if (OtherResources == null){
+    OtherResources = "No other resources were filled out";
+  }
+  //  OtherResources = OtherResources.split(" ").join(" \n");
+
+
+
+}
+catch(error) {
+  console.log('error: ' + error);
+
+}
 
 // Create a PDF page with text and rectangles
 //TODO: Add headers for PDF

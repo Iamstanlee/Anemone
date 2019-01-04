@@ -237,7 +237,7 @@ async checkSongTitle(){
                 ]}
                 >
 
-        {(this.state.avatarSource === null) ? (
+        {!(this.state.avatarSource === null) ? (
           <Button
           type="custom"
           backgroundColor={"#7bd2d8"}
@@ -298,12 +298,15 @@ async checkSongTitle(){
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: '#F5FCFF',
+      backgroundColor: '#ffffff',
+    //  {width: Dimensions.get('window').width},
+    //  {height: Dimensions.get('window').height}
     },
     avatarContainer: {
       justifyContent: 'center',
       alignItems: 'center',
-      borderRadius: 10
+      borderRadius: 10,
+      borderWidth: 2
     },
     avatar: {
       width: 300,
@@ -316,4 +319,8 @@ async checkSongTitle(){
       width: 350,
       backgroundColor: 'transparent'
     },
+
+    buttonContainer:{
+      width: 140,
+    }
   });

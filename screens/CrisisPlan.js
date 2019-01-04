@@ -141,7 +141,8 @@ incrementCount(){
           borderRadius={10}
           shadowHeight={5}
           containerStyle={styles.buttonContainer}
-          contentStyle={styles.content} onPress={() => this.props.navigation.navigate('ViewPlan')}> View your Crisis Plan </Button> : null}
+          contentStyle={styles.content}
+          onPress={() => this.props.navigation.navigate('ViewPlan')}> View your Crisis Plan </Button> : null}
 
 
           <Text pointerEvents="none">
@@ -209,5 +210,9 @@ incrementCount(){
   fontSize: 22,
   textAlign: 'center'
 },
+
+buttonContainer:{
+  width: 250,
+}
 
     });
