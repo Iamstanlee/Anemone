@@ -40,7 +40,7 @@
 	<key>NSCameraUsageDescription</key>
 	<string>Needs access to camera for grounding box</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Needs access to photos for grounding box</string>
 	<key>NSAppleMusicUsageDescription</key>

@@ -13,6 +13,10 @@ import LottieView from 'lottie-react-native';
 
 import FirstCard from './FirstCard';
 import SecondCard from './SecondCard';
+import ThirdCard from './ThirdCard';
+import FourthCard from './FourthCard';
+import FifthCard from './FifthCard';
+import SixthCard from './SixthCard';
 
 const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : 0;
 
@@ -57,8 +61,10 @@ export default () => (
 
       <FirstCard zIndex={100} />
       <SecondCard zIndex={90} />
-      <FirstCard zIndex={80} />
-      <SecondCard zIndex={70} />
+      <ThirdCard zIndex={80} />
+      <FourthCard zIndex={70} />
+          <FifthCard zIndex={60} />
+              <SixthCard zIndex={50} />
     </ScrollView>
   </View>
 );

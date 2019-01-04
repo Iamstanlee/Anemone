@@ -103,7 +103,6 @@ const TabNavigator = createMaterialBottomTabNavigator({
 
     }
 },
-//TODO: Add box animation
  },
 },
  {
