@@ -11,10 +11,12 @@ export default class CreateSwipe extends React.Component {
         source={require('../swipe.json')}
         autoPlay={true}
         loop={true}
-        style={{height: '80%',
-        width: '80%'}}
+        style={{height: '70%',
+        width: '70%'}}
       />
-      <Text style={{textAlign: 'center', fontFamily: 'ProximaNova-Regular'}}>Swipe cards left to move between steps</Text>
+      <Text style={{textAlign: 'center', fontFamily: 'ProximaNova-Bold'}}>Swipe cards left to move between steps           {"\n"}{"\n"}{"\n"}
+</Text>
+      <View style={{alignItems: 'center'}}>
 
       <Button
       type="custom"
@@ -25,6 +27,7 @@ export default class CreateSwipe extends React.Component {
       containerStyle={styles.buttonContainer}
       contentStyle={styles.content} onPress={() => this.props.navigation.navigate('CrisisPlanSteps')}> Next </Button>
 
+</View>
       </View>
     );
   }

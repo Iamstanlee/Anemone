@@ -12,13 +12,14 @@ export default class EditSwipe extends React.Component {
       source={require('../swipe.json')}
       autoPlay={true}
       loop={true}
-      style={{height: '80%',
-      width: '80%'}}
+      style={{height: '70%',
+      width: '70%'}}
 
       />
 
-      <Text style={{textAlign: 'center',fontFamily: 'ProximaNova-Regular'}}>Swipe cards left to move between steps</Text>
-
+      <Text style={{textAlign: 'center',fontFamily: 'ProximaNova-Bold'}}>Swipe cards left to move between steps           {"\n"}{"\n"}{"\n"}
+</Text>
+<View style={{alignItems: 'center'}}>
       <Button
       type="custom"
       backgroundColor={"#b6d332"}
@@ -27,6 +28,7 @@ export default class EditSwipe extends React.Component {
       shadowHeight={5}
       containerStyle={styles.buttonContainer}
       contentStyle={styles.content} onPress={() => this.props.navigation.navigate('EditPlan')}> Next </Button>
+      </View>
       </View>
     );
   }
