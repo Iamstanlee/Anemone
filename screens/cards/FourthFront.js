@@ -18,11 +18,8 @@ const styles = StyleSheet.create({
 
 export default ({ onPress }) => (
   <View style={styles.container}>
-
-<Text> {"\n"}{"\n"}{"\n"}</Text>
-
-        <Button title="Card #4" onPress={onPress} />
-
-
+  <TouchableWithoutFeedback onPress={onPress}>
+<Image style={{height: 180, width: 335}}source={require('/Users/apple/Anemone/Anemone/assets/exercisedietcard.jpg')}/>
+</TouchableWithoutFeedback>
   </View>
 );
