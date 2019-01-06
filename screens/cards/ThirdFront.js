@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
 export default ({ onPress }) => (
   <View style={styles.container}>
   <TouchableWithoutFeedback onPress={onPress}>
-<Image style={{height: 180, width: 335}}source={require('/Users/apple/Anemone/Anemone/assets/groundingcard.jpg')}/>
+<Image style={{height: 180, width: 335}}source={require('/Users/apple/Anemone/Anemone/assets/groundingcard.png')}/>
 </TouchableWithoutFeedback>
   </View>
 );
