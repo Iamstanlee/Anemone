@@ -42,6 +42,8 @@ const PCnumber = {
 
   //TODO: Fix state for number resetting when you open and close the app
   //TODO: Fix modal so that if you accidentally dismiss the first time, it comes up again
+
+  //TODO: Button positioning
 }
 
 export default class EmergencyResources extends React.Component{

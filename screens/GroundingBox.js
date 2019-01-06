@@ -188,9 +188,44 @@ async checkSongTitle(){
         justifyContent: 'center',
         alignItems: 'center'}}>
 
-        {(count==1) ? <Image source={require('../assets/sullyblank.png')} style={{width: 335, height: 245}}/> : null}
+        {(count==1) ? <Image source={require('../assets/sullyquote1.png')} style={{width: 335, height: 245}}/> : null}
 
-        {(count==2) ? <Image source={require('../assets/sullyblank.png')} style={{width: 335, height: 245}}/> : null}
+        {(count==2) ? <Image source={require('../assets/sullyquote2.png')} style={{width: 335, height: 245}}/> : null}
+
+        {(count==3) ? <Image source={require('../assets/sullyquote3.png')} style={{width: 335, height: 245}}/> : null}
+
+        {(count==4) ? <Image source={require('../assets/sullyquote4.png')} style={{width: 335, height: 245}}/> : null}
+
+        {(count==5) ? <Image source={require('../assets/sullyquote5.png')} style={{width: 335, height: 245}}/> : null}
+
+        {(count==6) ? <Image source={require('../assets/sullyquote2.png')} style={{width: 335, height: 245}}/> : null}
+
+        {(count==7) ? <Image source={require('../assets/sullyquote7.png')} style={{width: 335, height: 245}}/> : null}
+
+        {(count==8) ? <Image source={require('../assets/sullyquote8.png')} style={{width: 335, height: 245}}/> : null}
+
+        {(count==9) ? <Image source={require('../assets/sullyquote9.png')} style={{width: 335, height: 245}}/> : null}
+
+        {(count==10) ? <Image source={require('../assets/sullyquote10.png')} style={{width: 335, height: 245}}/> : null}
+
+        {(count==11) ? <Image source={require('../assets/sullyquote11.png')} style={{width: 335, height: 245}}/> : null}
+
+        {(count==12) ? <Image source={require('../assets/sullyquote2.png')} style={{width: 335, height: 245}}/> : null}
+
+        {(count==13) ? <Image source={require('../assets/sullyquote2.png')} style={{width: 335, height: 245}}/> : null}
+
+        {(count==14) ? <Image source={require('../assets/sullyquote2.png')} style={{width: 335, height: 245}}/> : null}
+
+        {(count==15) ? <Image source={require('../assets/sullyquote2.png')} style={{width: 335, height: 245}}/> : null}
+
+        {(count==16) ? <Image source={require('../assets/sullyquote2.png')} style={{width: 335, height: 245}}/> : null}
+
+        {(count==17) ? <Image source={require('../assets/sullyquote2.png')} style={{width: 335, height: 245}}/> : null}
+
+
+
+
+
 
 
         <Text style={{backgroundColor: 'white',fontFamily: 'ProximaNova-Regular'
@@ -223,7 +258,7 @@ async checkSongTitle(){
 
         <View>
         <TouchableWithoutFeedback onPress={()=> {this.refs.sully.open(); this.incrementCount();}}>
-        <Image source={require('../assets/seahorse.png')} style={{width: 50, height: 50}}/>
+        <Image source={require('../assets/seahorse.png')} style={{width: 70, height: 70}}/>
         </TouchableWithoutFeedback>
         </View>
         </Interactable.View>
