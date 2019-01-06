@@ -25,7 +25,7 @@ export default class FirstTop extends React.Component{
                  }
                />
 
-               <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi auctor, purus a lacinia suscipit, augue arcu tempus ante, sed aliquam sapien ligula sit amet orci. Ut non nisi eu dui accumsan iaculis sed nec urna. Proin quis purus condimentum, sodales mi eget, faucibus ex. Mauris pharetra posuere elementum. Phasellus nec libero tempus, sagittis tortor nec, eleifend nibh.</Text>
+               <Text style={{textAlign: 'center'}}>1.) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi auctor, purus a lacinia suscipit, augue arcu tempus ante, sed aliquam sapien ligula sit amet orci. Ut non nisi eu dui accumsan iaculis sed nec urna. Proin quis purus condimentum, sodales mi eget, faucibus ex. Mauris pharetra posuere elementum. Phasellus nec libero tempus, sagittis tortor nec, eleifend nibh.</Text>
       </View>
     );
   }
