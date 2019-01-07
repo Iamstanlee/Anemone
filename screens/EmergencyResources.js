@@ -182,7 +182,7 @@ export default class EmergencyResources extends React.Component{
                     //TODO: Set up if in async, call number, else modal for setting contact
                     //TODO: Add "edit number" button to Modal
                     //TODO: Some way to signify contact is not already set
-                    onPress={() => {this.personalanimated.swing(1000).then(endState => {this.checkPC(); this.forceUpdate(); ((this.state.isPC) ? (call(PCnumber).catch(console.error)): (this.refs.personalContact.open()))})}}>
+                    onPress={() => {this.personalanimated.swing(1000).then(endState => {this.forceUpdate(); this.checkPC(); this.forceUpdate(); ((this.state.isPC) ? (call(PCnumber).catch(console.error)): (this.refs.personalContact.open()))})}}>
                     <Animatable.View ref={component => this.personalanimated = component}>
                     <Text style={styles.buttonText}>Personal Contact</Text>
                     </Animatable.View>
@@ -257,6 +257,10 @@ export default class EmergencyResources extends React.Component{
                         iconColor={'#af7b93'}
                         labelStyle={{ color: '#000000', fontFamily:'ProximaNova-Bold'}}
                         inputStyle={{ color: '#F9BD39', fontFamily: 'ProximaNova-Regular'}}
+                        onChangeText={(text) => {this.saveKey('PC', text);}}
+                        keyboardType={'numeric'}
+                        textContentType={'telephoneNumber'}
+                        maxLength={10}
                         useNativeDriver
                         />
 
