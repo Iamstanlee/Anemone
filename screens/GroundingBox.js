@@ -27,6 +27,12 @@ var count = 0;
 export default class GroundingBox extends React.Component {
   incrementCount(){
     count = count+1;
+
+    if (count == 18){
+      count = 1;
+    }
+
+    //TODO: Check this works for all quotes
     console.log("The count is " + count);
     this.forceUpdate();
   }
