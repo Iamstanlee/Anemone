@@ -118,7 +118,7 @@ incrementCount(){
           {"\n"}{"\n"}{"\n"}
           </Text>
 
-          {(this.getKey('PlanCreated') != null) ?
+          {!(this.getKey('PlanCreated') != null) ?
                           <Button
                            type="custom"
                            backgroundColor={"#f9b5ac"}

@@ -2,6 +2,7 @@ import React from 'react';
 import {Platform, StyleSheet, Text, View, Button, TextInput, AsyncStorage, Dimensions, Share} from 'react-native';
 import Swiper from 'react-native-swiper-animated';
 import PDFLib, { PDFDocument, PDFPage } from 'react-native-pdf-lib';
+import RNHTMLtoPDF from 'react-native-html-to-pdf';
 
 //TODO: Fix this whole page so that edit can make text fields editable and actually saves to PDF which can then be viewed
 
@@ -442,97 +443,59 @@ catch(error) {
 
 }
 
-// Create a PDF page with text and rectangles
-//TODO: Add headers for PDF
-const page1 = PDFPage
-.create()
-.setMediaBox(816, 1056)
-.drawText("Crisis Plan", {
-  x: 25,
-  y: 1020,
-  //  width: 150,
-  //  height: 150,
-  color: '#000000',
-})
-.drawText(EarlySymptoms, {
-  x: 25,
-  y: 921.6,
-  //  width: 150,
-  //  height: 150,
-  color: '#000000',
-})  .drawText(SymptomManagement, {
-  x: 25,
-  y: 823.2,
-  //  width: 150,
-  //  height: 150,
-  color: '#000000',
-})  .drawText(CrisisSigns, {
-  x: 25,
-  y: 724.8,
-  //  width: 150,
-  //  height: 150,
-  color: '#000000',
-})  .drawText(People, {
-  x: 25,
-  y: 626.4,
-  //  width: 150,
-  //  height: 150,
-  color: '#000000',
-})  .drawText(HowPeopleCanHelp, {
-  x: 25,
-  y: 528,
-  //  width: 150,
-  //  height: 150,
-  color: '#000000',
-})  .drawText(CurrentMedications, {
-  x: 25,
-  y: 429.6,
-  //  width: 150,
-  //  height: 150,
-  color: '#000000',
-})  .drawText(PastMedications, {
-  x: 25,
-  y: 331.2,
-  //  width: 150,
-  //  height: 150,
-  color: '#000000',
-})  .drawText(TreatmentFacilities, {
-  x: 25,
-  y: 232.8,
-  //  width: 150,
-  //  height: 150,
-  color: '#000000',
-})  .drawText(OtherResources, {
-  x: 25,
-  y: 134.4,
-  //  width: 150,
-  //  height: 150,
-  color: '#000000',
-})  .drawText(dateTimeString, {
-  x: 25,
-  y: 36,
-  //  width: 150,
-  //  height: 150,
-  color: '#000000',
-});
+var htmlString =
 
+'<h1 style="text-align: center;"> Crisis Plan </h1> ' +
 
-try
-{
-  const docsDir = await PDFLib.getDocumentsDirectory();
+'<h2 style="text-align: center; color:#7bd2d8;"> Early Symptoms: </h2>' +
 
-  const pdfPath = `${docsDir}/crisisplan.pdf`;
-  PDFDocument
-  .create(pdfPath)
-  .addPages(page1)
-  .write() // Returns a promise that resolves with the PDF's path
-  .then(path => {
-    console.log('PDF created at: ' + path);
-    // Do stuff with your shiny new PDF!
+'<p style="text-align: center;">' + EarlySymptoms + '</p>' +
+
+'<h2 style="text-align: center; color:#b6d332;"> Ways I can manage early symptoms: </h2>' +
+
+'<p style="text-align: center;">' + SymptomManagement + '</p>' +
+
+'<h2 style="text-align: center; color:#ee7674;"> Crisis Signs: </h2>' +
+
+'<p style="text-align: center;">' + CrisisSigns + '</p>' +
+
+'<h2 style="text-align: center; color:#f9b5ac;"> People I would like to help me: </h2>' +
+
+'<p style="text-align: center;">' + People + '</p>' +
+
+'<h2 style="text-align: center; color:#af7b93;"> How I would like people to help me: </h2>' +
+
+'<p style="text-align: center;">' + HowPeopleCanHelp + '</p>' +
+
+'<h2 style="text-align: center; color:#F9BD39;"> Medications I am currently on: </h2>' +
+
+'<p style="text-align: center;">' + CurrentMedications + '</p>' +
+
+'<h2 style="text-align: center; color:#7bd2d8;"> Medications I used to be on: </h2>' +
+
+'<p style="text-align: center;">' + PastMedications + '</p>' +
+
+'<h2 style="text-align: center; color:#b6d332;"> Treatment Facilities or Hospitals I prefer: </h2>' +
+
+'<p style="text-align: center;">' + TreatmentFacilities + '</p>' +
+
+'<h2 style="text-align: center; color:#ee7674;"> Other Resources I can use: </h2>' +
+
+'<p style="text-align: center;">' + OtherResources + '</p>';
+
+let options = {
+      html: htmlString,
+      fileName: 'test',
+      directory: 'Documents',
+    };
+
+    let file = await RNHTMLtoPDF.convert(options)
+    // console.log(file.filePath);
+    //alert(file.filePath);
 
     try {
 
-      saveKey('CrisisPlan', pdfPath);
+      saveKey('CrisisPlan', file.filePath);
       saveKey('PlanCreated', "true");
 
     }
@@ -540,13 +503,6 @@ try
     catch (err) {
       console.log("Share error " + err)
     }
-  });
-}
-catch (err)
-{
-  console.log(err)
-}
-
 
 }
 
