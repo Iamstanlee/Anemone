@@ -59,7 +59,7 @@ export default class GroundingBox extends React.Component {
   }
 
   state = {
-    avatarSource: null,
+   avatarSource: null,
     songTitle: null,
   };
 
@@ -103,7 +103,7 @@ async checkSongTitle(){
       maxHeight: 500,
       storageOptions: {
         skipBackup: true,
-      },
+            },
     };
 
     ImagePicker.showImagePicker(options, (response) => {

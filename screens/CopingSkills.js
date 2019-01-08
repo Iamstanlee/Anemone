@@ -18,8 +18,6 @@ import FourthCard from './FourthCard';
 import FifthCard from './FifthCard';
 import SixthCard from './SixthCard';
 
-//TODO: USE PROXIMA NOVA
-
 const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : 0;
 
 const styles = StyleSheet.create({

@@ -288,9 +288,17 @@ const page1 = PDFPage
 .drawText("Crisis Plan", {
   x: 25,
   y: 1020,
-  //  width: 150,
-  //  height: 150,
+    width: 250,
+    height: 250,
   color: '#000000',
+
+})
+.drawText("Early Symptoms:", {
+x: 25,
+y: 951.6,
+width: 200,
+height: 200,
+color: '#7bd2d8',
 })
 .drawText(EarlySymptoms, {
   x: 25,
@@ -298,49 +306,132 @@ const page1 = PDFPage
   //  width: 150,
   //  height: 150,
   color: '#000000',
-})  .drawText(SymptomManagement, {
+
+})
+.drawText("Ways I can manage early symptoms:", {
+x: 25,
+y: 853.6,
+width: 200,
+height: 200,
+color: '#b6d332',
+})
+
+.drawText(SymptomManagement, {
   x: 25,
   y: 823.2,
   //  width: 150,
   //  height: 150,
   color: '#000000',
-})  .drawText(CrisisSigns, {
+})
+
+.drawText("Crisis Signs:", {
+x: 25,
+y: 754.8,
+width: 200,
+height: 200,
+color: '#ee7674',
+})
+
+.drawText(CrisisSigns, {
   x: 25,
   y: 724.8,
   //  width: 150,
   //  height: 150,
   color: '#000000',
-})  .drawText(People, {
+})
+
+
+.drawText("People I would like to help me:", {
+x: 25,
+y: 656.4,
+width: 200,
+height: 200,
+color: '#f9b5ac',
+})
+
+.drawText(People, {
   x: 25,
   y: 626.4,
   //  width: 150,
   //  height: 150,
   color: '#000000',
-})  .drawText(HowPeopleCanHelp, {
+})
+
+.drawText("How I would like people to help me:", {
+x: 25,
+y: 558,
+width: 200,
+height: 200,
+color: '#af7b93',
+})
+
+.drawText(HowPeopleCanHelp, {
   x: 25,
   y: 528,
   //  width: 150,
   //  height: 150,
   color: '#000000',
-})  .drawText(CurrentMedications, {
+})
+
+
+.drawText("Medications I am currently on:", {
+x: 25,
+y: 459.6,
+width: 200,
+height: 200,
+color: '#F9BD39',
+})
+
+ .drawText(CurrentMedications, {
   x: 25,
   y: 429.6,
   //  width: 150,
   //  height: 150,
   color: '#000000',
-})  .drawText(PastMedications, {
+})
+
+.drawText("Medications I used to be on:", {
+x: 25,
+y: 361.2,
+width: 200,
+height: 200,
+color: '#7bd2d8',
+})
+
+ .drawText(PastMedications, {
   x: 25,
   y: 331.2,
   //  width: 150,
   //  height: 150,
   color: '#000000',
-})  .drawText(TreatmentFacilities, {
+})
+
+
+.drawText("Treatment Facilities or Hospitals I prefer:", {
+x: 25,
+y: 262.8,
+width: 200,
+height: 200,
+color: '#b6d332',
+})
+
+.drawText(TreatmentFacilities, {
   x: 25,
   y: 232.8,
   //  width: 150,
   //  height: 150,
   color: '#000000',
-})  .drawText(OtherResources, {
+})
+
+.drawText("Other Resources I can use:", {
+x: 25,
+y: 164.4,
+width: 200,
+height: 200,
+color: '#ee7674',
+})
+
+.drawText(OtherResources, {
   x: 25,
   y: 134.4,
   //  width: 150,
