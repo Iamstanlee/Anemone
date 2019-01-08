@@ -148,7 +148,7 @@ export default class EditPlan extends React.Component{
         cardCount: this.state.cardCount + 1
       });
 
-      createPDF.bind(this);
+      createPDF();
 
       //console.log("count: " + this.state.cardCount);
 
@@ -165,7 +165,7 @@ export default class EditPlan extends React.Component{
       cardCount: this.state.cardCount +1
     });
 
-    createPDF.bind(this);
+    createPDF();
 
     //  console.log("count: " + this.state.cardCount);
 

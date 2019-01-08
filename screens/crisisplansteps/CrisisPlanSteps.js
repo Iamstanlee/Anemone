@@ -41,7 +41,7 @@ export default class CrisisPlanSteps extends React.Component{
         cardCount: this.state.cardCount + 1
       });
 
-      createPDF.bind(this);
+      createPDF();
 
       //console.log("count: " + this.state.cardCount);
 
@@ -58,7 +58,7 @@ export default class CrisisPlanSteps extends React.Component{
       cardCount: this.state.cardCount +1
     });
 
-    createPDF.bind(this);
+    createPDF();
 
     //  console.log("count: " + this.state.cardCount);
 
@@ -179,7 +179,7 @@ export default class CrisisPlanSteps extends React.Component{
   <Text style={{fontFamily: 'ProximaNova-Regular'}}>
   Email, export, or share plan with others
   </Text>
-  <Button title="Share" onPress={()=> {sharePDF();}}>
+  <Button title="Share" onPress={()=> {this.forceUpdate(); sharePDF();}}>
   </Button>
   </View>
 
@@ -304,188 +304,59 @@ catch(error) {
 
 }
 
-// Create a PDF page with text and rectangles
-//TODO: Add headers for PDF
-const page1 = PDFPage
-.create()
-.setMediaBox(816, 1056)
-.drawText("Crisis Plan", {
-  x: 25,
-  y: 1020,
-    width: 250,
-    height: 250,
-  color: '#000000',
+var htmlString =
 
-})
-.drawText("Early Symptoms:", {
-x: 25,
-y: 951.6,
-width: 200,
-height: 200,
-color: '#7bd2d8',
-})
-.drawText(EarlySymptoms, {
-  x: 25,
-  y: 921.6,
-  //  width: 150,
-  //  height: 150,
-  color: '#000000',
+'<h1 style="text-align: center;"> Crisis Plan </h1> ' +
 
-})
-.drawText("Ways I can manage early symptoms:", {
-x: 25,
-y: 853.6,
-width: 200,
-height: 200,
-color: '#b6d332',
-})
+'<h2 style="text-align: center;"> Early Symptoms: </h2>' +
 
-.drawText(SymptomManagement, {
-  x: 25,
-  y: 823.2,
-  //  width: 150,
-  //  height: 150,
-  color: '#000000',
-})
+'<p style="text-align: center;">' + EarlySymptoms + '</p>' +
 
-.drawText("Crisis Signs:", {
-x: 25,
-y: 754.8,
-width: 200,
-height: 200,
-color: '#ee7674',
-})
+'<h2 style="text-align: center;"> Ways I can manage early symptoms: </h2>' +
 
-.drawText(CrisisSigns, {
-  x: 25,
-  y: 724.8,
-  //  width: 150,
-  //  height: 150,
-  color: '#000000',
-})
+'<p style="text-align: center;">' + SymptomManagement + '</p>' +
 
+'<h2 style="text-align: center;"> Crisis Signs: </h2>' +
 
-.drawText("People I would like to help me:", {
-x: 25,
-y: 656.4,
-width: 200,
-height: 200,
-color: '#f9b5ac',
-})
+'<p style="text-align: center;">' + CrisisSigns + '</p>' +
 
-.drawText(People, {
-  x: 25,
-  y: 626.4,
-  //  width: 150,
-  //  height: 150,
-  color: '#000000',
-})
+'<h2 style="text-align: center;"> People I would like to help me: </h2>' +
 
-.drawText("How I would like people to help me:", {
-x: 25,
-y: 558,
-width: 200,
-height: 200,
-color: '#af7b93',
-})
+'<p style="text-align: center;">' + People + '</p>' +
 
-.drawText(HowPeopleCanHelp, {
-  x: 25,
-  y: 528,
-  //  width: 150,
-  //  height: 150,
-  color: '#000000',
-})
+'<h2 style="text-align: center;"> How I would like people to help me: </h2>' +
 
+'<p style="text-align: center;">' + HowPeopleCanHelp + '</p>' +
 
-.drawText("Medications I am currently on:", {
-x: 25,
-y: 459.6,
-width: 200,
-height: 200,
-color: '#F9BD39',
-})
+'<h2 style="text-align: center;"> Medications I am currently on: </h2>' +
 
- .drawText(CurrentMedications, {
-  x: 25,
-  y: 429.6,
-  //  width: 150,
-  //  height: 150,
-  color: '#000000',
-})
+'<p style="text-align: center;">' + CurrentMedications + '</p>' +
 
-.drawText("Medications I used to be on:", {
-x: 25,
-y: 361.2,
-width: 200,
-height: 200,
-color: '#7bd2d8',
-})
+'<h2 style="text-align: center;"> Medications I used to be on: </h2>' +
 
- .drawText(PastMedications, {
-  x: 25,
-  y: 331.2,
-  //  width: 150,
-  //  height: 150,
-  color: '#000000',
-})
+'<p style="text-align: center;">' + PastMedications + '</p>' +
 
+'<h2 style="text-align: center;"> Treatment Facilities or Hospitals I prefer: </h2>' +
 
-.drawText("Treatment Facilities or Hospitals I prefer:", {
-x: 25,
-y: 262.8,
-width: 200,
-height: 200,
-color: '#b6d332',
-})
+'<p style="text-align: center;">' + TreatmentFacilities + '</p>' +
 
-.drawText(TreatmentFacilities, {
-  x: 25,
-  y: 232.8,
-  //  width: 150,
-  //  height: 150,
-  color: '#000000',
-})
+'<h2 style="text-align: center;"> Other Resources I can use: </h2>' +
 
-.drawText("Other Resources I can use:", {
-x: 25,
-y: 164.4,
-width: 200,
-height: 200,
-color: '#ee7674',
-})
+'<p style="text-align: center;">' + OtherResources + '</p>';
 
-.drawText(OtherResources, {
-  x: 25,
-  y: 134.4,
-  //  width: 150,
-  //  height: 150,
-  color: '#000000',
-})  .drawText(dateTimeString, {
-  x: 25,
-  y: 36,
-  //  width: 150,
-  //  height: 150,
-  color: '#000000',
-});
+let options = {
+      html: htmlString,
+      fileName: 'test',
+      directory: 'Documents',
+    };
 
-
-try
-{
-  const docsDir = await PDFLib.getDocumentsDirectory();
-
-  const pdfPath = `${docsDir}/crisisplan.pdf`;
-  PDFDocument
-  .create(pdfPath)
-  .addPages(page1)
-  .write() // Returns a promise that resolves with the PDF's path
-  .then(path => {
-    console.log('PDF created at: ' + path);
-    // Do stuff with your shiny new PDF!
+    let file = await RNHTMLtoPDF.convert(options)
+    // console.log(file.filePath);
+    //alert(file.filePath);
 
     try {
 
-      saveKey('CrisisPlan', pdfPath);
+      saveKey('CrisisPlan', file.filePath);
       saveKey('PlanCreated', "true");
 
     }
@@ -493,13 +364,6 @@ try
     catch (err) {
       console.log("Share error " + err)
     }
-  });
-}
-catch (err)
-{
-  console.log(err)
-}
-
 
 }
 
