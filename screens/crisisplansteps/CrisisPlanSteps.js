@@ -308,39 +308,39 @@ var htmlString =
 
 '<h1 style="text-align: center;"> Crisis Plan </h1> ' +
 
-'<h2 style="text-align: center;"> Early Symptoms: </h2>' +
+'<h2 style="text-align: center; color:#7bd2d8;"> Early Symptoms: </h2>' +
 
 '<p style="text-align: center;">' + EarlySymptoms + '</p>' +
 
-'<h2 style="text-align: center;"> Ways I can manage early symptoms: </h2>' +
+'<h2 style="text-align: center; color:#b6d332;"> Ways I can manage early symptoms: </h2>' +
 
 '<p style="text-align: center;">' + SymptomManagement + '</p>' +
 
-'<h2 style="text-align: center;"> Crisis Signs: </h2>' +
+'<h2 style="text-align: center; color:#ee7674;"> Crisis Signs: </h2>' +
 
 '<p style="text-align: center;">' + CrisisSigns + '</p>' +
 
-'<h2 style="text-align: center;"> People I would like to help me: </h2>' +
+'<h2 style="text-align: center; color:#f9b5ac;"> People I would like to help me: </h2>' +
 
 '<p style="text-align: center;">' + People + '</p>' +
 
-'<h2 style="text-align: center;"> How I would like people to help me: </h2>' +
+'<h2 style="text-align: center; color:#af7b93;"> How I would like people to help me: </h2>' +
 
 '<p style="text-align: center;">' + HowPeopleCanHelp + '</p>' +
 
-'<h2 style="text-align: center;"> Medications I am currently on: </h2>' +
+'<h2 style="text-align: center; color:#F9BD39;"> Medications I am currently on: </h2>' +
 
 '<p style="text-align: center;">' + CurrentMedications + '</p>' +
 
-'<h2 style="text-align: center;"> Medications I used to be on: </h2>' +
+'<h2 style="text-align: center; color:#7bd2d8;"> Medications I used to be on: </h2>' +
 
 '<p style="text-align: center;">' + PastMedications + '</p>' +
 
-'<h2 style="text-align: center;"> Treatment Facilities or Hospitals I prefer: </h2>' +
+'<h2 style="text-align: center; color:#b6d332;"> Treatment Facilities or Hospitals I prefer: </h2>' +
 
 '<p style="text-align: center;">' + TreatmentFacilities + '</p>' +
 
-'<h2 style="text-align: center;"> Other Resources I can use: </h2>' +
+'<h2 style="text-align: center; color:#ee7674;"> Other Resources I can use: </h2>' +
 
 '<p style="text-align: center;">' + OtherResources + '</p>';
 
