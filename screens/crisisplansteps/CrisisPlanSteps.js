@@ -2,6 +2,8 @@ import React from 'react';
 import {Platform, StyleSheet, Text, View, Button, TextInput, AsyncStorage, Dimensions, Share,} from 'react-native';
 import Swiper from 'react-native-swiper-animated';
 import PDFLib, { PDFDocument, PDFPage } from 'react-native-pdf-lib';
+import RNHTMLtoPDF from 'react-native-html-to-pdf';
+
 
 var time= new Date().toLocaleString();
 
@@ -39,6 +41,8 @@ export default class CrisisPlanSteps extends React.Component{
         cardCount: this.state.cardCount + 1
       });
 
+      createPDF.bind(this);
+
       //console.log("count: " + this.state.cardCount);
 
 
@@ -53,6 +57,8 @@ export default class CrisisPlanSteps extends React.Component{
     this.setState({
       cardCount: this.state.cardCount +1
     });
+
+    createPDF.bind(this);
 
     //  console.log("count: " + this.state.cardCount);
 
@@ -173,7 +179,7 @@ export default class CrisisPlanSteps extends React.Component{
   <Text style={{fontFamily: 'ProximaNova-Regular'}}>
   Email, export, or share plan with others
   </Text>
-  <Button title="Share" onPress={createPDF.bind(this)}>
+  <Button title="Share" onPress={()=> {sharePDF();}}>
   </Button>
   </View>
 
@@ -204,6 +210,24 @@ async function getKey(key){
   }
 }
 
+async function sharePDF(){
+
+  path = await getKey('CrisisPlan');
+
+  try {
+
+    Share.share({
+      url: path,
+      title: 'Crisis Plan',
+    })
+
+  }
+
+  catch (err) {
+    console.log("Share error " + err)
+  }
+
+}
 
 async function createPDF(){// Create a new PDF in your app's private Documents directory
 var EarlySymptoms = "No early symptoms were filled out";
@@ -463,12 +487,6 @@ try
 
       saveKey('CrisisPlan', pdfPath);
       saveKey('PlanCreated', "true");
-
-
-      Share.share({
-        url: path,
-        title: 'Crisis Plan',
-      })
 
     }
 

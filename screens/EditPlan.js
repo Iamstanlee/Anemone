@@ -46,6 +46,8 @@ export default class EditPlan extends React.Component{
     }
   }
 
+
+
   async pullAnswers(){
 
 
@@ -146,6 +148,8 @@ export default class EditPlan extends React.Component{
         cardCount: this.state.cardCount + 1
       });
 
+      createPDF.bind(this);
+
       //console.log("count: " + this.state.cardCount);
 
 
@@ -160,6 +164,8 @@ export default class EditPlan extends React.Component{
     this.setState({
       cardCount: this.state.cardCount +1
     });
+
+    createPDF.bind(this);
 
     //  console.log("count: " + this.state.cardCount);
 
@@ -177,7 +183,7 @@ width: Dimensions.get('window').width},
   {flex: 1}}
   placeholder="Type text here"
   multiline={true}
-  onChangeText={(text) => {this.saveKey('EarlySymptoms', text);}}
+  onChangeText={(text) => {saveKey('EarlySymptoms', text);}}
   defaultValue = {EarlySymptoms}
   editable={true}
   />
@@ -297,7 +303,7 @@ width: Dimensions.get('window').width},
   {flex: 1}}
   placeholder="Type text here"
   multiline={true}
-  onChangeText={(text) => {this.saveKey('OtherResources', text);}}
+  onChangeText={(text) => {this.saveKey('OtherResources', text); createPDF.bind(this);}}
   defaultValue = {OtherResources}
   editable={true}
   />
@@ -309,7 +315,7 @@ width: Dimensions.get('window').width},
   Email, export, or share plan with others
   </Text>
   <Button style={{fontFamily: 'ProximaNova-Regular',
-}} title="Share" onPress={createPDF.bind(this)}>
+}} title="Share" onPress={() => {sharePDF();}}>
   </Button>
   </View>
 
@@ -320,6 +326,44 @@ width: Dimensions.get('window').width},
 }
 }
 
+async function saveKey(key, value){
+  //    value = JSON.stringify(value).replace(/\\n/g, "ooch");
+  try {
+    await AsyncStorage.setItem(key, value);
+  } catch (error) {
+    // Error saving data
+    console.log("Error: could not save data" + error);
+
+  }
+}
+
+async function getKey(key){
+  try {
+    const value = await AsyncStorage.getItem(key);
+    return value;
+  } catch (error) {
+    console.log("Error retrieving data" + error);
+  }
+}
+
+async function sharePDF(){
+
+  path = await getKey('CrisisPlan');
+
+  try {
+
+    Share.share({
+      url: path,
+      title: 'Crisis Plan',
+    })
+
+  }
+
+  catch (err) {
+    console.log("Share error " + err)
+  }
+
+}
 
 async function createPDF(){
 
@@ -490,12 +534,6 @@ try
 
       saveKey('CrisisPlan', pdfPath);
       saveKey('PlanCreated', "true");
-
-
-      Share.share({
-        url: path,
-        title: 'Crisis Plan',
-      })
 
     }
 
