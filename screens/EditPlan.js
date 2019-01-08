@@ -153,6 +153,8 @@ export default class EditPlan extends React.Component{
 
       //console.log("count: " + this.state.cardCount);
 
+      //todo: bug where the first page doesn't show the real contents of earlysymptoms
+
 
 
     }}
