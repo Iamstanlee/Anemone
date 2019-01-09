@@ -195,6 +195,7 @@ export default class EmergencyResources extends React.Component{
                         [
                         {text: 'Call', onPress: () => call(PCnumber).catch(console.error)},
                         {text: 'Edit Number', onPress: () => this.refs.personalContact.open()},
+                        {text: 'Cancel', onPress: () => console.log('Cancel Pressed!'), style: 'cancel'}
                         ],{ cancelable: true }) : (this.refs.personalContact.open()))})}}>
 
                         <Animatable.View ref={component => this.personalanimated = component}>
