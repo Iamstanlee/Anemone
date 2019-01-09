@@ -75,6 +75,7 @@ incrementCount(){
       swipetoClose="true"
       position={"center"}
       backdropOpacity={0.5}
+      backdropPressToClose={false}
       coverScreen={false}>
       <View style={{
         flex: 1,

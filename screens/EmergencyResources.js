@@ -39,9 +39,8 @@ const suicideTextLine = {
 
 const PCnumber = {
   number: null,
-  prompt: true
+  prompt: false
 
-  //TODO: Fix state for number resetting when you open and close the app
 
   //TODO: Button positioning
 }
@@ -182,10 +181,6 @@ export default class EmergencyResources extends React.Component{
                     <View style={outerButtonStyle(2,2,5)}>
                     <TouchableOpacity
                     style={innerButtonStyle(3, 2, 5)}
-                    //TODO: Set up if in async, call number, else modal for setting contact
-                    //TODO: Add "edit number" button to Modal
-                    //TODO: Some way to signify contact is not already set
-                    //  onPress={() => {this.personalanimated.swing(1000).then(endState => {this.forceUpdate(); this.checkPC(); this.forceUpdate(); ((this.state.isPC) ? (call(PCnumber).catch(console.error)): (this.refs.personalContact.open()))})}}>
                     onPress={() => {this.personalanimated.swing(1000).then(endState => {this.forceUpdate(); this.checkPC(); this.forceUpdate(); ((this.state.isPC) ?
 
                       Alert.alert(
@@ -256,7 +251,7 @@ export default class EmergencyResources extends React.Component{
                           swipetoClose="true"
                           position={"center"}
                           backdropOpacity={0.5}
-                          coverScreen={false}>
+                          coverScreen={true}>
                           <View style={{
                             flex: 1,
                             flexDirection: 'column',
@@ -265,7 +260,7 @@ export default class EmergencyResources extends React.Component{
 
                             <Kohana
                             style={{ backgroundColor: '#ffffff' }}
-                            label={'Personal Contact Phone Number'}
+                            label={'Enter Personal Contact Phone Number:'}
                             iconClass={MaterialsIcon}
                             iconName={'phone'}
                             iconColor={'#af7b93'}
@@ -273,6 +268,7 @@ export default class EmergencyResources extends React.Component{
                             inputStyle={{ color: '#F9BD39', fontFamily: 'ProximaNova-Regular'}}
                             onChangeText={(text) => {this.saveKey('PC', text); this.checkPC();}}
                             keyboardType={'numeric'}
+                            placeholder="Enter number here"
                             textContentType={'telephoneNumber'}
                             maxLength={10}
                             useNativeDriver
@@ -337,8 +333,8 @@ export default class EmergencyResources extends React.Component{
                                 backgroundColor: 'transparent',
                                 },
                                 modal: {
-                                  justifyContent: 'center',
-                                  alignItems: 'center',
+                                  //justifyContent: 'center',
+                                //  alignItems: 'center',
                                   height: 300,
                                   width: 350,
                                   backgroundColor: 'white'

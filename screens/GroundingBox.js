@@ -193,7 +193,8 @@ setTimeout(() => {
       swipetoClose="true"
       position={"center"}
       backdropOpacity={0.5}
-      coverScreen={true}>
+      coverScreen={true}
+      useNativeDriver="false">
       <View style={{
         flex: 1,
         flexDirection: 'column',
