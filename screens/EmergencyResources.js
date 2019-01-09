@@ -51,6 +51,10 @@ export default class EmergencyResources extends React.Component{
     super(props);
   }
 
+  //
+  // state = {
+  //      isPC: null,
+  //   };
 
   async checkPC(){
     if(await this.getKey('PC')!=null)
@@ -95,6 +99,8 @@ export default class EmergencyResources extends React.Component{
 
 
       render() {
+        //this.checkPC();
+
         var list1 = [
         {
           title: 'Local Hospitals',
@@ -242,7 +248,6 @@ export default class EmergencyResources extends React.Component{
 
                           }
                         }
-
                         return (
                           <View style={{backgroundColor:'transparent'}}>
 
@@ -337,6 +342,6 @@ export default class EmergencyResources extends React.Component{
                                 //  alignItems: 'center',
                                   height: 300,
                                   width: 350,
-                                  backgroundColor: 'white'
+                                  backgroundColor: 'white',
                                   },
                                   });
