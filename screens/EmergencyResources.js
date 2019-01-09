@@ -7,7 +7,7 @@
 */
 
 import React from 'react';
-import {Platform, StyleSheet, Text, View, Button, SectionList, TouchableOpacity, Linking, Icon, Dimensions, AsyncStorage, Image, TextInput} from 'react-native';
+import {Platform, StyleSheet, Text, View, Button, SectionList, TouchableOpacity, Linking, Icon, Dimensions, AsyncStorage, Image, TextInput, Alert} from 'react-native';
 import {List, ListItem} from 'react-native-elements';
 import call from 'react-native-phone-call'
 import SendSMS from 'react-native-sms'
@@ -86,7 +86,7 @@ export default class EmergencyResources extends React.Component{
       try {
         const value = await AsyncStorage.getItem(key);
         //isSaved = false;
-      //  console.log("GETKEY Value is " + value);
+        //  console.log("GETKEY Value is " + value);
         return value;
         } catch (error) {
           console.log("Error retrieving data" + error);
@@ -185,151 +185,162 @@ export default class EmergencyResources extends React.Component{
                     //TODO: Set up if in async, call number, else modal for setting contact
                     //TODO: Add "edit number" button to Modal
                     //TODO: Some way to signify contact is not already set
-                    onPress={() => {this.personalanimated.swing(1000).then(endState => {this.forceUpdate(); this.checkPC(); this.forceUpdate(); ((this.state.isPC) ? (call(PCnumber).catch(console.error)): (this.refs.personalContact.open()))})}}>
-                    <Animatable.View ref={component => this.personalanimated = component}>
-                    <Text style={styles.buttonText}>Personal Contact</Text>
-                    </Animatable.View>
-                    </TouchableOpacity>
-                    </View> ,
-                    },
-                    ]
+                    //  onPress={() => {this.personalanimated.swing(1000).then(endState => {this.forceUpdate(); this.checkPC(); this.forceUpdate(); ((this.state.isPC) ? (call(PCnumber).catch(console.error)): (this.refs.personalContact.open()))})}}>
+                    onPress={() => {this.personalanimated.swing(1000).then(endState => {this.forceUpdate(); this.checkPC(); this.forceUpdate(); ((this.state.isPC) ?
 
-                    var {height, width} = Dimensions.get('window');
-                    //  console.log("height: " + height);
+                      Alert.alert(
+                        'Alert',
+                        'Call Personal Contact?',
+                        [
+                        {text: 'Call', onPress: () => call(PCnumber).catch(console.error)},
+                        {text: 'Edit Number', onPress: () => this.refs.personalContact.open()},
+                        ],{ cancelable: true }) : (this.refs.personalContact.open()))})}}>
 
-                    //console.log("width: " + width);
-                    var innerColor = ['#af7b93', '#7bd2d8', '#b6d332', '#f9b5ac', '#ee7674', '#F9BD39']
+                        <Animatable.View ref={component => this.personalanimated = component}>
+                        <Text style={styles.buttonText}>Personal Contact</Text>
+                        </Animatable.View>
+                        </TouchableOpacity>
+                        </View> ,
+                        },
+                        ]
 
-                    var outerColor = ['#7C4D63', '#16a085', '#91AA1E', '#D88C82', '#C65351', '#C99422']
+                        var {height, width} = Dimensions.get('window');
+                        //  console.log("height: " + height);
 
-                    innerButtonStyle = function(rNum, cNum, colNum) {
-                      return {
-                        //borderWidth:,
-                        //borderColor:'rgba(0,0,0,0.2)',
-                        alignItems:'center',
-                        justifyContent:'center',
-                        width:100,
-                        height:100,
-                        backgroundColor:innerColor[colNum],
-                        borderRadius:100,
-                        //position: 'absolute'
-                        //   top: (rNum*(height))/6,
-                        // left: (cNum*(width))/6 - 100,
+                        //console.log("width: " + width);
+                        var innerColor = ['#af7b93', '#7bd2d8', '#b6d332', '#f9b5ac', '#ee7674', '#F9BD39']
 
-                      }
-                    }
+                        var outerColor = ['#7C4D63', '#16a085', '#91AA1E', '#D88C82', '#C65351', '#C99422']
 
-                    outerButtonStyle = function(rNum, cNum, colNum) {
-                      return {
-                        borderWidth:5,
-                        //position: 'absolute',
-                        borderColor:'rgba(0,0,0,0.2)',
-                        alignItems:'center',
-                        justifyContent:'center',
-                        width:120,
-                        height:120,
-                        backgroundColor:'transparent',
-                        borderColor:outerColor[colNum],
-                        borderRadius:120,
-                        top: (rNum*(height))/6,
-                        //left: (cNum*(width))/6,
+                        innerButtonStyle = function(rNum, cNum, colNum) {
+                          return {
+                            //borderWidth:,
+                            //borderColor:'rgba(0,0,0,0.2)',
+                            alignItems:'center',
+                            justifyContent:'center',
+                            width:100,
+                            height:100,
+                            backgroundColor:innerColor[colNum],
+                            borderRadius:100,
+                            textAlign: 'center'
+                            //position: 'absolute'
+                            //   top: (rNum*(height))/6,
+                            // left: (cNum*(width))/6 - 100,
 
-                      }
-                    }
-
-                    return (
-                      <View style={{backgroundColor:'transparent'}}>
-
-
-                      <Modal style={styles.modal} ref="personalContact" isOpen={false}
-                      swipetoClose="true"
-                      position={"center"}
-                      backdropOpacity={0.5}
-                      coverScreen={false}>
-                      <View style={{
-                        flex: 1,
-                        flexDirection: 'column',
-                        justifyContent: 'center',
-                        alignItems: 'center'}}>
-
-                        <Kohana
-                        style={{ backgroundColor: '#ffffff' }}
-                        label={'Personal Contact Phone Number'}
-                        iconClass={MaterialsIcon}
-                        iconName={'phone'}
-                        iconColor={'#af7b93'}
-                        labelStyle={{ color: '#000000', fontFamily:'ProximaNova-Bold'}}
-                        inputStyle={{ color: '#F9BD39', fontFamily: 'ProximaNova-Regular'}}
-                        onChangeText={(text) => {this.saveKey('PC', text); this.checkPC();}}
-                        keyboardType={'numeric'}
-                        textContentType={'telephoneNumber'}
-                        maxLength={10}
-                        useNativeDriver
-                        />
-
-                        <Text style={{backgroundColor: 'white', fontFamily:'ProximaNova-Regular'}}>Swipe down to close</Text>
-                        </View>
-                        </Modal>
-
-                        <Text>
-                        {"\n"}{"\n"}{"\n"}
-                        </Text>
-
-
-
-                        <List>
-
-
-                        <View style={{flexDirection: 'row', flex:2}}>
-                        {
-                          list1.map((item) => (
-                            <ListItem
-                            key={item.title}
-                            title={item.title}
-                            leftIcon={{name: item.icon}}
-                            component={item.component}
-                            />
-                            ))
-                          }
-                          </View>
-                          </List>
-
-                          <List>
-                          <View style={{flexDirection: 'row', flex:2}}>
-                          {
-                            list2.map((item) => (
-                              <ListItem
-                              key={item.title}
-                              title={item.title}
-                              leftIcon={{name: item.icon}}
-                              component={item.component}
-                              />
-                              ))
-                            }
-                            </View>
-                            </List>
-                            </View>
-
-                            );
                           }
                         }
 
-                        const styles = StyleSheet.create({
+                        outerButtonStyle = function(rNum, cNum, colNum) {
+                          return {
+                            borderWidth:5,
+                            //position: 'absolute',
+                            borderColor:'rgba(0,0,0,0.2)',
+                            alignItems:'center',
+                            justifyContent:'center',
+                            width:120,
+                            height:120,
+                            backgroundColor:'transparent',
+                            borderColor:outerColor[colNum],
+                            borderRadius:120,
+                            top: (rNum*(height))/6,
+                            //left: (cNum*(width))/6,
 
-                          buttonText: {
-                            fontSize: 15,
-                            fontWeight: '500',
-                            fontFamily: 'ProximaNova-Bold',
-                            textAlign: 'center',
-                            margin: 10,
-                            color: '#ffffff',
-                            backgroundColor: 'transparent',
-                            },
-                            modal: {
-                              justifyContent: 'center',
-                              alignItems: 'center',
-                              height: 300,
-                              width: 350,
-                              backgroundColor: 'white'
-                              },
-                              });
+                          }
+                        }
+
+                        return (
+                          <View style={{backgroundColor:'transparent'}}>
+
+
+                          <Modal style={styles.modal} ref="personalContact" isOpen={false}
+                          swipetoClose="true"
+                          position={"center"}
+                          backdropOpacity={0.5}
+                          coverScreen={false}>
+                          <View style={{
+                            flex: 1,
+                            flexDirection: 'column',
+                            justifyContent: 'center',
+                            alignItems: 'center'}}>
+
+                            <Kohana
+                            style={{ backgroundColor: '#ffffff' }}
+                            label={'Personal Contact Phone Number'}
+                            iconClass={MaterialsIcon}
+                            iconName={'phone'}
+                            iconColor={'#af7b93'}
+                            labelStyle={{ color: '#000000', fontFamily:'ProximaNova-Bold'}}
+                            inputStyle={{ color: '#F9BD39', fontFamily: 'ProximaNova-Regular'}}
+                            onChangeText={(text) => {this.saveKey('PC', text); this.checkPC();}}
+                            keyboardType={'numeric'}
+                            textContentType={'telephoneNumber'}
+                            maxLength={10}
+                            useNativeDriver
+                            />
+
+                            <Text style={{backgroundColor: 'white', fontFamily:'ProximaNova-Regular'}}>Swipe down to close</Text>
+                            </View>
+                            </Modal>
+
+                            <Text>
+                            {"\n"}{"\n"}{"\n"}
+                            </Text>
+
+
+
+                            <List>
+
+
+                            <View style={{flexDirection: 'row', flex:2}}>
+                            {
+                              list1.map((item) => (
+                                <ListItem
+                                key={item.title}
+                                title={item.title}
+                                leftIcon={{name: item.icon}}
+                                component={item.component}
+                                />
+                                ))
+                              }
+                              </View>
+                              </List>
+
+                              <List>
+                              <View style={{flexDirection: 'row', flex:2}}>
+                              {
+                                list2.map((item) => (
+                                  <ListItem
+                                  key={item.title}
+                                  title={item.title}
+                                  leftIcon={{name: item.icon}}
+                                  component={item.component}
+                                  />
+                                  ))
+                                }
+                                </View>
+                                </List>
+                                </View>
+
+                                );
+                              }
+                            }
+
+                            const styles = StyleSheet.create({
+
+                              buttonText: {
+                                fontSize: 15,
+                                fontWeight: '500',
+                                fontFamily: 'ProximaNova-Bold',
+                                textAlign: 'center',
+                                margin: 10,
+                                color: '#ffffff',
+                                backgroundColor: 'transparent',
+                                },
+                                modal: {
+                                  justifyContent: 'center',
+                                  alignItems: 'center',
+                                  height: 300,
+                                  width: 350,
+                                  backgroundColor: 'white'
+                                  },
+                                  });
