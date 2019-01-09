@@ -4,8 +4,6 @@ import Swiper from 'react-native-swiper-animated';
 import PDFLib, { PDFDocument, PDFPage } from 'react-native-pdf-lib';
 import RNHTMLtoPDF from 'react-native-html-to-pdf';
 
-//TODO: Fix this whole page so that edit can make text fields editable and actually saves to PDF which can then be viewed
-
 var time= new Date().toLocaleString();
 
 var dateTimeString = "This plan was created on " + time + ".";

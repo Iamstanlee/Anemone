@@ -17,6 +17,7 @@ import MaterialsIcon from 'react-native-vector-icons/MaterialIcons';
 import { Kohana } from 'react-native-textinput-effects';
 import LottieView from 'lottie-react-native';
 
+//var isSaved = false;
 
 const emergencyline = {
   number: '911', // String value with the number to call
@@ -41,7 +42,6 @@ const PCnumber = {
   prompt: true
 
   //TODO: Fix state for number resetting when you open and close the app
-  //TODO: Fix modal so that if you accidentally dismiss the first time, it comes up again
 
   //TODO: Button positioning
 }
@@ -53,10 +53,6 @@ export default class EmergencyResources extends React.Component{
   }
 
 
-   state = {
-     isPC: null,
-  };
-
   async checkPC(){
     if(await this.getKey('PC')!=null)
     {
@@ -66,7 +62,7 @@ export default class EmergencyResources extends React.Component{
     }
 
     else {
-      this.state.isPC = 'false'
+      this.setState({isPC: false});
     }
 
     console.log("PC is " + this.state.isPC);
@@ -76,6 +72,7 @@ export default class EmergencyResources extends React.Component{
     //value = JSON.stringify(value).replace(/\\n/g, "ooch");
     try {
       await AsyncStorage.setItem(key, value);
+      //isSaved = true;
       } catch (error) {
         // Error saving data
         console.log("Error: could not save data" + error);
@@ -84,13 +81,19 @@ export default class EmergencyResources extends React.Component{
     }
 
     async getKey(key){
+
+
       try {
         const value = await AsyncStorage.getItem(key);
+        //isSaved = false;
+      //  console.log("GETKEY Value is " + value);
         return value;
         } catch (error) {
           console.log("Error retrieving data" + error);
         }
       }
+
+
 
       render() {
         var list1 = [
@@ -257,7 +260,7 @@ export default class EmergencyResources extends React.Component{
                         iconColor={'#af7b93'}
                         labelStyle={{ color: '#000000', fontFamily:'ProximaNova-Bold'}}
                         inputStyle={{ color: '#F9BD39', fontFamily: 'ProximaNova-Regular'}}
-                        onChangeText={(text) => {this.saveKey('PC', text);}}
+                        onChangeText={(text) => {this.saveKey('PC', text); this.checkPC();}}
                         keyboardType={'numeric'}
                         textContentType={'telephoneNumber'}
                         maxLength={10}

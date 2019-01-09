@@ -1,7 +1,8 @@
 import React from 'react';
 import {Text, View, StyleSheet} from 'react-native'
 import LottieView from 'lottie-react-native';
-import Button from 'react-native-flat-button'
+import Button from 'react-native-flat-button';
+import pullAnswers from './EditPlan';
 
 export default class EditSwipe extends React.Component {
   render() {
@@ -27,7 +28,7 @@ export default class EditSwipe extends React.Component {
       borderRadius={10}
       shadowHeight={5}
       containerStyle={styles.buttonContainer}
-      contentStyle={styles.content} onPress={() => this.props.navigation.navigate('EditPlan')}> Next </Button>
+      contentStyle={styles.content} onPress={() => {pullAnswers(); this.props.navigation.navigate('EditPlan'); }}> Next </Button>
       </View>
       </View>
     );

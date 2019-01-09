@@ -25,6 +25,13 @@ import Button from 'react-native-flat-button'
 var count = 0;
 
 export default class GroundingBox extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+    this.selectPhotoTapped = this.selectPhotoTapped.bind(this);
+  }
+
   incrementCount(){
     count = count+1;
 
@@ -90,11 +97,7 @@ async checkSongTitle(){
     });
   }
 }
-  constructor(props) {
-    super(props);
 
-    this.selectPhotoTapped = this.selectPhotoTapped.bind(this);
-  }
 
   async selectPhotoTapped() {
     const options = {
@@ -106,7 +109,9 @@ async checkSongTitle(){
             },
     };
 
-    ImagePicker.showImagePicker(options, (response) => {
+setTimeout(() => {
+
+     ImagePicker.showImagePicker(options, (response) => {
       console.log('Response = ', response);
 
       if (response.didCancel) {
@@ -117,14 +122,15 @@ async checkSongTitle(){
         console.log('User tapped custom button: ', response.customButton);
       } else {
         let source = { uri: response.uri };
-      //  console.log("This is what source should look like: " + source);
+       console.log("This is what source should look like: " + source);
         this.setState({
           avatarSource: source,
         });
       }
-    });
+    })
+  }, 500);
 
-    await this.saveKey('GroundingPhoto', this.state.avatarSource);
+    await this.saveKey('GroundingPhoto', source);
 
     //TODO: Photo no longer saves upon app close
 
@@ -279,7 +285,7 @@ async checkSongTitle(){
                 ]}
                 >
 
-        {(this.state.avatarSource === null) ? (
+        {(this.state.avatarSource == null) ? (
           <Button
           type="custom"
           backgroundColor={"#7bd2d8"}

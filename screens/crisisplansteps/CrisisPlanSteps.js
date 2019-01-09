@@ -16,7 +16,6 @@ export default class CrisisPlanSteps extends React.Component{
     cardCount: 0,
   }
 
-
   render(){
     return(
 

@@ -45,8 +45,6 @@ export default class ViewPlan extends React.Component {
         if (EarlySymptoms == null){
           EarlySymptoms = "No early symptoms were filled out";
         }
-
-        //TODO: Still not picking up strings from this function
         //EarlySymptoms = EarlySymptoms.split(" ").join(" \n");
 
         SymptomManagement = await this.getKey('SymptomManagement');
