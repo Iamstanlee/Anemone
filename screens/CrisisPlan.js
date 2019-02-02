@@ -71,23 +71,28 @@ incrementCount(){
 
       <View style={styles.container}>
 
+{(count==0) ?
       <Modal style={styles.modal} ref="sully" isOpen={true}
       swipetoClose="true"
       position={"center"}
       backdropOpacity={0.5}
       backdropPressToClose={false}
-      coverScreen={false}>
+      coverScreen={false}
+      onClosed={()=>{this.incrementCount();}}>
       <View style={{
         flex: 1,
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center'}}>
 
-        {(count==0) ? <Image source={require('../assets/sullywelcome.png')} style={{width: 335, height: 245}}/> : null}
+        <Image source={require('../assets/sullywelcome.png')} style={{width: 335, height: 245}}/>
+
 
           <Text style={{backgroundColor: 'white', fontFamily: 'ProximaNova-Regular' }}>Swipe down to close</Text>
           </View>
           </Modal>
+
+          : null}
 
           <View style={{
             position: 'absolute',
