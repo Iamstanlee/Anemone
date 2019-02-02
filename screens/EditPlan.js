@@ -3,6 +3,8 @@ import {Platform, StyleSheet, Text, View, Button, TextInput, AsyncStorage, Dimen
 import Swiper from 'react-native-swiper-animated';
 import PDFLib, { PDFDocument, PDFPage } from 'react-native-pdf-lib';
 import RNHTMLtoPDF from 'react-native-html-to-pdf';
+import {EarlySymptomsSwipe} from './EditSwipe.js';
+
 
 var time= new Date().toLocaleString();
 
@@ -51,10 +53,10 @@ export default class EditPlan extends React.Component{
 
 
       try {
-        EarlySymptoms = await this.getKey('EarlySymptoms');
-        if (EarlySymptoms == null){
-          EarlySymptoms = "No early symptoms were filled out";
-        }
+       EarlySymptoms = await this.getKey('EarlySymptoms');
+       if (EarlySymptoms == null){
+         EarlySymptoms = "No early symptoms were filled out";
+       }
 
         //TODO: Still not picking up strings from this function
         //EarlySymptoms = EarlySymptoms.split(" ").join(" \n");

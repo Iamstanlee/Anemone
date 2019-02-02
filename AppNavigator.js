@@ -15,6 +15,7 @@ import ViewPlan from './screens/ViewPlan';
 import EditPlan from './screens/EditPlan';
 import CrisisPlanSteps from './screens/crisisplansteps/CrisisPlanSteps';
 import MusicPlayerController from 'react-native-musicplayercontroller'
+import Button from 'react-native-flat-button';
 
 // const tabBarIcon = name => ({focused, horizontal, tintColor }) => (
 //   <MaterialIcons name={name} color={focused ? tintColor: tintColor} size={horizontal ? 17 : 24} />
@@ -103,10 +104,58 @@ const TabNavigator = createMaterialBottomTabNavigator({
 const FeedStack = createStackNavigator({
   HomeScreen: HomeScreen,
   ViewPlan: ViewPlan,
-  EditPlan: EditPlan,
-  CrisisPlanSteps: CrisisPlanSteps,
-  EditSwipe: EditSwipe,
-  CreateSwipe: CreateSwipe,
+  EditPlan: {
+
+    screen: EditPlan, navigationOptions: ({navigation}) => ({
+            headerLeft: <Button type="custom"
+            backgroundColor={"#7bd2d8"}
+            borderColor={"#16a085"}
+            borderRadius={10}
+            shadowHeight={5}
+            containerStyle={styles.buttonContainer}
+            contentStyle={styles.content}
+          onPress={() => navigation.navigate('CrisisPlan')}>Back</Button>,
+        })
+      },
+  CrisisPlanSteps: {
+
+    screen: CrisisPlanSteps, navigationOptions: ({navigation}) => ({
+            headerLeft: <Button type="custom"
+            backgroundColor={"#7bd2d8"}
+            borderColor={"#16a085"}
+            borderRadius={10}
+            shadowHeight={5}
+            containerStyle={styles.buttonContainer}
+            contentStyle={styles.content}
+          onPress={() => navigation.navigate('CrisisPlan')}>Back</Button>,
+        })
+      },
+  EditSwipe: {
+
+    screen: EditSwipe, navigationOptions: ({navigation}) => ({
+            headerLeft: <Button type="custom"
+            backgroundColor={"#7bd2d8"}
+            borderColor={"#16a085"}
+            borderRadius={10}
+            shadowHeight={5}
+            containerStyle={styles.buttonContainer}
+            contentStyle={styles.content}
+          onPress={() => navigation.navigate('CrisisPlan')}>Back</Button>,
+        })
+      },
+  CreateSwipe: {
+
+    screen: CreateSwipe, navigationOptions: ({navigation}) => ({
+            headerLeft: <Button type="custom"
+            backgroundColor={"#7bd2d8"}
+            borderColor={"#16a085"}
+            borderRadius={10}
+            shadowHeight={5}
+            containerStyle={styles.buttonContainer}
+            contentStyle={styles.content}
+          onPress={() => navigation.navigate('CrisisPlan')}>Back</Button>,
+        })
+      },
 
 });
 
@@ -122,3 +171,43 @@ const FeedStack = createStackNavigator({
  const SwitchNavigator = createSwitchNavigator({ Opening: FeedStack, Tabs: TabNavigator,}, { initialRouteName: 'Opening', resetOnBlur: true, }, );
 
  export default createAppContainer(SwitchNavigator);
+
+ const styles = StyleSheet.create({
+   container: {
+     flex: 1,
+     justifyContent: 'center',
+     alignItems: 'center',
+     backgroundColor: '#F5FCFF',
+   },
+   welcome: {
+     fontSize: 20,
+     textAlign: 'center',
+     margin: 10,
+     fontFamily: 'ProximaNova-Regular'
+   },
+   instructions: {
+     textAlign: 'center',
+     color: '#333333',
+     marginBottom: 5,
+   },
+
+   modal: {
+ justifyContent: 'center',
+ alignItems: 'center',
+ height: 300,
+ width: 350,
+ backgroundColor: 'transparent'
+},
+
+content:{
+fontSize: 22,
+textAlign: 'center',
+fontFamily: 'ProximaNova-Bold'
+},
+
+buttonContainer:{
+width: 250,
+height: 32,
+}
+
+ });

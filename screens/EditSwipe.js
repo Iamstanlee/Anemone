@@ -2,10 +2,30 @@ import React from 'react';
 import {Text, View, StyleSheet} from 'react-native'
 import LottieView from 'lottie-react-native';
 import Button from 'react-native-flat-button';
-import pullAnswers from './EditPlan';
+
+var EarlySymptomsSwipe = "No early symptoms were filled out";
+
 
 export default class EditSwipe extends React.Component {
+
+async pullAnswer(){
+  try {
+    EarlySymptomsSwipe = await this.getKey('EarlySymptoms');
+    if (EarlySymptomsSwipe == null){
+      EarlySymptomsSwipe = "No early symptoms were ooched out";
+    }
+  }
+
+  catch (err) {
+    console.log("Retrieving failed " + err);
+  }
+}
+
+
   render() {
+
+this.pullAnswer();
+
     return (
       <View>
 
@@ -28,12 +48,14 @@ export default class EditSwipe extends React.Component {
       borderRadius={10}
       shadowHeight={5}
       containerStyle={styles.buttonContainer}
-      contentStyle={styles.content} onPress={() => {pullAnswers(); this.props.navigation.navigate('EditPlan'); }}> Next </Button>
+      contentStyle={styles.content} onPress={() => {this.props.navigation.navigate('EditPlan'); }}> Next </Button>
       </View>
       </View>
     );
   }
 }
+
+export {EarlySymptomsSwipe};
 
 
 const styles = StyleSheet.create({
