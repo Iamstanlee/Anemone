@@ -103,7 +103,19 @@ const TabNavigator = createMaterialBottomTabNavigator({
 
 const FeedStack = createStackNavigator({
   HomeScreen: HomeScreen,
-  ViewPlan: ViewPlan,
+  ViewPlan: {
+
+    screen: ViewPlan, navigationOptions: ({navigation}) => ({
+            headerLeft: <Button type="custom"
+            backgroundColor={"#7bd2d8"}
+            borderColor={"#16a085"}
+            borderRadius={10}
+            shadowHeight={5}
+            containerStyle={styles.buttonContainer}
+            contentStyle={styles.content}
+          onPress={() => navigation.navigate('CrisisPlan')}>Back</Button>,
+        })
+      },
   EditPlan: {
 
     screen: EditPlan, navigationOptions: ({navigation}) => ({
