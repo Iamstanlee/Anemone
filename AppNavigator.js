@@ -113,7 +113,7 @@ const FeedStack = createStackNavigator({
             shadowHeight={5}
             containerStyle={styles.buttonContainer}
             contentStyle={styles.content}
-          onPress={() => navigation.navigate('CrisisPlan')}>Back</Button>,
+          onPress={() => navigation.navigate('CrisisPlan')}>&#8592; Back</Button>,
         })
       },
   EditPlan: {
@@ -126,7 +126,7 @@ const FeedStack = createStackNavigator({
             shadowHeight={5}
             containerStyle={styles.buttonContainer}
             contentStyle={styles.content}
-          onPress={() => navigation.navigate('CrisisPlan')}>Back</Button>,
+          onPress={() => navigation.navigate('CrisisPlan')}>&#8592; Back</Button>,
         })
       },
   CrisisPlanSteps: {
@@ -139,7 +139,7 @@ const FeedStack = createStackNavigator({
             shadowHeight={5}
             containerStyle={styles.buttonContainer}
             contentStyle={styles.content}
-          onPress={() => navigation.navigate('CrisisPlan')}>Back</Button>,
+          onPress={() => navigation.navigate('CrisisPlan')}>&#8592; Back</Button>,
         })
       },
   EditSwipe: {
@@ -152,7 +152,7 @@ const FeedStack = createStackNavigator({
             shadowHeight={5}
             containerStyle={styles.buttonContainer}
             contentStyle={styles.content}
-          onPress={() => navigation.navigate('CrisisPlan')}>Back</Button>,
+          onPress={() => navigation.navigate('CrisisPlan')}>&#8592; Back</Button>,
         })
       },
   CreateSwipe: {
@@ -165,7 +165,7 @@ const FeedStack = createStackNavigator({
             shadowHeight={5}
             containerStyle={styles.buttonContainer}
             contentStyle={styles.content}
-          onPress={() => navigation.navigate('CrisisPlan')}>Back</Button>,
+          onPress={() => navigation.navigate('CrisisPlan')}>&#8592; Back</Button>,
         })
       },
 
@@ -218,7 +218,7 @@ fontFamily: 'ProximaNova-Bold'
 },
 
 buttonContainer:{
-width: 250,
+width: 100,
 height: 32,
 }
 
