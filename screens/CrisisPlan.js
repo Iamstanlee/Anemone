@@ -1,11 +1,11 @@
 import React from 'react';
-import {Platform, StyleSheet, Text, View, TextInput, AsyncStorage, Dimensions, Image, TouchableWithoutFeedback, TouchableHighlight, Share, Animated, Easing} from 'react-native';
+import {Platform, StyleSheet, Text, View, TextInput, AsyncStorage, Dimensions, Image, TouchableWithoutFeedback, TouchableHighlight, Share, Animated, Easing, Alert} from 'react-native';
 import Interactable from 'react-native-interactable';
 import Modal from 'react-native-modalbox';
 import Button from 'react-native-flat-button';
 import LottieView from 'lottie-react-native';
 
-var count = 0;
+var count = -1;
 var pdfPath = null;
 
   export default class CrisisPlan extends React.Component{
@@ -22,6 +22,22 @@ incrementCount(){
   count = count+1;
   console.log("The count is " + count);
   this.forceUpdate();
+}
+
+
+emergencyAlert(){
+
+  if (count == -1){
+  Alert.alert(
+  'Are you currently experiencing a mental health emergency?',
+  'If you select "Yes", you will be directed to emergency resources.',
+  [
+    {text: 'Yes', onPress: () => {this.props.navigation.navigate('EmergencyResources'); this.incrementCount();}},
+    {text: 'No', onPress: () => this.incrementCount()},
+  ],
+  {cancelable: true},
+);
+}
 }
 
   state = {
@@ -64,6 +80,8 @@ incrementCount(){
   }
 
   render() {
+
+    this.emergencyAlert();
 
     this.getPDF();
 
