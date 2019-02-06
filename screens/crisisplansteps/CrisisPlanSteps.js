@@ -69,6 +69,7 @@ export default class CrisisPlanSteps extends React.Component{
   >
   <View style={styles.slide}>
   <Text style={styles.text1}>Early Symptoms</Text>
+  <Text style={styles.description1}>Things you notice when your condition starts to worsen (Ex. isolating from others, crying, substance use)</Text>
   <TextInput ref={component => this._textInput = component}
   style={{fontFamily: 'ProximaNova-Regular', width: Dimensions.get('window').width},
   {height: Dimensions.get('window').height},
@@ -81,6 +82,8 @@ export default class CrisisPlanSteps extends React.Component{
 
   <View style={styles.slide}>
   <Text style={styles.text2}>Ways I can manage early symptoms</Text>
+  <Text style={styles.description2}>Things you notice when your condition starts to worsen (Ex. isolating from others, crying, substance use)</Text>
+
   <TextInput ref={component => this._textInput = component}
   style={{fontFamily: 'ProximaNova-Regular', width: Dimensions.get('window').width},
   {height: Dimensions.get('window').height},
@@ -93,6 +96,8 @@ export default class CrisisPlanSteps extends React.Component{
 
   <View style={styles.slide}>
   <Text style={styles.text3}>Crisis Signs</Text>
+  <Text style={styles.description3}>Things you notice when your condition starts to worsen (Ex. isolating from others, crying, substance use)</Text>
+
   <TextInput ref={component => this._textInput = component}
   style={{fontFamily: 'ProximaNova-Regular', width: Dimensions.get('window').width},
   {height: Dimensions.get('window').height},
@@ -105,6 +110,8 @@ export default class CrisisPlanSteps extends React.Component{
 
   <View style={styles.slide}>
   <Text style={styles.text4}>People I would like to help me</Text>
+  <Text style={styles.description4}>Things you notice when your condition starts to worsen (Ex. isolating from others, crying, substance use)</Text>
+
   <TextInput ref={component => this._textInput = component}
   style={{fontFamily: 'ProximaNova-Regular', width: Dimensions.get('window').width},
   {height: Dimensions.get('window').height},
@@ -117,6 +124,8 @@ export default class CrisisPlanSteps extends React.Component{
 
   <View style={styles.slide}>
   <Text style={styles.text5}>How I would like people to help me</Text>
+  <Text style={styles.description5}>Things you notice when your condition starts to worsen (Ex. isolating from others, crying, substance use)</Text>
+
   <TextInput ref={component => this._textInput = component}
   style={{fontFamily: 'ProximaNova-Regular', width: Dimensions.get('window').width},
   {height: Dimensions.get('window').height},
@@ -129,6 +138,8 @@ export default class CrisisPlanSteps extends React.Component{
 
   <View style={styles.slide}>
   <Text style={styles.text6}>Medications I am currently on</Text>
+  <Text style={styles.description6}>Things you notice when your condition starts to worsen (Ex. isolating from others, crying, substance use)</Text>
+
   <TextInput ref={component => this._textInput = component}
   style={{fontFamily: 'ProximaNova-Regular', width: Dimensions.get('window').width},
   {height: Dimensions.get('window').height},
@@ -141,6 +152,8 @@ export default class CrisisPlanSteps extends React.Component{
 
   <View style={styles.slide}>
   <Text style={styles.text1}>Medications I used to be on</Text>
+  <Text style={styles.description1}>Things you notice when your condition starts to worsen (Ex. isolating from others, crying, substance use)</Text>
+
   <TextInput ref={component => this._textInput = component}
   style={{fontFamily: 'ProximaNova-Regular', width: Dimensions.get('window').width},
   {height: Dimensions.get('window').height},
@@ -153,6 +166,8 @@ export default class CrisisPlanSteps extends React.Component{
 
   <View style={styles.slide}>
   <Text style={styles.text2}>Treatment Facilities or Hospitals I prefer</Text>
+  <Text style={styles.description2}>Things you notice when your condition starts to worsen (Ex. isolating from others, crying, substance use)</Text>
+
   <TextInput ref={component => this._textInput = component}
   style={{fontFamily: 'ProximaNova-Regular', width: Dimensions.get('window').width},
   {height: Dimensions.get('window').height},
@@ -165,6 +180,8 @@ export default class CrisisPlanSteps extends React.Component{
 
   <View style={styles.slide}>
   <Text style={styles.text3}>Other Resources I can use</Text>
+  <Text style={styles.description3}>Things you notice when your condition starts to worsen (Ex. isolating from others, crying, substance use)</Text>
+
   <TextInput
   style={{fontFamily: 'ProximaNova-Regular', width: Dimensions.get('window').width},
   {height: Dimensions.get('window').height},
@@ -376,6 +393,60 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5F5F5',
+
+  },
+
+  description1: {
+    color: '#7bd2d8',
+    fontSize: 15,
+    textAlign: 'center',
+    padding: 10,
+    fontFamily: 'ProximaNova-Regular'
+
+  },
+
+  description2: {
+    color: '#b6d332',
+    fontSize: 15,
+    textAlign: 'center',
+    padding: 10,
+    fontFamily: 'ProximaNova-Regular'
+
+  },
+
+  description3: {
+    color: '#ee7674',
+    fontSize: 15,
+    textAlign: 'center',
+    padding: 10,
+    fontFamily: 'ProximaNova-Regular'
+
+  },
+
+  description4: {
+    color: '#f9b5ac',
+    fontSize: 15,
+    textAlign: 'center',
+    padding: 10,
+    fontFamily: 'ProximaNova-Regular'
+
+  },
+
+  description5: {
+    color: '#af7b93',
+    fontSize: 15,
+    textAlign: 'center',
+    padding: 10,
+    fontFamily: 'ProximaNova-Regular'
+
+  },
+
+  description6: {
+    color: '#F9BD39',
+    fontSize: 15,
+    textAlign: 'center',
+    padding: 10,
+    fontFamily: 'ProximaNova-Regular'
 
   },
 
