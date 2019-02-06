@@ -210,7 +210,7 @@ setTimeout(() => {
 
         {(count==5) ? <Image source={require('../assets/sullyquote5.png')} style={{width: 335, height: 245}}/> : null}
 
-        {(count==6) ? <Image source={require('../assets/sullyquote2.png')} style={{width: 335, height: 245}}/> : null}
+        {(count==6) ? <Image source={require('../assets/sullyquote6.png')} style={{width: 335, height: 245}}/> : null}
 
         {(count==7) ? <Image source={require('../assets/sullyquote7.png')} style={{width: 335, height: 245}}/> : null}
 
