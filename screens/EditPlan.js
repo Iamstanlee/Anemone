@@ -181,7 +181,8 @@ export default class EditPlan extends React.Component{
   <View style={styles.slide}>
   <Text style={styles.text1}>Early Symptoms</Text>
   <Text style={styles.description1}>Things you notice when your condition starts to worsen (Ex. isolating from others, crying, substance use)</Text>
-  <TextInput ref={component => this._textInput = component}
+
+<TextInput ref={component => this._textInput = component}
   style={{    fontFamily: 'ProximaNova-Regular',
 width: Dimensions.get('window').width},
   {height: Dimensions.get('window').height},
@@ -540,55 +541,55 @@ const styles = {
 
   description1: {
     color: '#7bd2d8',
-    fontSize: 15,
+    fontSize: 19,
     textAlign: 'center',
     padding: 10,
-    fontFamily: 'ProximaNova-Regular'
+    fontFamily: 'ProximaNova-Bold'
 
   },
 
   description2: {
     color: '#b6d332',
-    fontSize: 15,
+    fontSize: 19,
     textAlign: 'center',
     padding: 10,
-    fontFamily: 'ProximaNova-Regular'
+    fontFamily: 'ProximaNova-Bold'
 
   },
 
   description3: {
     color: '#ee7674',
-    fontSize: 15,
+    fontSize: 19,
     textAlign: 'center',
     padding: 10,
-    fontFamily: 'ProximaNova-Regular'
+    fontFamily: 'ProximaNova-Bold'
 
   },
 
   description4: {
     color: '#f9b5ac',
-    fontSize: 15,
+    fontSize: 19,
     textAlign: 'center',
     padding: 10,
-    fontFamily: 'ProximaNova-Regular'
+    fontFamily: 'ProximaNova-Bold'
 
   },
 
   description5: {
     color: '#af7b93',
-    fontSize: 15,
+    fontSize: 19,
     textAlign: 'center',
     padding: 10,
-    fontFamily: 'ProximaNova-Regular'
+    fontFamily: 'ProximaNova-Bold'
 
   },
 
   description6: {
     color: '#F9BD39',
-    fontSize: 15,
+    fontSize: 19,
     textAlign: 'center',
     padding: 10,
-    fontFamily: 'ProximaNova-Regular'
+    fontFamily: 'ProximaNova-Bold'
 
   },
 
