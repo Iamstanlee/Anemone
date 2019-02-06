@@ -187,7 +187,7 @@ width: Dimensions.get('window').width},
   {flex: 1}}
   placeholder="Type text here"
   multiline={true}
-  onChangeText={(text) => {saveKey('EarlySymptoms', text);}}
+  onChangeText={(text) => {saveKey('EarlySymptoms', text.split("\n").join("\n"));}}
   defaultValue = {EarlySymptoms}
   editable={true}
   />
@@ -202,7 +202,7 @@ width: Dimensions.get('window').width},
   {flex: 1}}
   placeholder="Type text here"
   multiline={true}
-  onChangeText={(text) => {this.saveKey('SymptomManagement', text);}}
+  onChangeText={(text) => {this.saveKey('SymptomManagement', text.split("\n").join("\n"));}}
   defaultValue = {SymptomManagement}
   editable={true}
   />
@@ -217,7 +217,7 @@ width: Dimensions.get('window').width},
   {flex: 1}}
   placeholder="Type text here"
   multiline={true}
-  onChangeText={(text) => {this.saveKey('CrisisSigns', text);}}
+  onChangeText={(text) => {this.saveKey('CrisisSigns', text.split("\n").join("\n"));}}
   defaultValue = {CrisisSigns}
   editable={true}
   />
@@ -232,7 +232,7 @@ width: Dimensions.get('window').width},
   {flex: 1}}
   placeholder="Type text here"
   multiline={true}
-  onChangeText={(text) => {this.saveKey('People', text);}}
+  onChangeText={(text) => {this.saveKey('People', text.split("\n").join("\n"));}}
   defaultValue = {People}
   editable={true}
   />
@@ -247,7 +247,7 @@ width: Dimensions.get('window').width},
   {flex: 1}}
   placeholder="Type text here"
   multiline={true}
-  onChangeText={(text) => {this.saveKey('HowPeopleCanHelp', text);}}
+  onChangeText={(text) => {this.saveKey('HowPeopleCanHelp', text.split("\n").join("\n"));}}
   defaultValue = {HowPeopleCanHelp}
   editable={true}
   />
@@ -262,7 +262,7 @@ width: Dimensions.get('window').width},
   {flex: 1}}
   placeholder="Type text here"
   multiline={true}
-  onChangeText={(text) => {this.saveKey('CurrentMedications', text);}}
+  onChangeText={(text) => {this.saveKey('CurrentMedications', text.split("\n").join("\n"));}}
   defaultValue = {CurrentMedications}
   editable={true}
   />
@@ -277,7 +277,7 @@ width: Dimensions.get('window').width},
   {flex: 1}}
   placeholder="Type text here"
   multiline={true}
-  onChangeText={(text) => {this.saveKey('PastMedications', text);}}
+  onChangeText={(text) => {this.saveKey('PastMedications', text.split("\n").join("\n"));}}
   defaultValue = {PastMedications}
   editable={true}
   />
@@ -292,7 +292,7 @@ width: Dimensions.get('window').width},
   {flex: 1}}
   placeholder="Type text here"
   multiline={true}
-  onChangeText={(text) => {this.saveKey('TreatmentFacilities', text);}}
+  onChangeText={(text) => {this.saveKey('TreatmentFacilities', text.split("\n").join("\n"));}}
   defaultValue = {TreatmentFacilities}
   editable={true}
   />
@@ -307,7 +307,7 @@ width: Dimensions.get('window').width},
   {flex: 1}}
   placeholder="Type text here"
   multiline={true}
-  onChangeText={(text) => {this.saveKey('OtherResources', text); createPDF.bind(this);}}
+  onChangeText={(text) => {this.saveKey('OtherResources', text.split("\n").join("\n")); createPDF.bind(this);}}
   defaultValue = {OtherResources}
   editable={true}
   />
@@ -452,39 +452,39 @@ var htmlString =
 
 '<h2 style="text-align: center; color:#7bd2d8;"> Early Symptoms: </h2>' +
 
-'<p style="text-align: center;">' + EarlySymptoms + '</p>' +
+'<p style="text-align: center;">' + EarlySymptoms.split("\n").join("<br />") + '</p>' +
 
 '<h2 style="text-align: center; color:#b6d332;"> Ways I can manage early symptoms: </h2>' +
 
-'<p style="text-align: center;">' + SymptomManagement + '</p>' +
+'<p style="text-align: center;">' + SymptomManagement.split("\n").join("<br />") + '</p>' +
 
 '<h2 style="text-align: center; color:#ee7674;"> Crisis Signs: </h2>' +
 
-'<p style="text-align: center;">' + CrisisSigns + '</p>' +
+'<p style="text-align: center;">' + CrisisSigns.split("\n").join("<br />") + '</p>' +
 
 '<h2 style="text-align: center; color:#f9b5ac;"> People I would like to help me: </h2>' +
 
-'<p style="text-align: center;">' + People + '</p>' +
+'<p style="text-align: center;">' + People.split("\n").join("<br />") + '</p>' +
 
 '<h2 style="text-align: center; color:#af7b93;"> How I would like people to help me: </h2>' +
 
-'<p style="text-align: center;">' + HowPeopleCanHelp + '</p>' +
+'<p style="text-align: center;">' + HowPeopleCanHelp.split("\n").join("<br />") + '</p>' +
 
 '<h2 style="text-align: center; color:#F9BD39;"> Medications I am currently on: </h2>' +
 
-'<p style="text-align: center;">' + CurrentMedications + '</p>' +
+'<p style="text-align: center;">' + CurrentMedications.split("\n").join("<br />") + '</p>' +
 
 '<h2 style="text-align: center; color:#7bd2d8;"> Medications I used to be on: </h2>' +
 
-'<p style="text-align: center;">' + PastMedications + '</p>' +
+'<p style="text-align: center;">' + PastMedications.split("\n").join("<br />") + '</p>' +
 
 '<h2 style="text-align: center; color:#b6d332;"> Treatment Facilities or Hospitals I prefer: </h2>' +
 
-'<p style="text-align: center;">' + TreatmentFacilities + '</p>' +
+'<p style="text-align: center;">' + TreatmentFacilities.split("\n").join("<br />") + '</p>' +
 
 '<h2 style="text-align: center; color:#ee7674;"> Other Resources I can use: </h2>' +
 
-'<p style="text-align: center;">' + OtherResources + '</p>';
+'<p style="text-align: center;">' + OtherResources.split("\n").join("<br />") + '</p>';
 
 let options = {
       html: htmlString,

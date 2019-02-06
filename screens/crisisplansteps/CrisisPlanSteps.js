@@ -75,7 +75,7 @@ export default class CrisisPlanSteps extends React.Component{
   {flex: 1}}
   placeholder="Type text here"
   multiline={true}
-  onChangeText={(text) => {saveKey('EarlySymptoms', text);}}
+  onChangeText={(text) => {saveKey('EarlySymptoms', text.split("\n").join("\n"));}}
   />
   </View>
 
@@ -87,7 +87,7 @@ export default class CrisisPlanSteps extends React.Component{
   {flex: 1}}
   placeholder="Type text here"
   multiline={true}
-  onChangeText={(text) => {saveKey('SymptomManagement', text);}}
+  onChangeText={(text) => {saveKey('SymptomManagement', text.split("\n").join("\n"));}}
   />
   </View>
 
@@ -99,7 +99,7 @@ export default class CrisisPlanSteps extends React.Component{
   {flex: 1}}
   placeholder="Type text here"
   multiline={true}
-  onChangeText={(text) => {saveKey('CrisisSigns', text);}}
+  onChangeText={(text) => {saveKey('CrisisSigns', text.split("\n").join("\n"));}}
   />
   </View>
 
@@ -111,7 +111,7 @@ export default class CrisisPlanSteps extends React.Component{
   {flex: 1}}
   placeholder="Type text here"
   multiline={true}
-  onChangeText={(text) => {saveKey('People', text);}}
+  onChangeText={(text) => {saveKey('People', text.split("\n").join("\n"));}}
   />
   </View>
 
@@ -123,7 +123,7 @@ export default class CrisisPlanSteps extends React.Component{
   {flex: 1}}
   placeholder="Type text here"
   multiline={true}
-  onChangeText={(text) => {saveKey('HowPeopleCanHelp', text);}}
+  onChangeText={(text) => {saveKey('HowPeopleCanHelp', text.split("\n").join("\n"));}}
   />
   </View>
 
@@ -135,7 +135,7 @@ export default class CrisisPlanSteps extends React.Component{
   {flex: 1}}
   placeholder="Type text here"
   multiline={true}
-  onChangeText={(text) => {saveKey('CurrentMedications', text);}}
+  onChangeText={(text) => {saveKey('CurrentMedications', text.split("\n").join("\n"));}}
   />
   </View>
 
@@ -147,7 +147,7 @@ export default class CrisisPlanSteps extends React.Component{
   {flex: 1}}
   placeholder="Type text here"
   multiline={true}
-  onChangeText={(text) => {saveKey('PastMedications', text);}}
+  onChangeText={(text) => {saveKey('PastMedications', text.split("\n").join("\n"));}}
   />
   </View>
 
@@ -159,7 +159,7 @@ export default class CrisisPlanSteps extends React.Component{
   {flex: 1}}
   placeholder="Type text here"
   multiline={true}
-  onChangeText={(text) => {saveKey('TreatmentFacilities', text);}}
+  onChangeText={(text) => {saveKey('TreatmentFacilities', text.split("\n").join("\n"));}}
   />
   </View>
 
@@ -171,7 +171,7 @@ export default class CrisisPlanSteps extends React.Component{
   {flex: 1}}
   placeholder="Type text here"
   multiline={true}
-  onChangeText={(text) => {saveKey('OtherResources', text);}}
+  onChangeText={(text) => {saveKey('OtherResources', text.split("\n").join("\n"));}}
   />
   </View>
 
@@ -310,39 +310,39 @@ var htmlString =
 
 '<h2 style="text-align: center; color:#7bd2d8;"> Early Symptoms: </h2>' +
 
-'<p style="text-align: center;">' + EarlySymptoms + '</p>' +
+'<p style="text-align: center;">' + EarlySymptoms.split("\n").join("<br />") + '</p>' +
 
 '<h2 style="text-align: center; color:#b6d332;"> Ways I can manage early symptoms: </h2>' +
 
-'<p style="text-align: center;">' + SymptomManagement + '</p>' +
+'<p style="text-align: center;">' + SymptomManagement.split("\n").join("<br />") + '</p>' +
 
 '<h2 style="text-align: center; color:#ee7674;"> Crisis Signs: </h2>' +
 
-'<p style="text-align: center;">' + CrisisSigns + '</p>' +
+'<p style="text-align: center;">' + CrisisSigns.split("\n").join("<br />") + '</p>' +
 
 '<h2 style="text-align: center; color:#f9b5ac;"> People I would like to help me: </h2>' +
 
-'<p style="text-align: center;">' + People + '</p>' +
+'<p style="text-align: center;">' + People.split("\n").join("<br />") + '</p>' +
 
 '<h2 style="text-align: center; color:#af7b93;"> How I would like people to help me: </h2>' +
 
-'<p style="text-align: center;">' + HowPeopleCanHelp + '</p>' +
+'<p style="text-align: center;">' + HowPeopleCanHelp.split("\n").join("<br />") + '</p>' +
 
 '<h2 style="text-align: center; color:#F9BD39;"> Medications I am currently on: </h2>' +
 
-'<p style="text-align: center;">' + CurrentMedications + '</p>' +
+'<p style="text-align: center;">' + CurrentMedications.split("\n").join("<br />") + '</p>' +
 
 '<h2 style="text-align: center; color:#7bd2d8;"> Medications I used to be on: </h2>' +
 
-'<p style="text-align: center;">' + PastMedications + '</p>' +
+'<p style="text-align: center;">' + PastMedications.split("\n").join("<br />") + '</p>' +
 
 '<h2 style="text-align: center; color:#b6d332;"> Treatment Facilities or Hospitals I prefer: </h2>' +
 
-'<p style="text-align: center;">' + TreatmentFacilities + '</p>' +
+'<p style="text-align: center;">' + TreatmentFacilities.split("\n").join("<br />") + '</p>' +
 
 '<h2 style="text-align: center; color:#ee7674;"> Other Resources I can use: </h2>' +
 
-'<p style="text-align: center;">' + OtherResources + '</p>';
+'<p style="text-align: center;">' + OtherResources.split("\n").join("<br />") + '</p>';
 
 let options = {
       html: htmlString,
