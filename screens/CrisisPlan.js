@@ -101,12 +101,12 @@ emergencyAlert(){
         flex: 1,
         flexDirection: 'column',
         justifyContent: 'center',
-        alignItems: 'center'}}>
+        alignItems: 'center',}}>
 
         <Image source={require('../assets/sullywelcome.png')} style={{width: 335, height: 245}}/>
 
 
-          <Text style={{backgroundColor: 'white', fontFamily: 'ProximaNova-Regular' }}>Swipe down to close</Text>
+          <Text style={{backgroundColor: 'white', fontFamily: 'ProximaNova-Regular' }}>  Swipe down to close  </Text>
           </View>
           </Modal>
 

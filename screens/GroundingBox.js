@@ -35,7 +35,7 @@ export default class GroundingBox extends React.Component {
   incrementCount(){
     count = count+1;
 
-    if (count == 18){
+    if (count == 17){
       count = 1;
     }
 
@@ -240,7 +240,7 @@ setTimeout(() => {
 
 
         <Text style={{backgroundColor: 'white',fontFamily: 'ProximaNova-Regular'
-}}>Swipe down to close</Text>
+}}>  Swipe down to close  </Text>
         </View>
         </Modal>
 
