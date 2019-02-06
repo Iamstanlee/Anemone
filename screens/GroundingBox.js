@@ -222,17 +222,16 @@ setTimeout(() => {
 
         {(count==11) ? <Image source={require('../assets/sullyquote11.png')} style={{width: 335, height: 245}}/> : null}
 
-        {(count==12) ? <Image source={require('../assets/sullyquote2.png')} style={{width: 335, height: 245}}/> : null}
+        {(count==12) ? <Image source={require('../assets/sullyquote12.png')} style={{width: 335, height: 245}}/> : null}
 
-        {(count==13) ? <Image source={require('../assets/sullyquote2.png')} style={{width: 335, height: 245}}/> : null}
+        {(count==13) ? <Image source={require('../assets/sullyquote13.png')} style={{width: 335, height: 245}}/> : null}
 
-        {(count==14) ? <Image source={require('../assets/sullyquote2.png')} style={{width: 335, height: 245}}/> : null}
+        {(count==14) ? <Image source={require('../assets/sullyquote14.png')} style={{width: 335, height: 245}}/> : null}
 
-        {(count==15) ? <Image source={require('../assets/sullyquote2.png')} style={{width: 335, height: 245}}/> : null}
+        {(count==15) ? <Image source={require('../assets/sullyquote15.png')} style={{width: 335, height: 245}}/> : null}
 
-        {(count==16) ? <Image source={require('../assets/sullyquote2.png')} style={{width: 335, height: 245}}/> : null}
+        {(count==16) ? <Image source={require('../assets/sullyquote16.png')} style={{width: 335, height: 245}}/> : null}
 
-        {(count==17) ? <Image source={require('../assets/sullyquote2.png')} style={{width: 335, height: 245}}/> : null}
 
 
 
