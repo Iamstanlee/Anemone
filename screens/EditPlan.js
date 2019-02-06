@@ -138,6 +138,7 @@ export default class EditPlan extends React.Component{
       stackDepth={3}
       showPagination={true}
       showPaginationBelow={true}
+      paginationActiveDotColor={'#ee7674'}
       onRightSwipe =  {() => { if (this.state.cardCount < 7) {
 
 
