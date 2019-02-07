@@ -180,7 +180,7 @@ export default class EditPlan extends React.Component{
   >
   <View style={styles.slide}>
   <Text style={styles.text1}>Early Symptoms</Text>
-  <Text style={styles.description1}>Things you notice when your condition starts to worsen (Ex. isolating from others, crying, substance use)</Text>
+  <Text style={styles.description1}>List things you or others notice when your condition starts to worsen (Ex. isolating from others, crying, substance use, lack of motivation, forgetfulness)</Text>
 
 <TextInput ref={component => this._textInput = component}
   style={{    fontFamily: 'ProximaNova-Regular',
@@ -197,7 +197,7 @@ width: Dimensions.get('window').width},
 
   <View style={styles.slide}>
   <Text style={styles.text2}>Ways I can manage early symptoms</Text>
-  <Text style={styles.description2}>Things you notice when your condition starts to worsen (Ex. isolating from others, crying, substance use)</Text>
+  <Text style={styles.description2}>List things you can do to help deal with early symptoms (Ex. call a friend, go for a walk outside, journal)</Text>
 
   <TextInput ref={component => this._textInput = component}
   style={{    fontFamily: 'ProximaNova-Regular',
@@ -214,7 +214,7 @@ width: Dimensions.get('window').width},
 
   <View style={styles.slide}>
   <Text style={styles.text3}>Crisis Signs</Text>
-  <Text style={styles.description3}>Things you notice when your condition starts to worsen (Ex. isolating from others, crying, substance use)</Text>
+  <Text style={styles.description3}>List things you or others notice when you feel a crisis coming on (Ex. risk-taking behaviors, racing thoughts, inability to sleep, suicidal thoughts, paranoia)</Text>
 
   <TextInput ref={component => this._textInput = component}
   style={{    fontFamily: 'ProximaNova-Regular',
@@ -231,7 +231,7 @@ width: Dimensions.get('window').width},
 
   <View style={styles.slide}>
   <Text style={styles.text4}>People I would like to help me</Text>
-  <Text style={styles.description4}>Things you notice when your condition starts to worsen (Ex. isolating from others, crying, substance use)</Text>
+  <Text style={styles.description4}>List specific people and phone numbers/contact information. Be sure to share your completed plan with those people.</Text>
 
   <TextInput ref={component => this._textInput = component}
   style={{    fontFamily: 'ProximaNova-Regular',
@@ -248,7 +248,7 @@ width: Dimensions.get('window').width},
 
   <View style={styles.slide}>
   <Text style={styles.text5}>How I would like people to help me</Text>
-  <Text style={styles.description5}>Things you notice when your condition starts to worsen (Ex. isolating from others, crying, substance use)</Text>
+  <Text style={styles.description5}>List specific things you would like the previously mentioned people to do for you (Ex. listen to me vent, cook me a hot meal, help me check into a mental health facility)</Text>
 
   <TextInput ref={component => this._textInput = component}
   style={{    fontFamily: 'ProximaNova-Regular',
@@ -265,7 +265,7 @@ width: Dimensions.get('window').width},
 
   <View style={styles.slide}>
   <Text style={styles.text6}>Medications I am currently on</Text>
-  <Text style={styles.description6}>Things you notice when your condition starts to worsen (Ex. isolating from others, crying, substance use)</Text>
+  <Text style={styles.description6}>List medications and specific dosage information</Text>
 
   <TextInput ref={component => this._textInput = component}
   style={{    fontFamily: 'ProximaNova-Regular',
@@ -282,7 +282,7 @@ width: Dimensions.get('window').width},
 
   <View style={styles.slide}>
   <Text style={styles.text1}>Medications I used to be on</Text>
-  <Text style={styles.description1}>Things you notice when your condition starts to worsen (Ex. isolating from others, crying, substance use)</Text>
+  <Text style={styles.description1}>List medications that you are no longer on and why you stopped those medications</Text>
 
   <TextInput ref={component => this._textInput = component}
   style={{    fontFamily: 'ProximaNova-Regular',
@@ -299,7 +299,7 @@ width: Dimensions.get('window').width},
 
   <View style={styles.slide}>
   <Text style={styles.text2}>Treatment Facilities or Hospitals I prefer</Text>
-  <Text style={styles.description2}>Things you notice when your condition starts to worsen (Ex. isolating from others, crying, substance use)</Text>
+  <Text style={styles.description2}>List specific hospitals or facilities you would prefer to be in should you need to be hospitalized. Be sure to also include any facilities you want to avoid.</Text>
 
   <TextInput ref={component => this._textInput = component}
   style={{    fontFamily: 'ProximaNova-Regular',
@@ -316,7 +316,7 @@ width: Dimensions.get('window').width},
 
   <View style={styles.slide}>
   <Text style={styles.text3}>Other Resources I can use</Text>
-  <Text style={styles.description3}>Things you notice when your condition starts to worsen (Ex. isolating from others, crying, substance use)</Text>
+  <Text style={styles.description3}>List any other resources that are helpful to you such as crisis lines, family members, spiriual communities, etc.</Text>
 
   <TextInput
   style={{    fontFamily: 'ProximaNova-Regular',
