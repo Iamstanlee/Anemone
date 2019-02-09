@@ -29,7 +29,8 @@ export default class SixthBottom extends Component {
           backgroundColor: '#ffffff',
           flex: 1,
         }}
-      />
+      >
+      </View>
     );
   }
 
@@ -71,18 +72,9 @@ export default class SixthBottom extends Component {
             borderRadius: 2,
           }}
         >
-          <TouchableHighlight
-            style={{
-              flex: 1,
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}
-            onPress={onPress}
-          >
-            <Text>
-            <Text style={{textAlign:'center', fontFamily: 'ProximaNova-Regular'}}> 5.) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi auctor, purus a lacinia suscipit, augue arcu tempus ante, sed aliquam sapien ligula sit amet orci. Ut non nisi eu dui accumsan iaculis sed nec urna. Proin quis purus condimentum, sodales mi eget, faucibus ex. Mauris pharetra posuere elementum. Phasellus nec libero tempus, sagittis tortor nec, eleifend nibh. Praesent hendrerit vitae nulla non suscipit. Nunc dolor libero, gravida a lectus hendrerit, ornare mollis nisl. Cras mollis nunc eget enim pellentesque auctor. Pellentesque velit diam, molestie eget diam sit amet, vestibulum fringilla elit. Praesent libero dui, faucibus et ornare sit amet, sagittis sit amet ipsum. Sed quis auctor nisi, in pharetra velit. Mauris dui arcu, blandit eget justo vel, convallis tristique nulla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi ultrices luctus elit, ut rutrum ipsum.</Text>
-                       </Text>
-          </TouchableHighlight>
+            <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>Take your time with each breath.
+There are other forms of breathing but this is the easiest to complete if you’re feeling stressed.
+            </Text>
 
         </View>
       </View>
@@ -106,12 +98,16 @@ export default class SixthBottom extends Component {
           <View
             style={{
               flex: 1,
-              paddingBottom: 10,
               padding: 16,
+              paddingBottom: 5,
+              paddingTop: 5,
             }}
           >
 
-          <Text style={{textAlign:'center', fontFamily: 'ProximaNova-Regular'}}> 2.)Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi auctor, purus a lacinia suscipit, augue arcu tempus ante, sed aliquam sapien ligula sit amet orci. Ut non nisi eu dui accumsan iaculis sed nec urna. Proin quis purus condimentum, sodales mi eget, faucibus ex. Mauris pharetra posuere elementum. Phasellus nec libero tempus, sagittis tortor nec, eleifend nibh. Praesent hendrerit vitae nulla non suscipit. Nunc dolor libero, gravida a lectus hendrerit, ornare mollis nisl. Cras mollis nunc eget enim pellentesque auctor. Pellentesque velit diam, molestie eget diam sit amet, vestibulum fringilla elit. Praesent libero dui, faucibus et ornare sit amet, sagittis sit amet ipsum. Sed quis auctor nisi, in pharetra velit. Mauris dui arcu, blandit eget justo vel, convallis tristique nulla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi ultrices luctus elit, ut rutrum ipsum.</Text>
+            <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15,}}>Belly Breathing:{"\n"}{"\n"}
+Sit or lie flat in a comfortable position.
+Put one hand on your belly just below your ribs and the other hand on your chest.
+</Text>
 
 
             <View
@@ -126,8 +122,8 @@ export default class SixthBottom extends Component {
               >
                 <View
                   style={{
-                    width: 40,
-                    height: 40,
+                    width: 5,
+                    height: 5,
                     marginRight: 10,
                     backgroundColor: '#ffffff',
                   }}
@@ -146,18 +142,23 @@ export default class SixthBottom extends Component {
 
           </View>
 
-          <View style={{ flex: 1 }}>
+          <View style={{ flex: 1}}>
 
             <FoldView
               renderFrontface={this.renderBlankFace}
               renderBackface={this.renderBackface}
             >
-            <View>
+            <View style={{
+              flex: 1,
+              paddingBottom: 10,
+              padding: 16,
+            }}>
 
-            <Text style={{textAlign:'center', fontFamily: 'ProximaNova-Regular'}}> 3.)Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi auctor, purus a lacinia suscipit, augue arcu tempus ante, sed aliquam sapien ligula sit amet orci. Ut non nisi eu dui accumsan iaculis sed nec urna. Proin quis purus condimentum, sodales mi eget, faucibus ex. Mauris pharetra posuere elementum. Phasellus nec libero tempus, sagittis tortor nec, eleifend nibh. Praesent hendrerit vitae nulla non suscipit. Nunc dolor libero, gravida a lectus hendrerit, ornare mollis nisl. Cras mollis nunc eget enim pellentesque auctor. Pellentesque velit diam, molestie eget diam sit amet, vestibulum fringilla elit. Praesent libero dui, faucibus et ornare sit amet, sagittis sit amet ipsum. Sed quis auctor nisi, in pharetra velit. Mauris dui arcu, blandit eget justo vel, convallis tristique nulla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi ultrices luctus elit, ut rutrum ipsum.</Text>
+              <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>Take a deep breath in through your nose and let your belly push your hand out. Your chest should not move.
+</Text>
 
 
-</View>
+            </View>
             </FoldView>
 
           </View>
