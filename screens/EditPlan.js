@@ -1,9 +1,13 @@
 import React from 'react';
-import {Platform, StyleSheet, Text, View, Button, TextInput, AsyncStorage, Dimensions, Share} from 'react-native';
+import {Platform, StyleSheet, Text, View, TextInput, AsyncStorage, Dimensions, Share} from 'react-native';
 import Swiper from 'react-native-swiper-animated';
 import PDFLib, { PDFDocument, PDFPage } from 'react-native-pdf-lib';
 import RNHTMLtoPDF from 'react-native-html-to-pdf';
 import {EarlySymptomsSwipe} from './EditSwipe.js';
+import LottieView from 'lottie-react-native';
+import Button from 'react-native-flat-button';
+
+
 
 
 var time= new Date().toLocaleString();
@@ -332,17 +336,38 @@ width: Dimensions.get('window').width},
   </View>
 
   <View style={styles.slide}>
-  <Text style ={{fontFamily: 'ProximaNova-Regular'
-}}>
-  Email, export, or share plan with others
-  </Text>
-  <Button style={{fontFamily: 'ProximaNova-Regular',
-}} title="Share" onPress={() => {sharePDF();}}>
-  </Button>
+  <View style={{flex: 1, justifyContent: 'center', alignContent: 'center'}}>
+
+  <View
+        style={{
+          width: 113,
+          height: 100, justifyContent: 'center', alignContent: 'center'}}>
+  <LottieView
+  source={require('../share.json')}
+  autoPlay={true}
+  loop={true}
+  style={{height: '100%',
+  width: '100%'}}
+
+  />
   </View>
 
+  <Text style ={{fontFamily: 'ProximaNova-Regular'
+}}>
+  Email, export, or share plan with others {"\n"}{"\n"}
+  </Text>
 
 
+      <Button
+      type="custom"
+      backgroundColor={"#b6d332"}
+      borderColor={"#91AA1E"}
+      borderRadius={10}
+      shadowHeight={5}
+      containerStyle={styles.buttonContainer}
+      contentStyle={styles.content} onPress={() => {sharePDF(); }}> Share </Button>
+  </View>
+  </View>
   </Swiper>
 );
 }
@@ -672,6 +697,20 @@ const styles = {
     padding: 10,
     fontFamily: 'ProximaNova-Bold',
 
+
+  },
+
+  buttonContainer: {
+    width: 100,
+    height: 32,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+
+  content:{
+    fontSize: 22,
+    textAlign: 'center',
+    fontFamily: 'ProximaNova-Bold',
 
   },
 };
