@@ -352,7 +352,7 @@ width: Dimensions.get('window').width},
   />
   </View>
 
-  <Text style ={{fontFamily: 'ProximaNova-Regular'
+  <Text style ={{fontFamily: 'ProximaNova-Bold'
 }}>
   Email, export, or share plan with others {"\n"}{"\n"}
   </Text>

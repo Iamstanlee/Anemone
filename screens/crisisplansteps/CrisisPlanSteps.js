@@ -211,7 +211,7 @@ export default class CrisisPlanSteps extends React.Component{
   />
   </View>
 
-  <Text style ={{fontFamily: 'ProximaNova-Regular'
+  <Text style ={{fontFamily: 'ProximaNova-Bold'
 }}>
   Email, export, or share plan with others {"\n"}{"\n"}
   </Text>
