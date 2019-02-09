@@ -240,7 +240,7 @@ setTimeout(() => {
 
 
         <Text style={{backgroundColor: 'white',fontFamily: 'ProximaNova-Regular'
-}}>  Swipe down to close  </Text>
+}}>  Swipe down to close </Text>
         </View>
         </Modal>
 
@@ -255,10 +255,6 @@ setTimeout(() => {
         <Interactable.View
         horizontalOnly={false}
         snapPoints={[
-          {x: -160, y: -200},
-          {x: 160, y: -200},
-          {x: -160, y: -120},
-          {x: 160, y: -120},
           {x: -160, y: 120},
           {x: 160, y: 120},
           {x: -160, y: 200},
