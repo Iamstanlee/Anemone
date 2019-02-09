@@ -391,7 +391,7 @@ var htmlString =
 
 let options = {
       html: htmlString,
-      fileName: 'test',
+      fileName: 'CrisisPlan',
       directory: 'Documents',
     };
 
