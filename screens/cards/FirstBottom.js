@@ -72,7 +72,7 @@ export default class FirstBottom extends Component {
             borderRadius: 2,
           }}
         >
-            <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold'}}>Take your time with each breath.
+            <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>Take your time with each breath.
 There are other forms of breathing but this is the easiest to complete if you’re feeling stressed.
             </Text>
 
@@ -104,8 +104,8 @@ There are other forms of breathing but this is the easiest to complete if you’
             }}
           >
 
-            <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold'}}>Belly Breathing:{"\n"}{"\n"}
-Sit or lie flat in a comfortable position. Try to keep your body as relaxed as possible. 
+            <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15,}}>Belly Breathing:{"\n"}{"\n"}
+Sit or lie flat in a comfortable position.
 Put one hand on your belly just below your ribs and the other hand on your chest.
 </Text>
 
@@ -154,7 +154,7 @@ Put one hand on your belly just below your ribs and the other hand on your chest
               padding: 16,
             }}>
 
-              <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold'}}>Take a deep breath in through your nose and let your belly push your hand out. Your chest should not move.
+              <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>Take a deep breath in through your nose and let your belly push your hand out. Your chest should not move.
 </Text>
 
 

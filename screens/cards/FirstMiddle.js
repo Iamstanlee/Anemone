@@ -23,7 +23,7 @@ export default ({ onPress }) => (
 
     <View style={{ flex: 1 }}>
 
-    <Text style={{textAlign: 'left', fontFamily: 'ProximaNova-Bold'}}>Breathe out through pressed lips as if you are whistling. Feel the hand on our belly go in and use it push all the air out. Do this breathing 3-10 times.
+    <Text style={{textAlign: 'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>Breathe out through pressed lips as if you are whistling. Feel the hand on our belly go in and use it push all the air out. Do this breathing 3-10 times.
 
 </Text>
 

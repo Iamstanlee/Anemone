@@ -42,7 +42,7 @@ export default class FirstTop extends React.Component{
                  padding: 16,
                }}>
 
-               <Text style={{textAlign: 'left', fontFamily: 'ProximaNova-Bold'}}>The way we breathe can affect our entire body. Breathing exercises are a great way to relax, reduce tension, and relieve stress. Breathing exercises are easy to learn and are effective when emotions are starting to escalate. Popular breathing exercises include square breathing, belly breathing, and 4-7-8 breathing.{"\n"}{"\n"}Here’s a good breathing exercise to try: </Text>
+               <Text style={{textAlign: 'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>The way we breathe can affect our entire body. Breathing exercises are a great way to relax, reduce tension, and relieve stress. Breathing exercises are easy to learn and are effective when emotions are starting to escalate. Popular breathing exercises include square breathing, belly breathing, and 4-7-8 breathing.</Text>
       </View>
       </View>
     );
