@@ -72,8 +72,9 @@ export default class SixthBottom extends Component {
             borderRadius: 2,
           }}
         >
-            <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>Take your time with each breath.
-There are other forms of breathing but this is the easiest to complete if you’re feeling stressed.
+            <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>Try limiting how much time you spend on your phone about an hour before your actual bedtime to get your body ready to sleep.
+
+
             </Text>
 
         </View>
@@ -104,9 +105,8 @@ There are other forms of breathing but this is the easiest to complete if you’
             }}
           >
 
-            <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15,}}>Belly Breathing:{"\n"}{"\n"}
-Sit or lie flat in a comfortable position.
-Put one hand on your belly just below your ribs and the other hand on your chest.
+            <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15,}}>The two most common complaints people have regarding sleep are difficulty falling asleep and difficulty staying asleep. These symptoms can be the result of psychiatric meds, excessive worrying, and low mood.
+
 </Text>
 
 
@@ -154,7 +154,10 @@ Put one hand on your belly just below your ribs and the other hand on your chest
               padding: 16,
             }}>
 
-              <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>Take a deep breath in through your nose and let your belly push your hand out. Your chest should not move.
+              <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>Don’t worry though because there are several ways to improve sleep patterns through basic lifestyle changes such as:
+
+
+
 </Text>
 
 
