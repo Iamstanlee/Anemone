@@ -72,8 +72,7 @@ export default class FifthBottom extends Component {
             borderRadius: 2,
           }}
         >
-            <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>Take your time with each breath.
-There are other forms of breathing but this is the easiest to complete if you’re feeling stressed.
+            <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>Don’t worry if a new diet seems overwhelming. Start with a healthy snack, like carrots and hummus, or a piece of fruit. 
             </Text>
 
         </View>
@@ -104,9 +103,8 @@ There are other forms of breathing but this is the easiest to complete if you’
             }}
           >
 
-            <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15,}}>Belly Breathing:{"\n"}{"\n"}
-Sit or lie flat in a comfortable position.
-Put one hand on your belly just below your ribs and the other hand on your chest.
+            <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15,}}>While exercise is crucial, diet is equally important in improving mental health. Many of the foods we eat can affect moods (both positively and negatively), without us even realizing it.
+
 </Text>
 
 
@@ -154,7 +152,8 @@ Put one hand on your belly just below your ribs and the other hand on your chest
               padding: 16,
             }}>
 
-              <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>Take a deep breath in through your nose and let your belly push your hand out. Your chest should not move.
+              <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>It has been observed that products containing sugars, caffeine, wheat, and dairy have the potential to alter moods.
+
 </Text>
 
 

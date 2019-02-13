@@ -42,7 +42,8 @@ export default class SecondTop extends React.Component{
                  padding: 16,
                }}>
 
-               <Text style={{textAlign: 'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>The way we breathe can affect our entire body. Breathing exercises are a great way to relax, reduce tension, and relieve stress. Breathing exercises are easy to learn and are effective when emotions are starting to escalate. Popular breathing exercises include square breathing, belly breathing, and 4-7-8 breathing.</Text>
+               <Text style={{textAlign: 'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>Exercise and diet are very important in improving mental health. It is important to find the right exercise program for yourself. That may include running, walking, swimming, aerobic classes, and/or cycling, just to name a few.  Exercise increases the feel-good hormones like endorphins which can in-turn improve mood.
+</Text>
       </View>
       </View>
     );

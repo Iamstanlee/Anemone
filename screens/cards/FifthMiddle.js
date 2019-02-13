@@ -23,7 +23,8 @@ export default ({ onPress }) => (
 
     <View style={{ flex: 1 }}>
 
-    <Text style={{textAlign: 'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>Breathe out through pressed lips as if you are whistling. Feel the hand on our belly go in and use it push all the air out. Do this breathing 3-10 times.
+    <Text style={{textAlign: 'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>In order to maintain a healthy, mood-positive diet, focus on eating all your vitamins and minerals and ensuring you consume each food group.
+
 
 </Text>
 
