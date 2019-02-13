@@ -72,8 +72,7 @@ export default class FourthBottom extends Component {
             borderRadius: 2,
           }}
         >
-            <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>Take your time with each breath.
-There are other forms of breathing but this is the easiest to complete if you’re feeling stressed.
+            <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>Perhaps visit the virtual Grounding Box on the next page and click on Sully the seahorse for some inspirational quotes you can read.
             </Text>
 
         </View>
@@ -104,9 +103,8 @@ There are other forms of breathing but this is the easiest to complete if you’
             }}
           >
 
-            <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15,}}>Belly Breathing:{"\n"}{"\n"}
-Sit or lie flat in a comfortable position.
-Put one hand on your belly just below your ribs and the other hand on your chest.
+            <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15,}}>There are many ways to engage in diversion skills, but most differ for each individual.{"\n"}{"\n"}
+ Some examples of diversion skills include the following:
 </Text>
 
 
@@ -154,7 +152,7 @@ Put one hand on your belly just below your ribs and the other hand on your chest
               padding: 16,
             }}>
 
-              <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>Take a deep breath in through your nose and let your belly push your hand out. Your chest should not move.
+              <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>Coloring, walking/petting your dog, taking a shower, watching TV, listening to music, exercising, playing a game, and napping
 </Text>
 
 

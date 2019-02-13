@@ -42,7 +42,7 @@ export default class SecondTop extends React.Component{
                  padding: 16,
                }}>
 
-               <Text style={{textAlign: 'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>The way we breathe can affect our entire body. Breathing exercises are a great way to relax, reduce tension, and relieve stress. Breathing exercises are easy to learn and are effective when emotions are starting to escalate. Popular breathing exercises include square breathing, belly breathing, and 4-7-8 breathing.</Text>
+               <Text style={{textAlign: 'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>Diversion skills are intended to temporarily redirect oneself in order to cope with certain stressors in the moment. These skills are also known as distraction techniques and help us self regulate our emotions when they’re heightened. They can be classified as anything that helps redirect the intensity of the emotions.</Text>
       </View>
       </View>
     );

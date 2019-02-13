@@ -23,7 +23,7 @@ export default ({ onPress }) => (
 
     <View style={{ flex: 1 }}>
 
-    <Text style={{textAlign: 'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>Breathe out through pressed lips as if you are whistling. Feel the hand on our belly go in and use it push all the air out. Do this breathing 3-10 times.
+    <Text style={{textAlign: 'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>Just on your phone, try downloading a new game or app that can distract you from your feelings. Maybe even surf the web from your device, and look for different sites.
 
 </Text>
 
