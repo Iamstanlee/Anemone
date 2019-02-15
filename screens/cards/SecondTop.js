@@ -42,7 +42,8 @@ export default class SecondTop extends React.Component{
                  padding: 16,
                }}>
 
-               <Text style={{textAlign: 'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>The way we breathe can affect our entire body. Breathing exercises are a great way to relax, reduce tension, and relieve stress. Breathing exercises are easy to learn and are effective when emotions are starting to escalate. Popular breathing exercises include square breathing, belly breathing, and 4-7-8 breathing.</Text>
+               <Text style={{textAlign: 'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>Mindfulness is staying in the present and doing it intentionally with a non-judgmental stance. It’s paying attention through observations of thoughts, emotions, and body states. Part of mindfulness includes accepting your emotions for what they are, while pushing out unwanted thoughts and focusing on the current moment.
+</Text>
       </View>
       </View>
     );

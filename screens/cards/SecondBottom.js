@@ -72,8 +72,8 @@ export default class SecondBottom extends Component {
             borderRadius: 2,
           }}
         >
-            <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>Take your time with each breath.
-There are other forms of breathing but this is the easiest to complete if you’re feeling stressed.
+            <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>You can also be mindful while eating, listening to music, taking a shower, by just focusing on the sensations around you.
+
             </Text>
 
         </View>
@@ -104,9 +104,8 @@ There are other forms of breathing but this is the easiest to complete if you’
             }}
           >
 
-            <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15,}}>Belly Breathing:{"\n"}{"\n"}
-Sit or lie flat in a comfortable position.
-Put one hand on your belly just below your ribs and the other hand on your chest.
+            <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15,}}>Mindfulness Exercises: {"\n"}{"\n"}Mindfulness takes practice, just like any form of exercise. Mindfulness exercises are helpful to use several times a day.
+
 </Text>
 
 
@@ -154,7 +153,8 @@ Put one hand on your belly just below your ribs and the other hand on your chest
               padding: 16,
             }}>
 
-              <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>Take a deep breath in through your nose and let your belly push your hand out. Your chest should not move.
+              <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>Sometimes you will only be able to be mindful for a few minutes, but you will slowly learn to increase your time.
+
 </Text>
 
 
