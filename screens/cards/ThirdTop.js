@@ -42,7 +42,8 @@ export default class ThirdTop extends React.Component{
                  padding: 16,
                }}>
 
-               <Text style={{textAlign: 'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>The way we breathe can affect our entire body. Breathing exercises are a great way to relax, reduce tension, and relieve stress. Breathing exercises are easy to learn and are effective when emotions are starting to escalate. Popular breathing exercises include square breathing, belly breathing, and 4-7-8 breathing.</Text>
+               <Text style={{textAlign: 'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>Grounding is a strategy used to help us “detach” from emotional pain by focusing on a specific thing around you or in your situation. Grounding can done at any time or place with no materials needed. There are many different types of grounding, such as physical grounding, mental grounding, and self soothing grounding.
+</Text>
       </View>
       </View>
     );

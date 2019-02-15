@@ -72,8 +72,8 @@ export default class ThirdBottom extends Component {
             borderRadius: 2,
           }}
         >
-            <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>Take your time with each breath.
-There are other forms of breathing but this is the easiest to complete if you’re feeling stressed.
+            <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>Use the virtual grounding box in this app to ground yourself with a picture, song, and positive affirmations from Sully the seahorse.
+
             </Text>
 
         </View>
@@ -104,9 +104,7 @@ There are other forms of breathing but this is the easiest to complete if you’
             }}
           >
 
-            <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15,}}>Belly Breathing:{"\n"}{"\n"}
-Sit or lie flat in a comfortable position.
-Put one hand on your belly just below your ribs and the other hand on your chest.
+            <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15,}}>Physical grounding is very tactile. For example: running cool water on hands, grabbing tightly onto a chair, touching things around you, digging your heels into the floor, or focusing on sensations.
 </Text>
 
 
@@ -154,7 +152,7 @@ Put one hand on your belly just below your ribs and the other hand on your chest
               padding: 16,
             }}>
 
-              <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>Take a deep breath in through your nose and let your belly push your hand out. Your chest should not move.
+              <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>Mental grounding is focusing on as many factual details as possible within your environment, or describing the surroundings.
 </Text>
 
 
