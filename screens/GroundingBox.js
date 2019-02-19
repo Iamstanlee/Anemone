@@ -239,7 +239,7 @@ setTimeout(() => {
 
 
 
-        <Text style={{backgroundColor: 'white',fontFamily: 'ProximaNova-Regular'
+        <Text style={{backgroundColor: 'white',fontFamily: 'ProximaNova-Bold'
 }}>  Swipe down to close </Text>
         </View>
         </Modal>

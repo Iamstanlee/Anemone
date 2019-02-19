@@ -106,7 +106,7 @@ emergencyAlert(){
         <Image source={require('../assets/sullywelcome.png')} style={{width: 335, height: 245}}/>
 
 
-          <Text style={{backgroundColor: 'white', fontFamily: 'ProximaNova-Regular' }}>  Swipe down to close  </Text>
+          <Text style={{backgroundColor: 'white', fontFamily: 'ProximaNova-Bold' }}>  Swipe down to close  </Text>
           </View>
           </Modal>
 
