@@ -195,27 +195,35 @@ export default class CrisisPlanSteps extends React.Component{
   </View>
 
   <View style={styles.slide}>
-  <View style={{flex: 1, justifyContent: 'center', alignContent: 'center'}}>
 
-  <View
-        style={{
-          width: 113,
-          height: 100, justifyContent: 'center', alignContent: 'center'}}>
-  <LottieView
-  source={require('../../share.json')}
-  autoPlay={true}
-  loop={true}
-  style={{height: '100%',
-  width: '100%'}}
+  <Text>{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}</Text>
 
-  />
-  </View>
+  <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <View
+          style={{
+            width: 100,
+            height: 100,
+          }}
+        >
+          <LottieView
+            style={{
+              width: 100,
+              height: 100,
+            }}
+            source={require('../../share.json')}
+            autoPlay={true}
+            loop={true}
+            style={{height: '100%',
+            width: '100%'}}
+          />
+        </View>
 
   <Text style ={{fontFamily: 'ProximaNova-Bold'
 }}>
   Email, export, or share plan with others {"\n"}{"\n"}
   </Text>
 
+  <View style={{ flex: 1, alignItems: 'center' }}>
 
       <Button
       type="custom"
@@ -225,6 +233,7 @@ export default class CrisisPlanSteps extends React.Component{
       shadowHeight={5}
       containerStyle={styles.buttonContainer}
       contentStyle={styles.content} onPress={() => {sharePDF(); }}> Share </Button>
+      </View>
   </View>
   </View>
 
