@@ -284,7 +284,7 @@ export default class EmergencyResources extends React.Component{
                             alignItems: 'center'}}>
 
                             <Kohana
-                            style={{ backgroundColor: '#ffffff' }}
+                            style={{ backgroundColor: '#ffffff'}}
                             label={'Enter Personal Contact Phone Number:'}
                             iconClass={MaterialsIcon}
                             iconName={'phone'}
@@ -298,8 +298,8 @@ export default class EmergencyResources extends React.Component{
                             maxLength={10}
                             useNativeDriver
                             />
-
-                            <Text style={{backgroundColor: 'white', fontFamily:'ProximaNova-Regular'}}>Swipe down to close</Text>
+                            <Text>{"\n"}{"\n"}</Text>
+                            <Text style={{backgroundColor: 'white', fontFamily:'ProximaNova-Bold'}}> Swipe down to close </Text>
                             </View>
                             </Modal>
 
@@ -360,8 +360,8 @@ export default class EmergencyResources extends React.Component{
                                 modal: {
                                   //justifyContent: 'center',
                                 //  alignItems: 'center',
-                                  height: 300,
+                                  height: 200,
                                   width: 350,
-                                  backgroundColor: 'white',
+                                  backgroundColor: 'transparent',
                                   },
                                   });
