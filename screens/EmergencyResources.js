@@ -51,7 +51,6 @@ export default class EmergencyResources extends React.Component{
     super(props);
   }
 
-  
   state = {
        isPC: null,
     };
@@ -94,6 +93,26 @@ export default class EmergencyResources extends React.Component{
         } catch (error) {
           console.log("Error retrieving data" + error);
         }
+      }
+
+      callNumber(){
+
+        if (PCnumber.number == null | PCnumber.number == "" | PCnumber.number == " ") {
+
+          Alert.alert(
+            'Alert',
+            'No Number Provided',
+            [
+            {text: 'Edit Number', onPress: () => this.refs.personalContact.open()},
+            {text: 'Cancel', onPress: () => console.log('Cancel Pressed!'), style: 'cancel'}
+            ],{ cancelable: true })
+
+        }
+
+        else {
+        call(PCnumber).catch(console.error);
+        }
+
       }
 
 
@@ -193,7 +212,7 @@ export default class EmergencyResources extends React.Component{
                         'Alert',
                         'Call Personal Contact?',
                         [
-                        {text: 'Call', onPress: () => call(PCnumber).catch(console.error)},
+                        {text: 'Call', onPress: () => this.callNumber()},
                         {text: 'Edit Number', onPress: () => this.refs.personalContact.open()},
                         {text: 'Cancel', onPress: () => console.log('Cancel Pressed!'), style: 'cancel'}
                         ],{ cancelable: true }) : (this.refs.personalContact.open()))})}}>
