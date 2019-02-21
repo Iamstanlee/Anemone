@@ -51,10 +51,10 @@ export default class EmergencyResources extends React.Component{
     super(props);
   }
 
-  //
-  // state = {
-  //      isPC: null,
-  //   };
+  
+  state = {
+       isPC: null,
+    };
 
   async checkPC(){
     if(await this.getKey('PC')!=null)
