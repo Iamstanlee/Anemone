@@ -314,6 +314,8 @@ setTimeout(() => {
 }}>You have selected: {this.state.songTitle} </Text>
         )}
 
+        <Text>{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}</Text>
+
         </View>
 
 
