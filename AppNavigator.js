@@ -13,6 +13,7 @@ import EditSwipe from './screens/EditSwipe';
 import CreateSwipe from './screens/CreateSwipe';
 import ViewPlan from './screens/ViewPlan';
 import EditPlan from './screens/EditPlan';
+import WhatPlan from './screens/WhatPlan';
 import CrisisPlanSteps from './screens/crisisplansteps/CrisisPlanSteps';
 import MusicPlayerController from 'react-native-musicplayercontroller'
 import Button from 'react-native-flat-button';
@@ -168,6 +169,20 @@ const FeedStack = createStackNavigator({
           onPress={() => navigation.navigate('CrisisPlan')}>&#8592; Back</Button>,
         })
       },
+
+      WhatPlan: {
+
+        screen: WhatPlan, navigationOptions: ({navigation}) => ({
+                headerLeft: <Button type="custom"
+                backgroundColor={"#7bd2d8"}
+                borderColor={"#16a085"}
+                borderRadius={10}
+                shadowHeight={5}
+                containerStyle={styles.buttonContainer}
+                contentStyle={styles.content}
+              onPress={() => navigation.navigate('CrisisPlan')}>&#8592; Back</Button>,
+            })
+          },
 
 });
 

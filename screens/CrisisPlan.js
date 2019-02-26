@@ -157,6 +157,21 @@ emergencyAlert(){
                          {"\n"}{"\n"}{"\n"}
                          </Text>
 
+                         {!(this.getKey('PlanCreated') != null) ?
+                                         <Button
+                                          type="custom"
+                                          backgroundColor={"#b6d332"}
+                                          borderColor={"#91AA1E"}
+                                          borderRadius={10}
+                                          shadowHeight={5}
+                                          containerStyle={styles.buttonContainer}
+                                          contentStyle={styles.content}
+                                        onPress={() => this.props.navigation.navigate('WhatPlan')}> What is a Crisis Plan? </Button> : null}
+
+                         <Text pointerEvents="none">
+                         {"\n"}{"\n"}{"\n"}
+                         </Text>
+
           {(this.getKey('PlanCreated') != null) ?
           <Button
           type="custom"
@@ -215,7 +230,8 @@ emergencyAlert(){
         fontSize: 20,
         textAlign: 'center',
         margin: 10,
-        fontFamily: 'ProximaNova-Regular'
+        fontFamily: 'ProximaNova-Regular',
+        color: 'white'
       },
       instructions: {
         textAlign: 'center',
