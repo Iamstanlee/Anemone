@@ -295,6 +295,21 @@ setTimeout(() => {
         )}
 
         </View>
+
+        <View pointerEvents="none" style={{flex: 1, position: 'absolute', justifyContent: 'center',
+            height: 300,
+            width: 300, alignItems: 'center'}}
+            >
+                <LottieView
+                  source={require('../confetti.json')}
+                  autoPlay={true}
+                  loop={true}
+                  style={{height: 300,
+                      width: 300}}
+                />
+
+                </View >
+
         </TouchableOpacity>
 
 
@@ -319,19 +334,7 @@ setTimeout(() => {
         </View>
 
 
-<View pointerEvents="none" style={{position: 'absolute',
-    height: '100%',
-    width: '100%', alignItems: 'center'}}
-    >
-        <LottieView
-          source={require('../confetti.json')}
-          autoPlay={true}
-          loop={true}
-          style={{height: '100%',
-              width: '100%'}}
-        />
 
-        </View >
 
         </View>
         </ScrollView>
