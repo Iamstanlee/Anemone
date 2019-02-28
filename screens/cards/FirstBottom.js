@@ -56,7 +56,7 @@ export default class FirstBottom extends Component {
     return (
       <View
         style={{
-          backgroundColor: '#fff',
+          backgroundColor: '#ffffff',
           flex: 1,
           borderTopWidth: StyleSheet.hairlineWidth,
           borderTopColor: '#ffffff',

@@ -16,7 +16,6 @@ export default ({ onPress }) => (
       flexDirection: 'row',
 
       backgroundColor: '#FFFFFF',
-      borderTopWidth: StyleSheet.hairlineWidth,
       borderTopColor: '#FFFFFFF',
     }}
   >
