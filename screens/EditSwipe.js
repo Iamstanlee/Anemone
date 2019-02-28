@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View, StyleSheet} from 'react-native'
+import {Text, View, StyleSheet, AsyncStorage} from 'react-native'
 import LottieView from 'lottie-react-native';
 import Button from 'react-native-flat-button';
 
@@ -8,11 +8,20 @@ var EarlySymptomsSwipe = "No early symptoms were filled out";
 
 export default class EditSwipe extends React.Component {
 
+  async getKey(key){
+    try {
+      const value = await AsyncStorage.getItem(key);
+      return value;
+    } catch (error) {
+      console.log("Error retrieving data" + error);
+    }
+  }
+
 async pullAnswer(){
   try {
     EarlySymptomsSwipe = await this.getKey('EarlySymptoms');
     if (EarlySymptomsSwipe == null){
-      EarlySymptomsSwipe = "No early symptoms were ooched out";
+      EarlySymptomsSwipe = "No early symptoms were filled out";
     }
   }
 

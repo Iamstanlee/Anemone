@@ -58,9 +58,13 @@ export default class EditPlan extends React.Component{
 
       try {
        EarlySymptoms = await this.getKey('EarlySymptoms');
+       console.log("FIRST:" +  EarlySymptoms);
+
        if (EarlySymptoms == null){
          EarlySymptoms = "No early symptoms were filled out";
        }
+       console.log("SECOND:" + EarlySymptoms);
+
 
         //TODO: Still not picking up strings from this function
         //EarlySymptoms = EarlySymptoms.split(" ").join(" \n");
@@ -193,8 +197,8 @@ width: Dimensions.get('window').width},
   {flex: 1}}
   placeholder="Type text here"
   multiline={true}
-  onChangeText={(text) => {saveKey('EarlySymptoms', text.split("\n").join("\n"));}}
-  defaultValue = {EarlySymptoms}
+  onChangeText={(text) => {this.saveKey('EarlySymptoms', text.split("\n").join("\n"));}}
+  defaultValue = {EarlySymptomsSwipe}
   editable={true}
   />
   </View>
@@ -439,6 +443,7 @@ try {
   EarlySymptoms = await getKey('EarlySymptoms');
   if (EarlySymptoms == null){
     EarlySymptoms = "No early symptoms were filled out";
+
   }
   //EarlySymptoms = EarlySymptoms.split(" ").join(" \n");
 
