@@ -17,6 +17,8 @@ PODS:
     - React
   - rn-fetch-blob (0.10.6):
     - React/Core
+  - RNDeviceInfo (0.21.5):
+    - React
   - yoga (0.57.8.React)
 
 DEPENDENCIES:
@@ -28,6 +30,7 @@ DEPENDENCIES:
   - react-native-pdf (from `../node_modules/react-native-pdf`)
   - ReactNativePermissions (from `../node_modules/react-native-permissions`)
   - rn-fetch-blob (from `../node_modules/rn-fetch-blob`)
+  - RNDeviceInfo (from `../node_modules/react-native-device-info`)
   - yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 EXTERNAL SOURCES:
@@ -47,6 +50,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-permissions"
   rn-fetch-blob:
     :path: "../node_modules/rn-fetch-blob"
+  RNDeviceInfo:
+    :path: "../node_modules/react-native-device-info"
   yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -59,8 +64,9 @@ SPEC CHECKSUMS:
   react-native-pdf: 0268038d049187eccaf4bce4a2ca4a96719fdc36
   ReactNativePermissions: 9f2d9c45c98800795e6c2ed330e25d11a66a8169
   rn-fetch-blob: 76a8f798dae965bbcd146a2438f2e1d381c91ae3
+  RNDeviceInfo: 568c5641057313b4912d08a7742ff0b2f753ed5c
   yoga: b1ce48b6cf950b98deae82838f5173ea7cf89e85
 
-PODFILE CHECKSUM: 1e2238d0f1c1d4360f30d79c4a80354f6450de01
+PODFILE CHECKSUM: 52e5f7824373121d8fa0c9552bc75722fd3c7fac
 
 COCOAPODS: 1.5.3

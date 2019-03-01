@@ -36,6 +36,7 @@
 		1817A92321E013AC00C5315C /* ProximaNova-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1817A92221E013AC00C5315C /* ProximaNova-Bold.otf */; };
 		1817A92421E013AC00C5315C /* ProximaNova-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1817A92221E013AC00C5315C /* ProximaNova-Bold.otf */; };
 		1881129021CDDCC7000FE8EB /* libInteractable.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1881128421CDDC64000FE8EB /* libInteractable.a */; };
+		18883B132228D8E000363A05 /* libRNDeviceInfo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18883B052228D8BA00363A05 /* libRNDeviceInfo.a */; };
 		1C88C425765844678862F3A4 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A612B7E5125D411DAC199736 /* FontAwesome.ttf */; };
 		28127363ED26468B886267A6 /* libRNHTMLtoPDF.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF5C1FBA66414C9E95988038 /* libRNHTMLtoPDF.a */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
@@ -236,6 +237,20 @@
 			proxyType = 2;
 			remoteGlobalIDString = 7B49FEBB1E95090800DEB3EA;
 			remoteInfo = ReactNativeNavigationTests;
+		};
+		18883B042228D8BA00363A05 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18883AD12228D8BA00363A05 /* RNDeviceInfo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DA5891D81BA9A9FC002B4DB2;
+			remoteInfo = RNDeviceInfo;
+		};
+		18883B062228D8BA00363A05 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18883AD12228D8BA00363A05 /* RNDeviceInfo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E72EC1401F7ABB5A0001BC90;
+			remoteInfo = "RNDeviceInfo-tvOS";
 		};
 		1891D17C21C8A6D600D4D38F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -560,6 +575,7 @@
 		1817A8C421DD6EF000C5315C /* LottieReactNative.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LottieReactNative.xcodeproj; path = "../node_modules/lottie-react-native/src/ios/LottieReactNative.xcodeproj"; sourceTree = "<group>"; };
 		1817A8E621E0116E00C5315C /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ProximaNova-Regular.otf"; path = "../../../Library/Fonts/ProximaNova-Regular.otf"; sourceTree = "<group>"; };
 		1817A92221E013AC00C5315C /* ProximaNova-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ProximaNova-Bold.otf"; path = "../../../Library/Fonts/ProximaNova-Bold.otf"; sourceTree = "<group>"; };
+		18883AD12228D8BA00363A05 /* RNDeviceInfo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNDeviceInfo.xcodeproj; path = "../node_modules/react-native-device-info/ios/RNDeviceInfo.xcodeproj"; sourceTree = "<group>"; };
 		189D92321E2148A6A03756F0 /* ReactNativeNavigation.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeNavigation.xcodeproj; path = "../node_modules/react-native-navigation/lib/ios/ReactNativeNavigation.xcodeproj"; sourceTree = "<group>"; };
 		18A6F07721C8572100BE199B /* CrisisApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = CrisisApp.xcodeproj; sourceTree = "<group>"; };
 		1D47C965673E4E30B79276F6 /* RNGestureHandler.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNGestureHandler.xcodeproj; path = "../node_modules/react-native-gesture-handler/ios/RNGestureHandler.xcodeproj"; sourceTree = "<group>"; };
@@ -634,6 +650,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18883B132228D8E000363A05 /* libRNDeviceInfo.a in Frameworks */,
 				1817A8CA21DD6F7200C5315C /* libLottieReactNative.a in Frameworks */,
 				1817A8C121DD6DFD00C5315C /* libLottie.a in Frameworks */,
 				1817A8BB21DC638D00C5315C /* libRCTActionSheet.a in Frameworks */,
@@ -900,6 +917,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		18883AD22228D8BA00363A05 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				18883B052228D8BA00363A05 /* libRNDeviceInfo.a */,
+				18883B072228D8BA00363A05 /* libRNDeviceInfo-tvOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		1891D17621C8A6D500D4D38F /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -1018,6 +1044,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				18883AD12228D8BA00363A05 /* RNDeviceInfo.xcodeproj */,
 				1817A8C421DD6EF000C5315C /* LottieReactNative.xcodeproj */,
 				181458B021D8711200D884D7 /* Lottie.xcodeproj */,
 				180AFCCC21D0B76400A09BBB /* RNImagePicker.xcodeproj */,
@@ -1306,6 +1333,10 @@
 					ProjectRef = 189D92321E2148A6A03756F0 /* ReactNativeNavigation.xcodeproj */;
 				},
 				{
+					ProductGroup = 18883AD22228D8BA00363A05 /* Products */;
+					ProjectRef = 18883AD12228D8BA00363A05 /* RNDeviceInfo.xcodeproj */;
+				},
+				{
 					ProductGroup = 185EDC1B21C483CD009EA966 /* Products */;
 					ProjectRef = 1D47C965673E4E30B79276F6 /* RNGestureHandler.xcodeproj */;
 				},
@@ -1491,6 +1522,20 @@
 			fileType = wrapper.cfbundle;
 			path = ReactNativeNavigationTests.xctest;
 			remoteRef = 1881128921CDDC64000FE8EB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		18883B052228D8BA00363A05 /* libRNDeviceInfo.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNDeviceInfo.a;
+			remoteRef = 18883B042228D8BA00363A05 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		18883B072228D8BA00363A05 /* libRNDeviceInfo-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRNDeviceInfo-tvOS.a";
+			remoteRef = 18883B062228D8BA00363A05 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		1891D17D21C8A6D600D4D38F /* libBVLinearGradient.a */ = {
