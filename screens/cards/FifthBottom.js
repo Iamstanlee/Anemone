@@ -13,6 +13,39 @@ import {
 import FoldView from 'react-native-foldview';
 
 import FifthMiddle from './FifthMiddle';
+import DeviceInfo from 'react-native-device-info';
+var styles = StyleSheet.create();
+
+
+const model = DeviceInfo.getModel();
+
+
+if (model == 'iPhone 5s' || model == 'iPhone SE'){
+
+  styles = StyleSheet.create({
+  text: {
+  textAlign:'left',
+  fontFamily: 'ProximaNova-Bold',
+  fontSize: 13
+  }
+
+});
+
+}
+
+
+ else {
+
+  styles = StyleSheet.create({
+  text: {
+  textAlign:'left',
+  fontFamily: 'ProximaNova-Bold',
+  fontSize: 15
+  }
+
+});
+
+}
 
 
 export default class FifthBottom extends Component {
@@ -72,7 +105,7 @@ export default class FifthBottom extends Component {
             borderRadius: 2,
           }}
         >
-            <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>Don’t worry if a new diet seems overwhelming. Start with a healthy snack, like carrots and hummus, or a piece of fruit. 
+            <Text style={styles.text}>Don’t worry if a new diet seems overwhelming. Start with a healthy snack, like carrots and hummus, or a piece of fruit.
             </Text>
 
         </View>
@@ -103,7 +136,7 @@ export default class FifthBottom extends Component {
             }}
           >
 
-            <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15,}}>While exercise is crucial, diet is equally important in improving mental health. Many of the foods we eat can affect moods (both positively and negatively), without us even realizing it.
+            <Text style={styles.text}>While exercise is crucial, diet is equally important in improving mental health. Many of the foods we eat can affect moods (both positively and negatively), without us even realizing it.
 
 </Text>
 
@@ -152,7 +185,7 @@ export default class FifthBottom extends Component {
               padding: 16,
             }}>
 
-              <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>It has been observed that products containing sugars, caffeine, wheat, and dairy have the potential to alter moods.
+              <Text style={styles.text}>It has been observed that products containing sugars, caffeine, wheat, and dairy have the potential to alter moods.
 
 </Text>
 

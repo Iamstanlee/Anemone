@@ -13,6 +13,40 @@ import {
 import FoldView from 'react-native-foldview';
 
 import FourthMiddle from './FourthMiddle';
+import DeviceInfo from 'react-native-device-info';
+var styles = StyleSheet.create();
+
+
+const model = DeviceInfo.getModel();
+
+
+if (model == 'iPhone 5s' || model == 'iPhone SE'){
+
+  styles = StyleSheet.create({
+  text: {
+  textAlign:'left',
+  fontFamily: 'ProximaNova-Bold',
+  fontSize: 13
+  }
+
+});
+
+}
+
+
+ else {
+
+  styles = StyleSheet.create({
+  text: {
+  textAlign:'left',
+  fontFamily: 'ProximaNova-Bold',
+  fontSize: 15
+  }
+
+});
+
+}
+
 
 
 export default class FourthBottom extends Component {
@@ -72,7 +106,7 @@ export default class FourthBottom extends Component {
             borderRadius: 2,
           }}
         >
-            <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>Perhaps visit the virtual Grounding Box on the next page and click on Sully the seahorse for some inspirational quotes you can read.
+            <Text style={styles.text}>Perhaps visit the virtual Grounding Box on the next page and click on Sully the seahorse for some inspirational quotes you can read.
             </Text>
 
         </View>
@@ -103,7 +137,7 @@ export default class FourthBottom extends Component {
             }}
           >
 
-            <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15,}}>There are many ways to engage in diversion skills, but most differ for each individual.{"\n"}{"\n"}
+            <Text style={styles.text}>There are many ways to engage in diversion skills, but most differ for each individual.{"\n"}{"\n"}
  Some examples of diversion skills include the following:
 </Text>
 
@@ -152,7 +186,7 @@ export default class FourthBottom extends Component {
               padding: 16,
             }}>
 
-              <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>Coloring, walking/petting your dog, taking a shower, watching TV, listening to music, exercising, playing a game, and napping
+              <Text style={styles.text}>Coloring, walking/petting your dog, taking a shower, watching TV, listening to music, exercising, playing a game, and napping
 </Text>
 
 

@@ -9,6 +9,91 @@
 import React from 'react';
 import {Platform, StyleSheet, Text, View, Image} from 'react-native';
 import Button from 'react-native-flat-button'
+import DeviceInfo from 'react-native-device-info';
+var styles = StyleSheet.create();
+
+
+const model = DeviceInfo.getModel();
+
+
+if (model == 'iPhone 5s' || model == 'iPhone SE'){
+
+  styles = StyleSheet.create({
+  text: {
+  textAlign:'left',
+  fontFamily: 'ProximaNova-Bold',
+  fontSize: 13
+  },
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#ffffff',
+
+  },
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+    color: '#ffffff',
+  },
+  instructions: {
+    textAlign: 'center',
+    color: '#333333',
+    marginBottom: 5,
+  },
+  buttonContainer:{
+    height: 25,
+  },
+
+  content: {
+    fontFamily: 'ProximaNova-Bold',
+    fontSize: 20,
+  }
+
+});
+
+}
+
+
+ else {
+
+  styles = StyleSheet.create({
+  text: {
+  textAlign:'left',
+  fontFamily: 'ProximaNova-Bold',
+  fontSize: 15
+  },
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#ffffff',
+
+  },
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+    color: '#ffffff',
+  },
+  instructions: {
+    textAlign: 'center',
+    color: '#333333',
+    marginBottom: 5,
+  },
+  buttonContainer:{
+    height: 25,
+  },
+
+  content: {
+    fontFamily: 'ProximaNova-Bold',
+    fontSize: 20,
+  }
+
+});
+
+}
 
 
 //var yourPicture = require ('./images/picture.jpg');
@@ -42,39 +127,10 @@ export default class SecondTop extends React.Component{
                  padding: 16,
                }}>
 
-               <Text style={{textAlign: 'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>Exercise and diet are very important in improving mental health. It is important to find the right exercise program for yourself. That may include running, walking, swimming, aerobic classes, and/or cycling, just to name a few.  Exercise increases the feel-good hormones like endorphins which can in-turn improve mood.
+               <Text style={styles.text}>Exercise and diet are very important in improving mental health. It is important to find the right exercise program for yourself. That may include running, walking, swimming, aerobic classes, and/or cycling, just to name a few.  Exercise increases the feel-good hormones like endorphins which can in-turn improve mood.
 </Text>
       </View>
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#ffffff',
-
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-    color: '#ffffff',
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-  buttonContainer:{
-    height: 25,
-  },
-
-  content: {
-    fontFamily: 'ProximaNova-Bold',
-    fontSize: 20,
-  }
-});

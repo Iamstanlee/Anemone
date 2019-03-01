@@ -8,7 +8,93 @@
 
 import React from 'react';
 import {Platform, StyleSheet, Text, View, Image} from 'react-native';
-import Button from 'react-native-flat-button'
+import Button from 'react-native-flat-button';
+import DeviceInfo from 'react-native-device-info';
+var styles = StyleSheet.create();
+
+
+const model = DeviceInfo.getModel();
+
+
+if (model == 'iPhone 5s' || model == 'iPhone SE'){
+
+  styles = StyleSheet.create({
+  text: {
+  textAlign:'left',
+  fontFamily: 'ProximaNova-Bold',
+  fontSize: 13
+  },
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#ffffff',
+
+  },
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+    color: '#ffffff',
+  },
+  instructions: {
+    textAlign: 'center',
+    color: '#333333',
+    marginBottom: 5,
+  },
+  buttonContainer:{
+    height: 25,
+  },
+
+  content: {
+    fontFamily: 'ProximaNova-Bold',
+    fontSize: 20,
+  }
+
+});
+
+}
+
+
+ else {
+
+  styles = StyleSheet.create({
+  text: {
+  textAlign:'left',
+  fontFamily: 'ProximaNova-Bold',
+  fontSize: 15
+  },
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#ffffff',
+
+  },
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+    color: '#ffffff',
+  },
+  instructions: {
+    textAlign: 'center',
+    color: '#333333',
+    marginBottom: 5,
+  },
+  buttonContainer:{
+    height: 25,
+  },
+
+  content: {
+    fontFamily: 'ProximaNova-Bold',
+    fontSize: 20,
+  }
+
+});
+
+}
+
 
 
 //var yourPicture = require ('./images/picture.jpg');
@@ -42,38 +128,9 @@ export default class SixthTop extends React.Component{
                  padding: 16,
                }}>
 
-               <Text style={{textAlign: 'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>Just like diet and exercise, achieving a balanced sleep cycle is crucial to maintaining good mental health. Sleep and mental health are closely linked to each other. People who have poor mental health have an increased risk of sleep disturbance, while people who experience lack of sleep are more likely to suffer from mental illness.</Text>
+               <Text style={styles.text}>Just like diet and exercise, achieving a balanced sleep cycle is crucial to maintaining good mental health. Sleep and mental health are closely linked to each other. People who have poor mental health have an increased risk of sleep disturbance, while people who experience lack of sleep are more likely to suffer from mental illness.</Text>
       </View>
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#ffffff',
-
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-    color: '#ffffff',
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-  buttonContainer:{
-    height: 25,
-  },
-
-  content: {
-    fontFamily: 'ProximaNova-Bold',
-    fontSize: 20,
-  }
-});

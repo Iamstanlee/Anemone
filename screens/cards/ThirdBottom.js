@@ -13,6 +13,40 @@ import {
 import FoldView from 'react-native-foldview';
 
 import ThirdMiddle from './ThirdMiddle';
+import DeviceInfo from 'react-native-device-info';
+var styles = StyleSheet.create();
+
+
+const model = DeviceInfo.getModel();
+
+
+if (model == 'iPhone 5s' || model == 'iPhone SE'){
+
+  styles = StyleSheet.create({
+  text: {
+  textAlign:'left',
+  fontFamily: 'ProximaNova-Bold',
+  fontSize: 13
+  }
+
+});
+
+}
+
+
+ else {
+
+  styles = StyleSheet.create({
+  text: {
+  textAlign:'left',
+  fontFamily: 'ProximaNova-Bold',
+  fontSize: 15
+  }
+
+});
+
+}
+
 
 
 export default class ThirdBottom extends Component {
@@ -72,7 +106,7 @@ export default class ThirdBottom extends Component {
             borderRadius: 2,
           }}
         >
-            <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>Use the virtual grounding box in this app to ground yourself with a picture, song, and positive affirmations from Sully the seahorse.
+            <Text style={styles.text}>Use the virtual grounding box in this app to ground yourself with a picture, song, and positive affirmations from Sully the seahorse.
 
             </Text>
 
@@ -104,7 +138,7 @@ export default class ThirdBottom extends Component {
             }}
           >
 
-            <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15,}}>Physical grounding is very tactile. For example: running cool water on hands, grabbing tightly onto a chair, touching things around you, digging your heels into the floor, or focusing on sensations.
+            <Text style={styles.text}>Physical grounding is very tactile. For example: running cool water on hands, grabbing tightly onto a chair, touching things around you, digging your heels into the floor, or focusing on sensations.
 </Text>
 
 
@@ -152,7 +186,7 @@ export default class ThirdBottom extends Component {
               padding: 16,
             }}>
 
-              <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>Mental grounding is focusing on as many factual details as possible within your environment, or describing the surroundings.
+              <Text style={styles.text}>Mental grounding is focusing on as many factual details as possible within your environment, or describing the surroundings.
 </Text>
 
 

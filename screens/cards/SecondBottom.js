@@ -13,6 +13,40 @@ import {
 import FoldView from 'react-native-foldview';
 
 import SecondMiddle from './SecondMiddle';
+import DeviceInfo from 'react-native-device-info';
+var styles = StyleSheet.create();
+
+
+const model = DeviceInfo.getModel();
+
+
+if (model == 'iPhone 5s' || model == 'iPhone SE'){
+
+  styles = StyleSheet.create({
+  text: {
+  textAlign:'left',
+  fontFamily: 'ProximaNova-Bold',
+  fontSize: 13
+  }
+
+});
+
+}
+
+
+ else {
+
+  styles = StyleSheet.create({
+  text: {
+  textAlign:'left',
+  fontFamily: 'ProximaNova-Bold',
+  fontSize: 15
+  }
+
+});
+
+}
+
 
 
 export default class SecondBottom extends Component {
@@ -72,7 +106,7 @@ export default class SecondBottom extends Component {
             borderRadius: 2,
           }}
         >
-            <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>You can also be mindful while eating, listening to music, taking a shower, by just focusing on the sensations around you.
+            <Text style={styles.text}>You can also be mindful while eating, listening to music, taking a shower, by just focusing on the sensations around you.
 
             </Text>
 
@@ -104,7 +138,7 @@ export default class SecondBottom extends Component {
             }}
           >
 
-            <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15,}}>Mindfulness Exercises: {"\n"}{"\n"}Mindfulness takes practice, just like any form of exercise. Mindfulness exercises are helpful to use several times a day.
+            <Text style={styles.text}>Mindfulness Exercises: {"\n"}{"\n"}Mindfulness takes practice, just like any form of exercise. Mindfulness exercises are helpful to use several times a day.
 
 </Text>
 
@@ -153,7 +187,7 @@ export default class SecondBottom extends Component {
               padding: 16,
             }}>
 
-              <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>Sometimes you will only be able to be mindful for a few minutes, but you will slowly learn to increase your time.
+              <Text style={styles.text}>Sometimes you will only be able to be mindful for a few minutes, but you will slowly learn to increase your time.
 
 </Text>
 

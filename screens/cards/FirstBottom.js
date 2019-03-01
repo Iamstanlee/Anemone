@@ -13,6 +13,40 @@ import {
 import FoldView from 'react-native-foldview';
 
 import FirstMiddle from './FirstMiddle';
+import DeviceInfo from 'react-native-device-info';
+var styles = StyleSheet.create();
+
+
+const model = DeviceInfo.getModel();
+
+
+if (model == 'iPhone 5s' || model == 'iPhone SE'){
+
+  styles = StyleSheet.create({
+  text: {
+  textAlign:'left',
+  fontFamily: 'ProximaNova-Bold',
+  fontSize: 13
+  }
+
+});
+
+}
+
+
+ else {
+
+  styles = StyleSheet.create({
+  text: {
+  textAlign:'left',
+  fontFamily: 'ProximaNova-Bold',
+  fontSize: 15
+  }
+
+});
+
+}
+
 
 
 export default class FirstBottom extends Component {
@@ -72,7 +106,7 @@ export default class FirstBottom extends Component {
             borderRadius: 2,
           }}
         >
-            <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>Take your time with each breath.
+            <Text style={styles.text}>Take your time with each breath.
 There are other forms of breathing but this is the easiest to complete if you’re feeling stressed.
             </Text>
 
@@ -104,7 +138,7 @@ There are other forms of breathing but this is the easiest to complete if you’
             }}
           >
 
-            <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15,}}>Belly Breathing:{"\n"}{"\n"}
+            <Text style={styles.text}>Belly Breathing:{"\n"}{"\n"}
 Sit or lie flat in a comfortable position.
 Put one hand on your belly just below your ribs and the other hand on your chest.
 </Text>
@@ -154,7 +188,7 @@ Put one hand on your belly just below your ribs and the other hand on your chest
               padding: 16,
             }}>
 
-              <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>Take a deep breath in through your nose and let your belly push your hand out. Your chest should not move.
+              <Text style={styles.text}>Take a deep breath in through your nose and let your belly push your hand out. Your chest should not move.
 </Text>
 
 

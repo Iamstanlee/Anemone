@@ -13,6 +13,40 @@ import {
 import FoldView from 'react-native-foldview';
 
 import SixthMiddle from './SixthMiddle';
+import DeviceInfo from 'react-native-device-info';
+var styles = StyleSheet.create();
+
+
+const model = DeviceInfo.getModel();
+
+
+if (model == 'iPhone 5s' || model == 'iPhone SE'){
+
+  styles = StyleSheet.create({
+  text: {
+  textAlign:'left',
+  fontFamily: 'ProximaNova-Bold',
+  fontSize: 13
+  }
+
+});
+
+}
+
+
+ else {
+
+  styles = StyleSheet.create({
+  text: {
+  textAlign:'left',
+  fontFamily: 'ProximaNova-Bold',
+  fontSize: 15
+  }
+
+});
+
+}
+
 
 
 export default class SixthBottom extends Component {
@@ -72,7 +106,7 @@ export default class SixthBottom extends Component {
             borderRadius: 2,
           }}
         >
-            <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>Try limiting how much time you spend on your phone about an hour before your actual bedtime to get your body ready to sleep.
+            <Text style={styles.text}>Try limiting how much time you spend on your phone about an hour before your actual bedtime to get your body ready to sleep.
 
 
             </Text>
@@ -105,7 +139,7 @@ export default class SixthBottom extends Component {
             }}
           >
 
-            <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15,}}>The two most common complaints people have regarding sleep are difficulty falling asleep and difficulty staying asleep. These symptoms can be the result of psychiatric meds, excessive worrying, and low mood.
+            <Text style={styles.text}>The two most common complaints people have regarding sleep are difficulty falling asleep and difficulty staying asleep. These symptoms can be the result of psychiatric meds, excessive worrying, and low mood.
 
 </Text>
 
@@ -154,7 +188,7 @@ export default class SixthBottom extends Component {
               padding: 16,
             }}>
 
-              <Text style={{textAlign:'left', fontFamily: 'ProximaNova-Bold', fontSize: 15}}>Don’t worry though because there are several ways to improve sleep patterns through basic lifestyle changes such as:
+              <Text style={styles.text}>Don’t worry though because there are several ways to improve sleep patterns through basic lifestyle changes such as:
 
 
 
