@@ -39,7 +39,6 @@ export default class GroundingBox extends React.Component {
       count = 1;
     }
 
-    //TODO: Check this works for all quotes
     console.log("The count is " + count);
     this.forceUpdate();
   }
