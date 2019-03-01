@@ -70,11 +70,12 @@ export default class GroundingBox extends React.Component {
   };
 
 async checkPhoto(){
-  if (await this.getKey('GroundingPhoto') != null){
+  source = await this.getKey('GroundingPhoto');
 
-    source = await this.getKey('GroundingPhoto');
+  if (source != null){
 
-    //console.log("This is what source does look like: " + source);
+
+    console.log("This is what source does look like: " + source);
 
     this.setState({
       avatarSource: source
@@ -129,7 +130,8 @@ setTimeout(() => {
     })
   }, 500);
 
-    await this.saveKey('GroundingPhoto', source);
+    await this.saveKey('GroundingPhoto', this.state.avatarSource);
+    //console.log("AVATAR:" + this.state.avatarSource);
 
     //TODO: Photo no longer saves upon app close
 
