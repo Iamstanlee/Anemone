@@ -31,7 +31,7 @@ const model = DeviceInfo.getModel();
      },
    });
  }
- else if (model == 'iPhone XS Max'){
+ else if (model == 'iPhone XS Max' || model == 'iPhone 6 Plus' || model == 'iPhone 6s Plus' || model == 'iPhone 7 Plus' || model == 'iPhone 8 Plus' || model == 'iPhone XR'){
    styles = StyleSheet.create({
      coverPic: {
        height: 180, // 70% of height device screen
