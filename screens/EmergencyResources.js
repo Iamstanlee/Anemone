@@ -16,6 +16,9 @@ import Modal from 'react-native-modalbox';
 import MaterialsIcon from 'react-native-vector-icons/MaterialIcons';
 import { Kohana } from 'react-native-textinput-effects';
 import LottieView from 'lottie-react-native';
+import DeviceInfo from 'react-native-device-info';
+
+const model = DeviceInfo.getModel();
 
 //var isSaved = false;
 
@@ -40,9 +43,56 @@ const suicideTextLine = {
 const PCnumber = {
   number: null,
   prompt: false
+}
+
+var styles = StyleSheet.create();
+
+  if (model == 'iPhone 5s' || model == 'iPhone SE'){
+    styles = StyleSheet.create({
+
+      buttonText: {
+        fontSize: 11,
+        fontWeight: '500',
+        fontFamily: 'ProximaNova-Bold',
+        textAlign: 'center',
+        margin: 10,
+        color: '#ffffff',
+        backgroundColor: 'transparent',
+        },
+        modal: {
+          //justifyContent: 'center',
+        //  alignItems: 'center',
+          height: 200,
+          width: 350,
+          backgroundColor: 'transparent',
+          },
+          });
 
 
-  //TODO: Button positioning
+}
+
+else {
+  styles = StyleSheet.create({
+
+    buttonText: {
+      fontSize: 15,
+      fontWeight: '500',
+      fontFamily: 'ProximaNova-Bold',
+      textAlign: 'center',
+      margin: 10,
+      color: '#ffffff',
+      backgroundColor: 'transparent',
+      },
+      modal: {
+        //justifyContent: 'center',
+      //  alignItems: 'center',
+        height: 200,
+        width: 350,
+        backgroundColor: 'transparent',
+        },
+        });
+
+
 }
 
 export default class EmergencyResources extends React.Component{
@@ -233,16 +283,19 @@ export default class EmergencyResources extends React.Component{
 
                         var outerColor = ['#7C4D63', '#16a085', '#91AA1E', '#D88C82', '#C65351', '#C99422']
 
+                        if (model == 'iPhone 5s' || model == 'iPhone SE'){
+
+
                         innerButtonStyle = function(rNum, cNum, colNum) {
                           return {
                             //borderWidth:,
                             //borderColor:'rgba(0,0,0,0.2)',
                             alignItems:'center',
                             justifyContent:'center',
-                            width:100,
-                            height:100,
+                            width:80,
+                            height:80,
                             backgroundColor:innerColor[colNum],
-                            borderRadius:100,
+                            borderRadius:80,
                             textAlign: 'center'
                             //position: 'absolute'
                             //   top: (rNum*(height))/6,
@@ -258,15 +311,54 @@ export default class EmergencyResources extends React.Component{
                             borderColor:'rgba(0,0,0,0.2)',
                             alignItems:'center',
                             justifyContent:'center',
-                            width:120,
-                            height:120,
+                            width:100,
+                            height:100,
                             backgroundColor:'transparent',
                             borderColor:outerColor[colNum],
-                            borderRadius:120,
+                            borderRadius:100,
                             top: (rNum*(height))/6,
                             //left: (cNum*(width))/6,
 
+}
                           }
+                        }
+
+                        else {
+                          innerButtonStyle = function(rNum, cNum, colNum) {
+                            return {
+                              //borderWidth:,
+                              //borderColor:'rgba(0,0,0,0.2)',
+                              alignItems:'center',
+                              justifyContent:'center',
+                              width:100,
+                              height:100,
+                              backgroundColor:innerColor[colNum],
+                              borderRadius:100,
+                              textAlign: 'center'
+                              //position: 'absolute'
+                              //   top: (rNum*(height))/6,
+                              // left: (cNum*(width))/6 - 100,
+
+                            }
+                          }
+
+                          outerButtonStyle = function(rNum, cNum, colNum) {
+                            return {
+                              borderWidth:5,
+                              //position: 'absolute',
+                              borderColor:'rgba(0,0,0,0.2)',
+                              alignItems:'center',
+                              justifyContent:'center',
+                              width:120,
+                              height:120,
+                              backgroundColor:'transparent',
+                              borderColor:outerColor[colNum],
+                              borderRadius:120,
+                              top: (rNum*(height))/6,
+                              //left: (cNum*(width))/6,
+
+  }
+                            }
                         }
                         return (
                           <View style={{backgroundColor:'transparent'}}>
@@ -346,23 +438,3 @@ export default class EmergencyResources extends React.Component{
                                 );
                               }
                             }
-
-                            const styles = StyleSheet.create({
-
-                              buttonText: {
-                                fontSize: 15,
-                                fontWeight: '500',
-                                fontFamily: 'ProximaNova-Bold',
-                                textAlign: 'center',
-                                margin: 10,
-                                color: '#ffffff',
-                                backgroundColor: 'transparent',
-                                },
-                                modal: {
-                                  //justifyContent: 'center',
-                                //  alignItems: 'center',
-                                  height: 200,
-                                  width: 350,
-                                  backgroundColor: 'transparent',
-                                  },
-                                  });
