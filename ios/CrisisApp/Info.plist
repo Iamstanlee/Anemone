@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>CrisisApp</string>
+	<string>Anemone</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -37,14 +37,14 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Needs access to load music for grounding box</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Needs access to camera for grounding box</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Needs access to photos for grounding box</string>
-	<key>NSAppleMusicUsageDescription</key>
-	<string>Needs access to load music for grounding box</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Needs access to load photos for grounding box</string>
 	<key>UIAppFonts</key>

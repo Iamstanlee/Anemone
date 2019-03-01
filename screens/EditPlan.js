@@ -71,7 +71,6 @@ export default class EditPlan extends React.Component{
        console.log("SECOND:" + EarlySymptoms);
 
 
-        //TODO: Still not picking up strings from this function
         //EarlySymptoms = EarlySymptoms.split(" ").join(" \n");
 
         SymptomManagement = await this.getKey('SymptomManagement');
@@ -166,9 +165,6 @@ export default class EditPlan extends React.Component{
       createPDF();
 
       //console.log("count: " + this.state.cardCount);
-
-      //todo: bug where the first page doesn't show the real contents of earlysymptoms
-
 
 
     }}
