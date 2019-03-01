@@ -312,7 +312,7 @@ export default class EmergencyResources extends React.Component{
                             <List>
 
 
-                            <View style={{flexDirection: 'row', flex:2, alignItems: 'center'}}>
+                            <View style={{flexDirection: 'row', flex:2}}>
                             {
                               list1.map((item) => (
                                 <ListItem
@@ -327,7 +327,7 @@ export default class EmergencyResources extends React.Component{
                               </List>
 
                               <List>
-                              <View style={{flexDirection: 'row', flex:2, alignItems: 'center'}}>
+                              <View style={{flexDirection: 'row', flex:2}}>
                               {
                                 list2.map((item) => (
                                   <ListItem
