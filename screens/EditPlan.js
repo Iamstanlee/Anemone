@@ -6,9 +6,7 @@ import RNHTMLtoPDF from 'react-native-html-to-pdf';
 import {EarlySymptomsSwipe} from './EditSwipe.js';
 import LottieView from 'lottie-react-native';
 import Button from 'react-native-flat-button';
-
-
-
+import DeviceInfo from 'react-native-device-info';
 
 var time= new Date().toLocaleString();
 
@@ -23,7 +21,14 @@ var CurrentMedications = "No current medications were filled out";
 var PastMedications = "No past medications were filled out";
 var TreatmentFacilities = "No treatment facilities were filled out";
 var OtherResources = "No other resources were filled out";
+var spacer = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
 
+const model = DeviceInfo.getModel();
+
+
+if (model == 'iPhone 5s' || model == 'iPhone SE'){
+  spacer = "\n\n\n\n\n\n\n\n\n";
+}
 export default class EditPlan extends React.Component{
 
   state = {
@@ -341,7 +346,7 @@ width: Dimensions.get('window').width},
 
   <View style={styles.slide}>
 
-  <Text>{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}</Text>
+  <Text>{spacer}</Text>
 
   <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <View

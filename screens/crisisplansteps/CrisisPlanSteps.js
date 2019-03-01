@@ -5,7 +5,16 @@ import PDFLib, { PDFDocument, PDFPage } from 'react-native-pdf-lib';
 import RNHTMLtoPDF from 'react-native-html-to-pdf';
 import LottieView from 'lottie-react-native';
 import Button from 'react-native-flat-button';
+import DeviceInfo from 'react-native-device-info';
 
+var spacer = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+
+const model = DeviceInfo.getModel();
+
+
+if (model == 'iPhone 5s' || model == 'iPhone SE'){
+  spacer = "\n\n\n\n\n\n\n\n\n";
+}
 
 var time= new Date().toLocaleString();
 
@@ -196,7 +205,7 @@ export default class CrisisPlanSteps extends React.Component{
 
   <View style={styles.slide}>
 
-  <Text>{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}</Text>
+  <Text>{spacer}</Text>
 
   <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <View
