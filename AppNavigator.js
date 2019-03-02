@@ -14,6 +14,7 @@ import CreateSwipe from './screens/CreateSwipe';
 import ViewPlan from './screens/ViewPlan';
 import EditPlan from './screens/EditPlan';
 import WhatPlan from './screens/WhatPlan';
+import Disclaimer from './screens/Disclaimer';
 import CrisisPlanSteps from './screens/crisisplansteps/CrisisPlanSteps';
 import MusicPlayerController from 'react-native-musicplayercontroller'
 import Button from 'react-native-flat-button';
@@ -104,6 +105,19 @@ const TabNavigator = createMaterialBottomTabNavigator({
 
 const FeedStack = createStackNavigator({
   HomeScreen: HomeScreen,
+  Disclaimer: {
+
+    screen: Disclaimer, navigationOptions: ({navigation}) => ({
+          headerLeft: <Button type="custom"
+          backgroundColor={"#7bd2d8"}
+          borderColor={"#16a085"}
+          borderRadius={10}
+          shadowHeight={5}
+          containerStyle={styles.buttonContainer}
+          contentStyle={styles.content}
+        onPress={() => navigation.navigate('HomeScreen')}>&#8592; Back</Button>,
+      })
+    },
   ViewPlan: {
 
     screen: ViewPlan, navigationOptions: ({navigation}) => ({

@@ -30,7 +30,7 @@ export default class HomeScreen extends React.Component{
         <Button
                  type="custom"
                  onPress={() =>
-                   this.props.navigation.navigate('CrisisPlan')
+                   this.props.navigation.navigate('Disclaimer')
                  }
                  backgroundColor={"#7bd2d8"}
                  borderColor={"#16a085"}
