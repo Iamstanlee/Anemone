@@ -45,6 +45,7 @@ export default class GroundingBox extends React.Component {
 
   async saveKey(key, value){
     value = JSON.stringify(value);
+    console.log ("saved:" + value);
     try {
       await AsyncStorage.setItem(key, value);
     } catch (error) {
@@ -58,6 +59,8 @@ export default class GroundingBox extends React.Component {
     try {
       var value = await AsyncStorage.getItem(key);
       value = JSON.parse(value);
+      console.log ("retrieved:" + value);
+
       return value;
     } catch (error) {
       console.log("Error retrieving data" + error);
@@ -70,15 +73,15 @@ export default class GroundingBox extends React.Component {
   };
 
 async checkPhoto(){
-  source = await this.getKey('GroundingPhoto');
+  sourcePic = await this.getKey('GroundingPhoto');
 
-  if (source != null){
+  if (sourcePic != null){
 
 
-    console.log("This is what source does look like: " + source);
+    console.log("This is what source does look like: " + sourcePic);
 
     this.setState({
-      avatarSource: source
+      avatarSource: sourcePic
     });
   }
 }
@@ -100,6 +103,9 @@ async checkSongTitle(){
 
 
   async selectPhotoTapped() {
+
+    var sourcePicture = null;
+
     const options = {
       quality: 1.0,
       maxWidth: 500,
@@ -121,16 +127,16 @@ setTimeout(() => {
       } else if (response.customButton) {
         console.log('User tapped custom button: ', response.customButton);
       } else {
-        let source = { uri: response.uri };
-       console.log("This is what source should look like: " + source);
+         sourcePicture = { uri: response.uri };
+       console.log("This is what source should look like: " + sourcePicture);
         this.setState({
-          avatarSource: source,
+          avatarSource: sourcePicture,
         });
       }
     })
   }, 500);
 
-    await this.saveKey('GroundingPhoto', this.state.avatarSource);
+    await this.saveKey('GroundingPhoto', sourcePicture);
     //console.log("AVATAR:" + this.state.avatarSource);
 
     //TODO: Photo no longer saves upon app close
