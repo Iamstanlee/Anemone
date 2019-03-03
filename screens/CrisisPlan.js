@@ -5,10 +5,6 @@ import Modal from 'react-native-modalbox';
 import Button from 'react-native-flat-button';
 import LottieView from 'lottie-react-native';
 
-var count = -1;
-var pdfPath = null;
-var planCreated = false;
-
   export default class CrisisPlan extends React.Component{
 
     constructor(props) {
@@ -16,19 +12,21 @@ var planCreated = false;
 
         this.state = {
           progress: new Animated.Value(0),
+          planCreated: false,
+          count: -1,
+          pdfPath: null
         };
       }
 
 incrementCount(){
-  count = count+1;
-  console.log("The count is " + count);
-  this.forceUpdate();
+  this.setState({count:this.state.count + 1});
+  console.log("The count is " + this.state.count);
 }
 
 
 emergencyAlert(){
 
-  if (count == -1){
+  if (this.state.count == -1){
   Alert.alert(
   'Are you currently experiencing a mental health emergency?',
   'If you select "Yes", you will be directed to emergency resources.',
@@ -45,9 +43,15 @@ emergencyAlert(){
 
   componentDidMount() {
 
-     this.setupAnimation()
+         this.setupAnimation();
 
-   }
+         this.checkPlan();
+
+        this.emergencyAlert();
+
+        this.getPDF();
+
+       }
 
    setupAnimation = () => {
       Animated.timing(this.state.progress, {
@@ -78,30 +82,28 @@ emergencyAlert(){
   }
 
   async checkPlan(){
-    planVar = await this.getKey('PlanCreated');
+      let { planCreated } = this.state;
 
-    if (planVar == true){
-      planCreated = true;
-    }
+      planVar = await this.getKey('PlanCreated');
 
-    else {
-      planCreated = false;
+      if (planVar == true){
+        this.setState({planCreated:!planCreated})
+      }
+
+      else {
+        this.setState({planCreated:!planCreated})
+      }
     }
-  }
 
   render() {
 
-    this.checkPlan();
-
-    this.emergencyAlert();
-
-    this.getPDF();
+    let { count, pdfPath, planCreated} = this.state;
 
     return (
 
       <View style={styles.container}>
 
-{(count==0 && (this.getKey('PlanCreated') == null)) ?
+{(this.state.count==0 && (this.state.planCreated == null)) ?
       <Modal style={styles.modal} ref="sully" isOpen={true}
       swipetoClose="true"
       position={"center"}
@@ -146,7 +148,7 @@ emergencyAlert(){
           {"\n"}{"\n"}{"\n"}
           </Text>
 
-          {(planCreated == false) ? <Text style={styles.welcome} pointerEvents="none">
+          {(this.state.planCreated == false) ? <Text style={styles.welcome} pointerEvents="none">
           You do not currently have a crisis plan set up
           </Text> : null}
 
@@ -154,7 +156,7 @@ emergencyAlert(){
           {"\n"}{"\n"}{"\n"}
           </Text>
 
-          {(planCreated == false) ?
+          {(this.state.planCreated == false) ?
                           <Button
                            type="custom"
                            backgroundColor={"#f9b5ac"}
@@ -169,7 +171,7 @@ emergencyAlert(){
                          {"\n"}{"\n"}{"\n"}
                          </Text>
 
-                         {(planCreated == false) ?
+                         {(this.state.planCreated == false) ?
                                          <Button
                                           type="custom"
                                           backgroundColor={"#b6d332"}
@@ -184,7 +186,7 @@ emergencyAlert(){
                          {"\n"}{"\n"}{"\n"}
                          </Text>
 
-          {(planCreated != false) ?
+          {(this.state.planCreated != false) ?
           <Button
           type="custom"
           backgroundColor={"#f9b5ac"}
@@ -201,7 +203,7 @@ emergencyAlert(){
           </Text>
 
 
-          {(planCreated != false) ?
+          {(this.state.planCreated != false) ?
           <Button
           type="custom"
           backgroundColor={"#b6d332"}
@@ -215,7 +217,7 @@ emergencyAlert(){
                     {"\n"}{"\n"}{"\n"}
                     </Text>
 
-          {(planCreated != false) ?
+          {(this.state.planCreated != false) ?
           <Button
           type="custom"
           backgroundColor={"#F9BD39"}
