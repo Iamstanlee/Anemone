@@ -100,14 +100,14 @@ if (model == 'iPhone 5s' || model == 'iPhone SE'){
                           },
 
                           disclaimer:{
-                            fontSize: 12,
+                            fontSize: 15,
                             textAlign: 'center',
                             fontFamily: 'ProximaNova-Regular',
                             color: '#ffffff'
                             },
 
                             disclaimer2:{
-                              fontSize: 12,
+                              fontSize: 15,
                               textAlign: 'center',
                               fontFamily: 'ProximaNova-Bold',
                               color: '#ffffff'

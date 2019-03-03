@@ -71,6 +71,30 @@ var styles = StyleSheet.create();
 
 }
 
+else if (model == 'iPhone XS Max' || model == 'iPhone 6 Plus' || model == 'iPhone 6s Plus' || model == 'iPhone 7 Plus' || model == 'iPhone 8 Plus' || model == 'iPhone XR'){
+  styles = StyleSheet.create({
+
+    buttonText: {
+      fontSize: 17,
+      fontWeight: '500',
+      fontFamily: 'ProximaNova-Bold',
+      textAlign: 'center',
+      margin: 10,
+      color: '#ffffff',
+      backgroundColor: 'transparent',
+      },
+      modal: {
+        //justifyContent: 'center',
+      //  alignItems: 'center',
+        height: 200,
+        width: 250,
+        backgroundColor: 'transparent',
+        },
+        });
+
+
+}
+
 else {
   styles = StyleSheet.create({
 
@@ -322,6 +346,47 @@ export default class EmergencyResources extends React.Component{
 }
                           }
                         }
+
+                      else if (model == 'iPhone XS Max' || model == 'iPhone 6 Plus' || model == 'iPhone 6s Plus' || model == 'iPhone 7 Plus' || model == 'iPhone 8 Plus' || model == 'iPhone XR'){
+
+
+                        innerButtonStyle = function(rNum, cNum, colNum) {
+                          return {
+                            //borderWidth:,
+                            //borderColor:'rgba(0,0,0,0.2)',
+                            alignItems:'center',
+                            justifyContent:'center',
+                            width:120,
+                            height:120,
+                            backgroundColor:innerColor[colNum],
+                            borderRadius:120,
+                            textAlign: 'center'
+                            //position: 'absolute'
+                            //   top: (rNum*(height))/6,
+                            // left: (cNum*(width))/6 - 100,
+
+                          }
+                        }
+
+                        outerButtonStyle = function(rNum, cNum, colNum) {
+                          return {
+                            borderWidth:5,
+                            //position: 'absolute',
+                            borderColor:'rgba(0,0,0,0.2)',
+                            alignItems:'center',
+                            justifyContent:'center',
+                            width:140,
+                            height:140,
+                            backgroundColor:'transparent',
+                            borderColor:outerColor[colNum],
+                            borderRadius:140,
+                            top: (rNum*(height))/6,
+                            //left: (cNum*(width))/6,
+
+}
+                          }
+                        }
+
 
                         else {
                           innerButtonStyle = function(rNum, cNum, colNum) {
