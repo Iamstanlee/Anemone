@@ -86,12 +86,16 @@ emergencyAlert(){
 
       planVar = await this.getKey('PlanCreated');
 
-      if (planVar == true){
+      if (planVar == 'true'){
         this.setState({planCreated:true})
+        console.log("Plan is true");
+
       }
 
       else {
         this.setState({planCreated:false})
+        console.log("Plan is false");
+
       }
     }
 

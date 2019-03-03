@@ -420,7 +420,7 @@ let options = {
     try {
 
       saveKey('CrisisPlan', file.filePath);
-      saveKey('PlanCreated', "true");
+      saveKey('PlanCreated', 'true');
 
     }
 
