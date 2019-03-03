@@ -7,6 +7,7 @@ import LottieView from 'lottie-react-native';
 
 var count = -1;
 var pdfPath = null;
+var planCreated = false;
 
   export default class CrisisPlan extends React.Component{
 
@@ -40,9 +41,6 @@ emergencyAlert(){
 }
 }
 
-  state = {
-    planCreated: null,
-  }
 
 
   componentDidMount() {
@@ -79,7 +77,21 @@ emergencyAlert(){
 
   }
 
+  async checkPlan(){
+    planVar = await this.getKey('PlanCreated');
+
+    if (planVar == true){
+      planCreated = true;
+    }
+
+    else {
+      planCreated = false;
+    }
+  }
+
   render() {
+
+    this.checkPlan();
 
     this.emergencyAlert();
 
@@ -89,7 +101,7 @@ emergencyAlert(){
 
       <View style={styles.container}>
 
-{(count==0) ?
+{(count==0 && (this.getKey('PlanCreated') == null)) ?
       <Modal style={styles.modal} ref="sully" isOpen={true}
       swipetoClose="true"
       position={"center"}
@@ -134,7 +146,7 @@ emergencyAlert(){
           {"\n"}{"\n"}{"\n"}
           </Text>
 
-          {!(this.getKey('PlanCreated') != null) ? <Text style={styles.welcome} pointerEvents="none">
+          {(planCreated == false) ? <Text style={styles.welcome} pointerEvents="none">
           You do not currently have a crisis plan set up
           </Text> : null}
 
@@ -142,7 +154,7 @@ emergencyAlert(){
           {"\n"}{"\n"}{"\n"}
           </Text>
 
-          {!(this.getKey('PlanCreated') != null) ?
+          {(planCreated == false) ?
                           <Button
                            type="custom"
                            backgroundColor={"#f9b5ac"}
@@ -157,7 +169,7 @@ emergencyAlert(){
                          {"\n"}{"\n"}{"\n"}
                          </Text>
 
-                         {!(this.getKey('PlanCreated') != null) ?
+                         {(planCreated == false) ?
                                          <Button
                                           type="custom"
                                           backgroundColor={"#b6d332"}
@@ -172,7 +184,7 @@ emergencyAlert(){
                          {"\n"}{"\n"}{"\n"}
                          </Text>
 
-          {(this.getKey('PlanCreated') != null) ?
+          {(planCreated != false) ?
           <Button
           type="custom"
           backgroundColor={"#f9b5ac"}
@@ -189,7 +201,7 @@ emergencyAlert(){
           </Text>
 
 
-          {(this.getKey('PlanCreated') != null) ?
+          {(planCreated != false) ?
           <Button
           type="custom"
           backgroundColor={"#b6d332"}
@@ -203,7 +215,7 @@ emergencyAlert(){
                     {"\n"}{"\n"}{"\n"}
                     </Text>
 
-          {(this.getKey('PlanCreated') != null) ?
+          {(planCreated != false) ?
           <Button
           type="custom"
           backgroundColor={"#F9BD39"}

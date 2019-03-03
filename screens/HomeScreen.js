@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import {Platform, StyleSheet, Text, View, Image} from 'react-native';
+import {Platform, StyleSheet, Text, View, Image, AsyncStorage} from 'react-native';
 import Button from 'react-native-flat-button'
 
 
@@ -19,6 +19,7 @@ import Button from 'react-native-flat-button'
 type Props = {};
 export default class HomeScreen extends React.Component{
   render() {
+    AsyncStorage.clear();
     return (
 
 
