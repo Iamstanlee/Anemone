@@ -190,6 +190,9 @@ export default class GroundingBox extends React.Component {
 
   render() {
 
+    let { avatarSource} = this.state;
+
+
     this.checkPhoto();
     //this.checkSongTitle();
 
