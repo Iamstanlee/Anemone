@@ -63,7 +63,7 @@ var styles = StyleSheet.create();
           //justifyContent: 'center',
         //  alignItems: 'center',
           height: 200,
-          width: 350,
+          width: 250,
           backgroundColor: 'transparent',
           },
           });
@@ -375,9 +375,11 @@ export default class EmergencyResources extends React.Component{
                             justifyContent: 'center',
                             alignItems: 'center'}}>
 
-                            <Kohana
+                        {((model == 'iPhone 5s') || (model == 'iPhone SE')) ?
+
+                          <Kohana
                             style={{ backgroundColor: '#ffffff'}}
-                            label={'Enter Personal Contact Phone Number:'}
+                            label={'Enter Personal Contact:'}
                             iconClass={MaterialsIcon}
                             iconName={'phone'}
                             iconColor={'#af7b93'}
@@ -389,7 +391,23 @@ export default class EmergencyResources extends React.Component{
                             textContentType={'telephoneNumber'}
                             maxLength={10}
                             useNativeDriver
-                            />
+                            /> :
+
+                            <Kohana
+                              style={{ backgroundColor: '#ffffff'}}
+                              label={'Enter Personal Contact Phone Number:'}
+                              iconClass={MaterialsIcon}
+                              iconName={'phone'}
+                              iconColor={'#af7b93'}
+                              labelStyle={{ color: '#000000', fontFamily:'ProximaNova-Bold'}}
+                              inputStyle={{ color: '#F9BD39', fontFamily: 'ProximaNova-Regular'}}
+                              onChangeText={(text) => {this.saveKey('PC', text); this.checkPC();}}
+                              keyboardType={'numeric'}
+                              placeholder="Enter number here"
+                              textContentType={'telephoneNumber'}
+                              maxLength={10}
+                              useNativeDriver
+                              />}
                             <Text>{"\n"}{"\n"}</Text>
                             <Text style={{backgroundColor: 'white', fontFamily:'ProximaNova-Bold'}}> Swipe down to close </Text>
                             </View>
