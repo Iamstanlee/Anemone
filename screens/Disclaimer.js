@@ -68,6 +68,58 @@ if (model == 'iPhone 5s' || model == 'iPhone SE'){
                 })
               }
 
+              else if (model == 'iPhone XS Max' || model == 'iPhone 6 Plus' || model == 'iPhone 6s Plus' || model == 'iPhone 7 Plus' || model == 'iPhone 8 Plus' || model == 'iPhone XR'){
+                styles = StyleSheet.create({
+
+                  container: {
+                    flex: 1,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    backgroundColor: '#000000',
+                    padding: 20,
+                    width: null,
+                    height: null
+                    },
+                    welcome: {
+                      fontSize: 20,
+                      textAlign: 'center',
+                      margin: 10,
+                      color: '#ffffff',
+                      },
+                      instructions: {
+                        textAlign: 'center',
+                        color: '#333333',
+                        marginBottom: 5,
+                        },
+
+                        content:{
+                          fontSize: 25,
+                          textAlign: 'center',
+                          fontFamily: 'ProximaNova-Bold',
+                          color: '#ffffff'
+                          },
+
+                          disclaimer:{
+                            fontSize: 12,
+                            textAlign: 'center',
+                            fontFamily: 'ProximaNova-Regular',
+                            color: '#ffffff'
+                            },
+
+                            disclaimer2:{
+                              fontSize: 12,
+                              textAlign: 'center',
+                              fontFamily: 'ProximaNova-Bold',
+                              color: '#ffffff'
+                              },
+
+                              buttonContainer:{
+                                height: 45,
+                                },
+
+
+                              })
+                            }
               else {
                 styles = StyleSheet.create({
 

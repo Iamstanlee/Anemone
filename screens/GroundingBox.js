@@ -19,7 +19,10 @@ import Interactable from 'react-native-interactable';
 import Modal from 'react-native-modalbox';
 import MusicPlayerController from 'react-native-musicplayercontroller';
 import LottieView from 'lottie-react-native';
-import Button from 'react-native-flat-button'
+import Button from 'react-native-flat-button';
+import DeviceInfo from 'react-native-device-info';
+
+const model = DeviceInfo.getModel();
 
 
 var count = 0;
@@ -361,40 +364,87 @@ selectPhotoTapped() {
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#ffffff',
-    //  {width: Dimensions.get('window').width},
-    //  {height: Dimensions.get('window').height}
-  },
-  avatarContainer: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 10,
-    borderWidth: 2
-  },
-  avatar: {
-    width: 300,
-    height: 300,
-  },
-  modal: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: 300,
-    width: 350,
-    backgroundColor: 'transparent'
-  },
+var styles = StyleSheet.create();
 
-  buttonContainer:{
-    width: 160,
-    height: 32,
-  },
+if (model == 'iPhone XS Max' || model == 'iPhone 6 Plus' || model == 'iPhone 6s Plus' || model == 'iPhone 7 Plus' || model == 'iPhone 8 Plus' || model == 'iPhone XR'){
+  styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: '#ffffff',
+      //  {width: Dimensions.get('window').width},
+      //  {height: Dimensions.get('window').height}
+    },
+    avatarContainer: {
+      justifyContent: 'center',
+      alignItems: 'center',
+      borderRadius: 10,
+      borderWidth: 2
+    },
+    avatar: {
+      width: 300,
+      height: 300,
+    },
+    modal: {
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: 300,
+      width: 350,
+      backgroundColor: 'transparent'
+    },
 
-  content: {
-    fontFamily: 'ProximaNova-Bold',
-    fontSize: 22,
-  }
-});
+    buttonContainer:{
+      width: 250,
+      height: 40,
+    },
+
+    content: {
+      fontFamily: 'ProximaNova-Bold',
+      fontSize: 25,
+    }
+  });
+
+}
+
+else {
+  styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: '#ffffff',
+      //  {width: Dimensions.get('window').width},
+      //  {height: Dimensions.get('window').height}
+    },
+    avatarContainer: {
+      justifyContent: 'center',
+      alignItems: 'center',
+      borderRadius: 10,
+      borderWidth: 2
+    },
+    avatar: {
+      width: 300,
+      height: 300,
+    },
+    modal: {
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: 300,
+      width: 350,
+      backgroundColor: 'transparent'
+    },
+
+    buttonContainer:{
+      width: 160,
+      height: 32,
+    },
+
+    content: {
+      fontFamily: 'ProximaNova-Bold',
+      fontSize: 22,
+    }
+  });
+
+
+}

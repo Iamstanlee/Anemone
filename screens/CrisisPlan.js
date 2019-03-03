@@ -4,6 +4,9 @@ import Interactable from 'react-native-interactable';
 import Modal from 'react-native-modalbox';
 import Button from 'react-native-flat-button';
 import LottieView from 'lottie-react-native';
+import DeviceInfo from 'react-native-device-info';
+
+const model = DeviceInfo.getModel();
 
 var countNum = -1;
 var planCreatedVar = false;
@@ -369,43 +372,94 @@ emergencyAlert(){
     export {EarlySymptomsV, SymptomManagementV, CrisisSignsV, PeopleV, HowPeopleCanHelpV, CurrentMedicationsV, PastMedicationsV, TreatmentFacilitiesV, OtherResourcesV};
 
 
-    const styles = StyleSheet.create({
-      container: {
-        flex: 1,
+
+
+    var styles = StyleSheet.create();
+
+    if (model == 'iPhone XS Max' || model == 'iPhone 6 Plus' || model == 'iPhone 6s Plus' || model == 'iPhone 7 Plus' || model == 'iPhone 8 Plus' || model == 'iPhone XR'){
+        styles = StyleSheet.create({
+          container: {
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+            backgroundColor: '#F5FCFF',
+          },
+          welcome: {
+            fontSize: 20,
+            textAlign: 'center',
+            margin: 10,
+            fontFamily: 'ProximaNova-Regular',
+            color: 'white'
+          },
+          instructions: {
+            textAlign: 'center',
+            color: '#333333',
+            marginBottom: 5,
+          },
+
+          modal: {
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#F5FCFF',
-      },
-      welcome: {
-        fontSize: 20,
-        textAlign: 'center',
-        margin: 10,
-        fontFamily: 'ProximaNova-Regular',
-        color: 'white'
-      },
-      instructions: {
-        textAlign: 'center',
-        color: '#333333',
-        marginBottom: 5,
+        height: 300,
+        width: 350,
+        backgroundColor: 'transparent'
       },
 
-      modal: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: 300,
-    width: 350,
-    backgroundColor: 'transparent'
-  },
+      content:{
+      fontSize: 25,
+      textAlign: 'center',
+      fontFamily: 'ProximaNova-Bold'
+    },
 
-  content:{
-  fontSize: 22,
-  textAlign: 'center',
-  fontFamily: 'ProximaNova-Bold'
-},
+    buttonContainer:{
+      width: 300,
+      height: 45,
+    },
 
-buttonContainer:{
-  width: 250,
-  height: 32,
-}
+        });
+    }
 
-    });
+    else {
+      styles = StyleSheet.create({
+          container: {
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+            backgroundColor: '#F5FCFF',
+          },
+          welcome: {
+            fontSize: 20,
+            textAlign: 'center',
+            margin: 10,
+            fontFamily: 'ProximaNova-Regular',
+            color: 'white'
+          },
+          instructions: {
+            textAlign: 'center',
+            color: '#333333',
+            marginBottom: 5,
+          },
+
+          modal: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: 300,
+        width: 350,
+        backgroundColor: 'transparent'
+      },
+
+      content:{
+      fontSize: 22,
+      textAlign: 'center',
+      fontFamily: 'ProximaNova-Bold'
+    },
+
+    buttonContainer:{
+      width: 250,
+      height: 32,
+    },
+
+        });
+
+
+  }
