@@ -87,11 +87,11 @@ emergencyAlert(){
       planVar = await this.getKey('PlanCreated');
 
       if (planVar == true){
-        this.setState({planCreated:!planCreated})
+        this.setState({planCreated:true})
       }
 
       else {
-        this.setState({planCreated:!planCreated})
+        this.setState({planCreated:false})
       }
     }
 
