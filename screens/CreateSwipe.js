@@ -1,7 +1,10 @@
 import React from 'react';
 import {Text, View, StyleSheet} from 'react-native'
 import LottieView from 'lottie-react-native';
-import Button from 'react-native-flat-button'
+import Button from 'react-native-flat-button';
+import DeviceInfo from 'react-native-device-info';
+
+const model = DeviceInfo.getModel();
 
 export default class CreateSwipe extends React.Component {
   render() {
@@ -33,19 +36,44 @@ export default class CreateSwipe extends React.Component {
   }
 }
 
-const styles = StyleSheet.create({
+var styles = StyleSheet.create();
 
-  buttonContainer: {
-    width: 200,
-    height: 32,
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
+if (model == 'iPhone XS Max' || model == 'iPhone 6 Plus' || model == 'iPhone 6s Plus' || model == 'iPhone 7 Plus' || model == 'iPhone 8 Plus' || model == 'iPhone XR'){
+  styles = StyleSheet.create({
+    buttonContainer: {
+      width: 300,
+      height: 45,
+      justifyContent: 'center',
+      alignItems: 'center'
+    },
 
-content:{
-fontSize: 22,
-textAlign: 'center',
-fontFamily: 'ProximaNova-Bold'
-},
+    content:{
+      fontSize: 25,
+      textAlign: 'center',
+      fontFamily: 'ProximaNova-Bold',
 
-});
+    },
+
+  });
+
+}
+
+else {
+  styles = StyleSheet.create({
+    buttonContainer: {
+      width: 200,
+      height: 32,
+      justifyContent: 'center',
+      alignItems: 'center'
+    },
+
+    content:{
+      fontSize: 22,
+      textAlign: 'center',
+      fontFamily: 'ProximaNova-Bold',
+
+    },
+
+  });
+
+}
