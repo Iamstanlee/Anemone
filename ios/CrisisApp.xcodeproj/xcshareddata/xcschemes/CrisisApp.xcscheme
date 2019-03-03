@@ -103,7 +103,7 @@
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Debug"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
@@ -115,7 +115,7 @@
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
             BuildableName = "CrisisApp.app"
             BlueprintName = "CrisisApp"
-            ReferencedContainer = "container:CrisisApp.temp_caseinsensitive_rename.xcodeproj">
+            ReferencedContainer = "container:CrisisApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -7,6 +7,15 @@ import LottieView from 'lottie-react-native';
 
 var countNum = -1;
 var planCreatedVar = false;
+var EarlySymptomsV = "No early symptoms were filled out";
+var SymptomManagementV = "No symptom management skills were filled out";
+var CrisisSignsV = "No crisis signs were filled out";
+var PeopleV = "No contacts of assistance were filled out";
+var HowPeopleCanHelpV = "No instructions for contacts were filled out";
+var CurrentMedicationsV = "No current medications were filled out";
+var PastMedicationsV = "No past medications were filled out";
+var TreatmentFacilitiesV = "No treatment facilities were filled out";
+var OtherResourcesV = "No other resources were filled out";
 
 export default class CrisisPlan extends React.Component{
 
@@ -33,6 +42,78 @@ checkCountNum(){
     this.setState({count: countNum});
   }
 }
+
+async createView(){
+
+    try {
+      EarlySymptomsV = await this.getKey('EarlySymptoms');
+      if (EarlySymptomsV == null){
+        EarlySymptomsV = "No early symptoms were filled out";
+      }
+
+    //  console.log("ES:" + EarlySymptomsV);
+
+      //EarlySymptoms = EarlySymptoms.split(" ").join(" \n");
+
+      SymptomManagementV = await this.getKey('SymptomManagement');
+      if (SymptomManagementV == null){
+        SymptomManagementV = "No symptom management skills were filled out";
+      }
+    //  SymptomManagement = SymptomManagement.split(" ").join(" \n");
+
+      CrisisSignsV = await this.getKey('CrisisSigns');
+      if (CrisisSignsV == null){
+        CrisisSignsV = "No crisis signs were filled out";
+      }
+    //  CrisisSigns = CrisisSigns.split(" ").join(" \n");
+
+      PeopleV = await this.getKey('People');
+      if (PeopleV == null){
+        PeopleV = "No contacts of assistance were filled out";
+      }
+    //  People = People.split(" ").join(" \n");
+
+      HowPeopleCanHelpV = await this.getKey('HowPeopleCanHelp');
+      if (HowPeopleCanHelpV == null){
+        HowPeopleCanHelpV = "No instructions for contacts were filled out";
+      }
+    //  HowPeopleCanHelp = HowPeopleCanHelp.split(" ").join(" \n");
+
+      CurrentMedicationsV = await this.getKey('CurrentMedications');
+      if (CurrentMedicationsV == null){
+        CurrentMedicationsV = "No current medications were filled out";
+      }
+    //  CurrentMedications = CurrentMedications.split(" ").join(" \n");
+
+      PastMedicationsV = await this.getKey('PastMedications');
+      if (PastMedicationsV == null){
+        PastMedicationsV = "No past medications were filled out";
+      }
+    //  PastMedications = PastMedications.split(" ").join(" \n");
+
+      TreatmentFacilitiesV = await this.getKey('TreatmentFacilities');
+      if (TreatmentFacilitiesV == null){
+        TreatmentFacilitiesV = "No treatment facilities were filled out";
+      }
+    //  TreatmentFacilities = TreatmentFacilities.split(" ").join(" \n");
+
+      OtherResourcesV = await this.getKey('OtherResources');
+      if (OtherResourcesV == null){
+        OtherResourcesV = "No other resources were filled out";
+      }
+    //  OtherResources = OtherResources.split(" ").join(" \n");
+
+
+
+    }
+
+    catch (err) {
+      console.log("Retrieving failed " + err);
+    }
+
+    //this.forceUpdate();
+
+  }
 
 emergencyAlert(){
 
@@ -93,6 +174,8 @@ emergencyAlert(){
 
 
         this.getPDF();
+
+        this.createView();
         //console.log(JSON.stringify(this.props));
       //  console.log("props " + JSON.stringify(this.props.navigation.state));
        }
@@ -282,6 +365,8 @@ emergencyAlert(){
       }
 
     }
+
+    export {EarlySymptomsV, SymptomManagementV, CrisisSignsV, PeopleV, HowPeopleCanHelpV, CurrentMedicationsV, PastMedicationsV, TreatmentFacilitiesV, OtherResourcesV};
 
 
     const styles = StyleSheet.create({

@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text, ScrollView, StyleSheet, AsyncStorage} from 'react-native';
 import Interactable from 'react-native-interactable';
+import {EarlySymptomsV, SymptomManagementV, CrisisSignsV, PeopleV, HowPeopleCanHelpV, CurrentMedicationsV, PastMedicationsV, TreatmentFacilitiesV, OtherResourcesV} from './CrisisPlan.js';
 
 
 var EarlySymptoms = "No early symptoms were filled out";
@@ -37,6 +38,10 @@ export default class ViewPlan extends React.Component {
     }
   }
 
+
+createViewfromPrevious(){
+  EarlySymptoms = EarlySymptomsV;
+}
   async createView(){
 
 
@@ -108,11 +113,15 @@ export default class ViewPlan extends React.Component {
 
     }
 
+// componentDidMount(){
+//   createViewfromPrevious();
+// }
 
   render() {
 
+    //this.createViewfromPrevious();
 
-      this.createView();
+      //this.createView();
 
 
     return (
@@ -121,54 +130,54 @@ export default class ViewPlan extends React.Component {
 
 <Text style={styles.text1}>Early Symptoms: {"\n"}</Text>
 
-<Text style={styles.entryText}>{EarlySymptoms} {"\n"}{"\n"}{"\n"}</Text>
+<Text style={styles.entryText}>{EarlySymptomsV} {"\n"}{"\n"}{"\n"}</Text>
 
 
 
 <Text style={styles.text2}>Ways I can manage early symptoms: {"\n"}</Text>
 
-<Text style={styles.entryText}>{SymptomManagement} {"\n"}{"\n"}{"\n"}</Text>
+<Text style={styles.entryText}>{SymptomManagementV} {"\n"}{"\n"}{"\n"}</Text>
 
 
 
 <Text style={styles.text3}>Crisis Signs: {"\n"}</Text>
 
-<Text style={styles.entryText}>{CrisisSigns} {"\n"}{"\n"}{"\n"}</Text>
+<Text style={styles.entryText}>{CrisisSignsV} {"\n"}{"\n"}{"\n"}</Text>
 
 
 
 <Text style={styles.text4}>People I would like to help me: {"\n"}</Text>
 
-<Text style={styles.entryText}>{People} {"\n"}{"\n"}{"\n"}</Text>
+<Text style={styles.entryText}>{PeopleV} {"\n"}{"\n"}{"\n"}</Text>
 
 
 
 <Text style={styles.text5}>How I would like people to help me: {"\n"}</Text>
 
-<Text style={styles.entryText}>{HowPeopleCanHelp} {"\n"}{"\n"}{"\n"}</Text>
+<Text style={styles.entryText}>{HowPeopleCanHelpV} {"\n"}{"\n"}{"\n"}</Text>
 
 
 
 <Text style={styles.text6}>Medications I am currently on: {"\n"}</Text>
 
-<Text style={styles.entryText}>{CurrentMedications} {"\n"}{"\n"}{"\n"}</Text>
+<Text style={styles.entryText}>{CurrentMedicationsV} {"\n"}{"\n"}{"\n"}</Text>
 
 
 
 <Text style={styles.text1}>Medications I used to be on: {"\n"}</Text>
 
-<Text style={styles.entryText}>{PastMedications} {"\n"}{"\n"}{"\n"}</Text>
+<Text style={styles.entryText}>{PastMedicationsV} {"\n"}{"\n"}{"\n"}</Text>
 
 
 
 <Text style={styles.text2}>Treatment Facilities or Hospitals I prefer: {"\n"}</Text>
 
-<Text style={styles.entryText}>{TreatmentFacilities} {"\n"}{"\n"}{"\n"}</Text>
+<Text style={styles.entryText}>{TreatmentFacilitiesV} {"\n"}{"\n"}{"\n"}</Text>
 
 
 <Text style={styles.text3}>Other Resources I can use: {"\n"}</Text>
 
-<Text style={styles.entryText}>{OtherResources} {"\n"}{"\n"}{"\n"}</Text>
+<Text style={styles.entryText}>{OtherResourcesV} {"\n"}{"\n"}{"\n"}</Text>
 
 
 

@@ -63,12 +63,12 @@ export default class EditPlan extends React.Component{
 
       try {
        EarlySymptoms = await this.getKey('EarlySymptoms');
-       console.log("FIRST:" +  EarlySymptoms);
+      // console.log("FIRST:" +  EarlySymptoms);
 
        if (EarlySymptoms == null){
          EarlySymptoms = "No early symptoms were filled out";
        }
-       console.log("SECOND:" + EarlySymptoms);
+      // console.log("SECOND:" + EarlySymptoms);
 
 
         //EarlySymptoms = EarlySymptoms.split(" ").join(" \n");

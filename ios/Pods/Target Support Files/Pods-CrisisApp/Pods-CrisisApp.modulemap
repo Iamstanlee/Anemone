@@ -1,0 +1,6 @@
+module Pods_CrisisApp {
+  umbrella header "Pods-CrisisApp-umbrella.h"
+
+  export *
+  module * { export * }
+}
