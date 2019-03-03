@@ -107,7 +107,7 @@ emergencyAlert(){
 
       <View style={styles.container}>
 
-{(this.state.count==0 && (this.state.planCreated == null)) ?
+{(this.state.count==0 && (this.state.planCreated == false)) ?
       <Modal style={styles.modal} ref="sully" isOpen={true}
       swipetoClose="true"
       position={"center"}
