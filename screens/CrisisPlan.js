@@ -78,6 +78,7 @@ emergencyAlert(){
 
   async getPDF(){
     pdfPath = await this.getKey('CrisisPlan');
+    this.setState({pdfPath: pdfPath});
 
   }
 
@@ -235,7 +236,9 @@ emergencyAlert(){
           </View>
         );
       }
+
     }
+
 
     const styles = StyleSheet.create({
       container: {
