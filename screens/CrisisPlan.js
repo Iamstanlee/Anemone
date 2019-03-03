@@ -6,6 +6,7 @@ import Button from 'react-native-flat-button';
 import LottieView from 'lottie-react-native';
 
 var countNum = -1;
+var planCreatedVar = false;
 
 export default class CrisisPlan extends React.Component{
 
@@ -62,12 +63,23 @@ emergencyAlert(){
   if(state.params!= null && state.params!=undefined && state.params!='undefined' && state.params!="") {
     console.log("params" + state.params);
     countNum = state.params.count;
+    planCreatedVar = state.params.planCreated;
 
  }
 
- if (countNum == -1) {
+ if (countNum == -1){
    this.emergencyAlert();
+
  }
+
+ if (planCreatedVar == 'true') {
+   this.checkPlan();
+
+ }
+
+
+
+
 
   //console.log("COUNT:" + countNum);
 
@@ -76,6 +88,7 @@ emergencyAlert(){
         this.checkCountNum();
 
         this.checkPlan();
+
 
         this.getPDF();
         //console.log(JSON.stringify(this.props));
@@ -116,7 +129,7 @@ emergencyAlert(){
 
       planVar = await this.getKey('PlanCreated');
 
-      if (planVar == 'true'){
+      if (planVar == 'true' || planCreatedVar == 'true'){
         this.setState({planCreated:true})
         console.log("Plan is true");
 
