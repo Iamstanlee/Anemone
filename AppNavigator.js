@@ -128,7 +128,7 @@ const FeedStack = createStackNavigator({
             shadowHeight={5}
             containerStyle={styles.buttonContainer}
             contentStyle={styles.content}
-          onPress={() => navigation.navigate('CrisisPlan')}>&#8592; Back</Button>,
+          onPress={() => {navigation.setParams({ count: '1' }); navigation.navigate('CrisisPlan');}}>&#8592; Back</Button>,
         })
       },
   EditPlan: {
@@ -141,7 +141,7 @@ const FeedStack = createStackNavigator({
             shadowHeight={5}
             containerStyle={styles.buttonContainer}
             contentStyle={styles.content}
-          onPress={() => navigation.navigate('CrisisPlan')}>&#8592; Back</Button>,
+          onPress={() => {navigation.setParams({ count: '1' }); navigation.navigate('CrisisPlan');}}>&#8592; Back</Button>,
         })
       },
   CrisisPlanSteps: {
@@ -154,7 +154,7 @@ const FeedStack = createStackNavigator({
             shadowHeight={5}
             containerStyle={styles.buttonContainer}
             contentStyle={styles.content}
-          onPress={() => navigation.navigate('CrisisPlan')}>&#8592; Back</Button>,
+          onPress={() => {navigation.setParams({ count: '1' }); navigation.navigate('CrisisPlan');}}>&#8592; Back</Button>,
         })
       },
   EditSwipe: {
@@ -167,7 +167,7 @@ const FeedStack = createStackNavigator({
             shadowHeight={5}
             containerStyle={styles.buttonContainer}
             contentStyle={styles.content}
-          onPress={() => navigation.navigate('CrisisPlan')}>&#8592; Back</Button>,
+          onPress={() => {navigation.setParams({ count: '1' }); navigation.navigate('CrisisPlan');}}>&#8592; Back</Button>,
         })
       },
   CreateSwipe: {
@@ -180,7 +180,7 @@ const FeedStack = createStackNavigator({
             shadowHeight={5}
             containerStyle={styles.buttonContainer}
             contentStyle={styles.content}
-          onPress={() => navigation.navigate('CrisisPlan')}>&#8592; Back</Button>,
+          onPress={() => {navigation.setParams({ count: '1' }); navigation.navigate('CrisisPlan');}}>&#8592; Back</Button>,
         })
       },
 
@@ -194,7 +194,7 @@ const FeedStack = createStackNavigator({
                 shadowHeight={5}
                 containerStyle={styles.buttonContainer}
                 contentStyle={styles.content}
-              onPress={() => navigation.navigate('CrisisPlan')}>&#8592; Back</Button>,
+              onPress={() => {navigation.setParams({ count: '1' }); navigation.navigate('CrisisPlan');}}>&#8592; Back</Button>,
             })
           },
 

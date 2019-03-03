@@ -5,7 +5,10 @@ import Modal from 'react-native-modalbox';
 import Button from 'react-native-flat-button';
 import LottieView from 'lottie-react-native';
 
-  export default class CrisisPlan extends React.Component{
+var countNum = -1;
+
+export default class CrisisPlan extends React.Component{
+
 
     constructor(props) {
         super(props);
@@ -20,9 +23,15 @@ import LottieView from 'lottie-react-native';
 
 incrementCount(){
   this.setState({count:this.state.count + 1});
-  console.log("The count is " + this.state.count);
+  //console.log("The count is " + this.state.count);
 }
 
+checkCountNum(){
+  console.log("countNum:" + countNum);
+  if (countNum !=-1){
+    this.setState({count: countNum});
+  }
+}
 
 emergencyAlert(){
 
@@ -43,14 +52,34 @@ emergencyAlert(){
 
   componentDidMount() {
 
+  //
+
+  console.log(JSON.stringify(this.props.navigation.state));
+
+
+  const {state} = this.props.navigation;
+
+  if(state.params!= null && state.params!=undefined && state.params!='undefined' && state.params!="") {
+    console.log("params" + state.params);
+    countNum = state.params.count;
+
+ }
+
+ if (countNum == -1) {
+   this.emergencyAlert();
+ }
+
+  //console.log("COUNT:" + countNum);
+
          this.setupAnimation();
 
-         this.checkPlan();
+        this.checkCountNum();
 
-        this.emergencyAlert();
+        this.checkPlan();
 
         this.getPDF();
-
+        //console.log(JSON.stringify(this.props));
+      //  console.log("props " + JSON.stringify(this.props.navigation.state));
        }
 
    setupAnimation = () => {
