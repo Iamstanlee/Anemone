@@ -54,7 +54,7 @@ async createView(){
         EarlySymptomsV = "No early symptoms were filled out";
       }
 
-    //  console.log("ES:" + EarlySymptomsV);
+      console.log("ES:" + EarlySymptomsV);
 
       //EarlySymptoms = EarlySymptoms.split(" ").join(" \n");
 
@@ -199,6 +199,7 @@ emergencyAlert(){
   async getKey(key){
     try {
       const value = await AsyncStorage.getItem(key);
+      console.log("RET: " + value);
       return value;
     } catch (error) {
       console.log("Error retrieving data" + error);

@@ -87,7 +87,7 @@ else if (model == 'iPhone XS Max' || model == 'iPhone 6 Plus' || model == 'iPhon
         //justifyContent: 'center',
       //  alignItems: 'center',
         height: 200,
-        width: 250,
+        width: 350,
         backgroundColor: 'transparent',
         },
         });
