@@ -16,7 +16,16 @@ export default class WhatPlan extends React.Component {
 
 
 
-      <Text style={{textAlign: 'center',fontFamily: 'ProximaNova-Bold', fontSize: 22}}>A crisis plan contains basic steps and symptoms to be aware of during a mental health crisis and enables a person to not only gauge how severe their case is, but also provides them with easy resources for getting help. A crisis plan can be truly lifesaving, if prepared in advance. It should be filled out when you are feeling "well" so that it can be effective during an emergency.
+      <Text style={{textAlign: 'center',fontFamily: 'ProximaNova-Bold', fontSize: 22}}>A crisis plan contains basic steps and symptoms to be aware of during a mental health crisis and enables a person to not only gauge how severe their case is, but also provides them with easy resources for getting help.
+
+      </Text>
+      <Text>
+      {"\n"}{"\n"}
+
+      </Text>
+
+      <Text style={{textAlign: 'center',fontFamily: 'ProximaNova-Bold', fontSize: 22}}>
+      A crisis plan can be truly lifesaving, if prepared in advance. It should be filled out when you are feeling "well" so that it can be effective during an emergency.
 </Text>
 
       </View>

@@ -74,6 +74,8 @@ emergencyAlert(){
 
  if (planCreatedVar == 'true') {
    this.checkPlan();
+   this.getPDF();
+
 
  }
 
