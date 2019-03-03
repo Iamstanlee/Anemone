@@ -23,6 +23,7 @@ import Button from 'react-native-flat-button'
 
 
 var count = 0;
+var sourcePicture = null;
 
 export default class GroundingBox extends React.Component {
 
@@ -31,6 +32,14 @@ export default class GroundingBox extends React.Component {
 
     this.selectPhotoTapped = this.selectPhotoTapped.bind(this);
   }
+
+  componentDidMount() {
+
+    let { avatarSource} = this.state;
+
+
+    this.checkPhoto();
+}
 
   incrementCount(){
     count = count+1;
@@ -78,7 +87,7 @@ export default class GroundingBox extends React.Component {
     if (sourcePic != null){
 
 
-      console.log("This is what source does look like: " + sourcePic);
+      console.log("This is what source does look like: " + JSON.stringify(sourcePic));
 
       this.setState({
         avatarSource: sourcePic
@@ -102,9 +111,7 @@ export default class GroundingBox extends React.Component {
   }
 
 
-  async selectPhotoTapped() {
-
-    var sourcePicture = null;
+selectPhotoTapped() {
 
     const options = {
       quality: 1.0,
@@ -128,19 +135,24 @@ export default class GroundingBox extends React.Component {
           console.log('User tapped custom button: ', response.customButton);
         } else {
           sourcePicture = { uri: response.uri };
-          console.log("This is what source should look like: " + sourcePicture);
+          console.log("This is what source should look like: " + JSON.stringify(sourcePicture));
           this.setState({
-            avatarSource: sourcePicture,
-          });
+    avatarSource: sourcePicture
+}, () => {
+    this.savePhoto();
+});
         }
       })
-    }, 500);
+    }, 100);
 
-    await this.saveKey('GroundingPhoto', sourcePicture);
     //console.log("AVATAR:" + this.state.avatarSource);
 
     //TODO: Photo no longer saves upon app close
 
+  }
+
+  async savePhoto(){
+    await this.saveKey('GroundingPhoto', sourcePicture);
   }
 
 
@@ -190,10 +202,7 @@ export default class GroundingBox extends React.Component {
 
   render() {
 
-    let { avatarSource} = this.state;
 
-
-    this.checkPhoto();
     //this.checkSongTitle();
 
     return (
