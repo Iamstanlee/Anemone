@@ -23,7 +23,6 @@ const model = DeviceInfo.getModel();
 type Props = {};
 export default class HomeScreen extends React.Component{
   render() {
-  AsyncStorage.clear();
     return (
 
 
